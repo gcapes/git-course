@@ -112,6 +112,28 @@ Again, as always with Git **before** you execute the above, make sure you know w
 
 There are a number of available GUIs for working with Git. The official Git page contains a [comprehensive list](http://git-scm.com/downloads/guis).
 
+See for example: 
+
+* [SourceTreeApp](http://www.sourcetreeapp.com/)
+
+
+
+###Find out more:
+
+
+* [Git Branching](http://pcottle.github.io/learnGitBranching/) tutorial
+
+* [Visual Git Reference](http://marklodato.github.com/visual-git-guide/index-en.html) - pictorial representations of what Git commands do.
+* [Pro Git](http://git-scm.com/book) - the "official" online Git book.
+* [Version control by example](http://www.ericsink.com/vcbe/) - an acclaimed online book on version control by Eric Sink.
+* [Git commit policies](http://osteele.com/posts/2008/05/commit-policies) - images on what Git commands to with reference to the working directory, staging area, local and remote repositories.
+* [Gitolite](https://github.com/sitaramc/gitolite) - a way for you to host
+your own multi-user Git repositories. Your collaborators send you their public SSH keys then they can pull and push from/to the repositories.
+
+* Ram, K.  (2013) "git can facilitate greater reproducibility and increased transparency in science", Source Code for Biology and Medicine 2013, 8:7 doi:[10.1186/1751-0473-8-7](http://dx.doi.org/10.1186/1751-0473-8-7) - survey of the range of ways in which version control can help research.
+
+* Wilson, G.,  D. A. Aruliah, C. T. Brown, N. P. Chue Hong, M. Davis, R. T. Guy, S. H. D. Haddock, K. Huff, I. M. Mitchell, M. Plumbley, B. Waugh, E. P. White, P. Wilson (2012) "[Best Practices for Scientific Computing](http://arxiv.org/abs/1210.0530)", arXiv:1210.0530 [cs.MS].
+
 
 
 Previous: [Pull Requests](7_Pull_Requests.md) Next: [Conclusion](9_Conclusion.md)

@@ -164,7 +164,7 @@ Note that in this case we used "git add" to put journal.txt to the staging area.
 
 It can sometimes be quicker to provide our commit messages at the command-line by doing:
 
-    $ git add journa.txt
+    $ git add journal.txt
     $ git commit -m "Expanded introduction."
     
     

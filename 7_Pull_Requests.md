@@ -15,7 +15,7 @@ Let's look at the workflow and try to repeat it:
 		origin	https://github.com/YOUR_USERNAME/manchester-papers.git(push)
 
 3. Make changes you want to contribute. Commit and push them back to your repository. You won't be able to push back to the repository you forked from because you are not added as a contributor!
-4. Go to your GitHub account and to in the forked repository find a green button for creating Pull Requests. Click it and follow the instructions.
+4. Go to your GitHub account and in the forked repository find a green button for creating Pull Requests. Click it and follow the instructions.
 5. The owner of the original repository gets a notification that someone created a pull request - the request can be reviewed, commented and merged in (or not) via GitHub.
 
 
