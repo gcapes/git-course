@@ -1,3 +1,4 @@
+---
 title: Version control with Git  
 ---
 
