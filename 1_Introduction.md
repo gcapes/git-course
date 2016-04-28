@@ -1,10 +1,9 @@
 ---
+layout: default
 title: Version control with Git  
 ---
 
-**Based on materials by Mike Jackson, Greg Wilson, Chris Cannam, Katy
-Huff, Anthony Scopatz, Joshua R. Smith, and Sri Hari Krishna
-Narayanan. All materials created originally for [Software Carpentrty](http://www.software-carpentry.orgs)**
+**Based on materials by [Software Carpentrty](http://www.software-carpentry.org)**
 
 Introduction: What is version control?
 --------------------------------------
@@ -92,4 +91,4 @@ into your local repository; resolving conflicts
 write permits to a repo/contributing to large projects
 
 
-Next: [Creating and working with local repository](1_Local.md)
+Next: [Creating and working with a local repository](1_Local.md)
