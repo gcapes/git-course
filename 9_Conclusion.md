@@ -65,5 +65,4 @@ Plumbley, B. Waugh, E. P. White, P. Wilson (2012) "[Best Practices for
 Scientific Computing](http://arxiv.org/abs/1210.0530)", arXiv:1210.0530
 [cs.MS].
 
-Previous: [Collaborating with our colleagues](3_Collaboration) Next: [Git
-hints and tips](5_HintsAndTips)
+Previous: [Hints and tips](8_HintsAndTips)
