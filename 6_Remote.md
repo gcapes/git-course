@@ -382,4 +382,4 @@ branch against master?
 
 
 
-Previous: [Rebasing](5_Rebasing.md) Next: [Pull Requests](7_Pull_Requests.md)
+Previous: [Rebasing](5_Rebasing) Next: [Pull Requests](7_Pull_Requests)

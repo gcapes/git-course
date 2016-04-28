@@ -184,8 +184,8 @@ step again but before you make a commit, create a new branch and check it out.
 What happened?
 
 
-Previous: [Working with local repository](2_Local.md) Next: [Undoing
-things](4_Undoing.md)
+Previous: [Working with local repository](2_Local) Next: [Undoing
+things](4_Undoing)
 
 
 

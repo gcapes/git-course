@@ -180,5 +180,5 @@ Computing](http://arxiv.org/abs/1210.0530)", arXiv:1210.0530 [cs.MS].
 
 
 
-Previous: [Pull Requests](7_Pull_Requests.md) Next:
-[Conclusion](9_Conclusion.md)
+Previous: [Pull Requests](7_Pull_Requests) Next:
+[Conclusion](9_Conclusion)

@@ -411,5 +411,5 @@ released.
 
 
 
-Previous: [Introduction](1_Introduction.md) Next: [Branching](3_Branching.md)
+Previous: [Introduction](1_Introduction) Next: [Branching](3_Branching)
 
