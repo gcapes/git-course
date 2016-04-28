@@ -91,4 +91,4 @@ into your local repository; resolving conflicts
 write permits to a repo/contributing to large projects
 
 
-Next: [Creating and working with a local repository](1_Local)
+Next: [Creating and working with a local repository](2_Local)
