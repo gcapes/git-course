@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Version control with Git  
 ---
 ## Tracking your changes with a local repository
