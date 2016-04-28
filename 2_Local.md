@@ -195,8 +195,7 @@ smallest change that remain meaningful.
 > **What we know about software development - code reviews work** 
 
 > Fagan (1976) discovered that a rigorous inspection can remove 60-90% of
-errors before the first test is run.  
-> M.E., Fagan (1976). [Design and Code
+errors before the first test is run. [Design and Code
 inspections to reduce errors in program
 development](http://www.mfagan.com/pdfs/ibmfagan.pdf). IBM Systems Journal 15
 (3): pp. 182-211.
@@ -206,8 +205,8 @@ minutes long**
 
 > Cohen (2006) discovered that all the value of a code review comes within the
 first hour, after which reviewers can become exhausted and the issues they find
-become ever more trivial.  
-> J. Cohen (2006). [Best Kept Secrets of Peer Code
+become ever more trivial.
+[Best Kept Secrets of Peer Code
 Review](http://smartbear.com/SmartBear/media/pdfs/best-kept-secrets-of-peer-code-review.pdf). SmartBear, 2006. ISBN-10: 1599160676. ISBN-13: 978-1599160672.
 
 Let's add a directory, common and a file references.txt for references we may
