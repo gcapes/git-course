@@ -17,19 +17,21 @@ with one of our colleagues.
  First, let's create a directory:
 
      
-       $ mkdir papers $ cd papers
+       $ mkdir papers 
+       $ cd papers
 
 Now, we need to set up this directory up to be a Git repository (or "initiate
 the repository"):
 
-       $ git init Initialized empty Git repository in /home/user/papers/.git/
+       $ git init 
+       Initialized empty Git repository in /home/user/papers/.git/
 
 The directory "papers" is now our working directory. 
 
  If we look in this directory, we'll find a *.git* directory:
 
-      $ ls -a .git: branches  config  description  HEAD  hooks  info  objects
-      refs
+      $ ls -a .git
+      branches  config  description  HEAD  hooks  info  objects refs
 
 .git directory contains Git's configuration files. Be careful not to
 accidentally delete this directory!
@@ -41,7 +43,8 @@ those changes. In teamwork this information is often crucial (do you want to
 know who rewrote your 'Conclusions' section?). So, we need to tell Git about
 who we are:  
 
-    $ git config --global user.name "Your Name" $ git config --global
+    $ git config --global user.name "Your Name" 
+    $ git config --global
     user.email "yourname@yourplace.org"
 
 ### Set a default editor
@@ -70,8 +73,9 @@ We can now preview (and edit, if necessary) Git's global configuration (such as
 our name and the default editor which we just set up). If we look in our home
 directory, we'll see a `.gitconfig` file,
 
-    $ cat ~/.gitconfig [user] name = Your Name email = yourname@yourplace.org
-    [core] editor = nano
+    $ cat ~/.gitconfig 
+	    [user] name = Your Name email = yourname@yourplace.org
+	    [core] editor = nano
 
 This file holds global configuration that is applied to any Git repository in
 your file system. 
@@ -83,8 +87,8 @@ Now, we'll create a file. Let's say we're going to write a journal paper:
     $ nano journal.txt
 
 and add headings for Title, Author, Introduction, Conclusion and References,
-and save the file.\ git status allows us to find out about the current status
-of files in the repository. So, we can run,
+and save the file. git status allows us to find out about the current status
+of files in the repository. So we can run,
 
     $ git status journal.txt
 
@@ -94,7 +98,8 @@ means it's in our working directory but Git is not tracking it - that is, any
 changes made to this file will not be recorded by Git. To tell Git about the
 file, we will use the *add* command:
 
-    $ git add journal.txt $ git status journal.txt
+    $ git add journal.txt 
+    $ git status journal.txt
     
 Now, our file is now listed as one of some Changes to be committed. 
     
@@ -150,7 +155,7 @@ different sections.
 
  Now let's make some more changes to our journal.txt file . If we now run,
 
-     $ git status journal.txt
+     $ git status
 
 we see changes not staged for commit section and our file is marked as
 modified. This means that a file Git knows about has been modified by us but
@@ -158,7 +163,8 @@ has not yet been committed. So we can add it to the staging area and then
 commit the changes:
 
      
-    $ git add journal.txt $ git commit
+    $ git add journal.txt 
+    $ git commit
     
 Note that in this case we used "git add" to put journal.txt to the staging
 area. Git already knows this file should be tracked but doesn't know if we want
@@ -169,7 +175,8 @@ to add the file to the staging area.
 It can sometimes be quicker to provide our commit messages at the command-line
 by doing:
 
-    $ git add journal.txt $ git commit -m "Expanded introduction."
+    $ git add journal.txt 
+    $ git commit -m "Expanded introduction."
     
     
 To see the history of changes that we made to our repository (the most recent
@@ -184,13 +191,14 @@ comment.
 > **Top tip: When to commit changes**
 
 > There are no hard and fast rules, but good commits are atomic - they are the
-smallest change that remain meaningful.  > For code, it's useful to commit
-changes that can be reviewed by someone else in under an hour. 
+smallest change that remain meaningful.  
+> For code, it's useful to commit changes that can be reviewed by someone else in under an hour. 
 
 > **What we know about software development - code reviews work** 
 
 > Fagan (1976) discovered that a rigorous inspection can remove 60-90% of
-errors before the first test is run.  > M.E., Fagan (1976). [Design and Code
+errors before the first test is run.  
+> M.E., Fagan (1976). [Design and Code
 inspections to reduce errors in program
 development](http://www.mfagan.com/pdfs/ibmfagan.pdf). IBM Systems Journal 15
 (3): pp. 182-211.
@@ -200,14 +208,15 @@ minutes long**
 
 > Cohen (2006) discovered that all the value of a code review comes within the
 first hour, after which reviewers can become exhausted and the issues they find
-become ever more trivial.  > J. Cohen (2006). [Best Kept Secrets of Peer Code
-Review](http://smartbear.com/SmartBear/media/pdfs/best-kept-secrets-of-peer-code-review.pdf).
-SmartBear, 2006. ISBN-10: 1599160676. ISBN-13: 978-1599160672.
+become ever more trivial.  
+> J. Cohen (2006). [Best Kept Secrets of Peer Code
+Review](http://smartbear.com/SmartBear/media/pdfs/best-kept-secrets-of-peer-code-review.pdf). SmartBear, 2006. ISBN-10: 1599160676. ISBN-13: 978-1599160672.
 
 Let's add a directory, common and a file references.txt for references we may
 want to reuse:
 
-    $ mkdir common $ nano common/references.txt
+    $ mkdir common 
+    $ nano common/references.txt
     
 We will also add a few lines to our paper (journal.txt). Now we need to record
 our work in the repository so we need to make a commit.  First we tell Git to
@@ -310,7 +319,8 @@ Using our commit identifiers we can set our working directory to contain the
 state of the repository as it was at any commit. So, let's go back to the very
 first commit we made,
 
-    $ git log $ git checkout COMMITID
+    $ git log 
+    $ git checkout COMMITID
 
 
 We will get something like this:
@@ -390,7 +400,8 @@ We can list tags by doing:
 
 Now if we change our file,
 
-    $ git add journal.txt $ git commit -m "..." journal.txt
+    $ git add journal.txt 
+    $ git commit -m "..." journal.txt
 
 We can checkout our previous version using our tag instead of a commit
 identifier.
