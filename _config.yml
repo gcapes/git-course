@@ -1,2 +1,3 @@
 name: Version control with Git and GitHub
 markdown: kramdown
+  input: GFM

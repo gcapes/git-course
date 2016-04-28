@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Version control with Git  
 ---
 ## Tracking your changes with a local repository
@@ -16,7 +15,6 @@ with one of our colleagues.
 
  First, let's create a directory:
 
-     
        $ mkdir papers 
        $ cd papers
 
