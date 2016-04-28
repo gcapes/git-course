@@ -1,3 +1,7 @@
+---
+layout: default
+title: Version control with Git  
+---
 ## Tracking your changes with a local repository
 
 Version control is centred round the notion of a *repository* which holds your

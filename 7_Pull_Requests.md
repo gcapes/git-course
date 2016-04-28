@@ -1,3 +1,7 @@
+---
+layout: default
+title: Version control with Git  
+---
 ## Pull Requests
 
 Pull Requests are a great solution for contributing to repositories to which

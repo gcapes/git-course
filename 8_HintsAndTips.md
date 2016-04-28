@@ -1,3 +1,7 @@
+---
+layout: default
+title: Version control with Git  
+---
 # Git hints and tips
 
 ## `man` page

@@ -1,3 +1,7 @@
+---
+layout: default
+title: Version control with Git  
+---
 ## Rebasing
 
 ### Rebasing vs merging

@@ -1,3 +1,7 @@
+---
+layout: default
+title: Version control with Git  
+---
 There is a number of things which we can amend and change after then have been
 commited in Git.
 

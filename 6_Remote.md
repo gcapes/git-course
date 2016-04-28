@@ -1,3 +1,7 @@
+---
+layout: default
+title: Version control with Git  
+---
 ## Working from multiple locations with a remote repository
 
 We're going to set up a remote repository that we can use from multiple

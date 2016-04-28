@@ -1,3 +1,7 @@
+---
+layout: default
+title: Version control with Git  
+---
 ## Conclusions and further information
 
 We've seen how we can use version control to,

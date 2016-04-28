@@ -1,3 +1,7 @@
+---
+layout: default
+title: Version control with Git  
+---
 ### Branching
 
 ####What is a branch?
