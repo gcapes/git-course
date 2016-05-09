@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Version control with Git  
 ---
 ## Pull Requests
@@ -39,5 +39,5 @@ a notification that someone created a pull request - the request can be
 reviewed, commented and merged in (or not) via GitHub.
 
 
-Previous: [Working with remote repositories](6_Remote) Next: [Hints and
-Tips](8_HintsAndTips)
+Previous: [Working with remote repositories](6_Remote.html) Next: [Hints and
+Tips](8_HintsAndTips.html)

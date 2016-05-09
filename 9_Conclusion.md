@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Version control with Git  
 ---
 ## Conclusions and further information
@@ -65,4 +65,4 @@ Plumbley, B. Waugh, E. P. White, P. Wilson (2012) "[Best Practices for
 Scientific Computing](http://arxiv.org/abs/1210.0530)", arXiv:1210.0530
 [cs.MS].
 
-Previous: [Hints and tips](8_HintsAndTips)
+Previous: [Hints and tips](8_HintsAndTips.html)

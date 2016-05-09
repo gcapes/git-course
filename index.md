@@ -1,6 +1,6 @@
 ---
-layout: default
+layout: page
 title: Version control with Git  
 ---
 
-[Link to intro](1_Introduction)
+[Link to intro](1_Introduction.html)

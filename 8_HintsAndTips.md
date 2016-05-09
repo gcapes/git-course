@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Version control with Git  
 ---
 # Git hints and tips
@@ -180,5 +180,5 @@ Computing](http://arxiv.org/abs/1210.0530)", arXiv:1210.0530 [cs.MS].
 
 
 
-Previous: [Pull Requests](7_Pull_Requests) Next:
-[Conclusion](9_Conclusion)
+Previous: [Pull Requests](7_Pull_Requests.html) Next:
+[Conclusion](9_Conclusion.html)

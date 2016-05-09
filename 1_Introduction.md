@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Version control with Git  
 ---
 
@@ -91,4 +91,4 @@ into your local repository; resolving conflicts
 write permits to a repo/contributing to large projects
 
 
-Next: [Creating and working with a local repository](2_Local)
+Next: [Creating and working with a local repository](2_Local.html)

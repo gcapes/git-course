@@ -15,11 +15,9 @@ with one of our colleagues.
 
  First, let's create a directory:
 
-```
 
-       $ mkdir papers 
-       $ cd papers
-```
+    $ mkdir papers 
+    $ cd papers
 
 Now, we need to set up this directory up to be a Git repository (or "initiate
 the repository"):
@@ -422,5 +420,5 @@ released.
 
 
 
-Previous: [Introduction](1_Introduction) Next: [Branching](3_Branching)
+Previous: [Introduction](1_Introduction.html) Next: [Branching](3_Branching.html)
 

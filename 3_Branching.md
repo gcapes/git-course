@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Version control with Git  
 ---
 ### Branching
@@ -184,8 +184,8 @@ step again but before you make a commit, create a new branch and check it out.
 What happened?
 
 
-Previous: [Working with local repository](2_Local) Next: [Undoing
-things](4_Undoing)
+Previous: [Working with local repository](2_Local.html) Next: [Undoing
+things](4_Undoing.html)
 
 
 

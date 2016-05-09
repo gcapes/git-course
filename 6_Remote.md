@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Version control with Git  
 ---
 ## Working from multiple locations with a remote repository
@@ -382,4 +382,4 @@ branch against master?
 
 
 
-Previous: [Rebasing](5_Rebasing) Next: [Pull Requests](7_Pull_Requests)
+Previous: [Rebasing](5_Rebasing.html) Next: [Pull Requests](7_Pull_Requests.html)

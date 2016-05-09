@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Version control with Git  
 ---
 There is a number of things which we can amend and change after then have been
@@ -144,4 +144,4 @@ The online tutorial [Visualizing Git Concepts with
 D3](http://www.wei-wang.com/ExplainGitWithD3/#) shows you in a few simple steps
 the difference between `revert` and `reset`.
 
-Previous: [Branching](3_Branching) Next: [Rebasing](5_Rebasing)
+Previous: [Branching](3_Branching.html) Next: [Rebasing](5_Rebasing.html)
