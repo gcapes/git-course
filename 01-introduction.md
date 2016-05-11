@@ -3,10 +3,20 @@ layout: page
 title: Version control with Git  
 ---
 
-**Based on materials by [Software Carpentrty](http://www.software-carpentry.org)**
+**Based on materials by [Software Carpentry](http://www.software-carpentry.org)**
 
-Introduction: What is version control?
---------------------------------------
+## Introduction: What is version control?
+
+> ## Learning Objectives {.objectives}
+>
+> *   Understand the benefits of an automated version control system.
+
+> ## Prerequisites {.prereq}
+>
+> In this lesson we use Git from the Unix Shell.
+> Some previous experience with the shell is expected,
+> *but isn't mandatory*.
+
 
 Version control is a piece of software which allows you to record and
 preserve the history of changes made to directories and files. If you're
@@ -52,43 +62,4 @@ control everyone has their own (local) repository.
 and [GitHub](http://github.com), a web-based service providing remote
 repositories.
 
-Outline
---------
-1. Setting up and working with a local repository.
-2. Looking at differences.
-3. Discarding changes, undoing things.
-4. Travelling back in time.
-5. Branching, merging and resolving conflicts.
-6. Rebasing - introduction.
-7. Setting up and working with remote repositories.
-8. Collaborative work over a remote repository (including Pull Requests).
-9. Tips&tricks and resources for learning Git further.
-10. Summary and Q&A.s
-
-Agenda
------
-**10:00 - 10:30** Introduction to version control
-
-**10:30 - 12:00** Setting up and working with local repository (including:
-diffs, undoing things, looking back at history etc.)
-
-**12:00 - 13:00** Lunch
-
-**13:00 - 14:30** Branching (creating branches and working with them);
-merging with and without conflicts; a bit of internals of Git
-(pointers, commits, branches); intro to rebasing
-
-**14:30 - 15:00** Setting up a remote repository and working with it
-(commit-push-pull-clone etc.); few words about GitHub
-
-**15:00 - 15:30** Break 
-
-**15:30 - 16:15** Collaborating in pairs/groups on remote repository in
-GutHub - introduction to the Push-Pull workflow; getting others' changes
-into your local repository; resolving conflicts 
-
-**16:15 -17:00** Pull Requests in GitHub - collaboration without having
-write permits to a repo/contributing to large projects
-
-
-Next: [Creating and working with a local repository](2_Local.html)
+Next: [Creating and working with a local repository](02-local.html)

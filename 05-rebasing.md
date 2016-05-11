@@ -49,5 +49,5 @@ conflicts in the long run. But again, it is considered a better practice to use
 merge and deal with conflicts rather than mess up shared branches using rebase.
 
 
-Previous: [Undoing things](4_Undoing.html) Next: [Working with remote
-repository](6_Remote.html)
+Previous: [Undoing things](04-undoing.html) Next: [Working with remote
+repository](06-remote.html)

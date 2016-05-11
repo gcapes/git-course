@@ -39,5 +39,5 @@ a notification that someone created a pull request - the request can be
 reviewed, commented and merged in (or not) via GitHub.
 
 
-Previous: [Working with remote repositories](6_Remote.html) Next: [Hints and
-Tips](8_HintsAndTips.html)
+Previous: [Working with remote repositories](06-remote.html) Next: [Hints and
+Tips](08-hint-and-tips.html)

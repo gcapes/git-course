@@ -184,8 +184,8 @@ step again but before you make a commit, create a new branch and check it out.
 What happened?
 
 
-Previous: [Working with local repository](2_Local.html) Next: [Undoing
-things](4_Undoing.html)
+Previous: [Working with local repository](02-local.html) Next: [Undoing
+things](04-undoing.html)
 
 
 

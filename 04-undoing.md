@@ -144,4 +144,4 @@ The online tutorial [Visualizing Git Concepts with
 D3](http://www.wei-wang.com/ExplainGitWithD3/#) shows you in a few simple steps
 the difference between `revert` and `reset`.
 
-Previous: [Branching](3_Branching.html) Next: [Rebasing](5_Rebasing.html)
+Previous: [Branching](03-branching.html) Next: [Rebasing](05-rebasing.html)

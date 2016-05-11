@@ -382,4 +382,4 @@ branch against master?
 
 
 
-Previous: [Rebasing](5_Rebasing.html) Next: [Pull Requests](7_Pull_Requests.html)
+Previous: [Rebasing](05-rebasing.html) Next: [Pull Requests](07-pull-requests.html)
