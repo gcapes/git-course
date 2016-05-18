@@ -4,6 +4,10 @@ title: Version control with Git
 ---
 ## Rebasing
 
+The first thing to understand about git rebase is that it solves the same problem 
+as git merge. Both of these commands are designed to integrate changes from one 
+branch into another branch: they just do it in very different ways.
+
 ### Rebasing vs merging
 
 Rebasing may initially seem like merging. But in fact what happens behind the
@@ -11,7 +15,7 @@ scenes is very different. When we merge, it is clearly visible in our history
 that a new commit was created from a  3-way merge. When we rebase, we change
 the history but it looks as if the commits happened in the linear way.
 
-Rebasing 
+### Rebasing 
 
 Let's start first with checking out our master branch:
 
