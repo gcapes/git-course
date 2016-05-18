@@ -40,4 +40,4 @@ reviewed, commented and merged in (or not) via GitHub.
 
 
 Previous: [Working with remote repositories](06-remote.html) Next: [Hints and
-Tips](08-hint-and-tips.html)
+Tips](08-hints-and-tips.html)
