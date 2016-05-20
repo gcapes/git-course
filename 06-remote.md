@@ -19,21 +19,25 @@ services such as [Launchpad](https://launchpad.net),
 [SourceForge](http://sourceforge.net) supports a wealth of resources to support
 projects including:
 
-* Time histories changes to repositories * Commit-triggered e-mails * Browsing
-code from within a web browser, with syntax highlighting * Software release
-management * Issue (ticket) and bug tracking * Download * Varying permissions
-for various groups of users * Other service hooks e.g. to Twitter.
+* Time histories changes to repositories 
+* Commit-triggered e-mails 
+* Browsing code from within a web browser, with syntax highlighting 
+* Software release management 
+* Issue (ticket) and bug tracking 
+* Download 
+* Varying permissions for various groups of users 
+* Other service hooks e.g. to Twitter.
 
 **Note**  GitHub's free repositories have public licences **by default**. If
 you don't want to share (in the most liberal sense) your stuff with the world
-and you want to use GitHub (instead of GitHub), you will need to pay for the
+and you want to use GitHub, you will need to pay for the
 private GitHub repositories (GitHub offers up to 5 free private repositories,
 if you are an academic - but do check this information as T&C may change).
 
-### GitHub for research GitHub **isn't** the only remote repostitories
-provider. It is however very popular, in particular within the Open Source
-communities. The reason why we teach GitHub in this tutorial is mainly due to
-popular demand. 
+### GitHub for research 
+GitHub **isn't** the only remote repostitories provider. It is however very popular, 
+in particular within the Open Source communities. The reason why we teach GitHub 
+in this tutorial is mainly due to popular demand. 
 
 Also, GitHub has started working intensively in providing different
 [functionalities which are particularily useful in research
@@ -51,10 +55,12 @@ in](https://GitHub.com).
 
 Now, we can create a repository on GitHub,
 
-* Log in to [GitHub](https://GitHub.com/) * Click on the Create icon on the top
-right * Enter Repository name: "bootcamp-WiSE" * For the purpose of this
-exercise we'll create a public repository * Make sure the Initialize this
-repository with a README is *unselected* * Click Create Repository
+* Log in to [GitHub](https://GitHub.com/) 
+* Click on the Create icon on the top right 
+* Enter Repository name: "bootcamp-WiSE" 
+* For the purpose of this exercise we'll create a public repository 
+* Make sure the Initialize this repository with a README is *unselected* 
+* Click Create Repository
 
 You'll get a page with new information about your repository. We already have
 our local repository and we will be *pushing* it to GitHub. 
@@ -67,7 +73,8 @@ on GitHub.
 
 Now copy and paste the second line,
 
-    $ git push -u origin master Counting objects: 38, done.  Delta compression
+    $ git push -u origin master 
+    Counting objects: 38, done.  Delta compression
     using up to 4 threads.  Compressing objects: 100% (30/30), done.  Writing
     objects: 100% (38/38), 3.59 KiB, done.  Total 38 (delta 9), reused 0 (delta
     0) To https://github.com/USERNAME/papers.git * [new branch]      master ->
@@ -113,12 +120,14 @@ To delete the remote branch:
 Now, let's do something drastic! (but before that step, make sure that you
 pushed all your local branches into the remote repository)
 
-    $ cd ..  $ rm -rf papers
+    $ cd .. 
+    $ rm -rf papers
 
 Gulp! We've just wiped our local repository! But, as we've a copy on GitHub we
 can just copy, or *clone* that,
 
-    $ git clone https://github.com/USERNAME/papers.git Cloning into 'papers'…
+    $ git clone https://github.com/USERNAME/papers.git 
+    Cloning into 'papers'...
     remote: Counting objects: 38, done.  remote: Compressing objects: 100%
     (21/21), done.  remote: Total 38 (delta 9), reused 38 (delta 9) Unpacking
     objects: 100% (38/38), done.
@@ -128,7 +137,8 @@ a directory with the same name as the name of the repository.
 
 Now, if we change into `papers` we can see that we have our repository,
 
-    $ cd papers $ git log
+    $ cd papers 
+    $ git log
 
 and we can see our Git configuration files too,
 
@@ -168,31 +178,37 @@ then we'll work in pairs for some real-life practice.
 
 First, let us leave our current local repository,
 
-    $ cd ..  $ ls papers
+    $ cd ..  
+    $ ls papers
 
 And let us clone our repository again, but this time specify the local
 directory name,
 
-    $ git clone https://github.com/USERNAME/papers.git papers2 Cloning into
-    'papers2'...
+    $ git clone https://github.com/USERNAME/papers.git papers2 
+    Cloning into 'papers2'...
 
 
 So we now have two clones of our repository,
 
-    $ ls $ papers papers2
+    $ ls 
+    $ papers papers2
 
 Let's pretend these clones are on two separate machines! So we have 3 versions
 of our repository - our two local versions, on our separate machines (we're
 still pretending!) and one on GitHub. So let's go into one of our clones, make
 some changes, commit these and push these to GitHub:
 
-    $ cd papers $ nano journal.txt $ git add journal.txt $ git commit -m "Added
-    some more comments" $ git push
+    $ cd papers 
+    $ nano journal.txt 
+    $ git add journal.txt 
+    $ git commit -m "Added some more comments" 
+    $ git push
 
 Now let's change to our other repository and *fetch* the changes from our
 remote repository,
 
-    $ cd ../papers2 $ git fetch
+    $ cd ../papers2 
+    $ git fetch
 
 We can now see what the differences are by doing,
 
@@ -213,12 +229,18 @@ And then we can check that we have our changes,
 
 As a short-hand, we can do a Git *pull* which does a *fetch* then a *merge*,
 
-    $ nano journal.txt $ git add journal.txt $ git commit -m "Added
-    acknowldgements" journal.txt $ git push $ cd ..  $ cd ../papers $ git pull
+    $ nano journal.txt 
+    $ git add journal.txt 
+    $ git commit -m "Added acknowldgements" journal.txt 
+    $ git push 
+    $ cd ..  
+    $ cd ../papers 
+    $ git pull
 
 And then check that we have our changes,
 
-    $ cat journal.txt $ git log
+    $ cat journal.txt 
+    $ git log
 
 ### Collaboration: conflicts and how to resolve them
 
@@ -226,14 +248,19 @@ Let's continue to pretend that our two local, cloned, repositories are hosted
 on two different machines, and make some changes to our file, and push these to
 GitHub:
 
-    $ nano journal.txt $ git add journal.txt $ git commit -m "Credits - added
-    our names" journal.txt $ git push
+    $ nano journal.txt 
+    $ git add journal.txt 
+    $ git commit -m "Credits - added our names" journal.txt 
+    $ git push
 
 Now let us suppose, at a later, date, we use our other repository and we want
 to change the credits.
 
-    $ cd ../papers2 $ nano journal.txt $ git add journal.txt $ git commit -m
-    "Changed the first author" journal.txt $ git push
+    $ cd ../papers2 
+    $ nano journal.txt 
+    $ git add journal.txt 
+    $ git commit -m "Changed the first author" journal.txt 
+    $ git push
 
 Our push fails, as we've not yet pulled down our changes from our remote
 repository. Before pushing we should always pull, so let's do that...
