@@ -4,6 +4,11 @@ title: Version control with Git
 ---
 ### Branching
 
+> ## Learning objectives {.objectives}
+> * Know what branches are and why you would use them
+> * Understand how to merge branches
+> * Understand how to resolve conflicts during a merge
+
 ####What is a branch?
 
 You might have noticed the term `branch` in status messages,

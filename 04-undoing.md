@@ -2,6 +2,12 @@
 layout: page
 title: Version control with Git  
 ---
+> ## Learning objectives {.objectives}
+> * Know how to discard changes
+> * Know how to amend commits
+> * Understand how and when to use reset
+> * Understand how and when to use revert 
+
 There is a number of things which we can amend and change after then have been
 commited in Git.
 
