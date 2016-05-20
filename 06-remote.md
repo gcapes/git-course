@@ -4,6 +4,12 @@ title: Version control with Git
 ---
 ## Working from multiple locations with a remote repository
 
+> ## Learning objectives {.objectives}
+> * Understand how to set up remote repository
+> * Understand how to push local changes to a remote repository
+> * Understand how to pull changes from remote repository
+> * Understand how to clone a remote repository
+
 We're going to set up a remote repository that we can use from multiple
 locations. The remote repository can also be shared with colleagues, if we want
 to.

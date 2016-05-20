@@ -4,6 +4,12 @@ title: Version control with Git
 ---
 ## Tracking your changes with a local repository
 
+> ## Learning objectives {.objectives}
+> * Know how to set up a new Git repository
+> * Understand how to start tracking files
+> * Be able to view history of changes and differences between commits
+> * Understand how and when to use tags to label commits
+
 Version control is centred round the notion of a *repository* which holds your
 directories and files. We'll start by looking at a local repository. The local
 repository is set up in a directory in your local filesystem (local machine).

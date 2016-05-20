@@ -4,6 +4,11 @@ title: Version control with Git
 ---
 ## Rebasing
 
+> ## Learning objectives {.objectives}
+> * Understand what is meant by rebasing
+> * Understand the difference between merging and rebasing
+> * When (and when not) to rebase
+
 The first thing to understand about git rebase is that it solves the same problem 
 as git merge. Both of these commands are designed to integrate changes from one 
 branch into another branch: they just do it in very different ways.
