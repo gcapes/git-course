@@ -319,6 +319,16 @@ $ git add journal.txt
 $ git commit -m "Changed the first author" journal.txt 
 $ git push origin master
 ```
+```{.output}
+To https://github.com/<USERNAME>/papers.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/<USERNAME>/papers.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
 
 Our push fails, as we've not yet pulled down our changes from our remote
 repository. Before pushing we should always pull, so let's do that...
@@ -366,7 +376,9 @@ merging the branches.
 
 We edit the file. Then commit our changes. Now, if we push,
 
-    $ git push
+```{.bash}
+$ git push origin master
+```
 
 All goes well. If we now go to GitHub and click on the "Overview" tab we can
 see where our repository diverged and came together again.
@@ -377,108 +389,128 @@ between them, so no work is ever lost.
 
 
     
-
-## Exercises
-
-### Exercise 1: Collaborating on remote repository
-
-In this exercise you should work with a partner or a small group (probably not
-more than 3 people). One of you should give access to his/her remote repository
-on GitHub to the others (by selecting Settings -> Collaborators).
-
-Now those of you who are added as collaborators should clone the repository of
-the first person on your machines. (make sure that you **don't clone into
-a diectory that is already a repository**!)
-
-Each one of you should now make some changes to the files in the repository.
-Commit the changes and then push them back to the remote repository. 
-
-### Exercise 2: Creating branches and sharing them in the remote repository
-
-Working with the same remote repository, create 2 branches locally and push
-them back to the remote repo.
-
-	$ git push origin new_branch
-
-The other person(s) should try to get the branches created by others locally
-(so eventually everybody should have the same number of branches as the remote
-repository).
-
-To pull new branches from remote repository (into new local branches):
-
-	$ git fetch origin remote: Counting objects: 3, done.  remote:
-	Compressing objects: 100% (3/3), done.  remote: Total 3 (delta 0),
-	reused 2 (delta 0) Unpacking objects: 100% (3/3), done.  From
-	https://github.com/apawlik/papers 9e1705a..640210a  master     ->
-	origin/master * [new branch]      new_branch -> origin/new_branch
-
-This command gets us all branches from the remote repository (aliased as
-'origin') but doesn't actually pull any contents.
-
-Now we can set up a new branch locally and pull the contents of the
-corresponding remote branch into the new one which we set up:
-
-	$ git checkout -b new_branch origin/new_branch Branch new_branch set up
-	to track remote branch new_branch from origin.  Switched to a new
-	branch 'new_branch'
-	
-	
-### Exercise 3: Undoing changes using revert
-
-Once you have the branches which others created try in one of the branches to
-undo one of the commits. 
-
-Ideally, each one of you should try to do it in a different branch than the
-others.
-
-Push the branch back to the remote repository. The othes should pull that
-branch to get the changes you made.
-
-What is the end result? What happens when you pull the branch that your
-colleagues changes using `revert`?
-	
-	
-	
-### Exercise 4: Undoing changes using reset
-
-
-Now let's try a similar thing like in the Exercise above but using `reset`.
-Remember that this is a **bad** practice to use `reset` for branches which are
-shared. The purpose of this exercise is to actually try to prove that. 
-
-Select a different branch for this exercise than the one you used for the
-previous one.
-
-Reset to one of the previous commits and push it back to the remote repository.
-Pull the branches which your colleagues reset in a similar way.
-
-What happens? Look through the history using `git log` - what can you notice?
-
-	    
-### Exercise 5: Rebasing
-
-This exercise is again designed to explore what happens when you follow *bad
-practice*. In this case, the bad practice is rebasing branches which are shared
-with others.
-
-Firstly, make sure that you have all branches (so all of you working on the
-repository should have the same set of branches). Secondly, make sure that your
-all have these branches up to date. So if you have any uncommited changes,
-commit them and push them. Pull the changes that your colleagues commited.
-
-
-Pick a branch - this time pick all of you should try picking the same one. Do
-some work on it.   One of you should also make some changes to the `master`
-branch and push them back.  The same person should then rebase their selected
-non-master branch on master and push everything back to the repository. The
-others should now pull (previously commiting the changes they made in the
-branch).
-
-What is the end result? What happened when the other collaborator rebased the
-branch against master?
-
-
-
-
+> # Exercises {.challenge}
+> 
+> #### Exercise 1: Collaborating on remote repository
+> 
+> In this exercise you should work with a partner or a group of three. 
+> One of you should give access to your remote repository on GitHub to
+> the others (by selecting Settings -> Collaborators).
+> 
+> Now those of you who are added as collaborators should clone the repository of
+> the first person on your machines. (make sure that you **don't clone into
+> a directory that is already a repository**!)
+> 
+> Each of you should now make some changes to the files in the repository.
+> Commit the changes and then push them back to the remote repository.  
+>
+> ----
+>
+> #### Exercise 2: Creating branches and sharing them in the remote repository
+> 
+> Working with the same remote repository, each of you should create a new branch
+> locally and push it back to the remote repo.
+> 
+> ```{.bash}
+> $ git push origin new_branch
+> ```
+> 
+> The other person should try to get the branches created by others locally
+> (so eventually everybody should have the same number of branches as the remote
+> repository).
+> 
+> To pull new branches from remote repository (into new local branches):
+> 
+> ```{.bash}
+> $ git fetch origin 
+> ```
+> ```{.output}
+> Counting objects: 3, done.  remote:
+> Compressing objects: 100% (3/3), done.  remote: Total 3 (delta 0),
+> reused 2 (delta 0) Unpacking objects: 100% (3/3), done.  From
+> https://github.com/apawlik/papers 9e1705a..640210a  master     ->
+> origin/master * [new branch]      new_branch -> origin/new_branch
+> ```
+>	
+> This command gets us all branches from the remote repository (aliased as
+> 'origin') but doesn't actually pull any contents.
+> 
+> Now we can set up a new branch locally and pull the contents of the
+> corresponding remote branch into the new one which we set up:
+> 
+> ```{.bash}
+> $ git checkout -b new_branch origin/new_branch 
+> ```
+> ```{.output}
+> Branch new_branch set up to track remote branch new_branch from origin.
+> Switched to a new branch 'new_branch'
+> ```
+> 	
+> ----
+>
+> #### Exercise 3: Undoing changes using revert
+> 
+> Once you have the branches which others created, try to undo one of the commits.
+> 
+> Each one of you should try to revert a commit in a different branch to your partner(s).
+> 
+> Push the branch back to the remote repository. The others should pull that
+> branch to get the changes you made.
+> 
+> What is the end result? What happens when you pull the branch that your
+> colleagues changed using `revert`?	
+> 	
+> A: It works fine. The revert shows up in everyone's copy.
+>
+> ----
+>
+> #### Exercise 4: Undoing changes using reset
+> 
+> Now let's try to  undo a commit using `reset`.
+> Remember that it is a **bad** practice to use `reset` for branches which are
+> shared. The purpose of this exercise is to demonstrate what happens. 
+> 
+> Select a different branch for this exercise than the one you used for the
+> previous one.
+> 
+> Reset to one of the previous commits and push it back to the remote repository.
+> Pull the branches which your colleagues reset in a similar way.
+> 
+> What happens? Look through the history using `git log` - what can you notice?
+> 
+> A: You can't push the change to remote repository unless you use `push -f`.
+> After force pushing the changes, your git log shows what you've done, as does
+> the remote git log, but the other person's local git log shows no change to the 
+> history. To that person it looks like work has just gone missing from the files
+> in their working directory. Git also thinks that their branch is ahead of
+> origin/<branch> by <X> commits.
+>
+> ----
+>
+> #### Exercise 5: Rebasing
+> 
+> This exercise is again designed to explore what happens when you follow *bad
+> practice*. In this case, the bad practice is rebasing branches which are shared
+> with others.
+> 
+> Preparation:
+>
+> 1. Firstly, make sure that you have all branches (so all of you working on the
+> repository should have the same set of branches). 
+> 2. Secondly, make sure that you all have these branches up to date. So if 
+> you have any uncommited changes, commit them and push them. 
+> 3. Pull the changes that your colleagues committed.
+> 
+> The exercise:
+>
+> - Pick a (non-master) branch - this time you should both be working on the same one
+> - Both do some work on it and commit your changes
+> - Person A should also make some changes to the `master`  branch and push them back
+> - Person A should then rebase their selected non-master branch on master and push 
+> everything back to the repository
+> - Person B (and C if you're working in a group of 3) should now pull (previously commiting the changes they made in the  branch)
+> 
+> What is the end result? What happened when the other collaborator rebased the
+> branch against master?
 
 Previous: [Rebasing](05-rebasing.html) Next: [Pull Requests](07-pull-requests.html)
