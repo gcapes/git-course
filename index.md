@@ -3,17 +3,25 @@ layout: page
 title: Version control with Git  
 subtitle: Topics
 ---
-##  Topics
-1. Setting up and working with a local repository.
-2. Looking at differences.
-3. Discarding changes, undoing things.
-4. Travelling back in time.
-5. Branching, merging and resolving conflicts.
-6. Rebasing - introduction.
-7. Setting up and working with remote repositories.
-8. Collaborative work over a remote repository (including Pull Requests).
-9. Tips&tricks and resources for learning Git further.
-10. Summary and Q&A.s
+
+01. [Introduction](01-introduction.html)
+02. [Working locally](02-local.html) 
+Setting up and working with a local repository. 
+Looking at differences.
+Travelling back in time.
+03. [Branching](03-branching.html)
+Branching, merging and resolving conflicts.
+04. [Undoing changes](04-undoing.html) Discarding changes, undoing things.
+05. [Rebasing](05-rebasing.html)
+06. [Remote repositories](06-remote.html)
+Setting up and working with remote repositories.
+07. [Pull requests](07-pull-requests.html)
+08. [Hints and tips](08-hints-tips.html)
+09. [Conclusion](09-conclusion.html)
+Summary and Q&A.s
+
+
+**This course is based on materials by [Software Carpentry](http://www.software-carpentry.org)**
 
 ## Agenda - needs updating
 **10:00 - 10:30** Introduction to version control
