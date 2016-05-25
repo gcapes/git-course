@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Version control with Git  
+subtitle: Topics
 ---
 ##  Topics
 1. Setting up and working with a local repository.

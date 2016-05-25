@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Version control with Git  
+subtitle: Undoing changes
 ---
 > ## Learning objectives {.objectives}
 > * Know how to discard changes

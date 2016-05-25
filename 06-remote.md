@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Version control with Git  
+subtitle: Working from multiple locations with a remote repository
 ---
-## Working from multiple locations with a remote repository
 
 > ## Learning objectives {.objectives}
 > * Understand how to set up remote repository

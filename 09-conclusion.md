@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Version control with Git  
+subtitle: Conclusions and further information
 ---
-## Conclusions and further information
 
 We've seen how we can use version control to,
 

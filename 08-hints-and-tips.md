@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Version control with Git  
+subtitle: Git hints and tips
 ---
-# Git hints and tips
 
 ## `man` page
 

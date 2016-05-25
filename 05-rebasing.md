@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Version control with Git  
+subtitle: Rebasing
 ---
-## Rebasing
 
 > ## Learning objectives {.objectives}
 > * Understand what is meant by rebasing

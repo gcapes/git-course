@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Version control with Git  
+subtitle: Tracking changes with a local repository
 ---
-## Tracking your changes with a local repository
 
 > ## Learning objectives {.objectives}
 > * Know how to set up a new Git repository

@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Version control with Git  
+title: Version control with Git 
+subtitle: Branching
 ---
-### Branching
 
 > ## Learning objectives {.objectives}
 > * Know what branches are and why you would use them

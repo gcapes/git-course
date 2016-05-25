@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Version control with Git  
+subtitle: Pull Requests
 ---
-## Pull Requests
 
 Pull Requests are a great solution for contributing to repositories to which
 you don't have write access. Adding other people as *collaborators* to a remote

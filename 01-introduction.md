@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Version control with Git  
+subtitle: Introduction - What is version control?
 ---
 
 **Based on materials by [Software Carpentry](http://www.software-carpentry.org)**
