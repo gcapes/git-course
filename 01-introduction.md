@@ -15,6 +15,20 @@ familiar with Track Changes in Microsoft Word, or the versions of files
 saved in DropBox or GoogleDrive, then you've already used a simple form
 of version control.
 
+We'll start by exploring how version control can be used
+to keep track of what one person did and when.
+Even if you aren't collaborating with other people,
+automated version control is much better than this situation:
+
+[![Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com](fig/phd101212s.png)](http://www.phdcomics.com)
+
+"Piled Higher and Deeper" by Jorge Cham, http://www.phdcomics.com
+
+We've all been in this situation before: it seems ridiculous to have multiple nearly-identical versions of the same document. Some word processors let us deal with this a little better, such as Microsoft Word's "Track Changes" or Google Docs' version history.
+
+Version control systems start with a base version of the document and then save just the changes you made at each step of the way. You can think of it as a tape: if you rewind the tape and start at the base document, then you can play back each change and end up with your latest version.
+
+
 Think about the following situations:
 
 -   Someone asks you, "Can I have the code you used to create the data
