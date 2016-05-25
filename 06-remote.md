@@ -127,10 +127,11 @@ $ git branch -a
 ```
     
 
-To delete the remote branch:
+To delete the remote branch, two syntax options:
 
 ```{.bash}
-$ git push origin :feature2 
+$ git push origin --delete feature2
+$ git push origin :feature2
 ```
 
 
