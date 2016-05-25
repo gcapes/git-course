@@ -4,19 +4,9 @@ title: Version control with Git
 subtitle: Introduction - What is version control?
 ---
 
-**Based on materials by [Software Carpentry](http://www.software-carpentry.org)**
-
-## Introduction: What is version control?
-
 > ## Learning Objectives {.objectives}
 >
 > *   Understand the benefits of an automated version control system.
-
-> ## Prerequisites {.prereq}
->
-> In this lesson we use Git from the Unix Shell.
-> Some previous experience with the shell is expected,
-> *but isn't mandatory*.
 
 
 Version control is a piece of software which allows you to record and

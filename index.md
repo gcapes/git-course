@@ -39,13 +39,9 @@ into your local repository; resolving conflicts
 **16:15 -17:00** Pull Requests in GitHub - collaboration without having
 write permits to a repo/contributing to large projects
 
-## Topics
-01. [Introduction](01-introduction.html)
-02. [Working locally](02-local.html)
-03. [Branching](03-branching.html)
-04. [Undoing changes](04-undoing.html)
-05. [Rebasing](05-rebasing.html)
-06. [Remote repositories](06-remote.html)
-07. [Pull requests](07-pull-requests.html)
-08. [Hints and tips](08-hints-tips.html)
-09. [Conclusion](09-conclusion.html)
+> ## Prerequisites {.prereq}
+>
+> In this lesson we use Git from the Unix Shell.
+> Some previous experience with the shell is expected,
+> *but isn't mandatory*.
+
