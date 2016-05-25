@@ -4,7 +4,8 @@ title: Version control with Git
 subtitle: Conclusions and further information
 ---
 
-We've seen how we can use version control to,
+
+We've seen how we can use version control to:
 
 * Keep track of changes like a lab notebook for code and documents.  
 * Roll back changes to any point in the history of changes to our files - "undo" and

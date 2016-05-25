@@ -4,7 +4,7 @@ title: Version control with Git
 subtitle: Git hints and tips
 ---
 
-## `man` page
+### `man` page
 
 Like many Unix/Linux commands, `git` has a `man` page,
 
@@ -17,7 +17,7 @@ interested in help, type `/help` and then hit enter.
 
 To exit the manual page, type `q`.
 
-## Command-line help
+### Command-line help
 
 Type,
 
@@ -30,12 +30,12 @@ You can get more help on a specific command, by providing the command name e.g.
 
     $ git init --help $ git commit --help
 
-## Add a repository description
+### Add a repository description
 
 You can edit the file `.git/description` and give your repository a name e.g.
 "My first repository".
 
-## Ignore scratch, temporary and binary files
+### Ignore scratch, temporary and binary files
 
 You can create a `.gitignore` file which lists the patterns of files you want
 Git to ignore. It's common practice to not add to a repository any file you can
@@ -56,12 +56,12 @@ Then, add `.gitignore` to your repository,
     $ git add .gitignore $ git commit -m "Added rules to ignore XEmacs scratch
     files and binary files"
 
-## Add colour to `diff`
+### Add colour to `diff`
 
     $ git config --global color.diff auto
     
     
-##Git configuration
+###Git configuration
 
 The global configuration file for git `.gitconfig` is automatically created by
 Git in the `home` directory. If you set up some basic configuration (in the
@@ -86,7 +86,7 @@ Next time we can simply type:
 	
 	
 
-##Completely removing unwanted file from the repository    
+###Completely removing unwanted file from the repository    
 
 As we discussed earlier, there are a number of ways to undo what we did in Git.
 However, most of the time, we actually want to make some amendments rather than

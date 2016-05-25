@@ -22,9 +22,10 @@ with one of our colleagues.
 
  First, let's create a directory:
 
-
-    $ mkdir papers 
-    $ cd papers
+```{.bash}
+$ mkdir papers 
+$ cd papers
+```
 
 Now, we need to set up this directory up to be a Git repository (or "initiate
 the repository"):
