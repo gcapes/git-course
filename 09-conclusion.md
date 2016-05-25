@@ -6,20 +6,22 @@ title: Version control with Git
 
 We've seen how we can use version control to,
 
-* Keep track of changes like a lab notebook for code and documents.  * Roll
-back changes to any point in the history of changes to our files - "undo" and
-"redo" for files.  * Back up our entire history of changes in various
-locations.  * Work on our files from multiple locations.  * Identify and
-resolve conflicts when the same file is edited within two repositories without
-losing any work.  * Collaboratively work on code or documents or any other
-files.
+* Keep track of changes like a lab notebook for code and documents.  
+* Roll back changes to any point in the history of changes to our files - "undo" and
+"redo" for files.  
+* Back up our entire history of changes in various locations.  
+* Work on our files from multiple locations.  
+* Identify and resolve conflicts when the same file is edited within two
+repositories without
+losing any work.  
+* Collaboratively work on code or documents or any other files.
 
-Now, consider again our initial questions,
+Now, consider again our initial questions:
 
-* If someone asks you, "can I have the code you used to create the data that
-you graphed in your conference paper?" You can use your version control logs
+* If someone asks you, "Can I have the code you used to create the data that
+you graphed in your conference paper?", you can use your version control logs
 and tags to immediately retrieve the exact version of the code that you used.
-* If someone tells you, "er, your laptop's just been stolen!" ideally you'll
+* If someone tells you, "Er, your laptop's just been stolen!" ideally you'll
 have lost no work as you push it regularly to a remote repository. 
 * If you're working with a colleague on a journal paper who storms into your
 office and shouts, "you've just deleted my analysis section" you can just ask
