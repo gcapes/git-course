@@ -513,5 +513,13 @@ between them, so no work is ever lost.
 > 
 > What is the end result? What happened when the other collaborator rebased the
 > branch against master?
+>
+> A: It is confusing. When pushing person A's rebased branch back, it failed because tip
+> of current branch is behing its remote counterpart. So I did a pull. Auto-merge failed
+> so after editing the file to resolve the merge, add, commit, push, I finally got the 
+> rebased branch pushed but with an extra commit merging changes from remote. These 
+> changes were actually already in the rebased version.
+> Person B then gets a merge conflict when they pull. After resolving, their history 
+> is different to person A's history. One commit has a new hash ID, and others are missing.
 
 Previous: [Rebasing](05-rebasing.html) Next: [Pull Requests](07-pull-requests.html)
