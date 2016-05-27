@@ -5,19 +5,17 @@ subtitle: Topics
 ---
 
 01. [Introduction - what is version control?](01-introduction.html) 
-02. [Working locally](02-local.html)
-	* Setting up and working with a local repository
-	* Looking at differences
-	* Travelling back in time
-03. [Branching, merging and resolving conflicts](03-branching.html)
-04. [Undoing changes](04-undoing.html)
-05. [Rebasing](05-rebasing.html)
-06. [Remote repositories](06-remote.html)
-07. [Pull requests](07-pull-requests.html)
-08. [Hints and tips](08-hints-and-tips.html)
-09. [Conclusion](09-conclusion.html)
-Summary and Q&A.
-
+02. [Setting up and working with a local repository](02-local.html)
+03. [Looking at history and differences](03-history.html)
+04. [Best practice for committing changes](04-commit-advice.html)
+05. [Branching, merging and resolving conflicts](05-branching.html)
+06. [Undoing changes](06-undoing.html)
+07. [Rebasing](07-rebasing.html)
+08. [Using remote repositories to work from different locations](08-remote.html)
+09. [Collaborating using a remote repository](09-remote-collaboration.html)
+10. [Pull requests](10-pull-requests.html)
+11. [Hints and tips](11-hints-and-tips.html)
+12. [Conclusion](12-conclusion.html)
 
 **This course is based on materials by [Software Carpentry](http://www.software-carpentry.org)**
 
