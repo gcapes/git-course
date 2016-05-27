@@ -4,10 +4,10 @@ title: Version control with Git
 subtitle: Undoing changes
 ---
 > ## Learning objectives {.objectives}
-> * Know how to discard changes
-> * Know how to amend commits
-> * Understand how and when to use reset
-> * Understand how and when to use revert 
+> * Be able to discard local changes
+> * Be able to amend the most recent commit
+> * Be able to discard all changes since a particular commit
+> * Be able to undo the changes introduced by a commit
 
 There is a number of things which we can amend and change after then have been
 commited in Git.
