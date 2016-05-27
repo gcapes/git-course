@@ -47,6 +47,8 @@ understand who changed what, when, and why.
 
 ### Find out more...
 
+* [Atlassian Git tutorials](https://www.atlassian.com/git/tutorials/) (an
+excellent resource with clear explanations and illustrations)
 * K. Ram  (2013) "git can facilitate greater reproducibility and increased
 transparency in science", Source Code for Biology and Medicine 2013, 8:7
 doi:[10.1186/1751-0473-8-7](http://dx.doi.org/10.1186/1751-0473-8-7) - survey
@@ -56,9 +58,6 @@ of the range of ways in which version control can help research.
 * [Pro Git](http://git-scm.com/book) - the "official" online Git book.  
 * [Version control by example](http://www.ericsink.com/vcbe/) - an acclaimed online book
 on version control by Eric Sink.  
-* [Git commit policies](http://osteele.com/posts/2008/05/commit-policies) - images on what
-Git commands to with reference to the working directory, staging area, local
-and remote repositories.  
 * [Gitolite](https://github.com/sitaramc/gitolite) - a way for you to host 
 your own multi-user Git repositories. Your collaborators send you their public
 SSH keys then they can pull and push from/to the repositories.  
