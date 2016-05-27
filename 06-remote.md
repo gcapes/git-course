@@ -82,7 +82,7 @@ on GitHub.
 Now copy and paste the second line,
 
 ```{.bash}
-    $ git push -u origin master 
+$ git push -u origin master 
 ```
 ```{.output}
 Counting objects: 32, done.

@@ -75,24 +75,31 @@ session we'll use *nano*:
 ~~~{.bash}
 $ git config --global core.editor nano
 ~~~
+
 To set up vi as the default editor:
+
 ~~~{.bash}
 $ git config --global core.editor vi
 ~~~
+
 To set up xemacs as the default editor:
+
 ~~~{.bash}
 $ git config --global core.editor xemacs
 ~~~    
+
 ### Git's global configuration
 
 We can now preview (and edit, if necessary) Git's global configuration (such as
 our name and the default editor which we just set up). If we look in our home
 directory, we'll see a `.gitconfig` file,
+
 ~~~{.bash}
 $ cat ~/.gitconfig 
     [user] name = Your Name email = yourname@yourplace.org
     [core] editor = nano
 ~~~
+
 This file holds global configuration that is applied to any Git repository in
 your file system. 
 
@@ -144,7 +151,8 @@ Changes to be committed:
 (use "git rm --cached <file>..." to unstage)
 
       	new file:   journal.txt
-~~~    
+~~~
+
 Now, our file is now listed as one of some Changes to be committed. 
     
 *git add* is used for two purposes. Firstly, to tell Git that a given file
@@ -406,8 +414,8 @@ state of the repository as it was at any commit. So, let's go back to the very
 first commit we made,
 
 ~~~{.bash}
-    $ git log 
-    $ git checkout COMMITID
+$ git log 
+$ git checkout COMMITID
 ~~~
 
 We will get something like this:
@@ -494,27 +502,35 @@ act as easy-to-remember nicknames for commit identifiers.
 
 For example,
 
-    $ git tag PAPER_STUB
+```{.bash}    
+$ git tag PAPER_STUB
+```
 
 We can list tags by doing:
 
-    $ git tag
+```{.bash}    
+$ git tag
+```
 
 Now if we change our file,
 
-    $ git add journal.txt 
-    $ git commit -m "..." journal.txt
+```{.bash}    
+$ git add journal.txt 
+$ git commit -m "..." journal.txt
+```
 
 We can checkout our previous version using our tag instead of a commit
 identifier.
 
-    $ git checkout PAPER_STUB
+```{.bash}    
+$ git checkout PAPER_STUB
+```
 
 And return to the latest checkout,
 
-    $ git checkout master
-
-> **Top tip: tag significant "events"**
+```{.bash}    
+$ git checkout master
+```
 
 > When do you tag? Well, whenever you might want to get back to the exact
 version you've been working on. For a paper this, might be a version that has

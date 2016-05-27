@@ -8,7 +8,9 @@ subtitle: Git hints and tips
 
 Like many Unix/Linux commands, `git` has a `man` page,
 
-    $ man git
+```{.bash}
+$ man git
+```
 
 You can scroll the manual page up and down using the up and down arrows.
 
@@ -17,23 +19,33 @@ interested in help, type `/help` and then hit enter.
 
 To exit the manual page, type `q`.
 
+---
+
 ### Command-line help
 
 Type,
 
-    $ git --help
+```{.bash}
+$ git --help
+```
 
 and Git gives a list of commands it is able to help with, as well as their
 descriptions. 
 
 You can get more help on a specific command, by providing the command name e.g.
 
-    $ git init --help $ git commit --help
+```{.bash}
+$ git init --help $ git commit --help
+```
+
+---
 
 ### Add a repository description
 
 You can edit the file `.git/description` and give your repository a name e.g.
 "My first repository".
+
+---
 
 ### Ignore scratch, temporary and binary files
 
@@ -45,7 +57,9 @@ these to `.gitignore` means Git won't complain about them being untracked.
 
 Create or edit `gitignore`,
 
-    $ nano .gitignore
+```{.bash}
+$ nano .gitignore
+```
 
 Then add patterns for the files you want to ignore, where `*` is a wildcard,
 
@@ -53,13 +67,18 @@ Then add patterns for the files you want to ignore, where `*` is a wildcard,
 
 Then, add `.gitignore` to your repository,
 
-    $ git add .gitignore $ git commit -m "Added rules to ignore XEmacs scratch
-    files and binary files"
+```{.bash}
+$ git add .gitignore $ git commit -m "Added rules to ignore vim scratch
+files and binary files"
+```
+
+---
 
 ### Add colour to `diff`
 
-    $ git config --global color.diff auto
-    
+```{.bash}
+$ git config --global color.diff auto
+```
     
 ###Git configuration
 
@@ -67,23 +86,32 @@ The global configuration file for git `.gitconfig` is automatically created by
 Git in the `home` directory. If you set up some basic configuration (in the
 first steps of this tutorial), it should look like this.
 
-	$ cat ~/.gitconfig [user] name = Your Name email
-	= yourname@yourplace.org [core] editor = nano
+```{.bash}
+$ cat ~/.gitconfig 
+```
+```{.output}
+[user] name = Your Name email = yourname@yourplace.org 
+[core] editor = nano
+```
      	
 You can add more configuration options. For example, instead of typing `git
 commit -m` we can have a shorter version of this command:
 
-	$ git config --global alias.cms 'commit -m'
-	 
+```{.bash}
+$ git config --global alias.cms 'commit -m'
+```
 
 And now our configuration file will have a new section added:
 	
-	… [alias] cms = commit -m
-	
+```
+… [alias] cms = commit -m
+```
+
 Next time we can simply type:
 	
-	$ git cms "Commit message"
-	
+```{.bash}
+$ git cms "Commit message"
+```
 	
 
 ###Completely removing unwanted file from the repository    

@@ -26,11 +26,15 @@ the history but it looks as if the commits happened in a linear way.
 
 Let's start first with checking out our master branch:
 
-	$ git checkout master
+```{.bash}
+$ git checkout master
+```
 	
 Now create and checkout a new branch.
 
-	$ git checkout -b workshopPaper
+```{.bash}
+$ git checkout -b workshopPaper
+```
 	
 Make some changes to the files and commit them.
 
