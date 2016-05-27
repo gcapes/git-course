@@ -9,7 +9,7 @@ subtitle: Branching
 > * Understand how to merge branches
 > * Understand how to resolve conflicts during a merge
 
-####What is a branch?
+### What is a branch?
 
 You might have noticed the term `branch` in status messages:
 
@@ -229,7 +229,7 @@ this ability to merge text files line-by-line and highlight the conflicts
 between them, so no work is ever lost.
 
 
-##Looking at our history - revisited
+### Looking at our history - revisited
 We already looked at "going back in time with Git". But now we'll look at it in
 more detail to see how moving back relates to branches and we will learn how to
 actually undo things. So far we were moving back in time in one branch by 
