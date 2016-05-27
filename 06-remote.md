@@ -388,9 +388,9 @@ between them, so no work is ever lost.
 
 
     
-> # Exercises {.challenge}
+> # Exercises following good practice {.challenge}
 > 
-> #### Exercise 1: Collaborating on remote repository
+> #### Exercise 1: Collaborating on a remote repository
 > 
 > In this exercise you should work with a partner or a group of three. 
 > One of you should give access to your remote repository on GitHub to
@@ -461,7 +461,8 @@ between them, so no work is ever lost.
 > 	
 > A: It works fine. The revert shows up in everyone's copy.
 >
-> ----
+
+> # Exercises following bad practice {.challenge}
 >
 > #### Exercise 4: Undoing changes using reset
 > 
