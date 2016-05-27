@@ -7,15 +7,14 @@ subtitle: Tracking changes with a local repository
 > ## Learning objectives {.objectives}
 > * Know how to set up a new Git repository
 > * Understand how to start tracking files
-> * Understand what makes a good commit message
-> * Be able to view history of changes and differences between commits
-> * Understand how and when to use tags to label commits
+> * Be able to commit changes to your repository
 
 Version control is centred round the notion of a *repository* which holds your
 directories and files. We'll start by looking at a local repository. The local
 repository is set up in a directory in your local filesystem (local machine).
 
-### Create a new repository with Git
+### Setting up Git
+#### Create a new repository with Git
 
 We will be working with a simple example in this tutorial. It will be a paper
 that we will first start writing as a single author and then work on it further
@@ -51,7 +50,7 @@ branches  config  description  HEAD  hooks  info  objects refs
 .git directory contains Git's configuration files. Be careful not to
 accidentally delete this directory!
 
-### Tell Git who we are
+#### Tell Git who we are
 
 As part of the information about changes made to files Git records who made
 those changes. In teamwork this information is often crucial (do you want to
@@ -63,7 +62,7 @@ $ git config --global user.name "Your Name"
 $ git config --global user.email "yourname@yourplace.org"
 ~~~
 
-### Set a default editor
+#### Set a default editor
 
 When working with Git we will often need to provide some short but useful
 information. In order to enter this information we need an editor. We'll now
@@ -89,7 +88,7 @@ To set up xemacs as the default editor:
 $ git config --global core.editor xemacs
 ~~~    
 
-### Git's global configuration
+#### Git's global configuration
 
 We can now preview (and edit, if necessary) Git's global configuration (such as
 our name and the default editor which we just set up). If we look in our home
@@ -104,7 +103,9 @@ $ cat ~/.gitconfig
 This file holds global configuration that is applied to any Git repository in
 your file system. 
 
-### Add a file to the repository
+---
+
+### Tracking files with a git repository
 
 Now, we'll create a file. Let's say we're going to write a journal paper:
 
@@ -132,12 +133,14 @@ journal.txt
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 
-
 Information about what Git knows about the directory is displayed. For now, the
 important bit of information is that our file is listed as Untracked which
 means it's in our working directory but Git is not tracking it - that is, any
-changes made to this file will not be recorded by Git. To tell Git about the
-file, we will use the *add* command:
+changes made to this file will not be recorded by Git. 
+
+
+#### Add files to a Git repository
+To tell Git about the file, we will use the *add* command:
 
 ~~~{.bash}
 $ git add journal.txt 
@@ -164,6 +167,8 @@ The staging area can be viewed as a "loading dock", a place to hold files we've
 added, or changed, until we're ready to tell Git to record those changes in the
 repository. 
 
+#### Commit changes
+
 In order to tell Git to record our change, our new file, into the repository,
 we need to  *commit* it:
 
@@ -180,7 +185,7 @@ a message. "Initial structure and headings for the journal paper"
 If we save our commit message, Git will now commit our file.
 
 ~~~{.output}
-[master (root-commit) 21cfbde] Initial structure and headings for the journal paper
+[master (root-commit) 21cfbde] Add initial structure and headings
 1 file changed, 9 insertions(+)
 create mode 100644 journal.txt
 ~~~
@@ -198,15 +203,14 @@ $ git status
 On branch master
 nothing to commit, working directory clean
 ~~~
+
 Nothing to commit means that our file is now in the repository, our working
 directory is up-to-date and we have no uncommitted changes in our staging area. 
-
 
 Let's work a bit further on our `journal.txt` file adding a few lines to
 different sections.
    
-
-Now let's make some more changes to our journal.txt file . If we now run,
+If we now run,
 
 ~~~{.bash}
 $ git status
@@ -225,6 +229,7 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
+
 This means that a file Git knows about has been modified by us but
 has not yet been committed. So we can add it to the staging area and then
 commit the changes:
@@ -233,7 +238,7 @@ commit the changes:
 $ git add journal.txt 
 $ git commit
 ~~~    
-Note that in this case we used "git add" to put journal.txt to the staging
+Note that in this case we used `git add` to put journal.txt to the staging
 area. Git already knows this file should be tracked but doesn't know if we want
 to commit the changes we made to the file  in the repository and hence we have
 to add the file to the staging area. 
@@ -243,67 +248,9 @@ It can sometimes be quicker to provide our commit messages at the command-line
 by doing:
 
 ~~~{.bash}
-$ git commit -m "Adds notes on what to include in introduction"
+$ git commit -m "Add notes on what to include in introduction"
 ~~~    
-    
-To see the history of changes that we made to our repository (the most recent
-changes will be displayed at the top):
-
-~~~{.bash}
-$ git log
-~~~
-
-The output shows: the commit identifier (also called revision number) which
-uniquely identifies the changes made in this commit, author, date, and your
-comment.     
-
-### Write meaningful commit messages!
-
-Commit messages should explain why you have made your changes. They should mean
-something to others who may read them - including your future self in 6 months
-from now.
-
-[Here is an excellent summary](http://chris.beams.io/posts/git-commit/) of
-best-practice. It's well worth a read but the key points are given below:
-
-1. Separate the subject from body with a blank line
-2. Limit the subject line to 50 characters
-3. Capitalize the subject line
-4. Do not end the subject line with a period
-5. Use the imperative mood in the subject line
-6. Wrap the body at 72 characters
-7. Use the body to explain what and why vs. how
-
-
-> ##Top tip: When to commit changes {.callout}
->
-> There are no hard and fast rules, but good commits are atomic - they are the
-> smallest change that remain meaningful.  
-> For code, it's useful to commit changes that can be reviewed by someone else 
-> in under an hour. 
-
-----
-
-> **What we know about software development - code reviews work** 
->
-> Fagan (1976) discovered that a rigorous inspection can remove 60-90% of
-errors before the first test is run. [Design and Code
-inspections to reduce errors in program
-development](http://www.mfagan.com/pdfs/ibmfagan.pdf). IBM Systems Journal 15
-(3): pp. 182-211.
->
-> **What we know about software development - code reviews should be about 60
-minutes long** 
->
-> Cohen (2006) discovered that all the value of a code review comes within the
-first hour, after which reviewers can become exhausted and the issues they find
-become ever more trivial.
-[Best Kept Secrets of Peer Code
-Review](http://smartbear.com/SmartBear/media/pdfs/best-kept-secrets-of-peer-code-review.pdf). SmartBear, 2006. ISBN-10: 1599160676. ISBN-13: 978-1599160672.
-
-----
-
-Let's add a directory, common and a file references.txt for references we may
+Let's add a directory *common* and a file *references.txt* for references we may
 want to reuse:
 
 ~~~{.bash}
@@ -319,9 +266,9 @@ subdirectory:
 $ git add common
 ~~~
 
-All files that are in "common" are now tracked.  We would also have to add
+All files that are in *common* are now tracked.  We would also have to add
 journal.txt to the staging area. But there is a shortcut. We can use option
-"-a" for "commit". This option means "commit all files that are tracked and
+"-a" for `commit`. This option means "commit all files that are tracked and
 that have been modified".
 
 ~~~{.bash}
@@ -329,228 +276,12 @@ $ git commit -am "Adds common directory and references file"
 ~~~
 and Git will add, then commit, both the directory and the file.
 
-> ##Top tip: Commit anything that cannot be automatically recreated {.callout}
->
-> Typically we use version control to save anything that we create manually
-> e.g. source code, scripts, notes, plain-text documents, LaTeX documents.
-> Anything that we create using a compiler or a tool e.g. object files (`.o`,
-> `.a`, `.class`, `.pdf`, `.dvi` etc), binaries (`exe` files), libraries (`dll`
-> or `jar` files) we don't save as we can recreate it from the source. Adopting
-> this approach also means there's no risk of the auto-generated files becoming
-> out of sync with the manual ones.
-
 In order to add all tracked files to the staging area (which may be very useful
 when you edited, let's say, 10 files and now you want to commit all of them):
 
 ~~~{.bash}
 $ git commit -a
 ~~~
-
-
-### Looking at differences
-
-Let us suppose we've made a change to our file and not yet committed it. We can
-see the changes that we've made:
-
-~~~{.bash}
-$ git diff journal.txt
-~~~
-
-This shows the difference between the latest copy in the repository and the
-changes we've made. 
-
-* `-` means a line was deleted.  
-* `+` means a line was added.  
-* Note that a line that has been edited is shown as a removal of the old line and an
-addition of the updated line.
-
-Looking at differences between commits is one of the most common activities.
-The `diff` command itself has a number of [useful
-options](http://git-scm.com/docs/git-diff.html).
-
-There is also a more elaborate front end to the `diff` command - [`git
-difftool`](). `git difftool` is used for comparing and editing files that
-changed between commits using common diff tools. There is a range of such
-tools, including emerge, kompare, meld, and vimdiff.
-
-There is a range of GUI-based tools supporting looking at differences and
-editing files. For example:
-
-* [Diffmerge](https://sourcegear.com/diffmerge/) (Free, cross-platform)
-* [WinMerge](http://winmerge.org/) - open source tool available for Windows;
-* GitHub [Compare
-view](https://help.github.com/articles/comparing-commits-across-time)
-
-
-The choice of GUI for viewing differences depends on the context in which you
-are working and your own preferences related to choosing tools and
-technologies.
-
-
-
-### Looking at our history
-
-To see the history of changes that we made to our repository (the most recent
-changes will be displayed at the top):
-
-~~~{.bash}
-$ git log
-~~~
-
-The output shows: the commit identifier (also called revision number) which
-uniquely identifies the changes made in this commit, author, date, and your
-comment. *git log* command has many options to print information in various
-ways, for example:
-
-~~~{.bash}
-$ git log --relative-date
-~~~
-
-Git automatically assigns an identifier (*COMMITID*) to each commit made to the
-repository. In order to see the changes made between any earlier commit and our
-current version, we can use  `git diff`  providing the commit identifier of the
-earlier commit:
-
-~~~{.bash}
-$ git diff COMMITID
-~~~
-
-And, to see changes between two commits:
-
-~~~{.bash}
-$ git diff OLDER_COMMITID NEWER_COMMITID
-~~~
-
-Using our commit identifiers we can set our working directory to contain the
-state of the repository as it was at any commit. So, let's go back to the very
-first commit we made,
-
-~~~{.bash}
-$ git log 
-$ git checkout COMMITID
-~~~
-
-We will get something like this:
-
-~~~{.output}
-Note: checking out '21cfbdec'.
-
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by performing another checkout.
-
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -b with the checkout command again. Example:
-
-  git checkout -b new_branch_name
-  
-HEAD is now at 21cfbde... Initial structure and headings for the journal paper
-~~~
-
-*HEAD* is essentially a pointer which points to the branch where you currently
-are. We said previously that *master* is the default branch. But *master* is
-actually a pointer - that points to the tip of the master branch (the sequence
-of commits that is created by default by Git). You may think of *master* as two
-things: one as a pointer and one as the default branch. 
-
-When we checked out one of the past commits HEAD is pointing to that commit but
-does not point to the same thing as master any more. That is why git says You
-are in 'detached HEAD' state and advises us that if we want to make a commit
-now, we should create a new branch to retain these commits. 
-
-If we created a new commit without creating a new branch Git would not know
-what to do with it (since there is already a commit in master branch from the
-current state which we checked out c4354a...). We will get back to branches and
-HEAD pointer later in this tutorial. 
-
-
-
-If we look at `journal.txt` we'll see it's our very first version. And if we
-look at our directory,
-
-~~~{.bash}
-$ ls
-~~~
-~~~{.output}
-journal.txt
-~~~
-
-
-then we see that our `references` directory is gone. But, rest easy, while it's
-gone from our working directory, it's still in our repository. We can jump back
-to the latest commit by doing:
-
-~~~{.bash}
-$ git checkout master
-~~~
-
-And `references` will be there once more,
-
-~~~{.bash}
-$ ls
-~~~
-~~~{.output}
-common journal.txt
-~~~
-So we can get any version of our files from any point in time. In other words,
-we can set up our working directory back to any stage it was when we made
-a commit.
-
-> ##Top tip: Commit often {.callout}
->
-> In the same way that it is wise to frequently save a document that you are
-working on, so too is it wise to save numerous revisions of your files. More
-frequent commits increase the granularity of your "undo" button.
-
-While DropBox and GoogleDrive also preserve every version, they delete old
-versions after 30 days, or, for GoogleDrive, 100 revisions. DropBox allows for
-old versions to be stored for longer but you have to pay for this. Using
-revision control the only bound is how much space you have!
-
-### Using tags as nicknames for commit identifiers
-
-Commit identifiers are long and cryptic. Git allows us to create tags, which
-act as easy-to-remember nicknames for commit identifiers.
-
-For example,
-
-```{.bash}    
-$ git tag PAPER_STUB
-```
-
-We can list tags by doing:
-
-```{.bash}    
-$ git tag
-```
-
-Now if we change our file,
-
-```{.bash}    
-$ git add journal.txt 
-$ git commit -m "..." journal.txt
-```
-
-We can checkout our previous version using our tag instead of a commit
-identifier.
-
-```{.bash}    
-$ git checkout PAPER_STUB
-```
-
-And return to the latest checkout,
-
-```{.bash}    
-$ git checkout master
-```
-
-> ##Top tip: tag significant events {.callout}
->
-> When do you tag? Well, whenever you might want to get back to the exact
-> version you've been working on. For a paper, this might be a version that has
-> been submitted to an internal review, or has been submitted to a conference.
-> For code this might be when it's been submitted to review, or has been
-> released.
 
 Previous: [Introduction](01-introduction.html) Next: [Branching](03-branching.html)
 
