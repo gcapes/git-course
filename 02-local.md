@@ -263,10 +263,10 @@ Commit messages should explain why you have made your changes. They should mean
 something to others who may read them - including your future self in 6 months
 from now.
 
-[Here is an excellent summary](http://chris.beams.io/posts/git-commit/) of best-
-practice. It's well worth a read but the key points are given below:
+[Here is an excellent summary](http://chris.beams.io/posts/git-commit/) of
+best-practice. It's well worth a read but the key points are given below:
 
-1. Separate subject from body with a blank line
+1. Separate the subject from body with a blank line
 2. Limit the subject line to 50 characters
 3. Capitalize the subject line
 4. Do not end the subject line with a period
