@@ -4,20 +4,18 @@ title: Version control with Git
 subtitle: Topics
 ---
 
-01. [Introduction](01-introduction.html)
-02. [Working locally](02-local.html 
-Setting up and working with a local repository
-Looking at differences
-Travelling back in time
-03. [Branching](03-branching.html
-Branching, merging and resolving conflicts
-04. [Undoing changes](04-undoing.html) Discarding changes, undoing things
-05. [Rebasing](05-rebasing.html
-06. [Remote repositories](06-remote.html
-Setting up and working with remote repositories
-07. [Pull requests](07-pull-requests.html
-08. [Hints and tips](08-hints-tips.html
-09. [Conclusion](09-conclusion.html
+01. [Introduction - what is version control?](01-introduction.html) 
+02. [Working locally](02-local.html)
+	* Setting up and working with a local repository
+	* Looking at differences
+	* Travelling back in time
+03. [Branching, merging and resolving conflicts](03-branching.html)
+04. [Undoing changes](04-undoing.html)
+05. [Rebasing](05-rebasing.html)
+06. [Remote repositories](06-remote.html)
+07. [Pull requests](07-pull-requests.html)
+08. [Hints and tips](08-hints-tips.html)
+09. [Conclusion](09-conclusion.html)
 Summary and Q&A.
 
 
