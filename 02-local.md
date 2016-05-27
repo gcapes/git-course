@@ -206,7 +206,7 @@ Let's work a bit further on our `journal.txt` file adding a few lines to
 different sections.
    
 
- Now let's make some more changes to our journal.txt file . If we now run,
+Now let's make some more changes to our journal.txt file . If we now run,
 
 ~~~{.bash}
 $ git status
@@ -337,7 +337,7 @@ and Git will add, then commit, both the directory and the file.
 > `.a`, `.class`, `.pdf`, `.dvi` etc), binaries (`exe` files), libraries (`dll`
 > or `jar` files) we don't save as we can recreate it from the source. Adopting
 > this approach also means there's no risk of the auto-generated files becoming
-> out of synch with the manual ones.
+> out of sync with the manual ones.
 
 In order to add all tracked files to the staging area (which may be very useful
 when you edited, let's say, 10 files and now you want to commit all of them):
@@ -359,8 +359,9 @@ $ git diff journal.txt
 This shows the difference between the latest copy in the repository and the
 changes we've made. 
 
-* `-` means a line was deleted.  * `+` means a line was added.  * Note that,
-a line that has been edited is shown as a removal of the old line and an
+* `-` means a line was deleted.  
+* `+` means a line was added.  
+* Note that a line that has been edited is shown as a removal of the old line and an
 addition of the updated line.
 
 Looking at differences between commits is one of the most common activities.
@@ -543,13 +544,13 @@ And return to the latest checkout,
 $ git checkout master
 ```
 
+> ##Top tip: tag significant events {.callout}
+>
 > When do you tag? Well, whenever you might want to get back to the exact
-version you've been working on. For a paper this, might be a version that has
-been submitted to an internal review, or has been submitted to a conference.
-For code this might be when it's been submitted to review, or has been
-released.
-
-
+> version you've been working on. For a paper, this might be a version that has
+> been submitted to an internal review, or has been submitted to a conference.
+> For code this might be when it's been submitted to review, or has been
+> released.
 
 Previous: [Introduction](01-introduction.html) Next: [Branching](03-branching.html)
 

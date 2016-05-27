@@ -43,7 +43,7 @@ overwriting and losing each others work, and being able to record and
 understand who changed what, when, and why. 
 
 > "If you are not using version control then, whatever else you may be doing
-with a computer, you are not doing science" -- Greg Wilson
+> with a computer, you are not doing science" -- Greg Wilson
 
 ### Find out more...
 
@@ -52,7 +52,7 @@ transparency in science", Source Code for Biology and Medicine 2013, 8:7
 doi:[10.1186/1751-0473-8-7](http://dx.doi.org/10.1186/1751-0473-8-7) - survey
 of the range of ways in which version control can help research.  
 * [Visual Git Reference](http://marklodato.github.com/visual-git-guide/index-en.html)
-- pictorial representations of what Git commands do.  
+(pictorial representations of what Git commands do)
 * [Pro Git](http://git-scm.com/book) - the "official" online Git book.  
 * [Version control by example](http://www.ericsink.com/vcbe/) - an acclaimed online book
 on version control by Eric Sink.  

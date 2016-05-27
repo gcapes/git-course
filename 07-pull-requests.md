@@ -23,21 +23,23 @@ a contributor, it was really easy to make the contribution.
 Let's look at the workflow and try to repeat it:
 
 1. **Fork** [this
-repository](https://github.com/apawlik/manchester-papers.git).  2. Clone the
-repository from **YOUR** GitHub account. When you run `git remote -v` you
-should get something like this:
+repository](https://github.com/gcapes/manchester-papers.git).  
+2. Clone the repository from **YOUR** GitHub account. When you run `git remote -v`
+you should get something like this:
 	
-	origin	https://github.com/YOUR_USERNAME/manchester-papers.git(fetch)
-	origin 	https://github.com/YOUR_USERNAME/manchester-papers.git(push)
+```{.output}
+origin	https://github.com/YOUR_USERNAME/manchester-papers.git(fetch)
+origin 	https://github.com/YOUR_USERNAME/manchester-papers.git(push)
+```
 
 3. Make changes you want to contribute. Commit and push them back to your
 repository. You won't be able to push back to the repository you forked from
-because you are not added as a contributor!  4. Go to your GitHub account and
-in the forked repository find a green button for creating Pull Requests. Click
-it and follow the instructions.  5. The owner of the original repository gets
-a notification that someone created a pull request - the request can be
-reviewed, commented and merged in (or not) via GitHub.
-
+because you are not added as a contributor!
+4. Go to your GitHub account and in the forked repository find a green button
+for creating Pull Requests. Click it and follow the instructions.
+5. The owner of the original repository gets a notification that someone 
+created a pull request - the request can be reviewed, commented and merged in 
+(or not) via GitHub.
 
 Previous: [Working with remote repositories](06-remote.html) Next: [Hints and
 Tips](08-hints-and-tips.html)

@@ -62,11 +62,11 @@ in](https://GitHub.com).
 Now, we can create a repository on GitHub,
 
 * Log in to [GitHub](https://GitHub.com/) 
-* Click on the Create icon on the top right 
+* Click on the `Create` icon on the top right 
 * Enter Repository name: "papers"
 * For the purpose of this exercise we'll create a public repository 
 * Make sure the Initialize this repository with a README is *unselected* 
-* Click Create Repository
+* Click `Create Repository`
 
 You'll get a page with new information about your repository. We already have
 our local repository and we will be *pushing* it to GitHub. 
@@ -105,9 +105,7 @@ Our local repository is now available on GitHub. So, anywhere we can access
 GitHub, we can access our repository.
 
 
-
 ### Remote repository and branching
-
   
 Let's push all our local branches into our remote repository:
 
@@ -127,13 +125,12 @@ $ git branch -a
 ```
     
 
-To delete the remote branch, two syntax options:
+To delete the remote branch, there are two syntax options:
 
 ```{.bash}
 $ git push origin --delete feature2
 $ git push origin :feature2
 ```
-
 
 
 ### Cloning a remote repository
@@ -283,7 +280,7 @@ As a short-hand, we can do a Git *pull* which does a *fetch* then a *merge*,
 ```{.bash}    
 $ nano journal.txt 
 $ git add journal.txt 
-$ git commit -m "Adds acknowldgements" journal.txt 
+$ git commit -m "Adds acknowledgements" journal.txt 
 $ git push origin master
 $ cd ..  
 $ cd ../papers 

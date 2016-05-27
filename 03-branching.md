@@ -11,9 +11,7 @@ subtitle: Branching
 
 ####What is a branch?
 
-You might have noticed the term `branch` in status messages,
-
-You might have noticed the term branch in status messages,
+You might have noticed the term `branch` in status messages:
 
 ~~~{.bash}
 $ git status journal.txt 
@@ -24,14 +22,12 @@ nothing to commit (working directory clean)
 ~~~
 
 and when we wanted to get back to our most recent version of the repository, we
-used,
-
-    $ git checkout master
+used `git checkout master`.
 
 Not only can our repository store the changes made to files and directories, it
 can store multiple sets of these, which we can use and edit and update in
-parallel. Each of these sets, or parallel instances, is termed a branch and
-master is Git's default branch. 
+parallel. Each of these sets, or parallel instances, is termed a `branch` and
+`master` is Git's default branch. 
 
  A new branch can be created from any commit. Branches can also be merged
  together. 
@@ -55,7 +51,7 @@ We can then continue developing our software in our default, or master, branch,
 ```     
 -c1---c2---c3---c5---c6---c7    master
        \ 
-       c4                        feature1
+       c4                       feature1
 ```
 And, we can work on the new feature in the feature1 branch
 
@@ -86,13 +82,13 @@ making commits) in feature1 as well.
 ```
 One popular model is to have:
 
--   A release branch, representing a released version of the code.
--   A master branch, representing the most up-to-date stable version of the
-code.  
--   Various feature and/or developer-specific branches representing
-work-in-progress, new features etc.
+- A release branch, representing a released version of the code
+- A master branch, representing the most up-to-date stable version of the
+code
+- Various feature and/or developer-specific branches representing
+work-in-progress, new features etc
 
-For example,
+For example:
 
 ```
       0.1        0.2    0.3 
@@ -119,7 +115,7 @@ workflow](http://astropy.readthedocs.org/en/latest/development/workflow/developm
 
 ### Branching in practice
 
-One of our colleagues wants to contribute to the paper but it's not quite sure
+One of our colleagues wants to contribute to the paper but is not quite sure
 if it will actually make a publication. So it will be safer to create a branch
 and carry on working on this "experimental" version of the paper in a branch
 rather than in the master.
@@ -214,14 +210,14 @@ The mark-up shows us the parts of the file causing the conflict and the
 versions they come from. We now need to manually edit the file to resolve the
 conflict. This means removing the mark-up and doing one of:
 
--   Keep the local version, which, here, is the one marked-up by HEAD i.e.
+- Keep the local version, which, here, is the one marked-up by HEAD i.e.
 "My solo discovery of something scientifically interesting"
--   Keep the remote version, which, here, is the one marked-up by paperWJohn 
-Some interesting development in science
--   Or manually edit the line to something new which might combine some elements
+- Keep the remote version, which, here, is the one marked-up by paperWJohn
+i.e. "Some interesting development in science"
+- Or manually edit the line to something new which might combine some elements
 of the two e.g. "Collaborative scientific developments and discoveries"
 
-We edit the file. Then commit our changes e.g.
+We edit the file. Then commit our changes:
 
 ~~~{.bash}
 $ git add journal.txt 
@@ -258,7 +254,3 @@ But we were then in the "detached HEAD" state.
 
 Previous: [Working with local repository](02-local.html) Next: [Undoing
 things](04-undoing.html)
-
-
-
-

@@ -9,15 +9,15 @@ subtitle: Undoing changes
 > * Be able to discard all changes since a particular commit
 > * Be able to undo the changes introduced by a commit
 
-There is a number of things which we can amend and change after then have been
+There are a number of things which we can amend and change after they have been
 commited in Git.
 
-### Discarding changes
+### Discarding local changes
 
-Maybe we made our change just to see how something looks, or, for code, to
-quickly try something out. But we may be unhappy with our changes. If so, we
-can just throw them away and return our file to the most recent version we
-committed to the repository by using:
+Maybe we made our change just to see how something looks, or to
+quickly try something out. But we may be unhappy with our changes. If we
+haven't get done a `git add` we can just throw the changes away and return
+our file to the most recent version we committed to the repository by using:
 
 ```{.bash}
 $ git checkout journal.txt
@@ -29,8 +29,10 @@ the repository:
 ```{.bash}
 $ git status
 ```
-    
-### Amending commits
+
+---
+
+### Amending the most recent commit
 
 If you just made a commit and realised that either you did it a bit too early
 and the files are not yet ready to be commited. Or, which is not as uncommon as
@@ -59,7 +61,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-    	modified:   common/references.txt
+	modified:   common/references.txt
 	modified:   journal.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
@@ -83,7 +85,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed) 
   (use "git checkout --	<file>..." to discard changes in working directory)
 
-	modified:   references/references.txt
+	modified:   common/references.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```

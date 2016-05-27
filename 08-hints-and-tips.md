@@ -80,7 +80,9 @@ files and binary files"
 $ git config --global color.diff auto
 ```
     
-###Git configuration
+ ---
+
+### Git configuration
 
 The global configuration file for git `.gitconfig` is automatically created by
 Git in the `home` directory. If you set up some basic configuration (in the
@@ -113,8 +115,9 @@ Next time we can simply type:
 $ git cms "Commit message"
 ```
 	
+---	
 
-###Completely removing unwanted file from the repository    
+### Completely removing unwanted files from the repository    
 
 As we discussed earlier, there are a number of ways to undo what we did in Git.
 However, most of the time, we actually want to make some amendments rather than
