@@ -104,11 +104,17 @@ This will again bring up the editor and we can amend the commit message if requi
 Now when we run `git status` and then `git log` we can see that our Working
 Directory is clean and that both files were added. 
 
+---
 
-### Resetting
+### `git reset --hard` (restore a previous state by deleting history)
 
-What to do if you actually want to completely abandon the commit, not just
-amend it? If you're working locally, you can use the `git reset` command. 
+`git reset` has several uses, and is most often used to unstage files from the staging
+area i.e. `git reset` or `git reset <file>`.
+
+We are going to use a variant `git reset --hard <commit>` to reset things to how 
+they were at `<commit>`. This is a permanent undo which deletes all changes more recent
+than `<commit>` from your history. There is clearly potential here to lose work, so use
+this command with care.
 
 Let's try it on our example. Modify the journal and then make a commit. We now
 realise that what we've just done in our journal file makes no sense and decide
@@ -120,32 +126,39 @@ We can do that by running:
 $ git reset --hard HEAD^
 ```
 
-This moves the tip of the branch back to a previous commit. If we look in-depth, this command
-moves back 2 pointers: `HEAD` and the pointer to the tip of the branch we currently are working on. (`HEAD^` = the commit right before HEAD; `HEAD^^` = two commits before HEAD)
+This moves the tip of the branch back to a previous commit. If we look in-depth, 
+this command moves back 2 pointers: `HEAD` and the pointer to the tip of the
+branch we currently are working on. (`HEAD^` = the commit right before HEAD;
+`HEAD^^` = two commits before HEAD)
 
 The final effect is what we need: we abandoned the commit and we are now back
-to the commit point of the previous commit.
+to where we were before making the nonsense commit.
 
-This [article](http://git-scm.com/2011/07/11/reset.html) discusses more in
+[This article](http://git-scm.com/2011/07/11/reset.html) discusses more in
 depth `git reset` showing the differences between the three options:
 
-* `--soft` * `--mixed` * `--hard`
+* `--soft`
+* `--mixed`
+* `--hard`
 
 
-> ## Top tip: do not use `reset` with remote branches {.callout}
-> There is however one important thing to remember about the `reset` command - it
+> # Top tip: do not use `git reset` with remote branches {.callout}
+> There is one important thing to remember about the `reset` command - it
 > should only be used with branches that have not been shared yet (that is they
 > haven't been pushed into a remote repository that others are using). Resetting
 > is changing the history **without** leaving trace. This is always a bad practice
-> when using remote repositories and can lead to a massive mess.
+> when using remote repositories and can lead to a horrible mess.
 
 So what can we do if we want to abandon changes in branches that are shared
 with others? We need to use the `revert` command.
 
-### Reverting
+---
 
-`git revert` has a similar effect to `reset` but what happens "behind the
-scenes" is very different. 
+### `git revert` (undo changes associated with a commit)
+
+`git revert` removes the changes applied in a specified commit. However, rather 
+than deleting the commit from history, git works out how to undo those changes
+introduced by the commit, and appends a new commit with the resulting content.
 
 Let's try that on our example. 
 
@@ -153,10 +166,10 @@ Let's try that on our example.
 $ git revert HEAD^
 ```
 
-When we revert, a new commit is created. The HEAD pointer and the branch
+When we revert, a new commit is created. The `HEAD` pointer and the branch
 pointer are in fact moved forward rather than backwards. 	
 	
-We can revert to any previous commit. That is, we can "abandon" any of the
+We can revert any previous commit. That is, we can "abandon" any of the
 previous changes. However, depending on the changes we made, we may bump into
 a *conflict* (which we will cover in more detail further on). 
 
@@ -167,10 +180,10 @@ hint: with 'git add <paths>' or 'git rm <paths>'
 hint: and commit the result with 'git commit'
 ```
 	
-Behind the scenes Git gets confused trying to merge the commit HEAD is pointing
-to to the past commit we're reverting to. 
+Behind the scenes Git gets confused trying to merge the commit `HEAD` is pointing
+to wth the past commit we're reverting. 
 
-Reverting thus records the fact of "abandoning the commits" in the history.
+Reverting thus records the fact of "abandoning the commit" in the history.
 When we revert in a branch that is shared with others and then push that branch
 into the remote repository, it is as if we "came clean" about what we were
 doing. Everyone who pulls the branch in which we reverted changes will see it.
