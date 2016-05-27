@@ -14,7 +14,7 @@ subtitle: Topics
 05. [Rebasing](05-rebasing.html)
 06. [Remote repositories](06-remote.html)
 07. [Pull requests](07-pull-requests.html)
-08. [Hints and tips](08-hints-tips.html)
+08. [Hints and tips](08-hints-and-tips.html)
 09. [Conclusion](09-conclusion.html)
 Summary and Q&A.
 
