@@ -134,24 +134,6 @@ This [article](https://help.github.com/articles/remove-sensitive-data) provides
 a step-by-step tutorial on how to remove completely files from your repository
 (purge the repository) using `git filter-branch`.
 
-I recommend that you read the whole instruction (which isn't really that long)
-so that you know what you're doing (at least roughly). Essentially it boils
-down to:
- 
-"*Run `git filter-branch`, forcing (`--force`) Git to process—but not check out
-(`--index-filter`)—the entire history of every branch and tag
-(`--tag-name-filter cat -- --all`), removing the specified file (`git rm
---cached --ignore-unmatch path_to_file`) and any empty commits generated as
-a result (`--prune-empty`). Note that you need to specify the path to the file
-you want to remove, not just its filename.*"
- 
- The whole chain of commands is:
- 
-	$ git filter-branch --force --index-filter 'git rm --cached
-	--ignore-unmatch path_to_file' --prune-empty --tag-name-filter cat --
-	--all
-
-
 Removing files from the repository may be useful not only when the files
 contain sensitive data. Another case may be if you commited a large file in
 your local repository. Essentially, by deafult, there are no limitations on the
@@ -169,6 +151,7 @@ provider that allows for large files).
 Again, as always with Git **before** you execute the above, make sure you know
 what you're doing!
 
+---
 
 ### Git GUIs
 
@@ -179,7 +162,14 @@ See for example:
 
 * [SourceTreeApp](http://www.sourcetreeapp.com/)
 
+---
 
+### `git add --patch`
+This is a way to stage only parts of a file. If you have done lots of work
+without committing, it may be useful to commit your changes as a series of
+small commits. This command allows you to choose which changes go into which
+commit so you can group the changes logically. See [this discussion](
+http://nuclearsquid.com/writings/git-add/) for more information.
 
 Previous: [Pull Requests](07-pullrequests.html) Next:
 [Conclusion](09-conclusion.html)
