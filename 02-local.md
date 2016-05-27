@@ -7,6 +7,7 @@ subtitle: Tracking changes with a local repository
 > ## Learning objectives {.objectives}
 > * Know how to set up a new Git repository
 > * Understand how to start tracking files
+> * Understand what makes a good commit message
 > * Be able to view history of changes and differences between commits
 > * Understand how and when to use tags to label commits
 
@@ -176,15 +177,7 @@ we provided before) and even, what changes were made, but it cannot figure out
 why. So we need to provide this in a commit message. So let's type in
 a message. "Initial structure and headings for the journal paper" 
 
-
-
- Ideally, commit messages should have meaning to others who may read them - or
- you 6 months from now. Messages like "made a change" or "added changes" or
- "commit 5" aren't that helpful (in fact, they're redundant!). A good commit
- message usually contains a one-line description followed by a longer
- explanation, if necessary. 
-
- If we save our commit message, Git will now commit our file.
+If we save our commit message, Git will now commit our file.
 
 ~~~{.output}
 [master (root-commit) 21cfbde] Initial structure and headings for the journal paper
@@ -263,6 +256,24 @@ $ git log
 The output shows: the commit identifier (also called revision number) which
 uniquely identifies the changes made in this commit, author, date, and your
 comment.     
+
+### Write meaningful commit messages!
+
+Commit messages should explain why you have made your changes. They should mean
+something to others who may read them - including your future self in 6 months
+from now.
+
+[Here is an excellent summary](http://chris.beams.io/posts/git-commit/) of best-
+practice. It's well worth a read but the key points are given below:
+
+1. Separate subject from body with a blank line
+2. Limit the subject line to 50 characters
+3. Capitalize the subject line
+4. Do not end the subject line with a period
+5. Use the imperative mood in the subject line
+6. Wrap the body at 72 characters
+7. Use the body to explain what and why vs. how
+
 
 > ##Top tip: When to commit changes {.callout}
 >
