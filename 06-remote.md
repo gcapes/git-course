@@ -45,16 +45,17 @@ GitHub **isn't** the only remote repostitories provider. It is however very popu
 in particular within the Open Source communities. The reason why we teach GitHub 
 in this tutorial is mainly due to popular demand. 
 
-Also, GitHub has started working intensively in providing different
-[functionalities which are particularily useful in research
-context](https://github.com/blog/1840-improving-github-for-sciences).   
+Also, GitHub has started working on [functionality which is particularily useful
+for researchers](https://github.com/blog/1840-improving-github-for-sciences)
+such as making code citable.
+
+---
 
 ### Get an account
 
 Let's get back to our tutorial. We will first need a GitHub account.
 
-Setting up GitHub at first requires a user name and password. [Sign
-up](https://GitHub.com) or if you already have an account [sign
+[Sign up](https://GitHub.com) or if you already have an account [sign
 in](https://GitHub.com). 
 
 ### Create a new repository
