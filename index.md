@@ -21,6 +21,9 @@ Summary and Q&A.
 
 **This course is based on materials by [Software Carpentry](http://www.software-carpentry.org)**
 
+Please download a copy of the [Git cheat sheet](https://services.github.com/
+kit/downloads/github-git-cheat-sheet.pdf) for reference during this workshop.
+
 ## Agenda - needs updating
 **10:00 - 10:30** Introduction to version control
 
