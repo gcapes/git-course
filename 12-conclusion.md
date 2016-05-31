@@ -17,20 +17,12 @@ repositories without
 losing any work.  
 * Collaboratively work on code or documents or any other files.
 
-Now, consider again our initial questions:
+Now, consider again our initial scenario:
 
-* If someone asks you, "Can I have the code you used to create the data that
-you graphed in your conference paper?", you can use your version control logs
-and tags to immediately retrieve the exact version of the code that you used.
-* If someone tells you, "Er, your laptop's just been stolen!" ideally you'll
-have lost no work as you push it regularly to a remote repository. 
-* If you're working with a colleague on a journal paper who storms into your
-office and shouts, "you've just deleted my analysis section" you can just ask
-them to retrieve the previous version from the repository.  
-* If you're working with colleagues on a code and you find that a function 
-you wrote has been rewritten and you want to know why, you could just look 
-through the logs at the commit messages and, hopefully, these'll explain why 
-it was changed.
+If someone asks you, "Can you process a new data file in exactly the same
+way as described in your journal paper? Or can I have the code to do it myself?"
+You can use your version control logs and tags to easily retrieve the exact
+version of the code that you used.
 
 Version control serves as a log book for your software and documents, ideas
 you've explored, fixes you've made, refactorings you've done, false paths
