@@ -4,7 +4,7 @@ title: Version control with Git
 subtitle: Topics
 ---
 
-01. [Introduction - what is version control?](01-introduction.html) 
+01. [Introduction - Why use version control?](01-introduction.html) 
 02. [Setting up and working with a local repository](02-local.html)
 03. [Looking at history and differences](03-history.html)
 04. [Best practice for committing changes](04-commit-advice.html)
