@@ -204,4 +204,12 @@ $ git checkout master
 > For code this might be when it's been submitted to review, or has been
 > released.
 
+> ## Exercise: "bio" Repository {.challenge}
+>
+> - Create a new Git repository on your computer called "bio"
+> - Write a three-line biography for yourself in a file called `me.txt`
+> - Commit your changes
+> - Modify one line, add a fourth line, then save the file
+> - Display the differences between the updated file and the original
+
 Previous: [Setting up a local repository](02-local.html) Next: [Committing changes](04-commit-advice.html)
