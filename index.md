@@ -22,8 +22,9 @@ subtitle: Topics
 Please download a copy of the [Git cheat sheet](https://services.github.com/
 kit/downloads/github-git-cheat-sheet.pdf) for reference during this workshop.
 
-## Agenda - needs updating
+## Agenda
 **09:30 - 12:30** Morning session
+
 - Introduction to version control
 - Working with a local repository
 - Looking at history and differences
@@ -32,7 +33,8 @@ kit/downloads/github-git-cheat-sheet.pdf) for reference during this workshop.
 
 **12:00 - 13:00** Lunch
 
-**13:00 - 16:30** 
+**13:00 - 16:30** Afternoon session
+
 - Undoing changes
 - Rebasing
 - Remote repositories
