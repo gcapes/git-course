@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Version control with Git</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="lesson">
+    <div class="container card">
+      <div class="banner">
+        <!a href="http://software-carpentry.org" title="Software Carpentry">
+          <!img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        <!/a>
+        <a href="http://www.itservices.manchester.ac.uk/" title="University Of Manchester">
+          <img alt="UoM banner" src="img/university-of-manchester-banner.png" />
+        </a>
+      </div>
+      <article>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+                    <a href="index.html"><h1 class="title">Version control with Git</h1></a>
+          <h2 class="subtitle">Branching</h2>
+          <section class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
+</div>
+<div class="panel-body">
+<ul>
+<li>Know what branches are and why you would use them</li>
+<li>Understand how to merge branches</li>
+<li>Understand how to resolve conflicts during a merge</li>
+</ul>
+</div>
+</section>
+<h3 id="what-is-a-branch">What is a branch?</h3>
+<p>You might have noticed the term <code>branch</code> in status messages:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status journal.txt </code></pre>
+<pre class="output"><code>On branch master 
+nothing to commit (working directory clean)</code></pre>
+<p>and when we wanted to get back to our most recent version of the repository, we used <code>git checkout master</code>.</p>
+<p>Not only can our repository store the changes made to files and directories, it can store multiple sets of these, which we can use and edit and update in parallel. Each of these sets, or parallel instances, is termed a <code>branch</code> and <code>master</code> is Git’s default branch.</p>
+<p>A new branch can be created from any commit. Branches can also be merged together.</p>
+<p>Why is this useful? Suppose we’ve developed some software and now we want to add some new features to it but we’re not sure yet whether we’ll keep them. We can then create a branch ‘feature1’ and keep our master branch clean. When we’re done developing the feature and we are sure that we want to include it in our program, we can merge the feature branch with the master branch.</p>
+<p>We create our branch for the new feature.</p>
+<pre><code>-c1---c2---c3        master 
+       \
+       c4            feature1</code></pre>
+<p>We can then continue developing our software in our default, or master, branch,</p>
+<pre><code>-c1---c2---c3---c5---c6---c7    master
+       \ 
+       c4                       feature1</code></pre>
+<p>And, we can work on the new feature in the feature1 branch</p>
+<pre><code>-c1---c2---c3---c5---c6---c7         master 
+       \
+       c4---c8---c9                  feature1</code></pre>
+<p>We can then merge the feature1 branch adding new feature to our master branch (main program):</p>
+<pre><code>-c1---c2---c3---c5---c6---c7--c10       master
+       \                      /
+       c4---c8---c9----------           feature1
+</code></pre>
+<p>When we merge our feature1 branch with master git creates a new commit which contains merged files from master and feature1. After the merge we can continue developing. The merged branch is not deleted. We can continue developing (and making commits) in feature1 as well.</p>
+<pre><code>-c1---c2---c3---c5---c6---c7--c10---c11--c12     master
+       \                      / 
+       c4---c8---c9---------------c13            feature1</code></pre>
+<p>One popular model is to have:</p>
+<ul>
+<li>A release branch, representing a released version of the code</li>
+<li>A master branch, representing the most up-to-date stable version of the code</li>
+<li>Various feature and/or developer-specific branches representing work-in-progress, new features etc</li>
+</ul>
+<p>For example:</p>
+<pre><code>      0.1        0.2    0.3 
+      c6---------c9-----c17------                release
+      /         /       / 
+c1---c2---c3--c7--c8---c16--c18---c20---c21--    master
+|                     /
+c4---c10---c13------c15                          fred 
+|                   / 
+c5---c11---c12---c14---c19                       kate</code></pre>
+<p>There are different possible workflows when using Git for code development.</p>
+<p>One of the examples may be when the master branch holds stable and tested code. If a bug is found by a user, a bug fix can be applied to the release branch, and then merged with the master branch. When a feature or developer-specific branch, is stable and has been reviewed and tested it can be merged with the master branch. When the master branch has been reviewed and tested and is ready for release, a new release branch can be created from it. If you want to learn more about workflows with Git, have a look at the <a href="http://astropy.readthedocs.org/en/latest/development/workflow/development_workflow.html">AstroPy development workflow</a>.</p>
+<h3 id="branching-in-practice">Branching in practice</h3>
+<p>One of our colleagues wants to contribute to the paper but is not quite sure if it will actually make a publication. So it will be safer to create a branch and carry on working on this “experimental” version of the paper in a branch rather than in the master.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout -b paperWJohn 
+<span class="kw">Switched</span> to a new branch <span class="st">&#39;paperWJohn&#39;</span></code></pre>
+<p>Now let’s change the title of our paper and the authors (adding John Smith). Let’s commit our changes. Before we do that, it’s a good practice to check whether we’re working in the correct branch.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> branch </code></pre>
+<pre class="output"><code>  master
+* paperWJohn </code></pre>
+<p>The * indicates which branch we’re currently in. Let’s commit. If we want to work now in our master branch. We can switch by using:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master </code></pre>
+<pre class="output"><code>Switched to branch &#39;master&#39;</code></pre>
+<h3 id="merging-and-resolving-conflicts">Merging and resolving conflicts</h3>
+<p>We are now working on two papers. Our main one in our master branch and the one which may possibly be collaborative work in our “paperWJohn” branch. Let’s suppose that we have a new idea for the title for our main paper. We can change it in our master branch. Let’s do it and commit changes.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> journal.txt ......  
+$ <span class="kw">git</span> add journal.txt 
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Rewrote the title&quot;</span> journal.txt</code></pre>
+<p>After some discussions with John we decided that there is going to be a major change to our plan. We will publish together. And hence it makes sense now to merge all that was authored together with John in branch “paperWJohn”.</p>
+<p>We can do that by <em>merging</em> that branch with the master branch. Let’s try doing that:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> merge paperWJohn </code></pre>
+<pre class="output"><code>Auto-merging journal.txt
+CONFLICT (content): Merge conflict in journal.txt
+Automatic merge failed; fix conflicts and then commit the result.</code></pre>
+<p>Git cannot complete the merge because there is a conflict - if you recall, journal.txt differs in the same places (lines) in the master and the paperWJohn branch. We have to resolve the conflict and then complete the merge. We can get some more detail</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
+<pre class="output"><code>On branch master
+You have unmerged paths.
+  (fix conflicts and run &quot;git commit&quot;)
+
+Unmerged paths:
+  (use &quot;git add &lt;file&gt;...&quot; to mark resolution)
+
+        both modified:      journal.txt</code></pre>
+<p>Let’s look inside journal.txt:</p>
+<pre><code>title
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+My solo discovery of something scientifically interesting
+=======
+Some interesting development in science
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; paperwjohn</code></pre>
+<p>The mark-up shows us the parts of the file causing the conflict and the versions they come from. We now need to manually edit the file to resolve the conflict. This means removing the mark-up and doing one of:</p>
+<ul>
+<li>Keep the local version, which, here, is the one marked-up by HEAD i.e. “My solo discovery of something scientifically interesting”</li>
+<li>Keep the remote version, which, here, is the one marked-up by paperWJohn i.e. “Some interesting development in science”</li>
+<li>Or manually edit the line to something new which might combine some elements of the two e.g. “Collaborative scientific developments and discoveries”</li>
+</ul>
+<p>We edit the file. Then commit our changes:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add journal.txt 
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Resolves conflict in journal.txt by rewriting title&quot;</span> </code></pre>
+<p>This is where version control proves itself better than DropBox or GoogleDrive, this ability to merge text files line-by-line and highlight the conflicts between them, so no work is ever lost.</p>
+<h3 id="looking-at-our-history---revisited">Looking at our history - revisited</h3>
+<p>We already looked at “going back in time with Git”. But now we’ll look at it in more detail to see how moving back relates to branches and we will learn how to actually undo things. So far we were moving back in time in one branch by checking out one of the past commits.</p>
+<p>But we were then in the “detached HEAD” state.</p>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h3><span class="glyphicon glyphicon-pencil"></span>Exercise</h3>
+</div>
+<div class="panel-body">
+<p>1a. Add a commit to detached HEAD</p>
+<ul>
+<li>Checkout one of the previous commits from our repository.</li>
+<li>Make some changes and commit them. What happened?</li>
+<li>Now try to run <code>git branch</code>. What can you see?</li>
+</ul>
+<p>1b. Commit changes to a new branch</p>
+<ul>
+<li>Checkout the master branch again: <code>git checkout master</code></li>
+<li>Make some changes and save the file(s).</li>
+<li>Create a new branch and check it out.</li>
+<li>What happened?</li>
+<li>Now commit the file to the new branch</li>
+</ul>
+</div>
+</section>
+<p>Previous: <a href="04-commit-advice.html">Committing changes</a> Next: <a href="06-undoing.html">Undoing changes</a></p>
+        </div>
+      </div>
+      </article>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/gcapes/git-course">Source</a>
+        <a class="label swc-blue-bg" href="mailto:research-it-training@manchester.ac.uk">Contact</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  </body>
+</html>

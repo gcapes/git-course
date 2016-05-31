@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Version control with Git</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="lesson">
+    <div class="container card">
+      <div class="banner">
+        <!a href="http://software-carpentry.org" title="Software Carpentry">
+          <!img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        <!/a>
+        <a href="http://www.itservices.manchester.ac.uk/" title="University Of Manchester">
+          <img alt="UoM banner" src="img/university-of-manchester-banner.png" />
+        </a>
+      </div>
+      <article>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+                    <a href="index.html"><h1 class="title">Version control with Git</h1></a>
+          <h2 class="subtitle">Collaborating with a remote repository</h2>
+          <section class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
+</div>
+<div class="panel-body">
+<ul>
+<li>Understand how to pull changes from remote repository</li>
+<li>Understand how to resolve merge conflicts</li>
+</ul>
+</div>
+</section>
+<h3 id="pulling-changes-from-a-remote-repository">Pulling changes from a remote repository</h3>
+<p>Now when we have a remote repository, we can share it and collaborate with others (and we can also work from multiple locations: for example from a laptop and a desktop in the lab). But how do we get the latest changes? One way is simply to clone the repository every time but this is inefficient, especially if our repository is very large. So, Git allows us to get the latest changes down from a repository.</p>
+<p>We’ll first do a “dry run” of pulling changes from a remote repository and then we’ll work in pairs for some real-life practice.</p>
+<p>First, let us leave our current local repository,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> ..  
+$ <span class="kw">ls</span> papers</code></pre>
+<p>And let us clone our repository again, but this time specify the local directory name,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://github.com/<span class="kw">&lt;</span>USERNAME<span class="kw">&gt;</span>/papers.git papers2 
+<span class="kw">Cloning</span> into <span class="st">&#39;papers2&#39;</span>...</code></pre>
+<p>So we now have two clones of our repository,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> 
+$ <span class="kw">papers</span> papers2</code></pre>
+<p>Let’s pretend these clones are on two separate machines! So we have 3 versions of our repository - our two local versions, on our separate machines (we’re still pretending!) and one on GitHub. So let’s go into one of our clones, make some changes, commit these and push these to GitHub:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> papers 
+$ <span class="kw">nano</span> journal.txt 
+$ <span class="kw">git</span> add journal.txt 
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Adds some more comments&quot;</span> 
+$ <span class="kw">git</span> push</code></pre>
+<p>Now let’s change to our other repository and <em>fetch</em> the changes from our remote repository,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> ../papers2 
+$ <span class="kw">git</span> fetch</code></pre>
+<p>We can now see what the differences are by doing,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff origin/master</code></pre>
+<p>which compares our current, <code>master</code> branch, with an <code>origin/master</code> branch which is the name of the <code>master</code> branch in <code>origin</code> which is the alias for our cloned repository, the one on GitHub.</p>
+<p>We can then <em>merge</em> these changes into our current repository, which merges the branches together,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> merge origin/master</code></pre>
+<p>And then we can check that we have our changes,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> journal.txt 
+$ <span class="kw">git</span> log</code></pre>
+<p>As a short-hand, we can do a Git <em>pull</em> which does a <em>fetch</em> then a <em>merge</em>,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> journal.txt 
+$ <span class="kw">git</span> add journal.txt 
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Adds acknowledgements&quot;</span> journal.txt 
+$ <span class="kw">git</span> push origin master
+$ <span class="kw">cd</span> ..  
+$ <span class="kw">cd</span> ../papers 
+$ <span class="kw">git</span> pull origin master</code></pre>
+<p>And then check that we have our changes,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> journal.txt 
+$ <span class="kw">git</span> log</code></pre>
+<h3 id="conflicts-and-how-to-resolve-them">Conflicts and how to resolve them</h3>
+<p>Let’s continue to pretend that our two local, cloned, repositories are hosted on two different machines, and make some changes to our file, and push these to GitHub:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> journal.txt 
+$ <span class="kw">git</span> add journal.txt 
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Credits - added our names&quot;</span> journal.txt 
+$ <span class="kw">git</span> push origin master</code></pre>
+<p>Now let us suppose, at a later, date, we use our other repository and we want to change the credits.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> ../papers2 
+$ <span class="kw">nano</span> journal.txt 
+$ <span class="kw">git</span> add journal.txt 
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Changed the first author&quot;</span> journal.txt 
+$ <span class="kw">git</span> push origin master</code></pre>
+<pre class="output"><code>To https://github.com/&lt;USERNAME&gt;/papers.git
+ ! [rejected]        master -&gt; master (fetch first)
+error: failed to push some refs to &#39;https://github.com/&lt;USERNAME&gt;/papers.git&#39;
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., &#39;git pull ...&#39;) before pushing again.
+hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.</code></pre>
+<p>Our push fails, as we’ve not yet pulled down our changes from our remote repository. Before pushing we should always pull, so let’s do that…</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> pull origin master</code></pre>
+<p>and we get:</p>
+<pre class="output"><code>Auto-merging journal.txt
+CONFLICT (content): Merge conflict in journal.txt
+Automatic merge failed; fix conflicts and then commit the result.</code></pre>
+<p>As we saw earlier, with the fetch and merge, a <code>pull</code> pulls down changes from the repository and tries to merge them. It does this on a file-by-file basis, merging files line by line. We get a <em>conflict</em> if a file has changes that affect the same lines and those changes can’t be seamlessly merged. We had this situation before when we worked with branches and tried to merge 2 of them. If we look at the status,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
+<p>we can see that our file is listed as <code>Unmerged</code> and if we look at <code>journal.txt</code>, we may see something like,</p>
+<pre class="output"><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Author
+G Capes, J Smith
+=======
+author
+J Smith, G Capes
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 1b55fe7f23a6411f99bf573bfb287937ecb647fc</code></pre>
+<p>The mark-up shows us the parts of the file causing the conflict and the versions they come from. We now need to manually edit the file to <em>resolve</em> the conflict. Just like we did when we had to deal with the conflict when we were merging the branches.</p>
+<p>We edit the file. Then commit our changes. Now, if we push,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
+<p>All goes well. If we now go to GitHub and click on the “Overview” tab we can see where our repository diverged and came together again.</p>
+<p>This is where version control proves itself better than DropBox or GoogleDrive, this ability to merge text files line-by-line and highlight the conflicts between them, so no work is ever lost.</p>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h1><span class="glyphicon glyphicon-pencil"></span>Exercises following good practice</h1>
+</div>
+<div class="panel-body">
+<h4>Exercise 1: Collaborating on a remote repository</h4>
+<p>In this exercise you should work with a partner or a group of three. One of you should give access to your remote repository on GitHub to the others (by selecting Settings -&gt; Collaborators).</p>
+<p>Now those of you who are added as collaborators should clone the repository of the first person on your machines. (make sure that you <strong>don’t clone into a directory that is already a repository</strong>!)</p>
+<p>Each of you should now make some changes to the files in the repository. Commit the changes and then push them back to the remote repository.</p>
+<hr />
+<h4>Exercise 2: Creating branches and sharing them in the remote repository</h4>
+<p>Working with the same remote repository, each of you should create a new branch locally and push it back to the remote repo.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin new_branch</code></pre>
+<p>The other person should try to get the branches created by others locally (so eventually everybody should have the same number of branches as the remote repository).</p>
+<p>To pull new branches from remote repository (into new local branches):</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> fetch origin </code></pre>
+<pre class="output"><code>Counting objects: 3, done.  remote:
+Compressing objects: 100% (3/3), done.  remote: Total 3 (delta 0),
+reused 2 (delta 0) Unpacking objects: 100% (3/3), done.  From
+https://github.com/apawlik/papers 9e1705a..640210a  master     -&gt;
+origin/master * [new branch]      new_branch -&gt; origin/new_branch</code></pre>
+<p>This command gets us all branches from the remote repository (aliased as ‘origin’) but doesn’t actually pull any contents.</p>
+<p>Now we can set up a new branch locally and pull the contents of the corresponding remote branch into the new one which we set up:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout -b new_branch origin/new_branch </code></pre>
+<pre class="output"><code>Branch new_branch set up to track remote branch new_branch from origin.
+Switched to a new branch &#39;new_branch&#39;</code></pre>
+<hr />
+<h4>Exercise 3: Undoing changes using revert</h4>
+<p>Once you have the branches which others created, try to undo one of the commits.</p>
+<p>Each one of you should try to revert a commit in a different branch to your partner(s).</p>
+<p>Push the branch back to the remote repository. The others should pull that branch to get the changes you made.</p>
+<p>What is the end result? What happens when you pull the branch that your colleagues changed using <code>revert</code>?</p>
+<p>A: It works fine. The revert shows up in everyone’s copy.</p>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h1><span class="glyphicon glyphicon-pencil"></span>Exercises following bad practice</h1>
+</div>
+<div class="panel-body">
+<h4>Exercise 4: Undoing changes using reset</h4>
+<p>Now let’s try to undo a commit using <code>reset</code>. Remember that it is a <strong>bad</strong> practice to use <code>reset</code> for branches which are shared. The purpose of this exercise is to demonstrate what happens.</p>
+<p>Select a different branch for this exercise than the one you used for the previous one.</p>
+<p>Reset to one of the previous commits and push it back to the remote repository. Pull the branches which your colleagues reset in a similar way.</p>
+<p>What happens? Look through the history using <code>git log</code> - what can you notice?</p>
+<p>A: You can’t push the change to remote repository unless you use <code>push -f</code>. After force pushing the changes, your git log shows what you’ve done, as does the remote git log, but the other person’s local git log shows no change to the history. To that person it looks like work has just gone missing from the files in their working directory. Git also thinks that their branch is ahead of origin/branch.</p>
+<hr />
+<h4>Exercise 5: Rebasing</h4>
+<p>This exercise is again designed to explore what happens when you follow <em>bad practice</em>. In this case, the bad practice is rebasing branches which are shared with others.</p>
+<p>Preparation:</p>
+<ol style="list-style-type: decimal">
+<li>Firstly, make sure that you have all branches (so all of you working on the repository should have the same set of branches).</li>
+<li>Secondly, make sure that you all have these branches up to date. So if you have any uncommited changes, commit them and push them.</li>
+<li>Pull the changes that your colleagues committed.</li>
+</ol>
+<p>The exercise:</p>
+<ul>
+<li>Pick a (non-master) branch - this time you should both be working on the same one</li>
+<li>Both do some work on it and commit your changes</li>
+<li>Person A should also make some changes to the <code>master</code> branch and push them back</li>
+<li>Person A should then rebase their selected non-master branch on master and push everything back to the repository</li>
+<li>Person B (and C if you’re working in a group of 3) should now pull (previously commiting the changes they made in the branch)</li>
+</ul>
+<p>What is the end result? What happened when the other collaborator rebased the branch against master?</p>
+<p>A: It is confusing. When pushing person A’s rebased branch back, it failed because tip of current branch is behing its remote counterpart. So I did a pull. Auto-merge failed so after editing the file to resolve the merge, add, commit, push, I finally got the rebased branch pushed but with an extra commit merging changes from remote. These changes were actually already in the rebased version. Person B then gets a merge conflict when they pull. After resolving, their history is different to person A’s history. One commit has a new hash ID, and others are missing.</p>
+</div>
+</section>
+<p>Previous: <a href="08-remote.html">Working from multiple locations</a> Next: <a href="10-pull-requests.html">Pull Requests</a></p>
+        </div>
+      </div>
+      </article>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/gcapes/git-course">Source</a>
+        <a class="label swc-blue-bg" href="mailto:research-it-training@manchester.ac.uk">Contact</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  </body>
+</html>

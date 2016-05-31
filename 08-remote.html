@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Version control with Git</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="lesson">
+    <div class="container card">
+      <div class="banner">
+        <!a href="http://software-carpentry.org" title="Software Carpentry">
+          <!img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        <!/a>
+        <a href="http://www.itservices.manchester.ac.uk/" title="University Of Manchester">
+          <img alt="UoM banner" src="img/university-of-manchester-banner.png" />
+        </a>
+      </div>
+      <article>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+                    <a href="index.html"><h1 class="title">Version control with Git</h1></a>
+          <h2 class="subtitle">Working from multiple locations with a remote repository</h2>
+          <section class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
+</div>
+<div class="panel-body">
+<ul>
+<li>Understand how to set up remote repository</li>
+<li>Understand how to push local changes to a remote repository</li>
+<li>Understand how to clone a remote repository</li>
+</ul>
+</div>
+</section>
+<p>We’re going to set up a remote repository that we can use from multiple locations. The remote repository can also be shared with colleagues, if we want to.</p>
+<h3 id="github">GitHub</h3>
+<p><a href="http://GitHub.com">GitHub</a> is a company which provides remote repositories for Git and a range of functionalities supporting their use. GitHub allows users to set up their private and public source code Git repositories. It provides tools for browsing, collaborating on and documenting code. GitHub, like other services such as <a href="https://launchpad.net">Launchpad</a>, <a href="https://bitbucket.org">Bitucket</a>, <a href="http://code.google.com">GoogleCode</a>, and <a href="http://sourceforge.net">SourceForge</a> supports a wealth of resources to support projects including:</p>
+<ul>
+<li>Time histories changes to repositories</li>
+<li>Commit-triggered e-mails</li>
+<li>Browsing code from within a web browser, with syntax highlighting</li>
+<li>Software release management</li>
+<li>Issue (ticket) and bug tracking</li>
+<li>Download</li>
+<li>Varying permissions for various groups of users</li>
+<li>Other service hooks e.g. to Twitter.</li>
+</ul>
+<p><strong>Note</strong> GitHub’s free repositories have public licences <strong>by default</strong>. If you don’t want to share (in the most liberal sense) your stuff with the world and you want to use GitHub, you will need to pay for the private GitHub repositories (GitHub offers up to 5 free private repositories, if you are an academic - but do check this information as T&amp;C may change).</p>
+<h3 id="github-for-research">GitHub for research</h3>
+<p>GitHub <strong>isn’t</strong> the only remote repostitories provider. It is however very popular, in particular within the Open Source communities. The reason why we teach GitHub in this tutorial is mainly due to popular demand.</p>
+<p>Also, GitHub has started working on <a href="https://github.com/blog/1840-improving-github-for-sciences">functionality which is particularily useful for researchers</a> such as making code citable.</p>
+<hr />
+<h3 id="get-an-account">Get an account</h3>
+<p>Let’s get back to our tutorial. We will first need a GitHub account.</p>
+<p><a href="https://GitHub.com">Sign up</a> or if you already have an account <a href="https://GitHub.com">sign in</a>.</p>
+<h3 id="create-a-new-repository">Create a new repository</h3>
+<p>Now, we can create a repository on GitHub,</p>
+<ul>
+<li>Log in to <a href="https://GitHub.com/">GitHub</a></li>
+<li>Click on the <code>Create</code> icon on the top right</li>
+<li>Enter Repository name: “papers”</li>
+<li>For the purpose of this exercise we’ll create a public repository</li>
+<li>Make sure the Initialize this repository with a README is <em>unselected</em></li>
+<li>Click <code>Create Repository</code></li>
+</ul>
+<p>You’ll get a page with new information about your repository. We already have our local repository and we will be <em>pushing</em> it to GitHub, so this is the option we will use:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote add origin https://github.com/<span class="kw">&lt;</span>USERNAME<span class="kw">&gt;</span>/papers.git 
+$ <span class="kw">git</span> push -u origin master</code></pre>
+<p>The first line sets up an alias, <code>origin</code>, to correspond to the URL of our new repository on GitHub.</p>
+<h3 id="push-locally-tracked-files-to-a-remote-repository">Push locally tracked files to a remote repository</h3>
+<p>Now copy and paste the second line,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push -u origin master </code></pre>
+<pre class="output"><code>Counting objects: 32, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (28/28), done.
+Writing objects: 100% (32/32), 3.29 KiB | 0 bytes/s, done.
+Total 32 (delta 7), reused 0 (delta 0)
+To https://github.com/gcapes/papers.git
+ * [new branch]      master -&gt; master
+Branch master set up to track remote branch master from origin.</code></pre>
+<p>This <em>pushes</em> our <code>master</code> branch to the remote repository, named via the alias <code>origin</code> and creates a new <code>master</code> branch in the remote repository.</p>
+<p>Now, on GitHub, we should see our code and if we click the <code>Commits</code> tab we should see our complete history of commits.</p>
+<p>Our local repository is now available on GitHub. So, anywhere we can access GitHub, we can access our repository.</p>
+<h3 id="push-other-local-branches-to-a-remote-repository">Push other local branches to a remote repository</h3>
+<p>Let’s push all our local branches into our remote repository:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin branch_name</code></pre>
+<p>This will work assumig that ‘origin’ is still an alias for our remote repository in GitHub. The branch should now be created in our GitHub repository.</p>
+<p>To list all branches (local and remote):</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> branch -a</code></pre>
+<p>To delete the remote branch, there are two syntax options:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin --delete feature2
+$ <span class="kw">git</span> push origin :feature2</code></pre>
+<h3 id="cloning-a-remote-repository">Cloning a remote repository</h3>
+<p>Now, let’s do something drastic! (but before that step, make sure that you pushed all your local branches into the remote repository)</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> .. 
+$ <span class="kw">rm</span> -rf papers</code></pre>
+<p>Gulp! We’ve just wiped our local repository! But, as we’ve a copy on GitHub we can just copy, or <em>clone</em> that,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://github.com/<span class="kw">&lt;</span>USERNAME<span class="kw">&gt;</span>/papers.git </code></pre>
+<pre class="output"><code>Cloning into &#39;papers&#39;...
+remote: Counting objects: 32, done.
+remote: Compressing objects: 100% (21/21), done.
+remote: Total 32 (delta 7), reused 32 (delta 7), pack-reused 0
+Unpacking objects: 100% (32/32), done.
+Checking connectivity... done.</code></pre>
+<p>Cloning creates an exact copy of the repository. By deafult it creates a directory with the same name as the name of the repository.</p>
+<p>Now, if we change into <code>papers</code> we can see that we have our repository,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> papers 
+$ <span class="kw">git</span> log</code></pre>
+<p>and we can see our Git configuration files too,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -A</code></pre>
+<h3 id="push-changes-to-a-remote-repository">Push changes to a remote repository</h3>
+<p>We can use our cloned repository just as if it was a local repository so let’s make some changes to our files and commit these.</p>
+<p>Having done that, how do we send our changes back to the remote repository? We can do this by <em>pushing</em> our changes,</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
+<p>If we now check our GitHub page we should be able to see our new changes under the Commit tab.</p>
+<p>To see all remote repositories (we can have multiple ones!) type:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote -v</code></pre>
+<p>Previous: <a href="07-rebasing.html">Rebasing</a> Next: <a href="09-remote-collaboration.html">Collaborating using a remote repository</a></p>
+        </div>
+      </div>
+      </article>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/gcapes/git-course">Source</a>
+        <a class="label swc-blue-bg" href="mailto:research-it-training@manchester.ac.uk">Contact</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  </body>
+</html>

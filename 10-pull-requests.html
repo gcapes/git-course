@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Version control with Git</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="lesson">
+    <div class="container card">
+      <div class="banner">
+        <!a href="http://software-carpentry.org" title="Software Carpentry">
+          <!img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        <!/a>
+        <a href="http://www.itservices.manchester.ac.uk/" title="University Of Manchester">
+          <img alt="UoM banner" src="img/university-of-manchester-banner.png" />
+        </a>
+      </div>
+      <article>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+                    <a href="index.html"><h1 class="title">Version control with Git</h1></a>
+          <h2 class="subtitle">Pull Requests</h2>
+          <p>Pull Requests are a great solution for contributing to repositories to which you don’t have write access. Adding other people as <em>collaborators</em> to a remote repository is a good idea but sometimes (or even most of the time) you want to make sure that their contributions will provide more benefits that the potential mistakes they may introduce.</p>
+<p>In large projects, primarily Open Source ones, in which the community of contributors can be very big, keeping the source code safe but at the same allow people to make contributions without making them “pass” tests for their skills and trustworthiness may be one of the keys to success.</p>
+<p>Leveraging the power of Git, GitHub provides a functionality called <em>Pull Requests</em>. Esentially it’s “requesting the owner of the repository to pull in your contributions”. The owner may or may not accept them. But for you as a contributor, it was really easy to make the contribution.</p>
+<p>Let’s look at the workflow and try to repeat it:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Fork</strong> <a href="https://github.com/gcapes/manchester-papers.git">this repository</a>.<br /></li>
+<li>Clone the repository from <strong>YOUR</strong> GitHub account. When you run <code>git remote -v</code> you should get something like this:</li>
+</ol>
+<pre class="output"><code>origin  https://github.com/YOUR_USERNAME/manchester-papers.git(fetch)
+origin  https://github.com/YOUR_USERNAME/manchester-papers.git(push)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Make changes you want to contribute. Commit and push them back to your repository. You won’t be able to push back to the repository you forked from because you are not added as a contributor!</li>
+<li>Go to your GitHub account and in the forked repository find a green button for creating Pull Requests. Click it and follow the instructions.</li>
+<li>The owner of the original repository gets a notification that someone created a pull request - the request can be reviewed, commented and merged in (or not) via GitHub.</li>
+</ol>
+<p>Previous: <a href="09-remote-collaboration.html">Collaborating with remote repositories</a> Next: <a href="11-hints-and-tips.html">Hints and Tips</a></p>
+        </div>
+      </div>
+      </article>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/gcapes/git-course">Source</a>
+        <a class="label swc-blue-bg" href="mailto:research-it-training@manchester.ac.uk">Contact</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  </body>
+</html>
