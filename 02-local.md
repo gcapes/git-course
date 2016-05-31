@@ -283,5 +283,5 @@ when you edited, let's say, 10 files and now you want to commit all of them):
 $ git commit -a
 ~~~
 
-Previous: [Introduction](01-introduction.html) Next: [Branching](03-branching.html)
+Previous: [Introduction](01-introduction.html) Next: [Looking at history and differences](03-history.html)
 

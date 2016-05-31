@@ -194,4 +194,4 @@ See this [Atlassian online tutorial](
 https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting/commit-level-operations)
 for further reading about the differences between `revert` and `reset`.
 
-Previous: [Branching](03-branching.html) Next: [Rebasing](05-rebasing.html)
+Previous: [Branching, merging and resolving conflicts](05-branching.html) Next: [Rebasing](07-rebasing.html)

@@ -171,5 +171,5 @@ small commits. This command allows you to choose which changes go into which
 commit so you can group the changes logically. See [this discussion](
 http://nuclearsquid.com/writings/git-add/) for more information.
 
-Previous: [Pull Requests](07-pullrequests.html) Next:
-[Conclusion](09-conclusion.html)
+Previous: [Pull Requests](10-pull-requests.html) Next:
+[Conclusion](12-conclusion.html)

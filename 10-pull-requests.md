@@ -41,5 +41,5 @@ for creating Pull Requests. Click it and follow the instructions.
 created a pull request - the request can be reviewed, commented and merged in 
 (or not) via GitHub.
 
-Previous: [Working with remote repositories](06-remote.html) Next: [Hints and
-Tips](08-hints-and-tips.html)
+Previous: [Collaborating with remote repositories](09-remote-collaboration.html) 
+Next: [Hints and Tips](11-hints-and-tips.html)

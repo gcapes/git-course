@@ -78,3 +78,5 @@ Review](http://smartbear.com/SmartBear/media/pdfs/best-kept-secrets-of-peer-code
 
 ----
 
+Previous: [Looking at history and differences](03-history.html) Next: [Branching, merging and 
+resolving conflicts](05-branching.html)

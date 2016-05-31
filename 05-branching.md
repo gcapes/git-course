@@ -252,5 +252,5 @@ But we were then in the "detached HEAD" state.
 > - What happened?
 > - Now commit the file to the new branch
 
-Previous: [Working with local repository](02-local.html) Next: [Undoing
-things](04-undoing.html)
+Previous: [Committing changes](04-commit-advice.html) Next: [Undoing
+changes](06-undoing.html)

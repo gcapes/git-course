@@ -195,4 +195,5 @@ To see all remote repositories (we can have multiple ones!) type:
 ```{.bash}
 $ git remote -v
 ```
-Previous: [Rebasing](05-rebasing.html) Next: [Pull Requests](07-pull-requests.html)
+Previous: [Rebasing](07-rebasing.html) Next: [Collaborating using a remote
+repository](09-remote-collaboration.html)

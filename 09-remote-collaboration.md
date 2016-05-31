@@ -333,3 +333,4 @@ between them, so no work is ever lost.
 > Person B then gets a merge conflict when they pull. After resolving, their history 
 > is different to person A's history. One commit has a new hash ID, and others are missing.
 
+Previous: [Working from multiple locations](08-remote.html) Next: [Pull Requests](10-pull-requests.html)

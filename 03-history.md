@@ -204,4 +204,4 @@ $ git checkout master
 > For code this might be when it's been submitted to review, or has been
 > released.
 
-Previous: [Setting up a local repository](02-local.html) Next: [Branching](03-branching.html)
+Previous: [Setting up a local repository](02-local.html) Next: [Committing changes](04-commit-advice.html)

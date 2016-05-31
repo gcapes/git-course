@@ -67,4 +67,4 @@ control everyone has their own (local) repository.
 and [GitHub](http://github.com), a web-based service providing remote
 repositories.
 
-Next: [Creating and working with a local repository](02-local.html)
+Next: [Tracking changes using a local repository](02-local.html)

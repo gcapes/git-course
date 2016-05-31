@@ -67,5 +67,5 @@ gives a good illustration of what happens during rebasing.
 > merge and deal with conflicts rather than mess up shared branches using rebase.
 
 
-Previous: [Undoing things](04-undoing.html) Next: [Working with remote
-repository](06-remote.html)
+Previous: [Undoing changes](06-undoing.html) Next: [Working with a remote
+repository](08-remote.html)
