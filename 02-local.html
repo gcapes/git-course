@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="generator" content="pandoc">
-    <title>Software Carpentry: Version control with Git</title>
+    <title>UoM Research IT training: Version control with Git</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
@@ -110,6 +110,9 @@ Changes to be committed:
 <p>Now, our file is now listed as one of some Changes to be committed.</p>
 <p><em>git add</em> is used for two purposes. Firstly, to tell Git that a given file should be tracked. Secondly, to put the file into the Git’s <strong>staging area</strong> which is also known as the index or the cache.</p>
 <p>The staging area can be viewed as a “loading dock”, a place to hold files we’ve added, or changed, until we’re ready to tell Git to record those changes in the repository.</p>
+<div class="figure">
+<img src="fig/git-staging-area.svg" alt="The staging area" /><p class="caption">The staging area</p>
+</div>
 <h4 id="commit-changes">Commit changes</h4>
 <p>In order to tell Git to record our change, our new file, into the repository, we need to <em>commit</em> it:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit</code></pre>
@@ -152,6 +155,9 @@ $ <span class="kw">nano</span> common/references.txt</code></pre>
 <p>and Git will add, then commit, both the directory and the file.</p>
 <p>In order to add all tracked files to the staging area (which may be very useful when you edited, let’s say, 10 files and now you want to commit all of them):</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit -a</code></pre>
+<div class="figure">
+<img src="fig/git-committing.svg" alt="The Git commit workflow" /><p class="caption">The Git commit workflow</p>
+</div>
 <p>Previous: <a href="01-introduction.html">Introduction</a> Next: <a href="03-history.html">Looking at history and differences</a></p>
         </div>
       </div>
