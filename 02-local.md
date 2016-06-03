@@ -20,9 +20,11 @@ We will be working with a simple example in this tutorial. It will be a paper
 that we will first start writing as a single author and then work on it further
 with one of our colleagues. 
 
- First, let's create a directory:
+ First, let's create a directory within your home directory:
 
 ```{.bash}
+$ cd           # Switch to your home directory.
+$ pwd          # Print working directory (output should be /home/<username>)
 $ mkdir papers 
 $ cd papers
 ```
