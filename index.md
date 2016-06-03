@@ -4,7 +4,7 @@ title: Version control with Git
 subtitle: Index
 ---
 
-[Course slides](slides.html)
+[Course slides](http://slides.com/gcapes/git-course-slides#/)
 
 **This course is based on materials by [Software Carpentry](http://www.software-carpentry.org)**
 
