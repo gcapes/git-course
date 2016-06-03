@@ -47,8 +47,10 @@
 <h3 id="setting-up-git">Setting up Git</h3>
 <h4 id="create-a-new-repository-with-git">Create a new repository with Git</h4>
 <p>We will be working with a simple example in this tutorial. It will be a paper that we will first start writing as a single author and then work on it further with one of our colleagues.</p>
-<p>First, let’s create a directory:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> papers 
+<p>First, let’s create a directory within your home directory:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span>           <span class="co"># Switch to your home directory.</span>
+$ <span class="kw">pwd</span>          <span class="co"># Print working directory (output should be /home/&lt;username&gt;)</span>
+$ <span class="kw">mkdir</span> papers 
 $ <span class="kw">cd</span> papers</code></pre>
 <p>Now, we need to set up this directory up to be a Git repository (or “initiate the repository”):</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init </code></pre>
