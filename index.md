@@ -1,9 +1,27 @@
 ---
 layout: page
 title: Version control with Git  
-subtitle: Topics
+subtitle: Index
 ---
 
+[Course slides](slides.html)
+
+**This course is based on materials by [Software Carpentry](http://www.software-carpentry.org)**
+
+You may want to download a copy of the [Git cheat sheet](https://services.github.com/
+kit/downloads/github-git-cheat-sheet.pdf) for reference during this workshop.
+
+> ## Prerequisites {.prereq}
+>
+> In this lesson we use Git from the Unix Shell.
+> Some previous experience with the shell is expected,
+> *but is not mandatory*.
+>
+> You will need a GitHub account for the afternoon session.
+> Please [sign up for an account](https://github.com/) this 
+> morning if you do not already have an account.
+
+## Topics
 01. [Introduction - Why use version control?](01-introduction.html) 
 02. [Setting up and working with a local repository](02-local.html)
 03. [Looking at history and differences](03-history.html)
@@ -16,11 +34,6 @@ subtitle: Topics
 10. [Pull requests](10-pull-requests.html)
 11. [Hints and tips](11-hints-and-tips.html)
 12. [Conclusion](12-conclusion.html)
-
-**This course is based on materials by [Software Carpentry](http://www.software-carpentry.org)**
-
-Please download a copy of the [Git cheat sheet](https://services.github.com/
-kit/downloads/github-git-cheat-sheet.pdf) for reference during this workshop.
 
 ## Agenda
 **09:30 - 12:30** Morning session
@@ -42,10 +55,3 @@ kit/downloads/github-git-cheat-sheet.pdf) for reference during this workshop.
 - Pull requests
 - Hints and tips
 - Conclusion
-
-> ## Prerequisites {.prereq}
->
-> In this lesson we use Git from the Unix Shell.
-> Some previous experience with the shell is expected,
-> *but isn't mandatory*.
-
