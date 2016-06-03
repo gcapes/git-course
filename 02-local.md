@@ -169,6 +169,8 @@ The staging area can be viewed as a "loading dock", a place to hold files we've
 added, or changed, until we're ready to tell Git to record those changes in the
 repository. 
 
+![The staging area](fig/git-staging-area.svg)
+
 #### Commit changes
 
 In order to tell Git to record our change, our new file, into the repository,
@@ -284,6 +286,8 @@ when you edited, let's say, 10 files and now you want to commit all of them):
 ~~~{.bash}
 $ git commit -a
 ~~~
+
+![The Git commit workflow](fig/git-committing.svg)
 
 Previous: [Introduction](01-introduction.html) Next: [Looking at history and differences](03-history.html)
 
