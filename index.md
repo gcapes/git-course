@@ -1,15 +1,8 @@
 ---
 layout: page
 title: Version control with Git  
-subtitle: Index
 ---
-
-[Course slides](http://slides.com/gcapes/git-course-slides#/)
-
 **This course is based on materials by [Software Carpentry](http://www.software-carpentry.org)**
-
-You may want to download a copy of the [Git cheat sheet](https://services.github.com/
-kit/downloads/github-git-cheat-sheet.pdf) for reference during this workshop.
 
 > ## Prerequisites {.prereq}
 >
@@ -20,6 +13,13 @@ kit/downloads/github-git-cheat-sheet.pdf) for reference during this workshop.
 > You will need a GitHub account for the afternoon session.
 > Please [sign up for an account](https://github.com/) this 
 > morning if you do not already have an account.
+
+## Resources
+[Workshop presentation](http://slides.com/gcapes/git-course-slides#/)
+
+[Git cheat sheet](https://services.github.com/
+kit/downloads/github-git-cheat-sheet.pdf) (You may want to download a copy
+of this for reference during this workshop)
 
 ## Topics
 01. [Introduction - Why use version control?](01-introduction.html) 
