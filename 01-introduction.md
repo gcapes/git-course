@@ -15,7 +15,8 @@ preserve the history of changes made to directories and files. If you
 mess things up, you can retrieve an earlier version of your project.
 
 ### Why use a version control system?
-[![Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com](fig/phd101212s.png)](http://www.phdcomics.com)
+
+![[Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com](http://www.phdcomics.com)](fig/phd101212s.png)
 
 The comic above illustrates some of pitfalls of working without version
 control. Some of the benefits are given below:
