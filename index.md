@@ -17,9 +17,8 @@ title: Version control with Git
 ## Resources
 [Workshop presentation](http://slides.com/gcapes/git-course-slides#/)
 
-[Git cheat sheet](https://services.github.com/
-kit/downloads/github-git-cheat-sheet.pdf) (You may want to download a copy
-of this for reference during this workshop)
+[Git cheat sheet](https://services.github.com/kit/downloads/github-git-cheat-sheet.pdf)
+(You may want to download a copy of this for reference during this workshop)
 
 ## Topics
 01. [Introduction - Why use version control?](01-introduction.html) 
