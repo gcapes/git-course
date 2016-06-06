@@ -34,7 +34,7 @@ title: Version control with Git
 11. [Hints and tips](11-hints-and-tips.html)
 12. [Conclusion](12-conclusion.html)
 
-## Agenda
+## Schedule
 **09:30 - 12:30** Morning session
 
 - Introduction to version control
@@ -43,9 +43,9 @@ title: Version control with Git
 - Committing changes
 - Branching, merging, resolving conflicts
 
-**12:00 - 13:00** Lunch
+**12:30 - 13:30** Lunch
 
-**13:00 - 16:30** Afternoon session
+**13:30 - 16:30** Afternoon session
 
 - Undoing changes
 - Rebasing
