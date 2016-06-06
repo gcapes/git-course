@@ -33,7 +33,7 @@
           <h2 class="subtitle">Looking at history and differences</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -45,11 +45,13 @@
 </section>
 <h3 id="looking-at-differences">Looking at differences</h3>
 <p>Let us suppose we’ve made a change to our file and not yet committed it. We can see the changes that we’ve made:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff journal.txt</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff journal.txt</code></pre></div>
 <p>This shows the difference between the latest copy in the repository and the changes we’ve made.</p>
 <ul>
-<li><code>-</code> means a line was deleted.<br /></li>
-<li><code>+</code> means a line was added.<br /></li>
+<li><code>-</code> means a line was deleted.<br />
+</li>
+<li><code>+</code> means a line was added.<br />
+</li>
 <li>Note that a line that has been edited is shown as a removal of the old line and an addition of the updated line.</li>
 </ul>
 <p>Looking at differences between commits is one of the most common activities. The <code>diff</code> command itself has a number of <a href="http://git-scm.com/docs/git-diff.html">useful options</a>.</p>
@@ -63,16 +65,16 @@
 <p>The choice of GUI for viewing differences depends on the context in which you are working and your own preferences related to choosing tools and technologies.</p>
 <h3 id="looking-at-our-history">Looking at our history</h3>
 <p>To see the history of changes that we made to our repository (the most recent changes will be displayed at the top):</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> log</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> log</code></pre></div>
 <p>The output shows: the commit identifier (also called revision number) which uniquely identifies the changes made in this commit, author, date, and your comment. <em>git log</em> command has many options to print information in various ways, for example:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> log --relative-date</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> log --relative-date</code></pre></div>
 <p>Git automatically assigns an identifier (<em>COMMITID</em>) to each commit made to the repository. In order to see the changes made between any earlier commit and our current version, we can use <code>git diff</code> providing the commit identifier of the earlier commit:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff COMMITID</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff COMMITID</code></pre></div>
 <p>And, to see changes between two commits:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff OLDER_COMMITID NEWER_COMMITID</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff OLDER_COMMITID NEWER_COMMITID</code></pre></div>
 <p>Using our commit identifiers we can set our working directory to contain the state of the repository as it was at any commit. So, let’s go back to the very first commit we made,</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> log 
-$ <span class="kw">git</span> checkout COMMITID</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> log 
+$ <span class="kw">git</span> checkout COMMITID</code></pre></div>
 <p>We will get something like this:</p>
 <pre class="output"><code>Note: checking out &#39;21cfbdec&#39;.
 
@@ -90,30 +92,30 @@ HEAD is now at 21cfbde... Initial structure and headings for the journal paper</
 <p>When we checked out one of the past commits HEAD is pointing to that commit but does not point to the same thing as master any more. That is why git says You are in ‘detached HEAD’ state and advises us that if we want to make a commit now, we should create a new branch to retain these commits.</p>
 <p>If we created a new commit without creating a new branch Git would not know what to do with it (since there is already a commit in master branch from the current state which we checked out c4354a…). We will get back to branches and HEAD pointer later in this tutorial.</p>
 <p>If we look at <code>journal.txt</code> we’ll see it’s our very first version. And if we look at our directory,</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre></div>
 <pre class="output"><code>journal.txt</code></pre>
 <p>then we see that our <code>references</code> directory is gone. But, rest easy, while it’s gone from our working directory, it’s still in our repository. We can jump back to the latest commit by doing:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master</code></pre></div>
 <p>And <code>references</code> will be there once more,</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre></div>
 <pre class="output"><code>common journal.txt</code></pre>
 <p>So we can get any version of our files from any point in time. In other words, we can set up our working directory back to any stage it was when we made a commit.</p>
 <h3 id="using-tags-as-nicknames-for-commit-identifiers">Using tags as nicknames for commit identifiers</h3>
 <p>Commit identifiers are long and cryptic. Git allows us to create tags, which act as easy-to-remember nicknames for commit identifiers.</p>
 <p>For example,</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> tag PAPER_STUB</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> tag PAPER_STUB</code></pre></div>
 <p>We can list tags by doing:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> tag</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> tag</code></pre></div>
 <p>Now if we change our file,</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add journal.txt 
-$ <span class="kw">git</span> commit -m <span class="st">&quot;...&quot;</span> journal.txt</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add journal.txt 
+$ <span class="kw">git</span> commit -m <span class="st">&quot;...&quot;</span> journal.txt</code></pre></div>
 <p>We can checkout our previous version using our tag instead of a commit identifier.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout PAPER_STUB</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout PAPER_STUB</code></pre></div>
 <p>And return to the latest checkout,</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master</code></pre></div>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pushpin"></span>Top tip: tag significant events</h2>
+<h2 id="top-tip-tag-significant-events"><span class="glyphicon glyphicon-pushpin"></span>Top tip: tag significant events</h2>
 </div>
 <div class="panel-body">
 <p>When do you tag? Well, whenever you might want to get back to the exact version you’ve been working on. For a paper, this might be a version that has been submitted to an internal review, or has been submitted to a conference. For code this might be when it’s been submitted to review, or has been released.</p>
@@ -121,7 +123,7 @@ $ <span class="kw">git</span> commit -m <span class="st">&quot;...&quot;</span> 
 </aside>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span>Exercise: “bio” Repository</h2>
+<h2 id="exercise-bio-repository"><span class="glyphicon glyphicon-pencil"></span>Exercise: “bio” Repository</h2>
 </div>
 <div class="panel-body">
 <ul>

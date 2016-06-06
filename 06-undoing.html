@@ -33,7 +33,7 @@
           <h2 class="subtitle">Undoing changes</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -47,17 +47,17 @@
 <p>There are a number of things which we can amend and change after they have been commited in Git.</p>
 <h3 id="discarding-local-changes">Discarding local changes</h3>
 <p>Maybe we made our change just to see how something looks, or to quickly try something out. But we may be unhappy with our changes. If we haven’t get done a <code>git add</code> we can just throw the changes away and return our file to the most recent version we committed to the repository by using:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout journal.txt</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout journal.txt</code></pre></div>
 <p>and we can see that our file has <em>reverted</em> to being the most up-to-date one in the repository:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre></div>
 <hr />
 <h3 id="amending-the-most-recent-commit">Amending the most recent commit</h3>
 <p>If you just made a commit and realised that either you did it a bit too early and the files are not yet ready to be commited. Or, which is not as uncommon as you think, your commit message is not as it is supposed to be. You can fix that using the command:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit --amend</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit --amend</code></pre></div>
 <p>This opens up the default editor for Git which includes the previous commit message - you can edit it and close the editor. This will simply fix the commit message.</p>
 <p>But what if we forgot to include some files in the commit?</p>
 <p>Let’s try it on our example. First, let’s modify two files: our paper file and the references file. We should get something like this:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status </code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status </code></pre></div>
 <pre class="output"><code>$ On branch master 
 Changes not staged for commit:
   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
@@ -68,10 +68,10 @@ Changes not staged for commit:
 
 no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</code></pre>
 <p>Let’s then add and commit <code>journal.txt</code> but not the references file.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add journal.tex 
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Adding paper but not the references&quot;</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add journal.tex 
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Adding paper but not the references&quot;</span></code></pre></div>
 <p>Let’s have a look what’s up with our working directory now:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre></div>
 <pre class="output"><code>$ On branch master 
 Changes not staged for commit: 
   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed) 
@@ -82,8 +82,8 @@ Changes not staged for commit:
 no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</code></pre>
 <p>Also, run <code>git log</code> to see what is the latest commit message and ID.</p>
 <p>Now, we want to fix our commit and add the references file.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add common/references.txt 
-$ <span class="kw">git</span> commit --amend</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add common/references.txt 
+$ <span class="kw">git</span> commit --amend</code></pre></div>
 <p>This will again bring up the editor and we can amend the commit message if required.</p>
 <p>Now when we run <code>git status</code> and then <code>git log</code> we can see that our Working Directory is clean and that both files were added.</p>
 <hr />
@@ -92,7 +92,7 @@ $ <span class="kw">git</span> commit --amend</code></pre>
 <p>We are going to use a variant <code>git reset --hard &lt;commit&gt;</code> to reset things to how they were at <code>&lt;commit&gt;</code>. This is a permanent undo which deletes all changes more recent than <code>&lt;commit&gt;</code> from your history. There is clearly potential here to lose work, so use this command with care.</p>
 <p>Let’s try it on our example. Modify the journal and then make a commit. We now realise that what we’ve just done in our journal file makes no sense and decide to abandon the commit completely.</p>
 <p>We can do that by running:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> reset --hard HEAD^</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> reset --hard HEAD^</code></pre></div>
 <p>This moves the tip of the branch back to a previous commit. If we look in-depth, this command moves back 2 pointers: <code>HEAD</code> and the pointer to the tip of the branch we currently are working on. (<code>HEAD^</code> = the commit right before HEAD; <code>HEAD^^</code> = two commits before HEAD)</p>
 <p>The final effect is what we need: we abandoned the commit and we are now back to where we were before making the nonsense commit.</p>
 <p><a href="http://git-scm.com/2011/07/11/reset.html">This article</a> discusses more in depth <code>git reset</code> showing the differences between the three options:</p>
@@ -103,7 +103,7 @@ $ <span class="kw">git</span> commit --amend</code></pre>
 </ul>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h1><span class="glyphicon glyphicon-pushpin"></span>Top tip: do not use <code>git reset</code> with remote branches</h1>
+<h1 id="top-tip-do-not-use-git-reset-with-remote-branches"><span class="glyphicon glyphicon-pushpin"></span>Top tip: do not use <code>git reset</code> with remote branches</h1>
 </div>
 <div class="panel-body">
 <p>There is one important thing to remember about the <code>reset</code> command - it should only be used with branches that have not been shared yet (that is they haven’t been pushed into a remote repository that others are using). Resetting is changing the history <strong>without</strong> leaving trace. This is always a bad practice when using remote repositories and can lead to a horrible mess.</p>
@@ -114,7 +114,7 @@ $ <span class="kw">git</span> commit --amend</code></pre>
 <h3 id="git-revert-undo-changes-associated-with-a-commit"><code>git revert</code> (undo changes associated with a commit)</h3>
 <p><code>git revert</code> removes the changes applied in a specified commit. However, rather than deleting the commit from history, git works out how to undo those changes introduced by the commit, and appends a new commit with the resulting content.</p>
 <p>Let’s try that on our example.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> revert HEAD^</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> revert HEAD^</code></pre></div>
 <p>When we revert, a new commit is created. The <code>HEAD</code> pointer and the branch pointer are in fact moved forward rather than backwards.</p>
 <p>We can revert any previous commit. That is, we can “abandon” any of the previous changes. However, depending on the changes we made, we may bump into a <em>conflict</em> (which we will cover in more detail further on).</p>
 <pre class="output"><code>error: could not revert 848361e... Adds a reference to reference section
