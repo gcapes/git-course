@@ -194,4 +194,7 @@ See this [Atlassian online tutorial](
 https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting/commit-level-operations)
 for further reading about the differences between `revert` and `reset`.
 
+### How to undo almost anything with Git
+See [this blog post](https://github.com/blog/2019-how-to-undo-almost-anything-with-git) for more example scenarios and how to recover from them.
+
 Previous: [Branching, merging and resolving conflicts](05-branching.html) Next: [Rebasing](07-rebasing.html)
