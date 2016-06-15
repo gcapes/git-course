@@ -124,6 +124,8 @@ hint: and commit the result with &#39;git commit&#39;</code></pre>
 <p>Behind the scenes Git gets confused trying to merge the commit <code>HEAD</code> is pointing to wth the past commit we’re reverting.</p>
 <p>Reverting thus records the fact of “abandoning the commit” in the history. When we revert in a branch that is shared with others and then push that branch into the remote repository, it is as if we “came clean” about what we were doing. Everyone who pulls the branch in which we reverted changes will see it. With <code>reset</code> we “keep it secret” that we have undone some changes.</p>
 <p>See this <a href="https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting/commit-level-operations">Atlassian online tutorial</a> for further reading about the differences between <code>revert</code> and <code>reset</code>.</p>
+<h3 id="how-to-undo-almost-anything-with-git">How to undo almost anything with Git</h3>
+<p>See <a href="https://github.com/blog/2019-how-to-undo-almost-anything-with-git">this blog post</a> for more example scenarios and how to recover from them.</p>
 <p>Previous: <a href="05-branching.html">Branching, merging and resolving conflicts</a> Next: <a href="07-rebasing.html">Rebasing</a></p>
         </div>
       </div>
