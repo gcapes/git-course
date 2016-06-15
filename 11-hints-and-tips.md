@@ -136,7 +136,7 @@ a step-by-step tutorial on how to remove completely files from your repository
 
 Removing files from the repository may be useful not only when the files
 contain sensitive data. Another case may be if you commited a large file in
-your local repository. Essentially, by deafult, there are no limitations on the
+your local repository. Essentially, by default, there are no limitations on the
 size of files you can commit. However, there may be (and quite likely there
 will be) limits on the size of the files you can push to remote repositories
 (GitHub allows for max 100MB). You may encounter an annoying situation when you
