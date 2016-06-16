@@ -23,6 +23,9 @@ branch since you started working on a feature branch, you have a 3-way merge
 (common ancestor, HEAD and MERGE_HEAD) and a merge commit. If you rebase, a fast-
 forward merge results and you have a nice clean linear history.
 
+
+![Visual illustration of rebasing - image taken from [https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)](fig/git-rebase.svg)
+
 ### A worked example using `git rebase <base>` 
 
 Let's start first with checking out our master branch:
