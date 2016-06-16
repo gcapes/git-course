@@ -69,6 +69,10 @@ gives a good illustration of what happens during rebasing.
 > conflicts in the long run. But again, it is considered a better practice to use
 > merge and deal with conflicts rather than mess up shared branches using rebase.
 
+## Interactive rebasing
+`git rebase -i` will open an interactive rebasing session. This provides an opportunity
+to edit, delete, combine, and reorder individual commits as they are moved onto the new
+base commit. This can be useful for cleaning up history before sharing it with others.
 
 Previous: [Undoing changes](06-undoing.html) Next: [Working with a remote
 repository](08-remote.html)
