@@ -17,9 +17,8 @@ title: Version control with Git
 ## Resources
 [Workshop presentation](http://slides.com/gcapes/git-course-slides#/)
 
-[Git cheat sheet](https://services.github.com/
-kit/downloads/github-git-cheat-sheet.pdf) (You may want to download a copy
-of this for reference during this workshop)
+[Git cheat sheet](https://services.github.com/kit/downloads/github-git-cheat-sheet.pdf)
+(You may want to download a copy of this for reference during this workshop)
 
 ## Topics
 01. [Introduction - Why use version control?](01-introduction.html) 
@@ -35,7 +34,7 @@ of this for reference during this workshop)
 11. [Hints and tips](11-hints-and-tips.html)
 12. [Conclusion](12-conclusion.html)
 
-## Agenda
+## Schedule
 **09:30 - 12:30** Morning session
 
 - Introduction to version control
@@ -44,9 +43,9 @@ of this for reference during this workshop)
 - Committing changes
 - Branching, merging, resolving conflicts
 
-**12:00 - 13:00** Lunch
+**12:30 - 13:30** Lunch
 
-**13:00 - 16:30** Afternoon session
+**13:30 - 16:30** Afternoon session
 
 - Undoing changes
 - Rebasing

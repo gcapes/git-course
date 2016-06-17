@@ -33,7 +33,7 @@
           <h2 class="subtitle">Branching</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -45,7 +45,7 @@
 </section>
 <h3 id="what-is-a-branch">What is a branch?</h3>
 <p>You might have noticed the term <code>branch</code> in status messages:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status journal.txt </code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status journal.txt </code></pre></div>
 <pre class="output"><code>On branch master 
 nothing to commit (working directory clean)</code></pre>
 <p>and when we wanted to get back to our most recent version of the repository, we used <code>git checkout master</code>.</p>
@@ -92,28 +92,28 @@ c5---c11---c12---c14---c19                       kate</code></pre>
 <p>One of the examples may be when the master branch holds stable and tested code. If a bug is found by a user, a bug fix can be applied to the release branch, and then merged with the master branch. When a feature or developer-specific branch, is stable and has been reviewed and tested it can be merged with the master branch. When the master branch has been reviewed and tested and is ready for release, a new release branch can be created from it. If you want to learn more about workflows with Git, have a look at the <a href="http://astropy.readthedocs.org/en/latest/development/workflow/development_workflow.html">AstroPy development workflow</a>.</p>
 <h3 id="branching-in-practice">Branching in practice</h3>
 <p>One of our colleagues wants to contribute to the paper but is not quite sure if it will actually make a publication. So it will be safer to create a branch and carry on working on this “experimental” version of the paper in a branch rather than in the master.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout -b paperWJohn 
-<span class="kw">Switched</span> to a new branch <span class="st">&#39;paperWJohn&#39;</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout -b paperWJohn 
+<span class="kw">Switched</span> to a new branch <span class="st">&#39;paperWJohn&#39;</span></code></pre></div>
 <p>Now let’s change the title of our paper and the authors (adding John Smith). Let’s commit our changes. Before we do that, it’s a good practice to check whether we’re working in the correct branch.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> branch </code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> branch </code></pre></div>
 <pre class="output"><code>  master
 * paperWJohn </code></pre>
 <p>The * indicates which branch we’re currently in. Let’s commit. If we want to work now in our master branch. We can switch by using:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master </code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master </code></pre></div>
 <pre class="output"><code>Switched to branch &#39;master&#39;</code></pre>
 <h3 id="merging-and-resolving-conflicts">Merging and resolving conflicts</h3>
 <p>We are now working on two papers. Our main one in our master branch and the one which may possibly be collaborative work in our “paperWJohn” branch. Let’s suppose that we have a new idea for the title for our main paper. We can change it in our master branch. Let’s do it and commit changes.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> journal.txt ......  
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> journal.txt ......  
 $ <span class="kw">git</span> add journal.txt 
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Rewrote the title&quot;</span> journal.txt</code></pre>
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Rewrote the title&quot;</span> journal.txt</code></pre></div>
 <p>After some discussions with John we decided that there is going to be a major change to our plan. We will publish together. And hence it makes sense now to merge all that was authored together with John in branch “paperWJohn”.</p>
 <p>We can do that by <em>merging</em> that branch with the master branch. Let’s try doing that:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> merge paperWJohn </code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> merge paperWJohn </code></pre></div>
 <pre class="output"><code>Auto-merging journal.txt
 CONFLICT (content): Merge conflict in journal.txt
 Automatic merge failed; fix conflicts and then commit the result.</code></pre>
 <p>Git cannot complete the merge because there is a conflict - if you recall, journal.txt differs in the same places (lines) in the master and the paperWJohn branch. We have to resolve the conflict and then complete the merge. We can get some more detail</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre></div>
 <pre class="output"><code>On branch master
 You have unmerged paths.
   (fix conflicts and run &quot;git commit&quot;)
@@ -136,15 +136,15 @@ Some interesting development in science
 <li>Or manually edit the line to something new which might combine some elements of the two e.g. “Collaborative scientific developments and discoveries”</li>
 </ul>
 <p>We edit the file. Then commit our changes:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add journal.txt 
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Resolves conflict in journal.txt by rewriting title&quot;</span> </code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add journal.txt 
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Resolves conflict in journal.txt by rewriting title&quot;</span> </code></pre></div>
 <p>This is where version control proves itself better than DropBox or GoogleDrive, this ability to merge text files line-by-line and highlight the conflicts between them, so no work is ever lost.</p>
 <h3 id="looking-at-our-history---revisited">Looking at our history - revisited</h3>
 <p>We already looked at “going back in time with Git”. But now we’ll look at it in more detail to see how moving back relates to branches and we will learn how to actually undo things. So far we were moving back in time in one branch by checking out one of the past commits.</p>
 <p>But we were then in the “detached HEAD” state.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h3><span class="glyphicon glyphicon-pencil"></span>Exercise</h3>
+<h3 id="exercise"><span class="glyphicon glyphicon-pencil"></span>Exercise</h3>
 </div>
 <div class="panel-body">
 <p>1a. Add a commit to detached HEAD</p>
