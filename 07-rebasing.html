@@ -33,7 +33,7 @@
           <h2 class="subtitle">Rebasing</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -47,26 +47,32 @@
 <p>Rebasing is the process of moving a branch to a new base commit. Git does this by creating new commits and applying them to the specified base. As such, your history is rewritten when you rebase.</p>
 <p>When working on a feature branch, you have two options for integrating your changes into the master branch: merging directly or rebasing then merging.</p>
 <p>The main reason you might want to rebase is to maintain a linear project history. For example if you merge directly and there have been new commits on the master branch since you started working on a feature branch, you have a 3-way merge (common ancestor, HEAD and MERGE_HEAD) and a merge commit. If you rebase, a fast- forward merge results and you have a nice clean linear history.</p>
+<div class="figure">
+<img src="fig/git-rebase.svg" alt="Visual illustration of rebasing - image taken from https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase" />
+<p class="caption">Visual illustration of rebasing - image taken from <a href="https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase" class="uri">https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase</a></p>
+</div>
 <h3 id="a-worked-example-using-git-rebase-base">A worked example using <code>git rebase &lt;base&gt;</code></h3>
 <p>Let’s start first with checking out our master branch:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master</code></pre></div>
 <p>Now create and checkout a new branch.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout -b workshopPaper</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout -b workshopPaper</code></pre></div>
 <p>Make some changes to the files and commit them.</p>
 <p>Checkout master branch and make some changes in it as well. Commit them.</p>
 <p>Now check out back our “workshopPaper” branch and run:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> rebase master</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> rebase master</code></pre></div>
 <p>Run <code>git log</code> - you will see that rebasing created a new commit and put it on top of the commit pointed at by ‘master’.</p>
 <p>This <a href="https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase">online tutorial</a> gives a good illustration of what happens during rebasing.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h1><span class="glyphicon glyphicon-pushpin"></span>Warning: the perils of rebasing</h1>
+<h1 id="warning-the-perils-of-rebasing"><span class="glyphicon glyphicon-pushpin"></span>Warning: the perils of rebasing</h1>
 </div>
 <div class="panel-body">
 <p>The main rule is: <strong>do not rebase branches shared with other contributors</strong>. Rebasing changes history and as with practically any Git command which changes history, it should be used with care.</p>
 <p>The branches that are pushed to remote repositories should always be merged. For your local branches that you never share, you may use rebasing. Rebasing is convenient if you want to keep a clean history. It also helps to avoid conflicts in the long run. But again, it is considered a better practice to use merge and deal with conflicts rather than mess up shared branches using rebase.</p>
 </div>
 </aside>
+<h2 id="interactive-rebasing">Interactive rebasing</h2>
+<p><code>git rebase -i</code> will open an interactive rebasing session. This provides an opportunity to edit, delete, combine, and reorder individual commits as they are moved onto the new base commit. This can be useful for cleaning up history before sharing it with others.</p>
 <p>Previous: <a href="06-undoing.html">Undoing changes</a> Next: <a href="08-remote.html">Working with a remote repository</a></p>
         </div>
       </div>
