@@ -52,7 +52,7 @@ some changes, commit these and push these to GitHub:
 $ cd papers 
 $ nano journal.txt 
 $ git add journal.txt 
-$ git commit -m "Adds some more comments" 
+$ git commit -m "Add some more comments" 
 $ git push
 ```
 
@@ -93,7 +93,7 @@ As a short-hand, we can do a Git *pull* which does a *fetch* then a *merge*,
 ```{.bash}    
 $ nano journal.txt 
 $ git add journal.txt 
-$ git commit -m "Adds acknowledgements" journal.txt 
+$ git commit -m "Add acknowledgements" journal.txt 
 $ git push origin master
 $ cd ..  
 $ cd ../papers 
@@ -116,7 +116,7 @@ GitHub:
 ```{.bash}    
 $ nano journal.txt 
 $ git add journal.txt 
-$ git commit -m "Credits - added our names" journal.txt 
+$ git commit -m "Add credits - adds our names" journal.txt 
 $ git push origin master
 ```
 
@@ -127,7 +127,7 @@ to change the credits.
 $ cd ../papers2 
 $ nano journal.txt 
 $ git add journal.txt 
-$ git commit -m "Changed the first author" journal.txt 
+$ git commit -m "Change the first author" journal.txt 
 $ git push origin master
 ```
 ```{.output}

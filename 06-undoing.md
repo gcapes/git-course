@@ -71,7 +71,7 @@ Let's then add and commit `journal.txt` but not the references file.
 
 ```{.bash}
 $ git add journal.tex 
-$ git commit -m "Adding paper but not the references"
+$ git commit -m "Adds paper but not the references"
 ```
 	
 Let's have a look what's up with our working directory now:
