@@ -135,11 +135,15 @@ journal.txt
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 
-Information about what Git knows about the directory is displayed. For now, the
-important bit of information is that our file is listed as Untracked which
-means it's in our working directory but Git is not tracking it - that is, any
-changes made to this file will not be recorded by Git. 
+Information about what Git knows about the directory is displayed. We are on
+the **master** branch, which is the default branch in a Git respository
+(one way to think of branches is like parallel versions of the project - more
+on branches later).
 
+For now, the important bit of information is that our file is listed as
+**Untracked** which means it's in our working directory but Git is not
+tracking it - that is, any changes made to this file will not be recorded by
+Git.
 
 #### Add files to a Git repository
 To tell Git about the file, we will use the *add* command:
