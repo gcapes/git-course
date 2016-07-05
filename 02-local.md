@@ -280,7 +280,7 @@ journal.txt to the staging area. But there is a shortcut. We can use option
 that have been modified".
 
 ~~~{.bash}
-$ git commit -am "Adds common directory and references file"
+$ git commit -am "Add common directory and references file"
 ~~~
 and Git will add, then commit, both the directory and the file.
 
