@@ -251,6 +251,7 @@ But we were then in the "detached HEAD" state.
 > - Create a new branch and check it out.
 > - What happened?
 > - Now commit the file to the new branch
+> - Switch back to (i.e. checkout) the master branch 
 
 Previous: [Committing changes](04-commit-advice.html) Next: [Undoing
 changes](06-undoing.html)
