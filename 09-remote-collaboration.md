@@ -50,7 +50,7 @@ some changes, commit these and push these to GitHub:
 
 ```{.bash}    
 $ cd papers 
-$ nano journal.txt 
+$ gedit journal.txt 
 $ git add journal.txt 
 $ git commit -m "Add some more comments" 
 $ git push
@@ -91,7 +91,7 @@ $ git log
 As a short-hand, we can do a Git *pull* which does a *fetch* then a *merge*,
 
 ```{.bash}    
-$ nano journal.txt 
+$ gedit journal.txt 
 $ git add journal.txt 
 $ git commit -m "Add acknowledgements" journal.txt 
 $ git push origin master
@@ -114,7 +114,7 @@ on two different machines, and make some changes to our file, and push these to
 GitHub:
 
 ```{.bash}    
-$ nano journal.txt 
+$ gedit journal.txt 
 $ git add journal.txt 
 $ git commit -m "Add credits - adds our names" journal.txt 
 $ git push origin master
@@ -125,7 +125,7 @@ to change the credits.
 
 ```{.bash}    
 $ cd ../papers2 
-$ nano journal.txt 
+$ gedit journal.txt 
 $ git add journal.txt 
 $ git commit -m "Change the first author" journal.txt 
 $ git push origin master

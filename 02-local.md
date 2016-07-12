@@ -72,10 +72,10 @@ tell Git which editor we want to be the default one (i.e. Git will always bring
 it up whenever it wants us to provide some information).
 
 You can choose any available in you system editor. For the purpose of this
-session we'll use *nano*:
+session we'll use *gedit*:
 
 ~~~{.bash}
-$ git config --global core.editor nano
+$ git config --global core.editor gedit
 ~~~
 
 To set up vi as the default editor:
@@ -99,7 +99,7 @@ directory, we'll see a `.gitconfig` file,
 ~~~{.bash}
 $ cat ~/.gitconfig 
     [user] name = Your Name email = yourname@yourplace.org
-    [core] editor = nano
+    [core] editor = gedit
 ~~~
 
 This file holds global configuration that is applied to any Git repository in
@@ -112,7 +112,7 @@ your file system.
 Now, we'll create a file. Let's say we're going to write a journal paper:
 
 ~~~{.bash}
-$ nano journal.txt
+$ gedit journal.txt
 ~~~
 
 and add headings for Title, Author, Introduction, Conclusion and References,
@@ -263,7 +263,7 @@ want to reuse:
 
 ~~~{.bash}
 $ mkdir common 
-$ nano common/references.txt
+$ gedit common/references.txt
 ~~~    
 We will also add a few lines to our paper (journal.txt). Now we need to record
 our work in the repository so we need to make a commit.  First we tell Git to

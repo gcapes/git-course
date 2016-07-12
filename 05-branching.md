@@ -155,7 +155,7 @@ suppose that we have a new idea for the title for our main paper. We can change
 it in our master branch. Let's do it and commit changes.
 
 ~~~{.bash}
-$ nano journal.txt ......  
+$ gedit journal.txt ......  
 $ git add journal.txt 
 $ git commit -m "Rewrote the title" journal.txt
 ~~~

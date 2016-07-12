@@ -58,7 +58,7 @@ these to `.gitignore` means Git won't complain about them being untracked.
 Create or edit `gitignore`,
 
 ```{.bash}
-$ nano .gitignore
+$ gedit .gitignore
 ```
 
 Then add patterns for the files you want to ignore, where `*` is a wildcard,
@@ -93,7 +93,7 @@ $ cat ~/.gitconfig
 ```
 ```{.output}
 [user] name = Your Name email = yourname@yourplace.org 
-[core] editor = nano
+[core] editor = gedit
 ```
      	
 You can add more configuration options. For example, instead of typing `git
