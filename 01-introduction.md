@@ -106,10 +106,17 @@ any kind of text[^1] file:
 - Data files
 - User documentation, manuals, and journal papers,  whether they be plain-text,
 LaTeX, XML, md etc
+- Have a look at some of the projects on [GitHub](https://github.com/explore)
 
-For this session, we'll be using Git, a popular version control system
+For this session, we'll be using Git, a popular distributed version control system
 and [GitHub](http://github.com), a web-based service providing remote
-repositories.
+repositories. *Distributed* means that each user has a complete copy of
+the repository on their computer and can commit changes offline. If you 
+have used a centralized version control system before e.g. Subversion,
+this will be one of the major differences to how you are used to working.
+See [here](https://git.wiki.kernel.org/index.php/GitSvnComparsion) for a more 
+detailed comparison of Git and Subversion.
+
 
 Next: [Tracking changes using a local repository](02-local.html)
 
