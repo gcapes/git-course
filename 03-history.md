@@ -109,23 +109,8 @@ do so (now or later) by using -b with the checkout command again. Example:
 HEAD is now at 21cfbde... Initial structure and headings for the journal paper
 ~~~
 
-*HEAD* is essentially a pointer which points to the branch where you currently
-are. We said previously that *master* is the default branch. But *master* is
-actually a pointer - that points to the tip of the master branch (the sequence
-of commits that is created by default by Git). You may think of *master* as two
-things: one as a pointer and one as the default branch. 
-
-When we checked out one of the past commits HEAD is pointing to that commit but
-does not point to the same thing as master any more. That is why git says You
-are in 'detached HEAD' state and advises us that if we want to make a commit
-now, we should create a new branch to retain these commits. 
-
-If we created a new commit without creating a new branch Git would not know
-what to do with it (since there is already a commit in master branch from the
-current state which we checked out c4354a...). We will get back to branches and
-HEAD pointer later in this tutorial. 
-
-
+This strange concept of the 'detached HEAD' is covered in the next section ...
+just bear with me for now!
 
 If we look at `journal.txt` we'll see it's our very first version. And if we
 look at our directory,
@@ -158,6 +143,29 @@ So we can get any version of our files from any point in time. In other words,
 we can set up our working directory back to any stage it was when we made
 a commit.
 
+### The *HEAD* and *master* pointers
+
+*HEAD* is essentially a pointer which points to the branch at the commit where
+you currently are. 
+We said previously that *master* is the default branch. But *master* is
+actually a pointer - that points to the tip of the master branch (the sequence
+of commits that is created by default by Git). You may think of *master* as two
+things: one as a pointer and one as the default branch. 
+
+Before we checked out one of the past commits, the *HEAD* pointer was pointing to
+*master* i.e. the most recent commit of the master branch. 
+After checking out one of the past commits, *HEAD* was pointing to that commit i.e.
+not pointing to master any more. 
+That is what Git means by a 'detached HEAD' state and advises us that if we want to make a commit
+now, we should create a new branch to retain these commits. 
+
+![Checking out a previous commit - detached head](fig/detached_head.svg)
+
+If we created a new commit without first creating a new branch, i.e. working from
+the 'detached HEAD' these commits would not overwrite any of our existing work,
+but they would not belong to any branch. In order to save this work, we would need
+to checkout a new branch. To discard any changes we make from the detached HEAD
+state, we can just checkout master again.
 
 ### Using tags as nicknames for commit identifiers
 
