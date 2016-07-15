@@ -188,7 +188,8 @@ When we revert in a branch that is shared with others and then push that branch
 into the remote repository, it is as if we "came clean" about what we were
 doing. Everyone who pulls the branch in which we reverted changes will see it.
 With `reset` we "keep it secret" that we have undone some changes.
-	
+
+![Reset vs revert](fig/git-revert-vs-reset.svg)
 
 See this [Atlassian online tutorial](
 https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting/commit-level-operations)
