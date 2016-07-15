@@ -71,7 +71,7 @@ information. In order to enter this information we need an editor. We'll now
 tell Git which editor we want to be the default one (i.e. Git will always bring
 it up whenever it wants us to provide some information).
 
-You can choose any available in you system editor. For the purpose of this
+You can choose any editor available on your system. For the purpose of this
 session we'll use *gedit*:
 
 ~~~{.bash}
