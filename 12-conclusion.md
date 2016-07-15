@@ -39,6 +39,7 @@ understand who changed what, when, and why.
 
 ### Find out more...
 
+* [Download](https://git-scm.com/downloads) and install Git on your own computer (it's free!)
 * [Atlassian Git tutorials](https://www.atlassian.com/git/tutorials/) (an
 excellent resource with clear explanations and illustrations)
 * K. Ram  (2013) "git can facilitate greater reproducibility and increased
