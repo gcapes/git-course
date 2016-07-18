@@ -120,14 +120,14 @@ your file system.
 
 ### Tracking files with a git repository
 
-Now, we'll create a file. Let's say we're going to write a journal paper:
+Now, we'll create a file. Let's say we're going to write a journal paper, so
+we will start by adding the author names and a title, then save the file.
 
 ~~~{.bash}
 $ gedit journal.txt
 ~~~
 
-and add headings for Title, Author, Introduction, Conclusion and References,
-and save the file. git status allows us to find out about the current status
+`git status` allows us to find out about the current status
 of files in the repository. So we can run,
 
 ~~~{.bash}
@@ -152,12 +152,12 @@ the **master** branch, which is the default branch in a Git respository
 on branches later).
 
 For now, the important bit of information is that our file is listed as
-**Untracked** which means it's in our working directory but Git is not
+**Untracked** which means it is in our working directory but Git is not
 tracking it - that is, any changes made to this file will not be recorded by
 Git.
 
 #### Add files to a Git repository
-To tell Git about the file, we will use the *add* command:
+To tell Git about the file, we will use the `git add` command:
 
 ~~~{.bash}
 $ git add journal.txt 
@@ -176,12 +176,12 @@ Changes to be committed:
 
 Now, our file is now listed as one of some Changes to be committed. 
     
-*git add* is used for two purposes. Firstly, to tell Git that a given file
-should be tracked. Secondly, to put the file into the Git's **staging area**
+`git add` is used for two purposes. Firstly, to tell Git that a given file
+should be tracked. Secondly, to put the file into the Git **staging area**
 which is also known as the index or the cache. 
 
-The staging area can be viewed as a "loading dock", a place to hold files we've
-added, or changed, until we're ready to tell Git to record those changes in the
+The staging area can be viewed as a "loading dock", a place to hold files we have
+added, or changed, until we are ready to tell Git to record those changes in the
 repository. 
 
 ![The staging area](fig/git-staging-area.svg)
@@ -196,21 +196,21 @@ $ git commit
 ~~~
 
 Our default editor will now pop up. Why? Well, Git can automatically figure out
-that directories and files are committed, and who by (thanks to the information
+that directories and files are committed, and by whom (thanks to the information
 we provided before) and even, what changes were made, but it cannot figure out
-why. So we need to provide this in a commit message. So let's type in
-a message. "Initial structure and headings for the journal paper" 
+why. So we need to provide this in a commit message. So we need to type in
+a message: "Add title and authors"
 
 If we save our commit message, Git will now commit our file.
 
 ~~~{.output}
-[master (root-commit) 21cfbde] Add initial structure and headings
-1 file changed, 9 insertions(+)
+[master (root-commit) 21cfbde] 
+1 file changed, 9 insertions(+) Add title and authors
 create mode 100644 journal.txt
 ~~~
 
 This output shows the number of files changed and the number of lines inserted
-or deleted across all those files. Here, we've changed (by adding) 1 file and
+or deleted across all those files. Here, we have changed (by adding) 1 file and
 inserted 9 lines.
 
 Now, if we look at its status,
@@ -226,8 +226,8 @@ nothing to commit, working directory clean
 Nothing to commit means that our file is now in the repository, our working
 directory is up-to-date and we have no uncommitted changes in our staging area. 
 
-Let's work a bit further on our `journal.txt` file adding a few lines to
-different sections.
+No we will work a bit further on our `journal.txt` file by writing the introduction
+section.
    
 If we now run,
 
@@ -267,7 +267,7 @@ It can sometimes be quicker to provide our commit messages at the command-line
 by doing:
 
 ~~~{.bash}
-$ git commit -m "Add notes on what to include in introduction"
+$ git commit -m "Write introduction section"
 ~~~    
 Let's add a directory *common* and a file *references.txt* for references we may
 want to reuse:
@@ -276,8 +276,9 @@ want to reuse:
 $ mkdir common 
 $ gedit common/references.txt
 ~~~    
-We will also add a few lines to our paper (journal.txt). Now we need to record
-our work in the repository so we neeadding d to make a commit.  First we tell Git to
+
+We will also add a citation in our paper (journal.txt). Now we need to record
+our work in the repository so we need to make a commit.  First we tell Git to
 track the references. We can actually tell Git to track everything in the given
 subdirectory:
 

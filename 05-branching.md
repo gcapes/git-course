@@ -157,10 +157,10 @@ it in our master branch. Let's do it and commit changes.
 ~~~{.bash}
 $ gedit journal.txt ......  
 $ git add journal.txt 
-$ git commit -m "Rewrote the title" journal.txt
+$ git commit -m "Change title" journal.txt
 ~~~
 
-After some discussions with John we decided that there is going to be a major
+After some discussions with John we decided that there is going to be a 
 change to our plan. We will publish together. And hence it makes sense now to
 merge all that was authored together with John in branch "paperWJohn". 
 
@@ -200,9 +200,9 @@ Let's look inside journal.txt:
 ```
 title
 <<<<<<< HEAD
-My solo discovery of something scientifically interesting
+Laboratory measurements of atmospheric particle formation
 =======
-Some interesting development in science
+Simulations of atmospheric particle formation
 >>>>>>> paperwjohn
 ```
 
@@ -211,17 +211,19 @@ versions they come from. We now need to manually edit the file to resolve the
 conflict. This means removing the mark-up and doing one of:
 
 - Keep the local version, which, here, is the one marked-up by HEAD i.e.
-"My solo discovery of something scientifically interesting"
+"Laboratory measurements of atmospheric particle formation"
+
 - Keep the remote version, which, here, is the one marked-up by paperWJohn
-i.e. "Some interesting development in science"
+i.e. "Simulations of atmospheric particle formation"
+
 - Or manually edit the line to something new which might combine some elements
-of the two e.g. "Collaborative scientific developments and discoveries"
+of the two e.g. "Measurement-model comparison of atmospheric particle formation in laboratory experiements"
 
 We edit the file. Then commit our changes:
 
 ~~~{.bash}
 $ git add journal.txt 
-$ git commit -m "Resolves conflict in journal.txt by rewriting title" 
+$ git commit -m "Rewrite title to incorporate simulations"
 ~~~
 
 This is where version control proves itself better than DropBox or GoogleDrive,

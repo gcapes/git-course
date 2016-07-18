@@ -50,7 +50,11 @@ message.
 But what if we forgot to include some files in the commit?
 
 Let's try it on our example. First, let's modify two files: our paper file and
-the references file. We should get something like this:
+the references file. We will add a methodology section to the paper where we
+detail the instrumentation used, and add a reference for this to the references
+file.
+
+We should get something like this:
 	
 ```{.bash}
 $ git status 
@@ -71,7 +75,7 @@ Let's then add and commit `journal.txt` but not the references file.
 
 ```{.bash}
 $ git add journal.tex 
-$ git commit -m "Adds paper but not the references"
+$ git commit -m "Add methodology section"
 ```
 	
 Let's have a look what's up with our working directory now:
@@ -116,9 +120,13 @@ they were at `<commit>`. This is a permanent undo which deletes all changes more
 than `<commit>` from your history. There is clearly potential here to lose work, so use
 this command with care.
 
-Let's try it on our example. Modify the journal and then make a commit. We now
-realise that what we've just done in our journal file makes no sense and decide
-to abandon the commit completely.
+Let's try it on our example. Modify the journal, describing which other instruments were
+used, and then make a commit.
+We now realise that what we've just done in our journal file is incorrect
+because we are not using the data from that instrument.
+Some of the data got corrupted, and due to problems with the logging computer
+we are not going to use that data.
+So it makes sense to abandon the commit completely.
 
 We can do that by running:
 
@@ -160,10 +168,12 @@ with others? We need to use the `revert` command.
 than deleting the commit from history, git works out how to undo those changes
 introduced by the commit, and appends a new commit with the resulting content.
 
-Let's try that on our example. 
+Let's try that our paper, using the same example as before:
+add a line or two describing the instrument whose measurements we are no longer
+able to use. Then add and commit. Once again we have a change we want to undo.
 
 ```{.bash}	
-$ git revert HEAD^
+$ git revert HEAD
 ```
 
 When we revert, a new commit is created. The `HEAD` pointer and the branch
@@ -174,14 +184,14 @@ previous changes. However, depending on the changes we made, we may bump into
 a *conflict* (which we will cover in more detail further on). 
 
 ```{.output}
-error: could not revert 848361e... Adds a reference to reference section
+error: could not revert 848361e... Describe Aerosol Mass Spectrometer
 hint: after resolving the conflicts, mark the corrected paths
 hint: with 'git add <paths>' or 'git rm <paths>'
 hint: and commit the result with 'git commit'
 ```
 	
 Behind the scenes Git gets confused trying to merge the commit `HEAD` is pointing
-to wth the past commit we're reverting. 
+to with the past commit we're reverting. 
 
 Reverting thus records the fact of "abandoning the commit" in the history.
 When we revert in a branch that is shared with others and then push that branch

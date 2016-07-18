@@ -106,7 +106,7 @@ do so (now or later) by using -b with the checkout command again. Example:
 
   git checkout -b new_branch_name
   
-HEAD is now at 21cfbde... Initial structure and headings for the journal paper
+HEAD is now at 21cfbde... Add title and authors
 ~~~
 
 This strange concept of the 'detached HEAD' is covered in the next section ...
