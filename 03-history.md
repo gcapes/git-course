@@ -11,15 +11,15 @@ subtitle: Looking at history and differences
 
 ### Looking at differences
 
-Let us suppose we've made a change to our file and not yet committed it. We can
-see the changes that we've made:
+We made a typo in the introduction section. Correct it, save the file but do not commit it yet.
+We can review the changes that we made using:
 
 ~~~{.bash}
 $ git diff journal.txt
 ~~~
 
 This shows the difference between the latest copy in the repository and the
-changes we've made. 
+changes we made. 
 
 * `-` means a line was deleted.  
 * `+` means a line was added.  
@@ -48,7 +48,11 @@ The choice of GUI for viewing differences depends on the context in which you
 are working and your own preferences related to choosing tools and
 technologies.
 
-
+Now commit the change we made to fix the typo:
+```{.bash}
+$ git add journal.txt
+$ git commit
+```
 
 ### Looking at our history
 
@@ -184,11 +188,12 @@ We can list tags by doing:
 $ git tag
 ```
 
-Now if we change our file,
+Now add a reference and commit the change:
 
 ```{.bash}    
-$ git add journal.txt 
-$ git commit -m "..." journal.txt
+$ gedit common/references.txt
+$ git add references.txt 
+$ git commit -m "..." references.txt
 ```
 
 We can checkout our previous version using our tag instead of a commit

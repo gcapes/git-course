@@ -205,13 +205,13 @@ If we save our commit message, Git will now commit our file.
 
 ~~~{.output}
 [master (root-commit) 21cfbde] 
-1 file changed, 9 insertions(+) Add title and authors
+1 file changed, 2 insertions(+) Add title and authors
 create mode 100644 journal.txt
 ~~~
 
 This output shows the number of files changed and the number of lines inserted
 or deleted across all those files. Here, we have changed (by adding) 1 file and
-inserted 9 lines.
+inserted 2 lines.
 
 Now, if we look at its status,
 
@@ -226,9 +226,12 @@ nothing to commit, working directory clean
 Nothing to commit means that our file is now in the repository, our working
 directory is up-to-date and we have no uncommitted changes in our staging area. 
 
-No we will work a bit further on our `journal.txt` file by writing the introduction
+Now we will work a bit further on our `journal.txt` file by writing the introduction
 section.
    
+```{.bash}
+$ gedit journal.txt
+```
 If we now run,
 
 ~~~{.bash}
@@ -275,12 +278,12 @@ want to reuse:
 ~~~{.bash}
 $ mkdir common 
 $ gedit common/references.txt
-~~~    
+~~~
 
-We will also add a citation in our paper (journal.txt). Now we need to record
-our work in the repository so we need to make a commit.  First we tell Git to
-track the references. We can actually tell Git to track everything in the given
-subdirectory:
+We will also add a citation in our introduction section (in journal.txt).
+Now we need to record our work in the repository so we need to make a commit.
+First we tell Git to track the references.
+We can actually tell Git to track everything in the given subdirectory:
 
 ~~~{.bash}
 $ git add common
@@ -292,16 +295,12 @@ journal.txt to the staging area. But there is a shortcut. We can use option
 that have been modified".
 
 ~~~{.bash}
-$ git commit -am "Add common directory and references file"
+$ git commit -am "Reference J Bloggs and add references file"
 ~~~
 and Git will add, then commit, both the directory and the file.
 
-In order to add all tracked files to the staging area (which may be very useful
-when you edited, let's say, 10 files and now you want to commit all of them):
-
-~~~{.bash}
-$ git commit -a
-~~~
+In order to add all tracked files to the staging area, use `git commit -a`
+(which may be very useful if you edit e.g. 10 files and now you want to commit all of them).
 
 ![The Git commit workflow](fig/git-committing.svg)
 
