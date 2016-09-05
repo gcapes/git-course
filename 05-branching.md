@@ -217,7 +217,7 @@ conflict. This means removing the mark-up and doing one of:
 i.e. "Simulations of atmospheric particle formation"
 
 - Or manually edit the line to something new which might combine some elements
-of the two e.g. "Measurement-model comparison of atmospheric particle formation in laboratory experiements"
+of the two e.g. "Measurement-model comparison of atmospheric particle formation in laboratory experiments"
 
 We edit the file. Then commit our changes:
 
