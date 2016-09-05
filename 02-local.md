@@ -90,6 +90,17 @@ To set up xemacs as the default editor:
 $ git config --global core.editor xemacs
 ~~~    
 
+#### Colours in Git
+
+On many computers, the terminal output is automatically coloured which makes
+reading the output easier.
+If your output is not coloured (e.g. in the Sackville/G11 cluster) there is a command
+which will add the colour:
+
+```{.bash}
+$ git config --global --add color.ui true
+```
+
 #### Git's global configuration
 
 We can now preview (and edit, if necessary) Git's global configuration (such as
@@ -266,7 +277,7 @@ $ mkdir common
 $ gedit common/references.txt
 ~~~    
 We will also add a few lines to our paper (journal.txt). Now we need to record
-our work in the repository so we need to make a commit.  First we tell Git to
+our work in the repository so we neeadding d to make a commit.  First we tell Git to
 track the references. We can actually tell Git to track everything in the given
 subdirectory:
 
