@@ -44,7 +44,7 @@ The directory "papers" is now our working directory.
  If we look in this directory, we'll find a *.git* directory:
 
 ~~~{.bash}
-$ ls -a .git
+$ ls .git
 ~~~
 ~~~{.output}
 branches  config  description  HEAD  hooks  info  objects refs
