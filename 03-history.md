@@ -11,7 +11,8 @@ subtitle: Looking at history and differences
 
 ### Looking at differences
 
-We made a typo in the introduction section. Correct it, save the file but do not commit it yet.
+We forgot to reference a second paper in the introduction section.
+Correct it, save the file but do not commit it yet.
 We can review the changes that we made using:
 
 ~~~{.bash}
@@ -48,7 +49,7 @@ The choice of GUI for viewing differences depends on the context in which you
 are working and your own preferences related to choosing tools and
 technologies.
 
-Now commit the change we made to fix the typo:
+Now commit the change we made by adding the second reference:
 ```{.bash}
 $ git add journal.txt
 $ git commit
