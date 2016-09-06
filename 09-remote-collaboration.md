@@ -45,14 +45,14 @@ $ papers papers2
 
 Let's pretend these clones are on two separate machines! So we have 3 versions
 of our repository - our two local versions, on our separate machines (we're
-still pretending!) and one on GitHub. So let's go into one of our clones, make
-some changes, commit these and push these to GitHub:
+still pretending!) and one on GitHub. So let's go into one of our clones, add an
+acknowledgements section, commit the file and push these changes to GitHub:
 
 ```{.bash}    
 $ cd papers 
 $ gedit journal.txt 
 $ git add journal.txt 
-$ git commit -m "Add some more comments" 
+$ git commit -m "Add acknowledgements" 
 $ git push
 ```
 
@@ -88,14 +88,14 @@ $ cat journal.txt
 $ git log
 ```
 
-As a short-hand, we can do a Git *pull* which does a *fetch* then a *merge*,
+As a short-hand, we can do a Git *pull* which does a *fetch* then a *merge*. 
+Now try the same process, starting in the papers2 folder, and write an abstract:
 
 ```{.bash}    
 $ gedit journal.txt 
 $ git add journal.txt 
-$ git commit -m "Add acknowledgements" journal.txt 
+$ git commit -m "Add abstract" journal.txt 
 $ git push origin master
-$ cd ..  
 $ cd ../papers 
 $ git pull origin master
 ```

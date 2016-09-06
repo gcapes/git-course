@@ -40,11 +40,12 @@ Now create and checkout a new branch.
 $ git checkout -b workshopPaper
 ```
 	
-Make some changes to the files and commit them.
+Add a results section to the paper with a couple of lines to outline the findings.
+Commit the changes you made.
 
-Checkout master branch and make some changes in it as well. Commit them.
+Checkout the master branch and write some conclusions. Commit them.
 
-Now check out back our "workshopPaper" branch and run:
+Now check out our "workshopPaper" branch again and run:
 
 ```{.bash}
 $ git rebase master

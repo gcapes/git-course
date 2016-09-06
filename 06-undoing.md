@@ -74,7 +74,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 Let's then add and commit `journal.txt` but not the references file.
 
 ```{.bash}
-$ git add journal.tex 
+$ git add journal.txt 
 $ git commit -m "Add methodology section"
 ```
 	
