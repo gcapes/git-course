@@ -149,25 +149,28 @@ Switched to branch 'master'
 
 ### Merging and resolving conflicts
 
-We are now working on two papers. Our main one in our master branch and the one
-which may possibly be collaborative work in our "paperWJohn" branch. Let's
-suppose that we have a new idea for the title for our main paper. We can change
-it in our master branch. Let's do it and commit changes.
+We are now working on two papers: the main one in our master branch and the one
+which may possibly be collaborative work in our "paperWJohn" branch.
+Let's change the title of the paper in the collaborative branch to reflect the
+new content that this version will contain.
+Let's do it and commit changes.
 
 ~~~{.bash}
+$ git checkout paperWJohn
 $ gedit journal.txt ......  
 $ git add journal.txt 
 $ git commit -m "Change title" journal.txt
 ~~~
 
-After some discussions with John we decided that there is going to be a 
-change to our plan. We will publish together. And hence it makes sense now to
-merge all that was authored together with John in branch "paperWJohn". 
+After some discussions with John we decided that we will publish together,
+hence it makes sense to now merge all that was authored together with John 
+in branch "paperWJohn". 
 
  We can do that by *merging* that branch with the master branch. Let's try
  doing that:
 
 ~~~{.bash}
+$ git checkout master
 $ git merge paperWJohn 
 ~~~
 ~~~{.output}
