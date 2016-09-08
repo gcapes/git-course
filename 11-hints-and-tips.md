@@ -4,7 +4,9 @@ title: Version control with Git
 subtitle: Git hints and tips
 ---
 
-### `man` page
+### Getting help
+
+#### `man` page
 
 Like many Unix/Linux commands, `git` has a `man` page,
 
@@ -19,9 +21,8 @@ interested in help, type `/help` and then hit enter.
 
 To exit the manual page, type `q`.
 
----
 
-### Command-line help
+#### Command-line help
 
 Type,
 
@@ -35,8 +36,12 @@ descriptions.
 You can get more help on a specific command, by providing the command name e.g.
 
 ```{.bash}
-$ git init --help $ git commit --help
+$ git init --help 
+$ git commit --help
 ```
+
+#### Google
+Search for your problem online. Someone has probably already asked (and answered) your question on stackoverflow.com.
 
 ---
 
@@ -74,12 +79,50 @@ files and binary files"
 
 ---
 
+### `git add --patch`
+This is a way to stage only parts of a file. If you have done lots of work
+without committing, it may be useful to commit your changes as a series of
+small commits. This command allows you to choose which changes go into which
+commit so you can group the changes logically. See [this discussion](
+http://nuclearsquid.com/writings/git-add/) for more information.
+
+---
+
+### `git commit --author`
+You can commit changes made by someone else, by using the `--author`
+flag. Consider how this may enable you to collaborate with your colleagues.
+The syntax is: 
+
+`git add --author="FirstName Surname <Firstname.Surname@example.com>"`
+
+---
+
 ### Add colour to `diff`
 
 ```{.bash}
 $ git config --global color.diff auto
 ```
     
+---
+
+### Git GUIs
+
+There are a number of available GUIs for working with Git. The official Git
+page contains a [comprehensive list](http://git-scm.com/downloads/guis).
+
+See for example: 
+
+* [GitKraken](https://www.gitkraken.com/)
+* [SourceTreeApp](http://www.sourcetreeapp.com/)
+
+We have deliberately avoiding using GUIs in this lesson so that:
+
+* you will have a better understanding of the git commands
+* you will be able to use Git on any machine (e.g. when remotely accessing HPC
+systems, which generally only have Linux command line access)
+* you will be able to use any GUI of your chosing, rather than just the one you
+have learned
+
  ---
 
 ### Git configuration
@@ -152,31 +195,6 @@ Again, as always with Git **before** you execute the above, make sure you know
 what you're doing!
 
 ---
-
-### Git GUIs
-
-There are a number of available GUIs for working with Git. The official Git
-page contains a [comprehensive list](http://git-scm.com/downloads/guis).
-
-See for example: 
-
-* [SourceTreeApp](http://www.sourcetreeapp.com/)
-
----
-
-### `git add --patch`
-This is a way to stage only parts of a file. If you have done lots of work
-without committing, it may be useful to commit your changes as a series of
-small commits. This command allows you to choose which changes go into which
-commit so you can group the changes logically. See [this discussion](
-http://nuclearsquid.com/writings/git-add/) for more information.
-
-### `git commit --author`
-You can commit changes made by someone else, by using the `--author`
-flag. Consider how this may enable you to collaborate with your colleagues.
-The syntax is: 
-
-`git add --author="FirstName Surname <Firstname.Surname@example.com>"`
 
 Previous: [Pull Requests](10-pull-requests.html) Next:
 [Conclusion](12-conclusion.html)
