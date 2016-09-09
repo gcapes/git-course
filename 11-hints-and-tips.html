@@ -31,19 +31,22 @@
         <div class="col-md-10 col-md-offset-1">
                     <a href="index.html"><h1 class="title">Version control with Git</h1></a>
           <h2 class="subtitle">Git hints and tips</h2>
-          <h3 id="man-page"><code>man</code> page</h3>
+          <h3 id="getting-help">Getting help</h3>
+<h4 id="man-page"><code>man</code> page</h4>
 <p>Like many Unix/Linux commands, <code>git</code> has a <code>man</code> page,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">man</span> git</code></pre>
 <p>You can scroll the manual page up and down using the up and down arrows.</p>
 <p>You can search for keywords by typing <code>/</code> followed by the search term e.g. if interested in help, type <code>/help</code> and then hit enter.</p>
 <p>To exit the manual page, type <code>q</code>.</p>
-<hr />
-<h3 id="command-line-help">Command-line help</h3>
+<h4 id="command-line-help">Command-line help</h4>
 <p>Type,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> --help</code></pre>
 <p>and Git gives a list of commands it is able to help with, as well as their descriptions.</p>
 <p>You can get more help on a specific command, by providing the command name e.g.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init --help $ git commit --help</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init --help 
+$ <span class="kw">git</span> commit --help</code></pre>
+<h4 id="google">Google</h4>
+<p>Search for your problem online. Someone has probably already asked (and answered) your question on stackoverflow.com.</p>
 <hr />
 <h3 id="add-a-repository-description">Add a repository description</h3>
 <p>You can edit the file <code>.git/description</code> and give your repository a name e.g. “My first repository”.</p>
@@ -58,8 +61,29 @@
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add .gitignore $ git commit -m <span class="st">&quot;Added rules to ignore vim scratch</span>
 <span class="st">files and binary files&quot;</span></code></pre>
 <hr />
+<h3 id="git-add---patch"><code>git add --patch</code></h3>
+<p>This is a way to stage only parts of a file. If you have done lots of work without committing, it may be useful to commit your changes as a series of small commits. This command allows you to choose which changes go into which commit so you can group the changes logically. See <a href="http://nuclearsquid.com/writings/git-add/">this discussion</a> for more information.</p>
+<hr />
+<h3 id="git-commit---author"><code>git commit --author</code></h3>
+<p>You can commit changes made by someone else, by using the <code>--author</code> flag. Consider how this may enable you to collaborate with your colleagues. The syntax is:</p>
+<p><code>git add --author=&quot;FirstName Surname &lt;Firstname.Surname@example.com&gt;&quot;</code></p>
+<hr />
 <h3 id="add-colour-to-diff">Add colour to <code>diff</code></h3>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global color.diff auto</code></pre>
+<hr />
+<h3 id="git-guis">Git GUIs</h3>
+<p>There are a number of available GUIs for working with Git. The official Git page contains a <a href="http://git-scm.com/downloads/guis">comprehensive list</a>.</p>
+<p>See for example:</p>
+<ul>
+<li><a href="https://www.gitkraken.com/">GitKraken</a></li>
+<li><a href="http://www.sourcetreeapp.com/">SourceTreeApp</a></li>
+</ul>
+<p>We have deliberately avoiding using GUIs in this lesson so that:</p>
+<ul>
+<li>you will have a better understanding of the git commands</li>
+<li>you will be able to use Git on any machine (e.g. when remotely accessing HPC systems, which generally only have Linux command line access)</li>
+<li>you will be able to use any GUI of your chosing, rather than just the one you have learned</li>
+</ul>
 <hr />
 <h3 id="git-configuration">Git configuration</h3>
 <p>The global configuration file for git <code>.gitconfig</code> is automatically created by Git in the <code>home</code> directory. If you set up some basic configuration (in the first steps of this tutorial), it should look like this.</p>
@@ -80,18 +104,6 @@
 <p>Removing files from the repository may be useful not only when the files contain sensitive data. Another case may be if you commited a large file in your local repository. Essentially, by default, there are no limitations on the size of files you can commit. However, there may be (and quite likely there will be) limits on the size of the files you can push to remote repositories (GitHub allows for max 100MB). You may encounter an annoying situation when you commited a large file locally and then kept on working making local commits but not pushing. Finally, you decide to push to GitHub (or elsewhere remote) and you can’t because the file is too big. Using <code>git rm</code> won’t help because you are pushing since the last pushed commit and that means in between there is a commit with the large problematic file. To recover from this you will have to purge your large file from the repo (or switch to a different remote repo provider that allows for large files).</p>
 <p>Again, as always with Git <strong>before</strong> you execute the above, make sure you know what you’re doing!</p>
 <hr />
-<h3 id="git-guis">Git GUIs</h3>
-<p>There are a number of available GUIs for working with Git. The official Git page contains a <a href="http://git-scm.com/downloads/guis">comprehensive list</a>.</p>
-<p>See for example:</p>
-<ul>
-<li><a href="http://www.sourcetreeapp.com/">SourceTreeApp</a></li>
-</ul>
-<hr />
-<h3 id="git-add---patch"><code>git add --patch</code></h3>
-<p>This is a way to stage only parts of a file. If you have done lots of work without committing, it may be useful to commit your changes as a series of small commits. This command allows you to choose which changes go into which commit so you can group the changes logically. See <a href="http://nuclearsquid.com/writings/git-add/">this discussion</a> for more information.</p>
-<h3 id="git-commit---author"><code>git commit --author</code></h3>
-<p>You can commit changes made by someone else, by using the <code>--author</code> flag. Consider how this may enable you to collaborate with your colleagues. The syntax is:</p>
-<p><code>git add --author=&quot;FirstName Surname &lt;Firstname.Surname@example.com&gt;&quot;</code></p>
 <p>Previous: <a href="10-pull-requests.html">Pull Requests</a> Next: <a href="12-conclusion.html">Conclusion</a></p>
         </div>
       </div>

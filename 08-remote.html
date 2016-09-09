@@ -33,7 +33,7 @@
           <h2 class="subtitle">Working from multiple locations with a remote repository</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -75,12 +75,12 @@
 <li>Click <code>Create Repository</code></li>
 </ul>
 <p>You’ll get a page with new information about your repository. We already have our local repository and we will be <em>pushing</em> it to GitHub, so this is the option we will use:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote add origin https://github.com/<span class="kw">&lt;</span>USERNAME<span class="kw">&gt;</span>/papers.git 
-$ <span class="kw">git</span> push -u origin master</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote add origin https://github.com/<span class="kw">&lt;</span>USERNAME<span class="kw">&gt;</span>/papers.git 
+$ <span class="kw">git</span> push -u origin master</code></pre>
 <p>The first line sets up an alias, <code>origin</code>, to correspond to the URL of our new repository on GitHub.</p>
 <h3 id="push-locally-tracked-files-to-a-remote-repository">Push locally tracked files to a remote repository</h3>
 <p>Now copy and paste the second line,</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push -u origin master </code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push -u origin master </code></pre>
 <pre class="output"><code>Counting objects: 32, done.
 Delta compression using up to 8 threads.
 Compressing objects: 100% (28/28), done.
@@ -94,19 +94,19 @@ Branch master set up to track remote branch master from origin.</code></pre>
 <p>Our local repository is now available on GitHub. So, anywhere we can access GitHub, we can access our repository.</p>
 <h3 id="push-other-local-branches-to-a-remote-repository">Push other local branches to a remote repository</h3>
 <p>Let’s push all our local branches into our remote repository:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin branch_name</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin branch_name</code></pre>
 <p>This will work assumig that ‘origin’ is still an alias for our remote repository in GitHub. The branch should now be created in our GitHub repository.</p>
 <p>To list all branches (local and remote):</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> branch -a</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> branch -a</code></pre>
 <p>To delete the remote branch, there are two syntax options:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin --delete feature2
-$ <span class="kw">git</span> push origin :feature2</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin --delete feature2
+$ <span class="kw">git</span> push origin :feature2</code></pre>
 <h3 id="cloning-a-remote-repository">Cloning a remote repository</h3>
 <p>Now, let’s do something drastic! (but before that step, make sure that you pushed all your local branches into the remote repository)</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> .. 
-$ <span class="kw">rm</span> -rf papers</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> .. 
+$ <span class="kw">rm</span> -rf papers</code></pre>
 <p>Gulp! We’ve just wiped our local repository! But, as we’ve a copy on GitHub we can just copy, or <em>clone</em> that,</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://github.com/<span class="kw">&lt;</span>USERNAME<span class="kw">&gt;</span>/papers.git </code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://github.com/<span class="kw">&lt;</span>USERNAME<span class="kw">&gt;</span>/papers.git </code></pre>
 <pre class="output"><code>Cloning into &#39;papers&#39;...
 remote: Counting objects: 32, done.
 remote: Compressing objects: 100% (21/21), done.
@@ -115,17 +115,17 @@ Unpacking objects: 100% (32/32), done.
 Checking connectivity... done.</code></pre>
 <p>Cloning creates an exact copy of the repository. By deafult it creates a directory with the same name as the name of the repository.</p>
 <p>Now, if we change into <code>papers</code> we can see that we have our repository,</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> papers 
-$ <span class="kw">git</span> log</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> papers 
+$ <span class="kw">git</span> log</code></pre>
 <p>and we can see our Git configuration files too,</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -A</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -A</code></pre>
 <h3 id="push-changes-to-a-remote-repository">Push changes to a remote repository</h3>
 <p>We can use our cloned repository just as if it was a local repository so let’s make some changes to our files and commit these.</p>
 <p>Having done that, how do we send our changes back to the remote repository? We can do this by <em>pushing</em> our changes,</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
 <p>If we now check our GitHub page we should be able to see our new changes under the Commit tab.</p>
 <p>To see all remote repositories (we can have multiple ones!) type:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote -v</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote -v</code></pre>
 <p>Previous: <a href="07-rebasing.html">Rebasing</a> Next: <a href="09-remote-collaboration.html">Collaborating using a remote repository</a></p>
         </div>
       </div>
