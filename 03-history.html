@@ -44,9 +44,9 @@
 </div>
 </section>
 <h3 id="looking-at-differences">Looking at differences</h3>
-<p>Let us suppose we’ve made a change to our file and not yet committed it. We can see the changes that we’ve made:</p>
+<p>We forgot to reference a second paper in the introduction section. Correct it, save the file but do not commit it yet. We can review the changes that we made using:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff journal.txt</code></pre>
-<p>This shows the difference between the latest copy in the repository and the changes we’ve made.</p>
+<p>This shows the difference between the latest copy in the repository and the changes we made.</p>
 <ul>
 <li><code>-</code> means a line was deleted.<br /></li>
 <li><code>+</code> means a line was added.<br /></li>
@@ -61,6 +61,9 @@
 <li>GitHub <a href="https://help.github.com/articles/comparing-commits-across-time">Compare view</a></li>
 </ul>
 <p>The choice of GUI for viewing differences depends on the context in which you are working and your own preferences related to choosing tools and technologies.</p>
+<p>Now commit the change we made by adding the second reference:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add journal.txt
+$ <span class="kw">git</span> commit</code></pre>
 <h3 id="looking-at-our-history">Looking at our history</h3>
 <p>To see the history of changes that we made to our repository (the most recent changes will be displayed at the top):</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> log</code></pre>
@@ -85,10 +88,8 @@ do so (now or later) by using -b with the checkout command again. Example:
 
   git checkout -b new_branch_name
   
-HEAD is now at 21cfbde... Initial structure and headings for the journal paper</code></pre>
-<p><em>HEAD</em> is essentially a pointer which points to the branch where you currently are. We said previously that <em>master</em> is the default branch. But <em>master</em> is actually a pointer - that points to the tip of the master branch (the sequence of commits that is created by default by Git). You may think of <em>master</em> as two things: one as a pointer and one as the default branch.</p>
-<p>When we checked out one of the past commits HEAD is pointing to that commit but does not point to the same thing as master any more. That is why git says You are in ‘detached HEAD’ state and advises us that if we want to make a commit now, we should create a new branch to retain these commits.</p>
-<p>If we created a new commit without creating a new branch Git would not know what to do with it (since there is already a commit in master branch from the current state which we checked out c4354a…). We will get back to branches and HEAD pointer later in this tutorial.</p>
+HEAD is now at 21cfbde... Add title and authors</code></pre>
+<p>This strange concept of the ‘detached HEAD’ is covered in the next section … just bear with me for now!</p>
 <p>If we look at <code>journal.txt</code> we’ll see it’s our very first version. And if we look at our directory,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre>
 <pre class="output"><code>journal.txt</code></pre>
@@ -98,15 +99,23 @@ HEAD is now at 21cfbde... Initial structure and headings for the journal paper</
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre>
 <pre class="output"><code>common journal.txt</code></pre>
 <p>So we can get any version of our files from any point in time. In other words, we can set up our working directory back to any stage it was when we made a commit.</p>
+<h3 id="the-head-and-master-pointers">The <em>HEAD</em> and <em>master</em> pointers</h3>
+<p><em>HEAD</em> is essentially a pointer which points to the branch at the commit where you currently are. We said previously that <em>master</em> is the default branch. But <em>master</em> is actually a pointer - that points to the tip of the master branch (the sequence of commits that is created by default by Git). You may think of <em>master</em> as two things: one as a pointer and one as the default branch.</p>
+<p>Before we checked out one of the past commits, the <em>HEAD</em> pointer was pointing to <em>master</em> i.e. the most recent commit of the master branch. After checking out one of the past commits, <em>HEAD</em> was pointing to that commit i.e. not pointing to master any more. That is what Git means by a ‘detached HEAD’ state and advises us that if we want to make a commit now, we should create a new branch to retain these commits.</p>
+<div class="figure">
+<img src="fig/detached_head.svg" alt="Checking out a previous commit - detached head" /><p class="caption">Checking out a previous commit - detached head</p>
+</div>
+<p>If we created a new commit without first creating a new branch, i.e. working from the ‘detached HEAD’ these commits would not overwrite any of our existing work, but they would not belong to any branch. In order to save this work, we would need to checkout a new branch. To discard any changes we make from the detached HEAD state, we can just checkout master again.</p>
 <h3 id="using-tags-as-nicknames-for-commit-identifiers">Using tags as nicknames for commit identifiers</h3>
 <p>Commit identifiers are long and cryptic. Git allows us to create tags, which act as easy-to-remember nicknames for commit identifiers.</p>
 <p>For example,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> tag PAPER_STUB</code></pre>
 <p>We can list tags by doing:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> tag</code></pre>
-<p>Now if we change our file,</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add journal.txt 
-$ <span class="kw">git</span> commit -m <span class="st">&quot;...&quot;</span> journal.txt</code></pre>
+<p>Now add a reference and commit the change:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> common/references.txt
+$ <span class="kw">git</span> add references.txt 
+$ <span class="kw">git</span> commit -m <span class="st">&quot;...&quot;</span> references.txt</code></pre>
 <p>We can checkout our previous version using our tag instead of a commit identifier.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout PAPER_STUB</code></pre>
 <p>And return to the latest checkout,</p>

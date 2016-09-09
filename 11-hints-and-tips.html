@@ -51,7 +51,7 @@
 <h3 id="ignore-scratch-temporary-and-binary-files">Ignore scratch, temporary and binary files</h3>
 <p>You can create a <code>.gitignore</code> file which lists the patterns of files you want Git to ignore. It’s common practice to not add to a repository any file you can automatically create in some way e.g. C object files (<code>.o</code>), Java class (<code>.class</code>) files or temporary files e.g. XEmacs scratch files (<code>~</code>). Adding these to <code>.gitignore</code> means Git won’t complain about them being untracked.</p>
 <p>Create or edit <code>gitignore</code>,</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> .gitignore</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> .gitignore</code></pre>
 <p>Then add patterns for the files you want to ignore, where <code>*</code> is a wildcard,</p>
 <pre><code>*~ *.o *.so *.dll *.exe *.class *.jar</code></pre>
 <p>Then, add <code>.gitignore</code> to your repository,</p>
@@ -65,7 +65,7 @@
 <p>The global configuration file for git <code>.gitconfig</code> is automatically created by Git in the <code>home</code> directory. If you set up some basic configuration (in the first steps of this tutorial), it should look like this.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> ~/.gitconfig </code></pre>
 <pre class="output"><code>[user] name = Your Name email = yourname@yourplace.org 
-[core] editor = nano</code></pre>
+[core] editor = gedit</code></pre>
 <p>You can add more configuration options. For example, instead of typing <code>git commit -m</code> we can have a shorter version of this command:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global alias.cms <span class="st">&#39;commit -m&#39;</span></code></pre>
 <p>And now our configuration file will have a new section added:</p>

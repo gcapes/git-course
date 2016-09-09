@@ -47,18 +47,19 @@
 <p>We’ll first do a “dry run” of pulling changes from a remote repository and then we’ll work in pairs for some real-life practice.</p>
 <p>First, let us leave our current local repository,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> ..  
-$ <span class="kw">ls</span> papers</code></pre>
+$ <span class="kw">ls</span></code></pre>
+<pre class="output"><code>$ papers</code></pre>
 <p>And let us clone our repository again, but this time specify the local directory name,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://github.com/<span class="kw">&lt;</span>USERNAME<span class="kw">&gt;</span>/papers.git papers2 
 <span class="kw">Cloning</span> into <span class="st">&#39;papers2&#39;</span>...</code></pre>
 <p>So we now have two clones of our repository,</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> 
-$ <span class="kw">papers</span> papers2</code></pre>
-<p>Let’s pretend these clones are on two separate machines! So we have 3 versions of our repository - our two local versions, on our separate machines (we’re still pretending!) and one on GitHub. So let’s go into one of our clones, make some changes, commit these and push these to GitHub:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre>
+<pre class="output"><code>$ papers papers2</code></pre>
+<p>Let’s pretend these clones are on two separate machines! So we have 3 versions of our repository - our two local versions, on our separate machines (we’re still pretending!) and one on GitHub. So let’s go into one of our clones, add an acknowledgements section, commit the file and push these changes to GitHub:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> papers 
-$ <span class="kw">nano</span> journal.txt 
+$ <span class="kw">gedit</span> journal.txt 
 $ <span class="kw">git</span> add journal.txt 
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Add some more comments&quot;</span> 
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Add acknowledgements&quot;</span> 
 $ <span class="kw">git</span> push</code></pre>
 <p>Now let’s change to our other repository and <em>fetch</em> the changes from our remote repository,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> ../papers2 
@@ -71,26 +72,25 @@ $ <span class="kw">git</span> fetch</code></pre>
 <p>And then we can check that we have our changes,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> journal.txt 
 $ <span class="kw">git</span> log</code></pre>
-<p>As a short-hand, we can do a Git <em>pull</em> which does a <em>fetch</em> then a <em>merge</em>,</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> journal.txt 
+<p>As a short-hand, we can do a Git <em>pull</em> which does a <em>fetch</em> then a <em>merge</em>. Now try the same process, but ths time starting in the papers2 folder (you should already be in the papers2 folder), and write an abstract:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt 
 $ <span class="kw">git</span> add journal.txt 
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Add acknowledgements&quot;</span> journal.txt 
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Add abstract&quot;</span> journal.txt 
 $ <span class="kw">git</span> push origin master
-$ <span class="kw">cd</span> ..  
 $ <span class="kw">cd</span> ../papers 
 $ <span class="kw">git</span> pull origin master</code></pre>
 <p>And then check that we have our changes,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> journal.txt 
 $ <span class="kw">git</span> log</code></pre>
 <h3 id="conflicts-and-how-to-resolve-them">Conflicts and how to resolve them</h3>
-<p>Let’s continue to pretend that our two local, cloned, repositories are hosted on two different machines, and make some changes to our file, and push these to GitHub:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> journal.txt 
+<p>Let’s continue to pretend that our two local, cloned, repositories are hosted on two different machines. Add an affilication for each author. Then push these changes to our remote repository:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt 
 $ <span class="kw">git</span> add journal.txt 
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Add credits - adds our names&quot;</span> journal.txt 
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Add author affiliations&quot;</span> journal.txt 
 $ <span class="kw">git</span> push origin master</code></pre>
-<p>Now let us suppose, at a later, date, we use our other repository and we want to change the credits.</p>
+<p>Now let us suppose, at a later, date, we use our other repository and we want to change the order of the authors.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> ../papers2 
-$ <span class="kw">nano</span> journal.txt 
+$ <span class="kw">gedit</span> journal.txt 
 $ <span class="kw">git</span> add journal.txt 
 $ <span class="kw">git</span> commit -m <span class="st">&quot;Change the first author&quot;</span> journal.txt 
 $ <span class="kw">git</span> push origin master</code></pre>
@@ -168,7 +168,7 @@ Switched to a new branch &#39;new_branch&#39;</code></pre>
 <p>Select a different branch for this exercise than the one you used for the previous one.</p>
 <p>Reset to one of the previous commits and push it back to the remote repository. Pull the branches which your colleagues reset in a similar way.</p>
 <p>What happens? Look through the history using <code>git log</code> - what can you notice?</p>
-<p>A: You can’t push the change to remote repository unless you use <code>push -f</code>. After force pushing the changes, your git log shows what you’ve done, as does the remote git log, but the other person’s local git log shows no change to the history. To that person it looks like work has just gone missing from the files in their working directory. Git also thinks that their branch is ahead of origin/branch.</p>
+<p>A: You can’t push the change to remote repository unless you use <code>push -f</code>. After force pushing the changes, your git log shows what you’ve done, as does the remote git log, but the other person’s local git log shows no change to the history. To that person it looks like work has just gone missing from the files in their working directory. Git also thinks that their branch is ahead of origin/<branch>.</p>
 <hr />
 <h4>Exercise 5: Rebasing</h4>
 <p>This exercise is again designed to explore what happens when you follow <em>bad practice</em>. In this case, the bad practice is rebasing branches which are shared with others.</p>
@@ -187,7 +187,7 @@ Switched to a new branch &#39;new_branch&#39;</code></pre>
 <li>Person B (and C if you’re working in a group of 3) should now pull (previously commiting the changes they made in the branch)</li>
 </ul>
 <p>What is the end result? What happened when the other collaborator rebased the branch against master?</p>
-<p>A: It is confusing. When pushing person A’s rebased branch back, it failed because tip of current branch is behing its remote counterpart. So I did a pull. Auto-merge failed so after editing the file to resolve the merge, add, commit, push, I finally got the rebased branch pushed but with an extra commit merging changes from remote. These changes were actually already in the rebased version. Person B then gets a merge conflict when they pull. After resolving, their history is different to person A’s history. One commit has a new hash ID, and others are missing.</p>
+<p>A: It is confusing. When pushing person A’s rebased branch back, it failed because tip of current branch is behind its remote counterpart. So I did a pull. Auto-merge failed so after editing the file to resolve the merge, add, commit, push, I finally got the rebased branch pushed but with an extra commit merging changes from remote. These changes were actually already in the rebased version. Person B then gets a merge conflict when they pull. After resolving, their history is different to person A’s history. One commit has a new hash ID, and others are missing.</p>
 </div>
 </section>
 <p>Previous: <a href="08-remote.html">Working from multiple locations</a> Next: <a href="10-pull-requests.html">Pull Requests</a></p>

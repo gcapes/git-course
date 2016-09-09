@@ -102,13 +102,15 @@ c5---c11---c12---c14---c19                       kate</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master </code></pre>
 <pre class="output"><code>Switched to branch &#39;master&#39;</code></pre>
 <h3 id="merging-and-resolving-conflicts">Merging and resolving conflicts</h3>
-<p>We are now working on two papers. Our main one in our master branch and the one which may possibly be collaborative work in our “paperWJohn” branch. Let’s suppose that we have a new idea for the title for our main paper. We can change it in our master branch. Let’s do it and commit changes.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> journal.txt ......  
+<p>We are now working on two papers: the main one in our master branch and the one which may possibly be collaborative work in our “paperWJohn” branch. Let’s change the title of the paper in the collaborative branch to reflect the new content that this version will contain. Let’s do it and commit changes.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout paperWJohn
+$ <span class="kw">gedit</span> journal.txt
 $ <span class="kw">git</span> add journal.txt 
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Rewrote the title&quot;</span> journal.txt</code></pre>
-<p>After some discussions with John we decided that there is going to be a major change to our plan. We will publish together. And hence it makes sense now to merge all that was authored together with John in branch “paperWJohn”.</p>
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Change title&quot;</span> journal.txt</code></pre>
+<p>After some discussions with John we decided that we will publish together, hence it makes sense to now merge all that was authored together with John in branch “paperWJohn”.</p>
 <p>We can do that by <em>merging</em> that branch with the master branch. Let’s try doing that:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> merge paperWJohn </code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master
+$ <span class="kw">git</span> merge paperWJohn </code></pre>
 <pre class="output"><code>Auto-merging journal.txt
 CONFLICT (content): Merge conflict in journal.txt
 Automatic merge failed; fix conflicts and then commit the result.</code></pre>
@@ -125,19 +127,19 @@ Unmerged paths:
 <p>Let’s look inside journal.txt:</p>
 <pre><code>title
 &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-My solo discovery of something scientifically interesting
+Laboratory measurements of atmospheric particle formation
 =======
-Some interesting development in science
+Simulations of atmospheric particle formation
 &gt;&gt;&gt;&gt;&gt;&gt;&gt; paperwjohn</code></pre>
 <p>The mark-up shows us the parts of the file causing the conflict and the versions they come from. We now need to manually edit the file to resolve the conflict. This means removing the mark-up and doing one of:</p>
 <ul>
-<li>Keep the local version, which, here, is the one marked-up by HEAD i.e. “My solo discovery of something scientifically interesting”</li>
-<li>Keep the remote version, which, here, is the one marked-up by paperWJohn i.e. “Some interesting development in science”</li>
-<li>Or manually edit the line to something new which might combine some elements of the two e.g. “Collaborative scientific developments and discoveries”</li>
+<li><p>Keep the local version, which, here, is the one marked-up by HEAD i.e. “Laboratory measurements of atmospheric particle formation”</p></li>
+<li><p>Keep the remote version, which, here, is the one marked-up by paperWJohn i.e. “Simulations of atmospheric particle formation”</p></li>
+<li><p>Or manually edit the line to something new which might combine some elements of the two e.g. “Measurement-model comparison of atmospheric particle formation in laboratory experiments”</p></li>
 </ul>
 <p>We edit the file. Then commit our changes:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add journal.txt 
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Resolves conflict in journal.txt by rewriting title&quot;</span> </code></pre>
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Rewrite title to incorporate simulations&quot;</span></code></pre>
 <p>This is where version control proves itself better than DropBox or GoogleDrive, this ability to merge text files line-by-line and highlight the conflicts between them, so no work is ever lost.</p>
 <h3 id="looking-at-our-history---revisited">Looking at our history - revisited</h3>
 <p>We already looked at “going back in time with Git”. But now we’ll look at it in more detail to see how moving back relates to branches and we will learn how to actually undo things. So far we were moving back in time in one branch by checking out one of the past commits.</p>
