@@ -157,7 +157,7 @@ Let's do it and commit changes.
 
 ~~~{.bash}
 $ git checkout paperWJohn
-$ gedit journal.txt ......  
+$ gedit journal.txt
 $ git add journal.txt 
 $ git commit -m "Change title" journal.txt
 ~~~
