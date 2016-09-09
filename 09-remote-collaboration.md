@@ -24,7 +24,11 @@ First, let us leave our current local repository,
 
 ```{.bash}
 $ cd ..  
-$ ls papers
+$ ls
+```
+
+```{.output}
+$ papers
 ```
 
 And let us clone our repository again, but this time specify the local
@@ -39,7 +43,10 @@ Cloning into 'papers2'...
 So we now have two clones of our repository,
 
 ```{.bash}
-$ ls 
+$ ls
+```
+
+```{.output}
 $ papers papers2
 ```
 
@@ -89,7 +96,8 @@ $ git log
 ```
 
 As a short-hand, we can do a Git *pull* which does a *fetch* then a *merge*. 
-Now try the same process, starting in the papers2 folder, and write an abstract:
+Now try the same process, but ths time starting in the papers2 folder (you
+should already be in the papers2 folder), and write an abstract:
 
 ```{.bash}    
 $ gedit journal.txt 
@@ -110,18 +118,18 @@ $ git log
 ### Conflicts and how to resolve them
 
 Let's continue to pretend that our two local, cloned, repositories are hosted
-on two different machines, and make some changes to our file, and push these to
-GitHub:
+on two different machines. Add an affilication for each author.
+Then push these changes to our remote repository:
 
 ```{.bash}    
 $ gedit journal.txt 
 $ git add journal.txt 
-$ git commit -m "Add credits - adds our names" journal.txt 
+$ git commit -m "Add author affiliations" journal.txt 
 $ git push origin master
 ```
 
 Now let us suppose, at a later, date, we use our other repository and we want
-to change the credits.
+to change the order of the authors.
 
 ```{.bash}    
 $ cd ../papers2 
@@ -295,7 +303,7 @@ between them, so no work is ever lost.
 > the remote git log, but the other person's local git log shows no change to the 
 > history. To that person it looks like work has just gone missing from the files
 > in their working directory. Git also thinks that their branch is ahead of
-> origin/branch.
+> origin/<branch>.
 >
 > ----
 >
@@ -326,7 +334,7 @@ between them, so no work is ever lost.
 > branch against master?
 >
 > A: It is confusing. When pushing person A's rebased branch back, it failed because tip
-> of current branch is behing its remote counterpart. So I did a pull. Auto-merge failed
+> of current branch is behind its remote counterpart. So I did a pull. Auto-merge failed
 > so after editing the file to resolve the merge, add, commit, push, I finally got the 
 > rebased branch pushed but with an extra commit merging changes from remote. These 
 > changes were actually already in the rebased version.
