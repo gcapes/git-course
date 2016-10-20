@@ -110,10 +110,10 @@ $ git config --global color.diff auto
 There are a number of available GUIs for working with Git. The official Git
 page contains a [comprehensive list](http://git-scm.com/downloads/guis).
 
-See for example: 
+However, Git [for Windows](https://git-for-windows.github.io/) already comes
+with all the tools you need (Git Bash, Git GUI, Shell integration).
 
-* [GitKraken](https://www.gitkraken.com/)
-* [SourceTreeApp](http://www.sourcetreeapp.com/)
+Some IDEs already have integration with version control e.g. MATLAB, R studio.
 
 We have deliberately avoiding using GUIs in this lesson so that:
 
