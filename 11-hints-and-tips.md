@@ -105,6 +105,20 @@ $ git config --global color.diff auto
     
 ---
 
+### `git stash`
+Sometimes you are working on one branch and want to switch to another branch for
+a while. 
+In order to do so you would normally need to have a clean working directory i.e.
+no modified files or staged changes.
+You could commit all the changes you have made, then switch branch, but that would
+involve committing incomplete work just to return to this state later on.
+`git stash` saves the dirty state of your working directory and saves it on a stack
+of unfinished changes that you can reapply at any time using `git stash apply`.
+See [here](https://git-scm.com/book/en/v1/Git-Tools-Stashing) for more details and
+for examples.
+
+---
+
 ### Git GUIs
 
 There are a number of available GUIs for working with Git. The official Git

@@ -71,6 +71,9 @@ $ <span class="kw">git</span> commit --help</code></pre>
 <h3 id="add-colour-to-diff">Add colour to <code>diff</code></h3>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global color.diff auto</code></pre>
 <hr />
+<h3 id="git-stash"><code>git stash</code></h3>
+<p>Sometimes you are working on one branch and want to switch to another branch for a while. In order to do so you would normally need to have a clean working directory i.e. no modified files or staged changes. You could commit all the changes you have made, then switch branch, but that would involve committing incomplete work just to return to this state later on. <code>git stash</code> saves the dirty state of your working directory and saves it on a stack of unfinished changes that you can reapply at any time using <code>git stash apply</code>. See <a href="https://git-scm.com/book/en/v1/Git-Tools-Stashing">here</a> for more details and for examples.</p>
+<hr />
 <h3 id="git-guis">Git GUIs</h3>
 <p>There are a number of available GUIs for working with Git. The official Git page contains a <a href="http://git-scm.com/downloads/guis">comprehensive list</a>.</p>
 <p>However, Git <a href="https://git-for-windows.github.io/">for Windows</a> already comes with all the tools you need (Git Bash, Git GUI, Shell integration).</p>
