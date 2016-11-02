@@ -54,6 +54,7 @@ $ git rebase master
 Run `git log` - you will see that rebasing created a new commit and put it on
 top of the commit pointed at by 'master'. 
 
+![Merging with and without rebasing - image from [http://gitforteams.com/resources/merge-rebase.html](https://raw.githubusercontent.com/gitforteams/diagrams/master/balsamiq/merge-types.png)](fig/merge-types.png)
 
 This [online tutorial](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)
 gives a good illustration of what happens during rebasing.
