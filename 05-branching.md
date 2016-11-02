@@ -37,6 +37,8 @@ parallel. Each of these sets, or parallel instances, is termed a `branch` and
  can then create a branch 'feature1' and keep our master branch clean. When
  we're done developing the feature and we are sure that we want to include it
  in our program, we can merge the feature branch with the master branch. 
+ This keeps all the work-in-progress separate from the master branch, which 
+ contains tested, working code.
  
  We create our branch for the new feature.
 
@@ -82,35 +84,26 @@ making commits) in feature1 as well.
 ```
 One popular model is to have:
 
-- A release branch, representing a released version of the code
-- A master branch, representing the most up-to-date stable version of the
-code
+- A master branch, representing a released version of the code
+- A release branch, representing the beginnings of the next release - a branch 
+where the code is still undergoing testing
 - Various feature and/or developer-specific branches representing
 work-in-progress, new features etc
 
 For example:
 
-```
-      0.1        0.2    0.3 
-      c6---------c9-----c17------                release
-      /         /       / 
-c1---c2---c3--c7--c8---c16--c18---c20---c21--    master
-|                     /
-c4---c10---c13------c15                          fred 
-|                   / 
-c5---c11---c12---c14---c19                       kate
-```
+![Git workflow [(image from http://nurelm.com/our-workflow-git-flow/)](http://nurelm.com/our-workflow-git-flow/)](fig/git-flow.png)
 
 There are different possible workflows when using Git for code development. 
 
 One of the examples may be when the master branch holds stable and tested code.
 If a bug is found by a user, a bug fix can be applied to the release branch,
 and then merged with the master branch.  When a feature or developer-specific
-branch, is stable and has been reviewed and tested it can be merged with the
+branch is stable and has been reviewed and tested it can be merged with the
 master branch. When the master branch has been reviewed and tested and is ready
 for release, a new release branch can be created from it.  If you want to learn
-more about workflows with Git, have a look at the [AstroPy development
-workflow](http://astropy.readthedocs.org/en/latest/development/workflow/development_workflow.html).
+more about workflows with Git, have a look at the
+[feature branch workflow](http://nvie.com/posts/a-successful-git-branching-model/).
 
 
 ### Branching in practice
