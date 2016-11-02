@@ -33,7 +33,7 @@ parallel. Each of these sets, or parallel instances, is termed a `branch` and
  together. 
 
  Why is this useful? Suppose we've developed some software and now we want to
- add some new features to it but we're not sure yet whether we'll keep them. We
+ try out some new ideas but we're not sure yet whether we'll keep them. We
  can then create a branch 'feature1' and keep our master branch clean. When
  we're done developing the feature and we are sure that we want to include it
  in our program, we can merge the feature branch with the master branch. 
