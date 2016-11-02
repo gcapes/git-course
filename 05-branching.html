@@ -51,7 +51,7 @@ nothing to commit (working directory clean)</code></pre>
 <p>and when we wanted to get back to our most recent version of the repository, we used <code>git checkout master</code>.</p>
 <p>Not only can our repository store the changes made to files and directories, it can store multiple sets of these, which we can use and edit and update in parallel. Each of these sets, or parallel instances, is termed a <code>branch</code> and <code>master</code> is Git’s default branch.</p>
 <p>A new branch can be created from any commit. Branches can also be merged together.</p>
-<p>Why is this useful? Suppose we’ve developed some software and now we want to add some new features to it but we’re not sure yet whether we’ll keep them. We can then create a branch ‘feature1’ and keep our master branch clean. When we’re done developing the feature and we are sure that we want to include it in our program, we can merge the feature branch with the master branch.</p>
+<p>Why is this useful? Suppose we’ve developed some software and now we want to try out some new ideas but we’re not sure yet whether we’ll keep them. We can then create a branch ‘feature1’ and keep our master branch clean. When we’re done developing the feature and we are sure that we want to include it in our program, we can merge the feature branch with the master branch. This keeps all the work-in-progress separate from the master branch, which contains tested, working code.</p>
 <p>We create our branch for the new feature.</p>
 <pre><code>-c1---c2---c3        master 
        \
@@ -75,21 +75,16 @@ nothing to commit (working directory clean)</code></pre>
        c4---c8---c9---------------c13            feature1</code></pre>
 <p>One popular model is to have:</p>
 <ul>
-<li>A release branch, representing a released version of the code</li>
-<li>A master branch, representing the most up-to-date stable version of the code</li>
+<li>A master branch, representing a released version of the code</li>
+<li>A release branch, representing the beginnings of the next release - a branch where the code is still undergoing testing</li>
 <li>Various feature and/or developer-specific branches representing work-in-progress, new features etc</li>
 </ul>
 <p>For example:</p>
-<pre><code>      0.1        0.2    0.3 
-      c6---------c9-----c17------                release
-      /         /       / 
-c1---c2---c3--c7--c8---c16--c18---c20---c21--    master
-|                     /
-c4---c10---c13------c15                          fred 
-|                   / 
-c5---c11---c12---c14---c19                       kate</code></pre>
+<div class="figure">
+<img src="fig/git-flow.png" alt="Git workflow (image from http://nurelm.com/our-workflow-git-flow/)" /><p class="caption">Git workflow <a href="http://nurelm.com/our-workflow-git-flow/">(image from http://nurelm.com/our-workflow-git-flow/)</a></p>
+</div>
 <p>There are different possible workflows when using Git for code development.</p>
-<p>One of the examples may be when the master branch holds stable and tested code. If a bug is found by a user, a bug fix can be applied to the release branch, and then merged with the master branch. When a feature or developer-specific branch, is stable and has been reviewed and tested it can be merged with the master branch. When the master branch has been reviewed and tested and is ready for release, a new release branch can be created from it. If you want to learn more about workflows with Git, have a look at the <a href="http://astropy.readthedocs.org/en/latest/development/workflow/development_workflow.html">AstroPy development workflow</a>.</p>
+<p>One of the examples may be when the master branch holds stable and tested code. If a bug is found by a user, a bug fix can be applied to the release branch, and then merged with the master branch. When a feature or developer-specific branch is stable and has been reviewed and tested it can be merged with the master branch. When the master branch has been reviewed and tested and is ready for release, a new release branch can be created from it. If you want to learn more about workflows with Git, have a look at the <a href="http://nvie.com/posts/a-successful-git-branching-model/">feature branch workflow</a>.</p>
 <h3 id="branching-in-practice">Branching in practice</h3>
 <p>One of our colleagues wants to contribute to the paper but is not quite sure if it will actually make a publication. So it will be safer to create a branch and carry on working on this “experimental” version of the paper in a branch rather than in the master.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout -b paperWJohn 
