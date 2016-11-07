@@ -222,6 +222,7 @@ between them, so no work is ever lost.
 > 
 > Each of you should now make some changes to the files in the repository.
 > Commit the changes and then push them back to the remote repository.  
+> Remember to pull changes before you push.
 >
 > ----
 >
@@ -277,7 +278,7 @@ between them, so no work is ever lost.
 > branch to get the changes you made.
 > 
 > What is the end result? What happens when you pull the branch that your
-> colleagues changed using `revert`?	
+> colleagues changed using `git revert`?	
 > 	
 > A: It works fine. The revert shows up in everyone's copy.
 >
@@ -286,8 +287,8 @@ between them, so no work is ever lost.
 >
 > #### Exercise 4: Undoing changes using reset
 > 
-> Now let's try to  undo a commit using `reset`.
-> Remember that it is a **bad** practice to use `reset` for branches which are
+> Now let's try to  undo a commit using `git reset`.
+> Remember that it is a **bad** practice to use `git reset` for branches which are
 > shared. The purpose of this exercise is to demonstrate what happens. 
 > 
 > Select a different branch for this exercise than the one you used for the
@@ -298,7 +299,7 @@ between them, so no work is ever lost.
 > 
 > What happens? Look through the history using `git log` - what can you notice?
 > 
-> A: You can't push the change to remote repository unless you use `push -f`.
+> A: You can't push the change to remote repository unless you use `git push -f`.
 > After force pushing the changes, your git log shows what you've done, as does
 > the remote git log, but the other person's local git log shows no change to the 
 > history. To that person it looks like work has just gone missing from the files
@@ -325,7 +326,7 @@ between them, so no work is ever lost.
 >
 > - Pick a (non-master) branch - this time you should both be working on the same one
 > - Both do some work on it and commit your changes
-> - Person A should also make some changes to the `master`  branch and push them back
+> - Person A should also make some changes to the *master*  branch and push them back
 > - Person A should then rebase their selected non-master branch on master and push 
 > everything back to the repository
 > - Person B (and C if you're working in a group of 3) should now pull (previously commiting the changes they made in the  branch)

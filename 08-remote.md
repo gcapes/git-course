@@ -62,11 +62,11 @@ in](https://GitHub.com).
 Now, we can create a repository on GitHub,
 
 * Log in to [GitHub](https://GitHub.com/) 
-* Click on the `Create` icon on the top right 
+* Click on the **Create** icon on the top right 
 * Enter Repository name: "papers"
 * For the purpose of this exercise we'll create a public repository 
-* Make sure the Initialize this repository with a README is *unselected* 
-* Click `Create Repository`
+* Make sure that **Initialize this repository with a README** is **unselected** 
+* Click **Create Repository**
 
 You'll get a page with new information about your repository. We already have
 our local repository and we will be *pushing* it to GitHub, so this is the
@@ -77,7 +77,7 @@ $ git remote add origin https://github.com/<USERNAME>/papers.git
 $ git push -u origin master
 ```
 
-The first line sets up an alias, `origin`, to correspond to the URL of our
+The first line sets up an alias **origin**, to correspond to the URL of our
 new repository on GitHub.
 
 
@@ -99,10 +99,10 @@ To https://github.com/gcapes/papers.git
 Branch master set up to track remote branch master from origin.
 ```
 
-This *pushes* our `master` branch to the remote repository, named via the alias
-`origin` and creates a new `master` branch in the remote repository.
+This **pushes** our *master* branch to the remote repository, named via the alias
+*origin* and creates a new *master* branch in the remote repository.
 
-Now, on GitHub, we should see our code and if we click the `Commits` tab we should see
+Now, on GitHub, we should see our code and if we click the **Commits** tab we should see
 our complete history of commits.  
 
 Our local repository is now available on GitHub. So, anywhere we can access
@@ -111,15 +111,13 @@ GitHub, we can access our repository.
 
 ### Push other local branches to a remote repository
   
-Let's push all our local branches into our remote repository:
+Let's push each of our local branches into our remote repository:
 
 ```{.bash}
 $ git push origin branch_name
 ```
     
-This will work assumig that 'origin' is still an alias for our remote
-repository in GitHub. The branch should now be created in our GitHub
-repository.    
+The branch should now be created in our GitHub repository.    
 
 To list all branches (local and remote):
 
