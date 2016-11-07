@@ -174,11 +174,11 @@ Changes to be committed:
       	new file:   journal.txt
 ~~~
 
-Now, our file is now listed as one of some Changes to be committed. 
+Now our file is listed underneath where it says **Changes to be committed**. 
     
 `git add` is used for two purposes. Firstly, to tell Git that a given file
 should be tracked. Secondly, to put the file into the Git **staging area**
-which is also known as the index or the cache. 
+which is also known as the *index* or the *cache*. 
 
 The staging area can be viewed as a "loading dock", a place to hold files we have
 added, or changed, until we are ready to tell Git to record those changes in the
@@ -223,10 +223,11 @@ On branch master
 nothing to commit, working directory clean
 ~~~
 
-Nothing to commit means that our file is now in the repository, our working
-directory is up-to-date and we have no uncommitted changes in our staging area. 
+Our file is now in the repository. 
+The output from the `git status` command means that we have a clean directory
+i.e. no tracked but modified files. 
 
-Now we will work a bit further on our `journal.txt` file by writing the introduction
+Now we will work a bit further on our *journal.txt* file by writing the introduction
 section.
    
 ```{.bash}
@@ -290,8 +291,8 @@ $ git add common
 ~~~
 
 All files that are in *common* are now tracked.  We would also have to add
-journal.txt to the staging area. But there is a shortcut. We can use option
-"-a" for `commit`. This option means "commit all files that are tracked and
+journal.txt to the staging area. But there is a shortcut. We can use
+`commit -a`. This option means "commit all files that are tracked and
 that have been modified".
 
 ~~~{.bash}
