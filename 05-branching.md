@@ -11,7 +11,7 @@ subtitle: Branching
 
 ### What is a branch?
 
-You might have noticed the term `branch` in status messages:
+You might have noticed the term *branch* in status messages:
 
 ~~~{.bash}
 $ git status journal.txt 
@@ -26,10 +26,10 @@ used `git checkout master`.
 
 Not only can our repository store the changes made to files and directories, it
 can store multiple sets of these, which we can use and edit and update in
-parallel. Each of these sets, or parallel instances, is termed a `branch` and
-`master` is Git's default branch. 
+parallel. Each of these sets, or parallel instances, is termed a **branch** and
+*master* is Git's default branch. 
 
- A new branch can be created from any commit. Branches can also be merged
+ A new branch can be created from any commit. Branches can also be *merged*
  together. 
 
  Why is this useful? Suppose we've developed some software and now we want to
@@ -74,7 +74,7 @@ We can then merge the feature1 branch adding new feature to our master branch
 ```
 When we merge our feature1 branch with master git creates a new commit which
 contains merged files from master and feature1. After the merge we can continue
-developing. The merged branch is not deleted. We can continue developing (and
+developing. **The merged branch is not deleted.** We can continue developing (and
 making commits) in feature1 as well.
 
 ```    

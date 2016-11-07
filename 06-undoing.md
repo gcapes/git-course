@@ -176,7 +176,7 @@ able to use. Then add and commit. Once again we have a change we want to undo.
 $ git revert HEAD
 ```
 
-When we revert, a new commit is created. The `HEAD` pointer and the branch
+When we revert, a new commit is created. The *HEAD* pointer and the branch
 pointer are in fact moved forward rather than backwards. 	
 	
 We can revert any previous commit. That is, we can "abandon" any of the
@@ -190,20 +190,20 @@ hint: with 'git add <paths>' or 'git rm <paths>'
 hint: and commit the result with 'git commit'
 ```
 	
-Behind the scenes Git gets confused trying to merge the commit `HEAD` is pointing
+Behind the scenes Git gets confused trying to merge the commit *HEAD* is pointing
 to with the past commit we're reverting. 
 
 Reverting thus records the fact of "abandoning the commit" in the history.
 When we revert in a branch that is shared with others and then push that branch
 into the remote repository, it is as if we "came clean" about what we were
 doing. Everyone who pulls the branch in which we reverted changes will see it.
-With `reset` we "keep it secret" that we have undone some changes.
+With `git reset` we "keep it secret" that we have undone some changes.
 
 ![Reset vs revert](fig/git-revert-vs-reset.svg)
 
 See this [Atlassian online tutorial](
 https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting/commit-level-operations)
-for further reading about the differences between `revert` and `reset`.
+for further reading about the differences between `git revert` and `git reset`.
 
 ### How to undo almost anything with Git
 See [this blog post](https://github.com/blog/2019-how-to-undo-almost-anything-with-git) for more example scenarios and how to recover from them.
