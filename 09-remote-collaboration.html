@@ -66,13 +66,13 @@ $ <span class="kw">git</span> push</code></pre>
 $ <span class="kw">git</span> fetch</code></pre>
 <p>We can now see what the differences are by doing,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff origin/master</code></pre>
-<p>which compares our current, <code>master</code> branch, with an <code>origin/master</code> branch which is the name of the <code>master</code> branch in <code>origin</code> which is the alias for our cloned repository, the one on GitHub.</p>
+<p>which compares our current, <em>master</em> branch, with an <em>origin/master</em> branch which is the name of the <em>master</em> branch in <em>origin</em> which is the alias for our cloned repository, the one on GitHub.</p>
 <p>We can then <em>merge</em> these changes into our current repository, which merges the branches together,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> merge origin/master</code></pre>
 <p>And then we can check that we have our changes,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> journal.txt 
 $ <span class="kw">git</span> log</code></pre>
-<p>As a short-hand, we can do a Git <em>pull</em> which does a <em>fetch</em> then a <em>merge</em>. Now try the same process, but ths time starting in the papers2 folder (you should already be in the papers2 folder), and write an abstract:</p>
+<p>As a short-hand, we can do a <code>git pull</code> which does a <code>git fetch</code> then a <code>git merge</code>. Now try the same process, but ths time starting in the papers2 folder (you should already be in the papers2 folder), and write an abstract:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt 
 $ <span class="kw">git</span> add journal.txt 
 $ <span class="kw">git</span> commit -m <span class="st">&quot;Add abstract&quot;</span> journal.txt 
@@ -108,9 +108,9 @@ hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; fo
 <pre class="output"><code>Auto-merging journal.txt
 CONFLICT (content): Merge conflict in journal.txt
 Automatic merge failed; fix conflicts and then commit the result.</code></pre>
-<p>As we saw earlier, with the fetch and merge, a <code>pull</code> pulls down changes from the repository and tries to merge them. It does this on a file-by-file basis, merging files line by line. We get a <em>conflict</em> if a file has changes that affect the same lines and those changes can’t be seamlessly merged. We had this situation before when we worked with branches and tried to merge 2 of them. If we look at the status,</p>
+<p>As we saw earlier, with the fetch and merge, a <code>git pull</code> pulls down changes from the repository and tries to merge them. It does this on a file-by-file basis, merging files line by line. We get a <strong>conflict</strong> if a file has changes that affect the same lines and those changes can’t be seamlessly merged. We had this situation before when we worked with branches and tried to merge 2 of them. If we look at the status,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
-<p>we can see that our file is listed as <code>Unmerged</code> and if we look at <code>journal.txt</code>, we may see something like,</p>
+<p>we can see that our file is listed as <em>Unmerged</em> and if we look at <em>journal.txt</em>, we may see something like,</p>
 <pre class="output"><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 Author
 G Capes, J Smith
@@ -119,9 +119,9 @@ author
 J Smith, G Capes
 &gt;&gt;&gt;&gt;&gt;&gt;&gt; 1b55fe7f23a6411f99bf573bfb287937ecb647fc</code></pre>
 <p>The mark-up shows us the parts of the file causing the conflict and the versions they come from. We now need to manually edit the file to <em>resolve</em> the conflict. Just like we did when we had to deal with the conflict when we were merging the branches.</p>
-<p>We edit the file. Then commit our changes. Now, if we push,</p>
+<p>We edit the file. Then commit our changes. Now, if we <em>push</em> …</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin master</code></pre>
-<p>All goes well. If we now go to GitHub and click on the “Overview” tab we can see where our repository diverged and came together again.</p>
+<p>… all goes well. If we now go to GitHub and click on the “Overview” tab we can see where our repository diverged and came together again.</p>
 <p>This is where version control proves itself better than DropBox or GoogleDrive, this ability to merge text files line-by-line and highlight the conflicts between them, so no work is ever lost.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
@@ -131,7 +131,7 @@ J Smith, G Capes
 <h4>Exercise 1: Collaborating on a remote repository</h4>
 <p>In this exercise you should work with a partner or a group of three. One of you should give access to your remote repository on GitHub to the others (by selecting Settings -&gt; Collaborators).</p>
 <p>Now those of you who are added as collaborators should clone the repository of the first person on your machines. (make sure that you <strong>don’t clone into a directory that is already a repository</strong>!)</p>
-<p>Each of you should now make some changes to the files in the repository. Commit the changes and then push them back to the remote repository.</p>
+<p>Each of you should now make some changes to the files in the repository. Commit the changes and then push them back to the remote repository.<br />Remember to pull changes before you push.</p>
 <hr />
 <h4>Exercise 2: Creating branches and sharing them in the remote repository</h4>
 <p>Working with the same remote repository, each of you should create a new branch locally and push it back to the remote repo.</p>
@@ -154,7 +154,7 @@ Switched to a new branch &#39;new_branch&#39;</code></pre>
 <p>Once you have the branches which others created, try to undo one of the commits.</p>
 <p>Each one of you should try to revert a commit in a different branch to your partner(s).</p>
 <p>Push the branch back to the remote repository. The others should pull that branch to get the changes you made.</p>
-<p>What is the end result? What happens when you pull the branch that your colleagues changed using <code>revert</code>?</p>
+<p>What is the end result? What happens when you pull the branch that your colleagues changed using <code>git revert</code>?</p>
 <p>A: It works fine. The revert shows up in everyone’s copy.</p>
 </div>
 </section>
@@ -164,11 +164,11 @@ Switched to a new branch &#39;new_branch&#39;</code></pre>
 </div>
 <div class="panel-body">
 <h4>Exercise 4: Undoing changes using reset</h4>
-<p>Now let’s try to undo a commit using <code>reset</code>. Remember that it is a <strong>bad</strong> practice to use <code>reset</code> for branches which are shared. The purpose of this exercise is to demonstrate what happens.</p>
+<p>Now let’s try to undo a commit using <code>git reset</code>. Remember that it is a <strong>bad</strong> practice to use <code>git reset</code> for branches which are shared. The purpose of this exercise is to demonstrate what happens.</p>
 <p>Select a different branch for this exercise than the one you used for the previous one.</p>
 <p>Reset to one of the previous commits and push it back to the remote repository. Pull the branches which your colleagues reset in a similar way.</p>
 <p>What happens? Look through the history using <code>git log</code> - what can you notice?</p>
-<p>A: You can’t push the change to remote repository unless you use <code>push -f</code>. After force pushing the changes, your git log shows what you’ve done, as does the remote git log, but the other person’s local git log shows no change to the history. To that person it looks like work has just gone missing from the files in their working directory. Git also thinks that their branch is ahead of origin/<branch>.</p>
+<p>A: You can’t push the change to remote repository unless you use <code>git push -f</code>. After force pushing the changes, your git log shows what you’ve done, as does the remote git log, but the other person’s local git log shows no change to the history. To that person it looks like work has just gone missing from the files in their working directory. Git also thinks that their branch is ahead of origin/<branch>.</p>
 <hr />
 <h4>Exercise 5: Rebasing</h4>
 <p>This exercise is again designed to explore what happens when you follow <em>bad practice</em>. In this case, the bad practice is rebasing branches which are shared with others.</p>
@@ -182,7 +182,7 @@ Switched to a new branch &#39;new_branch&#39;</code></pre>
 <ul>
 <li>Pick a (non-master) branch - this time you should both be working on the same one</li>
 <li>Both do some work on it and commit your changes</li>
-<li>Person A should also make some changes to the <code>master</code> branch and push them back</li>
+<li>Person A should also make some changes to the <em>master</em> branch and push them back</li>
 <li>Person A should then rebase their selected non-master branch on master and push everything back to the repository</li>
 <li>Person B (and C if you’re working in a group of 3) should now pull (previously commiting the changes they made in the branch)</li>
 </ul>

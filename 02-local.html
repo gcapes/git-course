@@ -111,8 +111,8 @@ Changes to be committed:
 (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
 
         new file:   journal.txt</code></pre>
-<p>Now, our file is now listed as one of some Changes to be committed.</p>
-<p><code>git add</code> is used for two purposes. Firstly, to tell Git that a given file should be tracked. Secondly, to put the file into the Git <strong>staging area</strong> which is also known as the index or the cache.</p>
+<p>Now our file is listed underneath where it says <strong>Changes to be committed</strong>.</p>
+<p><code>git add</code> is used for two purposes. Firstly, to tell Git that a given file should be tracked. Secondly, to put the file into the Git <strong>staging area</strong> which is also known as the <em>index</em> or the <em>cache</em>.</p>
 <p>The staging area can be viewed as a “loading dock”, a place to hold files we have added, or changed, until we are ready to tell Git to record those changes in the repository.</p>
 <div class="figure">
 <img src="fig/git-staging-area.svg" alt="The staging area" /><p class="caption">The staging area</p>
@@ -130,8 +130,8 @@ create mode 100644 journal.txt</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
 <pre class="output"><code>On branch master
 nothing to commit, working directory clean</code></pre>
-<p>Nothing to commit means that our file is now in the repository, our working directory is up-to-date and we have no uncommitted changes in our staging area.</p>
-<p>Now we will work a bit further on our <code>journal.txt</code> file by writing the introduction section.</p>
+<p>Our file is now in the repository. The output from the <code>git status</code> command means that we have a clean directory i.e. no tracked but modified files.</p>
+<p>Now we will work a bit further on our <em>journal.txt</em> file by writing the introduction section.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt</code></pre>
 <p>If we now run,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
@@ -155,7 +155,7 @@ $ <span class="kw">git</span> commit</code></pre>
 $ <span class="kw">gedit</span> common/references.txt</code></pre>
 <p>We will also add a citation in our introduction section (in journal.txt). Now we need to record our work in the repository so we need to make a commit. First we tell Git to track the references. We can actually tell Git to track everything in the given subdirectory:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add common</code></pre>
-<p>All files that are in <em>common</em> are now tracked. We would also have to add journal.txt to the staging area. But there is a shortcut. We can use option “-a” for <code>commit</code>. This option means “commit all files that are tracked and that have been modified”.</p>
+<p>All files that are in <em>common</em> are now tracked. We would also have to add journal.txt to the staging area. But there is a shortcut. We can use <code>commit -a</code>. This option means “commit all files that are tracked and that have been modified”.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit -am <span class="st">&quot;Reference J Bloggs and add references file&quot;</span></code></pre>
 <p>and Git will add, then commit, both the directory and the file.</p>
 <p>In order to add all tracked files to the staging area, use <code>git commit -a</code> (which may be very useful if you edit e.g. 10 files and now you want to commit all of them).</p>

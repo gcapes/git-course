@@ -68,16 +68,16 @@
 <p>Now, we can create a repository on GitHub,</p>
 <ul>
 <li>Log in to <a href="https://GitHub.com/">GitHub</a></li>
-<li>Click on the <code>Create</code> icon on the top right</li>
+<li>Click on the <strong>Create</strong> icon on the top right</li>
 <li>Enter Repository name: “papers”</li>
 <li>For the purpose of this exercise we’ll create a public repository</li>
-<li>Make sure the Initialize this repository with a README is <em>unselected</em></li>
-<li>Click <code>Create Repository</code></li>
+<li>Make sure that <strong>Initialize this repository with a README</strong> is <strong>unselected</strong></li>
+<li>Click <strong>Create Repository</strong></li>
 </ul>
 <p>You’ll get a page with new information about your repository. We already have our local repository and we will be <em>pushing</em> it to GitHub, so this is the option we will use:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> remote add origin https://github.com/<span class="kw">&lt;</span>USERNAME<span class="kw">&gt;</span>/papers.git 
 $ <span class="kw">git</span> push -u origin master</code></pre>
-<p>The first line sets up an alias, <code>origin</code>, to correspond to the URL of our new repository on GitHub.</p>
+<p>The first line sets up an alias <strong>origin</strong>, to correspond to the URL of our new repository on GitHub.</p>
 <h3 id="push-locally-tracked-files-to-a-remote-repository">Push locally tracked files to a remote repository</h3>
 <p>Now copy and paste the second line,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push -u origin master </code></pre>
@@ -89,13 +89,13 @@ Total 32 (delta 7), reused 0 (delta 0)
 To https://github.com/gcapes/papers.git
  * [new branch]      master -&gt; master
 Branch master set up to track remote branch master from origin.</code></pre>
-<p>This <em>pushes</em> our <code>master</code> branch to the remote repository, named via the alias <code>origin</code> and creates a new <code>master</code> branch in the remote repository.</p>
-<p>Now, on GitHub, we should see our code and if we click the <code>Commits</code> tab we should see our complete history of commits.</p>
+<p>This <strong>pushes</strong> our <em>master</em> branch to the remote repository, named via the alias <em>origin</em> and creates a new <em>master</em> branch in the remote repository.</p>
+<p>Now, on GitHub, we should see our code and if we click the <strong>Commits</strong> tab we should see our complete history of commits.</p>
 <p>Our local repository is now available on GitHub. So, anywhere we can access GitHub, we can access our repository.</p>
 <h3 id="push-other-local-branches-to-a-remote-repository">Push other local branches to a remote repository</h3>
-<p>Let’s push all our local branches into our remote repository:</p>
+<p>Let’s push each of our local branches into our remote repository:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> push origin branch_name</code></pre>
-<p>This will work assumig that ‘origin’ is still an alias for our remote repository in GitHub. The branch should now be created in our GitHub repository.</p>
+<p>The branch should now be created in our GitHub repository.</p>
 <p>To list all branches (local and remote):</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> branch -a</code></pre>
 <p>To delete the remote branch, there are two syntax options:</p>
