@@ -95,14 +95,7 @@ For example:
 ![Git workflow [(image from http://nurelm.com/our-workflow-git-flow/)](http://nurelm.com/our-workflow-git-flow/)](fig/git-flow.png)
 
 There are different possible workflows when using Git for code development. 
-
-One of the examples may be when the master branch holds stable and tested code.
-If a bug is found by a user, a bug fix can be applied to the release branch,
-and then merged with the master branch.  When a feature or developer-specific
-branch is stable and has been reviewed and tested it can be merged with the
-master branch. When the master branch has been reviewed and tested and is ready
-for release, a new release branch can be created from it.  If you want to learn
-more about workflows with Git, have a look at the
+If you want to learn more about workflows with Git, have a look at the
 [feature branch workflow](http://nvie.com/posts/a-successful-git-branching-model/).
 
 
