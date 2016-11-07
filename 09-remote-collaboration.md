@@ -77,8 +77,8 @@ We can now see what the differences are by doing,
 $ git diff origin/master
 ```
 
-which compares our current, `master` branch, with an `origin/master` branch
-which is the name of the `master` branch in `origin` which is the alias for our
+which compares our current, *master* branch, with an *origin/master* branch
+which is the name of the *master* branch in *origin* which is the alias for our
 cloned repository, the one on GitHub.
 
 We can then *merge* these changes into our current repository, which merges the
@@ -95,7 +95,7 @@ $ cat journal.txt
 $ git log
 ```
 
-As a short-hand, we can do a Git *pull* which does a *fetch* then a *merge*. 
+As a short-hand, we can do a `git pull` which does a `git fetch` then a `git merge`. 
 Now try the same process, but ths time starting in the papers2 folder (you
 should already be in the papers2 folder), and write an abstract:
 
@@ -164,9 +164,9 @@ CONFLICT (content): Merge conflict in journal.txt
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-As we saw earlier, with the fetch and merge, a `pull` pulls down changes from the
+As we saw earlier, with the fetch and merge, a `git pull` pulls down changes from the
 repository and tries to merge them. It does this on a file-by-file basis,
-merging files line by line. We get a *conflict* if a file has changes that
+merging files line by line. We get a **conflict** if a file has changes that
 affect the same lines and those changes can't be seamlessly merged. We had this
 situation before when we worked with branches and tried to merge 2 of them. If
 we look at the status,
@@ -175,8 +175,8 @@ we look at the status,
 $ git status
 ```
 
-we can see that our file is listed as `Unmerged` and if we look at
-`journal.txt`, we may see something like,
+we can see that our file is listed as *Unmerged* and if we look at
+*journal.txt*, we may see something like,
 
 ```{.output}
 <<<<<<< HEAD
@@ -193,13 +193,13 @@ versions they come from. We now need to manually edit the file to *resolve* the
 conflict. Just like we did when we had to deal with the conflict when we were
 merging the branches.
 
-We edit the file. Then commit our changes. Now, if we push,
+We edit the file. Then commit our changes. Now, if we *push* ...
 
 ```{.bash}
 $ git push origin master
 ```
 
-All goes well. If we now go to GitHub and click on the "Overview" tab we can
+... all goes well. If we now go to GitHub and click on the "Overview" tab we can
 see where our repository diverged and came together again.
 
 This is where version control proves itself better than DropBox or GoogleDrive,
