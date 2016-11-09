@@ -43,18 +43,50 @@ $ git checkout -b results
 Add a results section to the paper with a couple of lines to outline the findings.
 Commit the changes you made.
 
+```{.bash}
+$ gedit journal.txt   # Add results section
+$ git add journal.txt
+$ git commit          # Write results section
+```
+
 Checkout the **master** branch and write some conclusions. Commit them.
 
+```{.bash}
+$ gedit journal.txt   # Add conclusions section
+$ git add journal.txt
+$ git commit          # Write conclusions section
+```
 Now check out our **results** branch again and run:
 
 ```{.bash}
 $ git rebase master
 ```
 
-Run `git log` - you will see that rebasing created a new commit and put it on
+Depending what changes we have made, there may be conflicts we have to fix in order to rebase.
+If this is the case, Git will let us know, and give some instructions on how to proceed.
+The process for fixing conflicts is the same as before:
+
+```{.bash}
+$ gedit journal.txt      # Manually fix conficts in affected file(s)
+$ git add                # Mark file as resolved
+$ git rebase --continue  # Continue to rebase
+```
+
+Finally, run 
+
+```{.bash}
+git log -3
+```
+
+and you will see that rebasing created a new commit and put it on
 top of the commit pointed at by **master**.
 If we switch back to the master branch, we can now merge the rebased **results** branch into
 master and a linear history results.
+
+```{.bash}
+$ git checkout master   # Switch branch to master
+$ git merge results     # Merge results branch into master
+```
 
 ![Merging with and without rebasing - image from [http://gitforteams.com/resources/merge-rebase.html](https://raw.githubusercontent.com/gitforteams/diagrams/master/balsamiq/merge-types.png)](fig/merge-types.png)
 
