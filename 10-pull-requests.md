@@ -20,6 +20,16 @@ Requests*. Esentially it's "requesting the owner of the repository to pull in
 your contributions". The owner may or may not accept them. But for you as
 a contributor, it was really easy to make the contribution.
 
+The process looks like this:
+
+- Find a repository on GitHub that belongs to someone else
+- **Fork** it (`git clone` it on GitHub's servers into your GitHub account)
+- `git clone` it to your PC/laptop
+- Make changes, and push them to your repository on GitHub
+- Request that the owner of the repository you *forked* pulls in your changes
+
+![Conceptual illustratin of a pull request - image adapted from [here](http://acrl.ala.org/techconnect/post/coding-collaboration-on-github)](fig/github-diagram.png)
+
 > # Exercise {.challenge}
 > Let's look at the workflow and try to repeat it:
 > 
