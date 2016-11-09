@@ -14,7 +14,7 @@ subtitle: Branching
 You might have noticed the term *branch* in status messages:
 
 ~~~{.bash}
-$ git status journal.txt 
+$ git status 
 ~~~
 ~~~{.output}
 On branch master 
@@ -107,24 +107,33 @@ and carry on working on this "experimental" version of the paper in a branch
 rather than in the master.
 
 ~~~{.bash}
-$ git checkout -b paperWJohn 
+$ git checkout -b paperWJohn
+~~~
+~~~{.output}
 Switched to a new branch 'paperWJohn'
 ~~~
 
-Now let's change the title of our paper and the authors (adding John Smith).
-Let's commit our changes. Before we do that, it's a good practice to check
-whether we're working in the correct branch.
+We're going to change the title of the paper and update the author list (adding John Smith).
+However, before we get started it's a good practice to check that we're working
+on the right branch.
 
 ~~~{.bash}
-$ git branch 
+$ git branch        # Double check which branch we are working on
 ~~~
 ~~~{.output}
   master
 * paperWJohn 
 ~~~
 
-The * indicates which branch we're currently in. Let's commit. If we want to
-work now in our master branch. We can switch by using:
+The * indicates which branch we're currently in. Now let's make the changes to the paper.
+
+~~~{.bash}
+$ gedit journal.txt   # Change title and add co-author
+$ git add journal.txt
+$ git commit          # Modify title and add John as co-author
+~~~
+
+If we now want to work in our master branch. We can switch back by using:
 
 ~~~{.bash}
 $ git checkout master 
@@ -133,19 +142,26 @@ $ git checkout master
 Switched to branch 'master'
 ~~~
 
+Having written some of the paper, we have thought of a better title for
+the *master* version of the paper.
+
+~~~{.bash}
+$ gedit journal       # Rewrite the title
+$ git add journal.txt
+$ git commit          # Rewrite title emphasising measurements
+~~~
+
 ### Merging and resolving conflicts
 
 We are now working on two papers: the main one in our master branch and the one
 which may possibly be collaborative work in our "paperWJohn" branch.
-Let's change the title of the paper in the collaborative branch to reflect the
-new content that this version will contain.
-Let's do it and commit changes.
+Let's add another section to the paper to write about John's simulations.
 
 ~~~{.bash}
-$ git checkout paperWJohn
-$ gedit journal.txt
+$ git checkout paperWJohn       # Switch branch
+$ gedit journal.txt             # Add 'simulations' section
 $ git add journal.txt 
-$ git commit -m "Change title" journal.txt
+$ git commit -m "Add simulations" journal.txt
 ~~~
 
 After some discussions with John we decided that we will publish together,
@@ -156,8 +172,8 @@ in branch "paperWJohn".
  doing that:
 
 ~~~{.bash}
-$ git checkout master
-$ git merge paperWJohn 
+$ git checkout master   # Switch branch
+$ git merge paperWJohn  # Merge paperWJohn into master
 ~~~
 ~~~{.output}
 Auto-merging journal.txt
@@ -166,8 +182,8 @@ Automatic merge failed; fix conflicts and then commit the result.
 ~~~
 
 Git cannot complete the merge because there is a conflict - if you recall,
-journal.txt differs in the same places (lines) in the master and the paperWJohn
-branch. We have to resolve the conflict and then complete the merge. We can get
+after creating the new branch, we changed the title of the paper on both branches.
+We have to resolve the conflict and then complete the merge. We can get
 some more detail
 
 ~~~{.bash}
@@ -199,10 +215,10 @@ The mark-up shows us the parts of the file causing the conflict and the
 versions they come from. We now need to manually edit the file to resolve the
 conflict. This means removing the mark-up and doing one of:
 
-- Keep the local version, which, here, is the one marked-up by HEAD i.e.
+- Keep the local version, which is the one marked-up by HEAD i.e.
 "Laboratory measurements of atmospheric particle formation"
 
-- Keep the remote version, which, here, is the one marked-up by paperWJohn
+- Keep the remote version, which is the one marked-up by paperWJohn
 i.e. "Simulations of atmospheric particle formation"
 
 - Or manually edit the line to something new which might combine some elements
@@ -211,7 +227,8 @@ of the two e.g. "Measurement-model comparison of atmospheric particle formation 
 We edit the file. Then commit our changes:
 
 ~~~{.bash}
-$ git add journal.txt 
+$ gedit journal.txt    # Resolve conflict by editing journal.txt
+$ git add journal.txt  # Let Git know we have resolved the conflict
 $ git commit -m "Rewrite title to incorporate simulations"
 ~~~
 
