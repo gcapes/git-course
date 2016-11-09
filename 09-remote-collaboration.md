@@ -35,8 +35,8 @@ And let us clone our repository again, but this time specify the local
 directory name,
 
 ```{.bash}
-$ git clone https://github.com/<USERNAME>/papers.git papers2 
-Cloning into 'papers2'...
+$ git clone https://github.com/<USERNAME>/papers.git laptop_papers 
+Cloning into 'laptop_papers'...
 ```
 
 
@@ -47,7 +47,7 @@ $ ls
 ```
 
 ```{.output}
-$ papers papers2
+$ papers laptop_papers
 ```
 
 Let's pretend these clones are on two separate machines! So we have 3 versions
@@ -67,7 +67,7 @@ Now let's change to our other repository and *fetch* the changes from our
 remote repository,
 
 ```{.bash}    
-$ cd ../papers2 
+$ cd ../laptop_papers 
 $ git fetch
 ```
 
@@ -96,13 +96,13 @@ $ git log
 ```
 
 As a short-hand, we can do a `git pull` which does a `git fetch` then a `git merge`. 
-Now try the same process, but ths time starting in the papers2 folder (you
-should already be in the papers2 folder), and write an abstract:
+Now try the same process, but this time starting in the laptop_papers folder (you
+should already be in the laptop_papers folder), and write an abstract:
 
 ```{.bash}    
-$ gedit journal.txt 
+$ gedit journal.txt       # Write abstract
 $ git add journal.txt 
-$ git commit -m "Add abstract" journal.txt 
+$ git commit -m "Write abstract" journal.txt 
 $ git push origin master
 $ cd ../papers 
 $ git pull origin master
@@ -118,7 +118,8 @@ $ git log
 ### Conflicts and how to resolve them
 
 Let's continue to pretend that our two local, cloned, repositories are hosted
-on two different machines. Add an affilication for each author.
+on two different machines. You should still be in the original *papers* folder.
+Add an affilication for each author.
 Then push these changes to our remote repository:
 
 ```{.bash}    
@@ -132,7 +133,7 @@ Now let us suppose, at a later, date, we use our other repository and we want
 to change the order of the authors.
 
 ```{.bash}    
-$ cd ../papers2 
+$ cd ../laptop_papers 
 $ gedit journal.txt 
 $ git add journal.txt 
 $ git commit -m "Change the first author" journal.txt 
@@ -168,7 +169,7 @@ As we saw earlier, with the fetch and merge, a `git pull` pulls down changes fro
 repository and tries to merge them. It does this on a file-by-file basis,
 merging files line by line. We get a **conflict** if a file has changes that
 affect the same lines and those changes can't be seamlessly merged. We had this
-situation before when we worked with branches and tried to merge 2 of them. If
+situation before when we worked with branches and tried to merge two of them. If
 we look at the status,
 
 ```{.bash}
