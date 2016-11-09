@@ -16,7 +16,8 @@ Correct it, save the file but do not commit it yet.
 We can review the changes that we made using:
 
 ~~~{.bash}
-$ git diff journal.txt
+$ gedit journal.txt    # Add second reference to introduction
+$ git diff journal.txt # View changes to file
 ~~~
 
 This shows the difference between the latest copy in the repository and the
@@ -28,13 +29,13 @@ changes we made.
 addition of the updated line.
 
 Looking at differences between commits is one of the most common activities.
-The `diff` command itself has a number of [useful
+The `git diff` command itself has a number of [useful
 options](http://git-scm.com/docs/git-diff.html).
 
-There is also a more elaborate front end to the `diff` command - [`git
+There is also a more elaborate front end to the `git diff` command - [`git
 difftool`](). `git difftool` is used for comparing and editing files that
 changed between commits using common diff tools. There is a range of such
-tools, including emerge, kompare, meld, and vimdiff.
+tools, including diffmerge, meld, and vimdiff.
 
 There is a range of GUI-based tools supporting looking at differences and
 editing files. For example:
@@ -52,7 +53,7 @@ technologies.
 Now commit the change we made by adding the second reference:
 ```{.bash}
 $ git add journal.txt
-$ git commit
+$ git commit          # Add second reference to introduction
 ```
 
 ### Looking at our history

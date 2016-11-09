@@ -96,7 +96,7 @@ $ git config --global --add color.ui true
 
 We can now preview (and edit, if necessary) Git's global configuration (such as
 our name and the default editor which we just set up). If we look in our home
-directory, we'll see a `.gitconfig` file,
+directory, we'll see a **.gitconfig** file,
 
 ~~~{.bash}
 $ cat ~/.gitconfig 
@@ -180,19 +180,20 @@ repository.
 #### Commit changes
 
 In order to tell Git to record our change, our new file, into the repository,
-we need to  *commit* it:
+we need to  **commit** it:
 
 ~~~{.bash}
 $ git commit
+# Type a commit message: "Add title and authors"
+# Now close gedit
 ~~~
 
 Our default editor will now pop up. Why? Well, Git can automatically figure out
 that directories and files are committed, and by whom (thanks to the information
 we provided before) and even, what changes were made, but it cannot figure out
-why. So we need to provide this in a commit message. So we need to type in
-a message: "Add title and authors"
+why. So we need to provide this in a commit message.
 
-If we save our commit message, Git will now commit our file.
+If we save our commit message **and exit the editor**, Git will now commit our file.
 
 ~~~{.output}
 [master (root-commit) 21cfbde] 
@@ -214,7 +215,7 @@ On branch master
 nothing to commit, working directory clean
 ~~~
 
-Our file is now in the repository. 
+our file is now in the repository. 
 The output from the `git status` command means that we have a clean directory
 i.e. no tracked but modified files. 
 
@@ -223,6 +224,7 @@ section.
    
 ```{.bash}
 $ gedit journal.txt
+# Write introduction section
 ```
 If we now run,
 
@@ -250,44 +252,47 @@ commit the changes:
      
 ~~~{.bash}
 $ git add journal.txt 
-$ git commit
+$ git commit # Write introduction
 ~~~    
 Note that in this case we used `git add` to put journal.txt to the staging
 area. Git already knows this file should be tracked but doesn't know if we want
 to commit the changes we made to the file  in the repository and hence we have
 to add the file to the staging area. 
 
-
 It can sometimes be quicker to provide our commit messages at the command-line
-by doing:
+by doing `git commit -m "Write introduction section"`.
 
-~~~{.bash}
-$ git commit -m "Write introduction section"
-~~~    
 Let's add a directory *common* and a file *references.txt* for references we may
 want to reuse:
 
 ~~~{.bash}
 $ mkdir common 
-$ gedit common/references.txt
+$ gedit common/references.txt # Add a reference
 ~~~
 
 We will also add a citation in our introduction section (in journal.txt).
+
+~~~{.bash}
+$ gedit journal.txt # Use reference in introduction
+~~~
+
 Now we need to record our work in the repository so we need to make a commit.
 First we tell Git to track the references.
 We can actually tell Git to track everything in the given subdirectory:
 
 ~~~{.bash}
-$ git add common
+$ git add common # Track everything currently in the 'common' directory
+$ git status     # Verify that common/references.txt is now tracked
 ~~~
 
 All files that are in *common* are now tracked.  We would also have to add
-journal.txt to the staging area. But there is a shortcut. We can use
+journal.txt in the staging area. But there is a shortcut. We can use
 `commit -a`. This option means "commit all files that are tracked and
 that have been modified".
 
 ~~~{.bash}
 $ git commit -am "Reference J Bloggs and add references file"
+# add and commit all tracked files
 ~~~
 and Git will add, then commit, both the directory and the file.
 
