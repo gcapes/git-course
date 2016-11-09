@@ -57,11 +57,11 @@ accidentally delete this directory!
 As part of the information about changes made to files Git records who made
 those changes. In teamwork this information is often crucial (do you want to
 know who rewrote your 'Conclusions' section?). So, we need to tell Git about
-who we are:  
+who we are (note that you need to enclose your name in quote marks):  
 
 ~~~{.bash}
 $ git config --global user.name "Your Name" 
-$ git config --global user.email "yourname@yourplace.org"
+$ git config --global user.email yourname@yourplace.org
 ~~~
 
 #### Set a default editor
