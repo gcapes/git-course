@@ -61,22 +61,19 @@ $ <span class="kw">cd</span> papers</code></pre>
 <pre class="output"><code>branches  config  description  HEAD  hooks  info  objects refs</code></pre>
 <p>.git directory contains Git’s configuration files. Be careful not to accidentally delete this directory!</p>
 <h4 id="tell-git-who-we-are">Tell Git who we are</h4>
-<p>As part of the information about changes made to files Git records who made those changes. In teamwork this information is often crucial (do you want to know who rewrote your ‘Conclusions’ section?). So, we need to tell Git about who we are:</p>
+<p>As part of the information about changes made to files Git records who made those changes. In teamwork this information is often crucial (do you want to know who rewrote your ‘Conclusions’ section?). So, we need to tell Git about who we are (note that you need to enclose your name in quote marks):</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global user.name <span class="st">&quot;Your Name&quot;</span> 
-$ <span class="kw">git</span> config --global user.email <span class="st">&quot;yourname@yourplace.org&quot;</span></code></pre>
+$ <span class="kw">git</span> config --global user.email yourname@yourplace.org</code></pre>
 <h4 id="set-a-default-editor">Set a default editor</h4>
 <p>When working with Git we will often need to provide some short but useful information. In order to enter this information we need an editor. We’ll now tell Git which editor we want to be the default one (i.e. Git will always bring it up whenever it wants us to provide some information).</p>
 <p>You can choose any editor available on your system. For the purpose of this session we’ll use <em>gedit</em>:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global core.editor gedit</code></pre>
-<p>To set up vi as the default editor:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global core.editor vi</code></pre>
-<p>To set up xemacs as the default editor:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global core.editor xemacs</code></pre>
+<p>To set up alternative editors, follow the same notation e.g. <code>git config --global core.editor vi</code>, <code>git config --global core.editor xemacs</code>.</p>
 <h4 id="colours-in-git">Colours in Git</h4>
-<p>On many computers, the terminal output is automatically coloured which makes reading the output easier. If your output is not coloured (e.g. in the Sackville/G11 cluster) there is a command which will add the colour:</p>
+<p>On many computers, the terminal output is automatically coloured which makes reading the output easier. If your output is not coloured (e.g. in the Sackville/G11 cluster) there is a command which will add the colour (<strong>note the spelling of <em>color</em></strong>):</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global --add color.ui true</code></pre>
 <h4 id="gits-global-configuration">Git’s global configuration</h4>
-<p>We can now preview (and edit, if necessary) Git’s global configuration (such as our name and the default editor which we just set up). If we look in our home directory, we’ll see a <code>.gitconfig</code> file,</p>
+<p>We can now preview (and edit, if necessary) Git’s global configuration (such as our name and the default editor which we just set up). If we look in our home directory, we’ll see a <strong>.gitconfig</strong> file,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> ~/.gitconfig 
     [<span class="kw">user</span>] name = Your Name email = yourname@yourplace.org
     [<span class="kw">core</span>] editor = gedit</code></pre>
@@ -118,10 +115,12 @@ Changes to be committed:
 <img src="fig/git-staging-area.svg" alt="The staging area" /><p class="caption">The staging area</p>
 </div>
 <h4 id="commit-changes">Commit changes</h4>
-<p>In order to tell Git to record our change, our new file, into the repository, we need to <em>commit</em> it:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit</code></pre>
-<p>Our default editor will now pop up. Why? Well, Git can automatically figure out that directories and files are committed, and by whom (thanks to the information we provided before) and even, what changes were made, but it cannot figure out why. So we need to provide this in a commit message. So we need to type in a message: “Add title and authors”</p>
-<p>If we save our commit message, Git will now commit our file.</p>
+<p>In order to tell Git to record our change, our new file, into the repository, we need to <strong>commit</strong> it:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit
+<span class="co"># Type a commit message: &quot;Add title and authors&quot;</span>
+<span class="co"># Now close gedit</span></code></pre>
+<p>Our default editor will now pop up. Why? Well, Git can automatically figure out that directories and files are committed, and by whom (thanks to the information we provided before) and even, what changes were made, but it cannot figure out why. So we need to provide this in a commit message.</p>
+<p>If we save our commit message <strong>and exit the editor</strong>, Git will now commit our file.</p>
 <pre class="output"><code>[master (root-commit) 21cfbde] 
 1 file changed, 2 insertions(+) Add title and authors
 create mode 100644 journal.txt</code></pre>
@@ -130,9 +129,10 @@ create mode 100644 journal.txt</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
 <pre class="output"><code>On branch master
 nothing to commit, working directory clean</code></pre>
-<p>Our file is now in the repository. The output from the <code>git status</code> command means that we have a clean directory i.e. no tracked but modified files.</p>
+<p>our file is now in the repository. The output from the <code>git status</code> command means that we have a clean directory i.e. no tracked but modified files.</p>
 <p>Now we will work a bit further on our <em>journal.txt</em> file by writing the introduction section.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt
+<span class="co"># Write introduction section</span></code></pre>
 <p>If we now run,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
 <p>we see changes not staged for commit section and our file is marked as modified:</p>
@@ -146,17 +146,20 @@ Changes not staged for commit:
 no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</code></pre>
 <p>This means that a file Git knows about has been modified by us but has not yet been committed. So we can add it to the staging area and then commit the changes:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add journal.txt 
-$ <span class="kw">git</span> commit</code></pre>
+$ <span class="kw">git</span> commit <span class="co"># Write introduction</span></code></pre>
 <p>Note that in this case we used <code>git add</code> to put journal.txt to the staging area. Git already knows this file should be tracked but doesn’t know if we want to commit the changes we made to the file in the repository and hence we have to add the file to the staging area.</p>
-<p>It can sometimes be quicker to provide our commit messages at the command-line by doing:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit -m <span class="st">&quot;Write introduction section&quot;</span></code></pre>
+<p>It can sometimes be quicker to provide our commit messages at the command-line by doing <code>git commit -m &quot;Write introduction section&quot;</code>.</p>
 <p>Let’s add a directory <em>common</em> and a file <em>references.txt</em> for references we may want to reuse:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> common 
-$ <span class="kw">gedit</span> common/references.txt</code></pre>
-<p>We will also add a citation in our introduction section (in journal.txt). Now we need to record our work in the repository so we need to make a commit. First we tell Git to track the references. We can actually tell Git to track everything in the given subdirectory:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add common</code></pre>
-<p>All files that are in <em>common</em> are now tracked. We would also have to add journal.txt to the staging area. But there is a shortcut. We can use <code>commit -a</code>. This option means “commit all files that are tracked and that have been modified”.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit -am <span class="st">&quot;Reference J Bloggs and add references file&quot;</span></code></pre>
+$ <span class="kw">gedit</span> common/references.txt <span class="co"># Add a reference</span></code></pre>
+<p>We will also add a citation in our introduction section (in journal.txt).</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt <span class="co"># Use reference in introduction</span></code></pre>
+<p>Now we need to record our work in the repository so we need to make a commit. First we tell Git to track the references. We can actually tell Git to track everything in the given subdirectory:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add common <span class="co"># Track everything currently in the &#39;common&#39; directory</span>
+$ <span class="kw">git</span> status     <span class="co"># Verify that common/references.txt is now tracked</span></code></pre>
+<p>All files that are in <em>common</em> are now tracked. We would also have to add journal.txt in the staging area. But there is a shortcut. We can use <code>commit -a</code>. This option means “commit all files that are tracked and that have been modified”.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit -am <span class="st">&quot;Reference J Bloggs and add references file&quot;</span>
+<span class="co"># add and commit all tracked files</span></code></pre>
 <p>and Git will add, then commit, both the directory and the file.</p>
 <p>In order to add all tracked files to the staging area, use <code>git commit -a</code> (which may be very useful if you edit e.g. 10 files and now you want to commit all of them).</p>
 <div class="figure">

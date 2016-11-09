@@ -56,10 +56,24 @@
 <p>Now create and checkout a new branch.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout -b results</code></pre>
 <p>Add a results section to the paper with a couple of lines to outline the findings. Commit the changes you made.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt   <span class="co"># Add results section</span>
+$ <span class="kw">git</span> add journal.txt
+$ <span class="kw">git</span> commit          <span class="co"># Write results section</span></code></pre>
 <p>Checkout the <strong>master</strong> branch and write some conclusions. Commit them.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt   <span class="co"># Add conclusions section</span>
+$ <span class="kw">git</span> add journal.txt
+$ <span class="kw">git</span> commit          <span class="co"># Write conclusions section</span></code></pre>
 <p>Now check out our <strong>results</strong> branch again and run:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> rebase master</code></pre>
-<p>Run <code>git log</code> - you will see that rebasing created a new commit and put it on top of the commit pointed at by <strong>master</strong>. If we switch back to the master branch, we can now merge the rebased <strong>results</strong> branch into master and a linear history results.</p>
+<p>Depending what changes we have made, there may be conflicts we have to fix in order to rebase. If this is the case, Git will let us know, and give some instructions on how to proceed. The process for fixing conflicts is the same as before:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt      <span class="co"># Manually fix conficts in affected file(s)</span>
+$ <span class="kw">git</span> add                <span class="co"># Mark file as resolved</span>
+$ <span class="kw">git</span> rebase --continue  <span class="co"># Continue to rebase</span></code></pre>
+<p>Finally, run</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> log -3</code></pre>
+<p>and you will see that rebasing created a new commit and put it on top of the commit pointed at by <strong>master</strong>. If we switch back to the master branch, we can now merge the rebased <strong>results</strong> branch into master and a linear history results.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master   <span class="co"># Switch branch to master</span>
+$ <span class="kw">git</span> merge results     <span class="co"># Merge results branch into master</span></code></pre>
 <div class="figure">
 <img src="fig/merge-types.png" alt="Merging with and without rebasing - image from http://gitforteams.com/resources/merge-rebase.html" /><p class="caption">Merging with and without rebasing - image from <a href="https://raw.githubusercontent.com/gitforteams/diagrams/master/balsamiq/merge-types.png">http://gitforteams.com/resources/merge-rebase.html</a></p>
 </div>

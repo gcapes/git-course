@@ -45,7 +45,7 @@
 </section>
 <h3 id="what-is-a-branch">What is a branch?</h3>
 <p>You might have noticed the term <em>branch</em> in status messages:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status journal.txt </code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status </code></pre>
 <pre class="output"><code>On branch master 
 nothing to commit (working directory clean)</code></pre>
 <p>and when we wanted to get back to our most recent version of the repository, we used <code>git checkout master</code>.</p>
@@ -86,29 +86,37 @@ nothing to commit (working directory clean)</code></pre>
 <p>There are different possible workflows when using Git for code development. If you want to learn more about workflows with Git, have a look at the <a href="http://nvie.com/posts/a-successful-git-branching-model/">feature branch workflow</a>.</p>
 <h3 id="branching-in-practice">Branching in practice</h3>
 <p>One of our colleagues wants to contribute to the paper but is not quite sure if it will actually make a publication. So it will be safer to create a branch and carry on working on this “experimental” version of the paper in a branch rather than in the master.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout -b paperWJohn 
-<span class="kw">Switched</span> to a new branch <span class="st">&#39;paperWJohn&#39;</span></code></pre>
-<p>Now let’s change the title of our paper and the authors (adding John Smith). Let’s commit our changes. Before we do that, it’s a good practice to check whether we’re working in the correct branch.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> branch </code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout -b paperWJohn</code></pre>
+<pre class="output"><code>Switched to a new branch &#39;paperWJohn&#39;</code></pre>
+<p>We’re going to change the title of the paper and update the author list (adding John Smith). However, before we get started it’s a good practice to check that we’re working on the right branch.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> branch        <span class="co"># Double check which branch we are working on</span></code></pre>
 <pre class="output"><code>  master
 * paperWJohn </code></pre>
-<p>The * indicates which branch we’re currently in. Let’s commit. If we want to work now in our master branch. We can switch by using:</p>
+<p>The * indicates which branch we’re currently in. Now let’s make the changes to the paper.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt   <span class="co"># Change title and add co-author</span>
+$ <span class="kw">git</span> add journal.txt
+$ <span class="kw">git</span> commit          <span class="co"># Modify title and add John as co-author</span></code></pre>
+<p>If we now want to work in our master branch. We can switch back by using:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master </code></pre>
 <pre class="output"><code>Switched to branch &#39;master&#39;</code></pre>
+<p>Having written some of the paper, we have thought of a better title for the <em>master</em> version of the paper.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal       <span class="co"># Rewrite the title</span>
+$ <span class="kw">git</span> add journal.txt
+$ <span class="kw">git</span> commit          <span class="co"># Rewrite title emphasising measurements</span></code></pre>
 <h3 id="merging-and-resolving-conflicts">Merging and resolving conflicts</h3>
-<p>We are now working on two papers: the main one in our master branch and the one which may possibly be collaborative work in our “paperWJohn” branch. Let’s change the title of the paper in the collaborative branch to reflect the new content that this version will contain. Let’s do it and commit changes.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout paperWJohn
-$ <span class="kw">gedit</span> journal.txt
+<p>We are now working on two papers: the main one in our master branch and the one which may possibly be collaborative work in our “paperWJohn” branch. Let’s add another section to the paper to write about John’s simulations.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout paperWJohn       <span class="co"># Switch branch</span>
+$ <span class="kw">gedit</span> journal.txt             <span class="co"># Add &#39;simulations&#39; section</span>
 $ <span class="kw">git</span> add journal.txt 
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Change title&quot;</span> journal.txt</code></pre>
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Add simulations&quot;</span> journal.txt</code></pre>
 <p>After some discussions with John we decided that we will publish together, hence it makes sense to now merge all that was authored together with John in branch “paperWJohn”.</p>
 <p>We can do that by <em>merging</em> that branch with the master branch. Let’s try doing that:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master
-$ <span class="kw">git</span> merge paperWJohn </code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master   <span class="co"># Switch branch</span>
+$ <span class="kw">git</span> merge paperWJohn  <span class="co"># Merge paperWJohn into master</span></code></pre>
 <pre class="output"><code>Auto-merging journal.txt
 CONFLICT (content): Merge conflict in journal.txt
 Automatic merge failed; fix conflicts and then commit the result.</code></pre>
-<p>Git cannot complete the merge because there is a conflict - if you recall, journal.txt differs in the same places (lines) in the master and the paperWJohn branch. We have to resolve the conflict and then complete the merge. We can get some more detail</p>
+<p>Git cannot complete the merge because there is a conflict - if you recall, after creating the new branch, we changed the title of the paper on both branches. We have to resolve the conflict and then complete the merge. We can get some more detail</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
 <pre class="output"><code>On branch master
 You have unmerged paths.
@@ -127,12 +135,13 @@ Simulations of atmospheric particle formation
 &gt;&gt;&gt;&gt;&gt;&gt;&gt; paperwjohn</code></pre>
 <p>The mark-up shows us the parts of the file causing the conflict and the versions they come from. We now need to manually edit the file to resolve the conflict. This means removing the mark-up and doing one of:</p>
 <ul>
-<li><p>Keep the local version, which, here, is the one marked-up by HEAD i.e. “Laboratory measurements of atmospheric particle formation”</p></li>
-<li><p>Keep the remote version, which, here, is the one marked-up by paperWJohn i.e. “Simulations of atmospheric particle formation”</p></li>
+<li><p>Keep the local version, which is the one marked-up by HEAD i.e. “Laboratory measurements of atmospheric particle formation”</p></li>
+<li><p>Keep the remote version, which is the one marked-up by paperWJohn i.e. “Simulations of atmospheric particle formation”</p></li>
 <li><p>Or manually edit the line to something new which might combine some elements of the two e.g. “Measurement-model comparison of atmospheric particle formation in laboratory experiments”</p></li>
 </ul>
 <p>We edit the file. Then commit our changes:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add journal.txt 
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt    <span class="co"># Resolve conflict by editing journal.txt</span>
+$ <span class="kw">git</span> add journal.txt  <span class="co"># Let Git know we have resolved the conflict</span>
 $ <span class="kw">git</span> commit -m <span class="st">&quot;Rewrite title to incorporate simulations&quot;</span></code></pre>
 <p>This is where version control proves itself better than DropBox or GoogleDrive, this ability to merge text files line-by-line and highlight the conflicts between them, so no work is ever lost.</p>
 <h3 id="looking-at-our-history---revisited">Looking at our history - revisited</h3>

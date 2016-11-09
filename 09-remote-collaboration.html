@@ -50,11 +50,11 @@
 $ <span class="kw">ls</span></code></pre>
 <pre class="output"><code>$ papers</code></pre>
 <p>And let us clone our repository again, but this time specify the local directory name,</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://github.com/<span class="kw">&lt;</span>USERNAME<span class="kw">&gt;</span>/papers.git papers2 
-<span class="kw">Cloning</span> into <span class="st">&#39;papers2&#39;</span>...</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone https://github.com/<span class="kw">&lt;</span>USERNAME<span class="kw">&gt;</span>/papers.git laptop_papers 
+<span class="kw">Cloning</span> into <span class="st">&#39;laptop_papers&#39;</span>...</code></pre>
 <p>So we now have two clones of our repository,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre>
-<pre class="output"><code>$ papers papers2</code></pre>
+<pre class="output"><code>$ papers laptop_papers</code></pre>
 <p>Let’s pretend these clones are on two separate machines! So we have 3 versions of our repository - our two local versions, on our separate machines (we’re still pretending!) and one on GitHub. So let’s go into one of our clones, add an acknowledgements section, commit the file and push these changes to GitHub:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> papers 
 $ <span class="kw">gedit</span> journal.txt 
@@ -62,7 +62,7 @@ $ <span class="kw">git</span> add journal.txt
 $ <span class="kw">git</span> commit -m <span class="st">&quot;Add acknowledgements&quot;</span> 
 $ <span class="kw">git</span> push</code></pre>
 <p>Now let’s change to our other repository and <em>fetch</em> the changes from our remote repository,</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> ../papers2 
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> ../laptop_papers 
 $ <span class="kw">git</span> fetch</code></pre>
 <p>We can now see what the differences are by doing,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff origin/master</code></pre>
@@ -72,10 +72,10 @@ $ <span class="kw">git</span> fetch</code></pre>
 <p>And then we can check that we have our changes,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> journal.txt 
 $ <span class="kw">git</span> log</code></pre>
-<p>As a short-hand, we can do a <code>git pull</code> which does a <code>git fetch</code> then a <code>git merge</code>. Now try the same process, but ths time starting in the papers2 folder (you should already be in the papers2 folder), and write an abstract:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt 
+<p>As a short-hand, we can do a <code>git pull</code> which does a <code>git fetch</code> then a <code>git merge</code>. Now try the same process, but this time starting in the laptop_papers folder (you should already be in the laptop_papers folder), and write an abstract:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt       <span class="co"># Write abstract</span>
 $ <span class="kw">git</span> add journal.txt 
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Add abstract&quot;</span> journal.txt 
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Write abstract&quot;</span> journal.txt 
 $ <span class="kw">git</span> push origin master
 $ <span class="kw">cd</span> ../papers 
 $ <span class="kw">git</span> pull origin master</code></pre>
@@ -83,13 +83,13 @@ $ <span class="kw">git</span> pull origin master</code></pre>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> journal.txt 
 $ <span class="kw">git</span> log</code></pre>
 <h3 id="conflicts-and-how-to-resolve-them">Conflicts and how to resolve them</h3>
-<p>Let’s continue to pretend that our two local, cloned, repositories are hosted on two different machines. Add an affilication for each author. Then push these changes to our remote repository:</p>
+<p>Let’s continue to pretend that our two local, cloned, repositories are hosted on two different machines. You should still be in the original <em>papers</em> folder. Add an affilication for each author. Then push these changes to our remote repository:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt 
 $ <span class="kw">git</span> add journal.txt 
 $ <span class="kw">git</span> commit -m <span class="st">&quot;Add author affiliations&quot;</span> journal.txt 
 $ <span class="kw">git</span> push origin master</code></pre>
 <p>Now let us suppose, at a later, date, we use our other repository and we want to change the order of the authors.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> ../papers2 
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> ../laptop_papers 
 $ <span class="kw">gedit</span> journal.txt 
 $ <span class="kw">git</span> add journal.txt 
 $ <span class="kw">git</span> commit -m <span class="st">&quot;Change the first author&quot;</span> journal.txt 
@@ -108,7 +108,7 @@ hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; fo
 <pre class="output"><code>Auto-merging journal.txt
 CONFLICT (content): Merge conflict in journal.txt
 Automatic merge failed; fix conflicts and then commit the result.</code></pre>
-<p>As we saw earlier, with the fetch and merge, a <code>git pull</code> pulls down changes from the repository and tries to merge them. It does this on a file-by-file basis, merging files line by line. We get a <strong>conflict</strong> if a file has changes that affect the same lines and those changes can’t be seamlessly merged. We had this situation before when we worked with branches and tried to merge 2 of them. If we look at the status,</p>
+<p>As we saw earlier, with the fetch and merge, a <code>git pull</code> pulls down changes from the repository and tries to merge them. It does this on a file-by-file basis, merging files line by line. We get a <strong>conflict</strong> if a file has changes that affect the same lines and those changes can’t be seamlessly merged. We had this situation before when we worked with branches and tried to merge two of them. If we look at the status,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
 <p>we can see that our file is listed as <em>Unmerged</em> and if we look at <em>journal.txt</em>, we may see something like,</p>
 <pre class="output"><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD

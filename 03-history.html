@@ -45,15 +45,16 @@
 </section>
 <h3 id="looking-at-differences">Looking at differences</h3>
 <p>We forgot to reference a second paper in the introduction section. Correct it, save the file but do not commit it yet. We can review the changes that we made using:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff journal.txt</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt    <span class="co"># Add second reference to introduction</span>
+$ <span class="kw">git</span> diff journal.txt <span class="co"># View changes to file</span></code></pre>
 <p>This shows the difference between the latest copy in the repository and the changes we made.</p>
 <ul>
 <li><code>-</code> means a line was deleted.<br /></li>
 <li><code>+</code> means a line was added.<br /></li>
 <li>Note that a line that has been edited is shown as a removal of the old line and an addition of the updated line.</li>
 </ul>
-<p>Looking at differences between commits is one of the most common activities. The <code>diff</code> command itself has a number of <a href="http://git-scm.com/docs/git-diff.html">useful options</a>.</p>
-<p>There is also a more elaborate front end to the <code>diff</code> command - <a href=""><code>git difftool</code></a>. <code>git difftool</code> is used for comparing and editing files that changed between commits using common diff tools. There is a range of such tools, including emerge, kompare, meld, and vimdiff.</p>
+<p>Looking at differences between commits is one of the most common activities. The <code>git diff</code> command itself has a number of <a href="http://git-scm.com/docs/git-diff.html">useful options</a>.</p>
+<p>There is also a more elaborate front end to the <code>git diff</code> command - <a href=""><code>git difftool</code></a>. <code>git difftool</code> is used for comparing and editing files that changed between commits using common diff tools. There is a range of such tools, including diffmerge, meld, and vimdiff.</p>
 <p>There is a range of GUI-based tools supporting looking at differences and editing files. For example:</p>
 <ul>
 <li><a href="https://sourcegear.com/diffmerge/">Diffmerge</a> (Free, cross-platform)</li>
@@ -63,7 +64,7 @@
 <p>The choice of GUI for viewing differences depends on the context in which you are working and your own preferences related to choosing tools and technologies.</p>
 <p>Now commit the change we made by adding the second reference:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add journal.txt
-$ <span class="kw">git</span> commit</code></pre>
+$ <span class="kw">git</span> commit          <span class="co"># Add second reference to introduction</span></code></pre>
 <h3 id="looking-at-our-history">Looking at our history</h3>
 <p>To see the history of changes that we made to our repository (the most recent changes will be displayed at the top):</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> log</code></pre>
