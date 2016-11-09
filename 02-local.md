@@ -86,7 +86,7 @@ e.g. `git config --global core.editor vi`, `git config --global core.editor xema
 On many computers, the terminal output is automatically coloured which makes
 reading the output easier.
 If your output is not coloured (e.g. in the Sackville/G11 cluster) there is a command
-which will add the colour:
+which will add the colour (**note the spelling of *color***):
 
 ```{.bash}
 $ git config --global --add color.ui true
