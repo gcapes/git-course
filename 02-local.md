@@ -78,17 +78,8 @@ session we'll use *gedit*:
 $ git config --global core.editor gedit
 ~~~
 
-To set up vi as the default editor:
-
-~~~{.bash}
-$ git config --global core.editor vi
-~~~
-
-To set up xemacs as the default editor:
-
-~~~{.bash}
-$ git config --global core.editor xemacs
-~~~    
+To set up alternative editors, follow the same notation 
+e.g. `git config --global core.editor vi`, `git config --global core.editor xemacs`.    
 
 #### Colours in Git
 
