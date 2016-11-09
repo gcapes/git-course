@@ -54,11 +54,12 @@ the references file. We will add a methodology section to the paper where we
 detail the instrumentation used, and add a reference for this to the references
 file.
 
-We should get something like this:
-	
 ```{.bash}
-$ git status 
+$ gedit journal.txt           # Add methodology section, including a reference
+$ gedit common/references.txt # Add new reference to references file
+$ git status                  # Get a status update on file modifications
 ```
+	
 ```{.output}
 $ On branch master 
 Changes not staged for commit:
@@ -71,14 +72,14 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-Let's then add and commit `journal.txt` but not the references file.
+Let's then add and commit *journal.txt* but not the references file.
 
 ```{.bash}
-$ git add journal.txt 
+$ git add journal.txt # Add journal to staging area
 $ git commit -m "Add methodology section"
 ```
 	
-Let's have a look what's up with our working directory now:
+Let's have a look at our working directory now:
 
 ```{.bash}
 $ git status
@@ -94,19 +95,24 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-Also, run `git log` to see what is the latest commit message and ID.
+Also, run `git log -2` to see what is the latest commit message and ID.
 
 Now, we want to fix our commit and add the references file.
 
 ```{.bash}
-$ git add common/references.txt 
-$ git commit --amend
+$ git add common/references.txt # Add reference file
+$ git commit --amend            # Amend most recent commit
 ```
 
 This will again bring up the editor and we can amend the commit message if required.
 
 Now when we run `git status` and then `git log` we can see that our Working
 Directory is clean and that both files were added. 
+
+```{.bash}
+$ git status
+$ git log -3
+```
 
 ---
 
@@ -122,6 +128,13 @@ this command with care.
 
 Let's try it on our example. Modify the journal, describing which other instruments were
 used, and then make a commit.
+
+```{.bash}
+$ gedit journal.txt # Describe other instruments
+$ git add journal.txt
+$ git commit -m "Describe flaky instrumentation used"
+```
+
 We now realise that what we've just done in our journal file is incorrect
 because we are not using the data from that instrument.
 Some of the data got corrupted, and due to problems with the logging computer
@@ -131,7 +144,7 @@ So it makes sense to abandon the commit completely.
 We can do that by running:
 
 ```{.bash}
-$ git reset --hard HEAD^
+$ git reset --hard HEAD^ # Move tip of branch to one commit before HEAD
 ```
 
 This moves the tip of the branch back to a previous commit. If we look in-depth, 
@@ -173,7 +186,7 @@ add a line or two describing the instrument whose measurements we are no longer
 able to use. Then add and commit. Once again we have a change we want to undo.
 
 ```{.bash}	
-$ git revert HEAD
+$ git revert HEAD # Undo changes introduced by most recent commit
 ```
 
 When we revert, a new commit is created. The *HEAD* pointer and the branch
