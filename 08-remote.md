@@ -161,22 +161,35 @@ Checking connectivity... done.
 Cloning creates an exact copy of the repository. By deafult it creates
 a directory with the same name as the name of the repository. 
 
-Now, if we change into `papers` we can see that we have our repository,
+Now, if we change into *papers* we can see that we have our repository,
 
 ```{.bash}    
 $ cd papers 
 $ git log
 ```
-and we can see our Git configuration files too,
+and we can see our Git configuration files too:
 
 ```{.bash}    
 $ ls -A
+```
+
+In order to see the other branches locally, we can check them out as before:
+
+```{.bash}
+$ git branch -r        # Show remote branches
+$ git checkout results # Check out the results branch
 ```
 
 ### Push changes to a remote repository
 
 We can use our cloned repository just as if it was a local repository so let's
 make some changes to our files and commit these.
+
+```{.bash}
+$ gedit journal.txt     # Add section which will contain the figures 
+$ git add journal.txt   # Add figures section
+$ git commit
+```
 
 Having done that, how do we send our changes back to the remote repository? We
 can do this by *pushing* our changes,
@@ -186,7 +199,7 @@ $ git push origin master
 ```
 
 If we now check our GitHub page we should be able to see our new changes under
-the Commit tab.
+the *Commit* tab.
 
 To see all remote repositories (we can have multiple ones!) type:
 	
