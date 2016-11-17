@@ -28,7 +28,7 @@ The process looks like this:
 - Make changes, and push them to your repository on GitHub
 - Request that the owner of the repository you *forked* pulls in your changes
 
-![Conceptual illustratin of a pull request - image adapted from [here](http://acrl.ala.org/techconnect/post/coding-collaboration-on-github)](fig/github-diagram.png)
+![Conceptual illustration of a pull request - image adapted from [here](http://acrl.ala.org/techconnect/post/coding-collaboration-on-github)](fig/github-diagram.png)
 
 > # Exercise {.challenge}
 > Let's look at the workflow and try to repeat it:
