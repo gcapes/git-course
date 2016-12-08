@@ -226,5 +226,7 @@ $ git checkout master
 > - Commit your changes
 > - Modify one line, add a fourth line, then save the file
 > - Display the differences between the updated file and the original
+>
+> [Solution](solutions.html)
 
 Previous: [Setting up a local repository](02-local.html) Next: [Advice on commits](04-commit-advice.html)
