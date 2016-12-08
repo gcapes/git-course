@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>UoM Research IT training: Version control with Git</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="lesson">
+    <div class="container card">
+      <div class="banner">
+        <!a href="http://software-carpentry.org" title="Software Carpentry">
+          <!img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+        <!/a>
+        <a href="http://www.itservices.manchester.ac.uk/" title="University Of Manchester">
+          <img alt="UoM banner" src="img/university-of-manchester-banner.png" />
+        </a>
+      </div>
+      <article>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+                    <a href="index.html"><h1 class="title">Version control with Git</h1></a>
+          <h2 class="subtitle">Solutions to exercises</h2>
+          <section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="bio-repository"><span class="glyphicon glyphicon-pencil"></span>Bio repository</h2>
+</div>
+<div class="panel-body">
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">cd</span>            <span class="co"># navigate out of the papers directory. </span>
+              <span class="co"># Avoid creating a repo within a repo - confusion will arise!</span>
+<span class="kw">mkdir</span> bio     <span class="co"># create a new directory</span>
+<span class="kw">cd</span> bio        <span class="co"># navigate into the new directory</span>
+<span class="kw">git</span> init      <span class="co"># initialise a new repository</span>
+<span class="kw">gedit</span> bio.txt     <span class="co"># create a file and write your biography</span>
+<span class="kw">git</span> add bio.txt   <span class="co"># add your biography file to the staging area</span>
+<span class="kw">git</span> commit        <span class="co"># commit your staged changes</span>
+<span class="kw">gedit</span> bio.tx      <span class="co"># edit your file</span>
+<span class="kw">git</span> diff bio.txt  <span class="co"># display differences between your modified file and the last committed version</span></code></pre></div>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="branching"><span class="glyphicon glyphicon-pencil"></span>Branching</h2>
+</div>
+<div class="panel-body">
+<h4 id="detached-head">1. Detached head</h4>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> checkout HEAD~1   <span class="co"># check out the commit one before last</span>
+<span class="kw">gedit</span> journal.txt <span class="co"># make some edits</span>
+<span class="kw">git</span> add journal.txt   <span class="co"># stage the changes</span>
+<span class="kw">git</span> commit        <span class="co"># commit the changes</span>
+<span class="kw">git</span> branch        <span class="co"># you should see a message like the one below, </span>
+          <span class="co"># indicating your commit does not belong to a branch</span></code></pre></div>
+<pre class="output"><code>* (detached from 57289fb)
+  master</code></pre>
+<h4 id="save-changes-to-a-new-branch">2. Save changes to a new branch</h4>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> checkout master</code></pre></div>
+<p>The output you see will be slightly different to that below, reflecting your previous commit message and commit ID.</p>
+<pre class="output"><code>Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+eb7c650 Add empty line for branching exercise
+
+If you want to keep them by creating a new branch, this may be a good time
+to do so with:
+
+ git branch new_branch_name eb7c650
+
+ Switched to branch &#39;master&#39;
+ Your branch is up-to-date with &#39;master&#39;.</code></pre>
+<p>We will ignore this message for now and discard the changes. Make some new changes so you can follow the process coming from a clean working directory. This is effectively the start of the exercise - we have just been clearing up so far.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">gedit</span> journal.txt     <span class="co"># Modify the paper, but don&#39;t stage or commit the changes yet</span>
+<span class="kw">git</span> branch exercise       <span class="co"># Create a new branch</span>
+<span class="kw">git</span> checkout exercise     <span class="co"># Switch to the new branch </span></code></pre></div>
+<p>You should see similar output to below. This means you have created a new branch, starting from the previous commit you checked out. The ‘M’ next to the file name indicates this file has modifications. You can now stage, then commit your changes.</p>
+<pre class="output"><code>M journal.txt
+Switched to branch &#39;exercise&#39;</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> add journal.txt   <span class="co"># Stage your modified file</span>
+<span class="kw">git</span> commit            <span class="co"># Commit your staged changes</span>
+<span class="kw">git</span> checkout master   <span class="co"># Switch back to the &#39;master&#39; branch</span></code></pre></div>
+</div>
+</section>
+        </div>
+      </div>
+      </article>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/gcapes/git-course">Source</a>
+        <a class="label swc-blue-bg" href="mailto:research-it-training@manchester.ac.uk">Contact</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  </body>
+</html>

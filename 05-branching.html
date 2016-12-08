@@ -33,7 +33,7 @@
           <h2 class="subtitle">Branching</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -45,7 +45,7 @@
 </section>
 <h3 id="what-is-a-branch">What is a branch?</h3>
 <p>You might have noticed the term <em>branch</em> in status messages:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status </code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status </code></pre></div>
 <pre class="output"><code>On branch master 
 nothing to commit (working directory clean)</code></pre>
 <p>and when we wanted to get back to our most recent version of the repository, we used <code>git checkout master</code>.</p>
@@ -81,43 +81,44 @@ nothing to commit (working directory clean)</code></pre>
 </ul>
 <p>For example:</p>
 <div class="figure">
-<img src="fig/git-flow.png" alt="Git workflow (image from http://nurelm.com/our-workflow-git-flow/)" /><p class="caption">Git workflow <a href="http://nurelm.com/our-workflow-git-flow/">(image from http://nurelm.com/our-workflow-git-flow/)</a></p>
+<img src="fig/git-flow.png" alt="Git workflow (image from http://nurelm.com/our-workflow-git-flow/)" />
+<p class="caption">Git workflow <a href="http://nurelm.com/our-workflow-git-flow/">(image from http://nurelm.com/our-workflow-git-flow/)</a></p>
 </div>
 <p>There are different possible workflows when using Git for code development. If you want to learn more about workflows with Git, have a look at the <a href="http://nvie.com/posts/a-successful-git-branching-model/">feature branch workflow</a>.</p>
 <h3 id="branching-in-practice">Branching in practice</h3>
 <p>One of our colleagues wants to contribute to the paper but is not quite sure if it will actually make a publication. So it will be safer to create a branch and carry on working on this “experimental” version of the paper in a branch rather than in the master.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout -b paperWJohn</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout -b paperWJohn</code></pre></div>
 <pre class="output"><code>Switched to a new branch &#39;paperWJohn&#39;</code></pre>
 <p>We’re going to change the title of the paper and update the author list (adding John Smith). However, before we get started it’s a good practice to check that we’re working on the right branch.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> branch        <span class="co"># Double check which branch we are working on</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> branch        <span class="co"># Double check which branch we are working on</span></code></pre></div>
 <pre class="output"><code>  master
 * paperWJohn </code></pre>
 <p>The * indicates which branch we’re currently in. Now let’s make the changes to the paper.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt   <span class="co"># Change title and add co-author</span>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt   <span class="co"># Change title and add co-author</span>
 $ <span class="kw">git</span> add journal.txt
-$ <span class="kw">git</span> commit          <span class="co"># Modify title and add John as co-author</span></code></pre>
+$ <span class="kw">git</span> commit          <span class="co"># Modify title and add John as co-author</span></code></pre></div>
 <p>If we now want to work in our master branch. We can switch back by using:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master </code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master </code></pre></div>
 <pre class="output"><code>Switched to branch &#39;master&#39;</code></pre>
 <p>Having written some of the paper, we have thought of a better title for the <em>master</em> version of the paper.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal       <span class="co"># Rewrite the title</span>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal       <span class="co"># Rewrite the title</span>
 $ <span class="kw">git</span> add journal.txt
-$ <span class="kw">git</span> commit          <span class="co"># Rewrite title emphasising measurements</span></code></pre>
+$ <span class="kw">git</span> commit          <span class="co"># Rewrite title emphasising measurements</span></code></pre></div>
 <h3 id="merging-and-resolving-conflicts">Merging and resolving conflicts</h3>
 <p>We are now working on two papers: the main one in our master branch and the one which may possibly be collaborative work in our “paperWJohn” branch. Let’s add another section to the paper to write about John’s simulations.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout paperWJohn       <span class="co"># Switch branch</span>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout paperWJohn       <span class="co"># Switch branch</span>
 $ <span class="kw">gedit</span> journal.txt             <span class="co"># Add &#39;simulations&#39; section</span>
 $ <span class="kw">git</span> add journal.txt 
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Add simulations&quot;</span> journal.txt</code></pre>
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Add simulations&quot;</span> journal.txt</code></pre></div>
 <p>After some discussions with John we decided that we will publish together, hence it makes sense to now merge all that was authored together with John in branch “paperWJohn”.</p>
 <p>We can do that by <em>merging</em> that branch with the master branch. Let’s try doing that:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master   <span class="co"># Switch branch</span>
-$ <span class="kw">git</span> merge paperWJohn  <span class="co"># Merge paperWJohn into master</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master   <span class="co"># Switch branch</span>
+$ <span class="kw">git</span> merge paperWJohn  <span class="co"># Merge paperWJohn into master</span></code></pre></div>
 <pre class="output"><code>Auto-merging journal.txt
 CONFLICT (content): Merge conflict in journal.txt
 Automatic merge failed; fix conflicts and then commit the result.</code></pre>
 <p>Git cannot complete the merge because there is a conflict - if you recall, after creating the new branch, we changed the title of the paper on both branches. We have to resolve the conflict and then complete the merge. We can get some more detail</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre></div>
 <pre class="output"><code>On branch master
 You have unmerged paths.
   (fix conflicts and run &quot;git commit&quot;)
@@ -140,33 +141,37 @@ Simulations of atmospheric particle formation
 <li><p>Or manually edit the line to something new which might combine some elements of the two e.g. “Measurement-model comparison of atmospheric particle formation in laboratory experiments”</p></li>
 </ul>
 <p>We edit the file. Then commit our changes:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt    <span class="co"># Resolve conflict by editing journal.txt</span>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt    <span class="co"># Resolve conflict by editing journal.txt</span>
 $ <span class="kw">git</span> add journal.txt  <span class="co"># Let Git know we have resolved the conflict</span>
-$ <span class="kw">git</span> commit -m <span class="st">&quot;Rewrite title to incorporate simulations&quot;</span></code></pre>
+$ <span class="kw">git</span> commit -m <span class="st">&quot;Rewrite title to incorporate simulations&quot;</span></code></pre></div>
 <p>This is where version control proves itself better than DropBox or GoogleDrive, this ability to merge text files line-by-line and highlight the conflicts between them, so no work is ever lost.</p>
 <h3 id="looking-at-our-history---revisited">Looking at our history - revisited</h3>
 <p>We already looked at “going back in time with Git”. But now we’ll look at it in more detail to see how moving back relates to branches and we will learn how to actually undo things. So far we were moving back in time in one branch by checking out one of the past commits.</p>
 <p>But we were then in the “detached HEAD” state.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
-<h3><span class="glyphicon glyphicon-pencil"></span>Exercise</h3>
+<h3 id="exercise-branching"><span class="glyphicon glyphicon-pencil"></span>Exercise: branching</h3>
 </div>
 <div class="panel-body">
-<p>1a. Add a commit to detached HEAD</p>
+<ol style="list-style-type: decimal">
+<li><p>Add a commit to detached HEAD</p>
 <ul>
 <li>Checkout one of the previous commits from our repository.</li>
 <li>Make some changes and commit them. What happened?</li>
 <li>Now try to run <code>git branch</code>. What can you see?</li>
-</ul>
-<p>1b. Commit changes to a new branch</p>
+</ul></li>
+<li><p>Commit changes to a new branch</p>
 <ul>
 <li>Checkout the master branch again: <code>git checkout master</code></li>
+<li>Read the message output by Git - it will make more sense after this exercise</li>
 <li>Make some changes and save the file(s).</li>
 <li>Create a new branch and check it out.</li>
 <li>What happened?</li>
 <li>Now commit the file to the new branch</li>
 <li>Switch back to (i.e. checkout) the master branch</li>
-</ul>
+</ul></li>
+</ol>
+<p><a href="solutions.html">Solutions</a></p>
 </div>
 </section>
 <p>Previous: <a href="04-commit-advice.html">Committing changes</a> Next: <a href="06-undoing.html">Undoing changes</a></p>

@@ -34,17 +34,17 @@
           <h3 id="getting-help">Getting help</h3>
 <h4 id="man-page"><code>man</code> page</h4>
 <p>Like many Unix/Linux commands, <code>git</code> has a <code>man</code> page,</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">man</span> git</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">man</span> git</code></pre></div>
 <p>You can scroll the manual page up and down using the up and down arrows.</p>
 <p>You can search for keywords by typing <code>/</code> followed by the search term e.g. if interested in help, type <code>/help</code> and then hit enter.</p>
 <p>To exit the manual page, type <code>q</code>.</p>
 <h4 id="command-line-help">Command-line help</h4>
 <p>Type,</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> --help</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> --help</code></pre></div>
 <p>and Git gives a list of commands it is able to help with, as well as their descriptions.</p>
 <p>You can get more help on a specific command, by providing the command name e.g.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init --help 
-$ <span class="kw">git</span> commit --help</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init --help 
+$ <span class="kw">git</span> commit --help</code></pre></div>
 <h4 id="google">Google</h4>
 <p>Search for your problem online. Someone has probably already asked (and answered) your question on stackoverflow.com.</p>
 <hr />
@@ -54,12 +54,12 @@ $ <span class="kw">git</span> commit --help</code></pre>
 <h3 id="ignore-scratch-temporary-and-binary-files">Ignore scratch, temporary and binary files</h3>
 <p>You can create a <code>.gitignore</code> file which lists the patterns of files you want Git to ignore. It’s common practice to not add to a repository any file you can automatically create in some way e.g. C object files (<code>.o</code>), Java class (<code>.class</code>) files or temporary files e.g. XEmacs scratch files (<code>~</code>). Adding these to <code>.gitignore</code> means Git won’t complain about them being untracked.</p>
 <p>Create or edit <code>gitignore</code>,</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> .gitignore</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> .gitignore</code></pre></div>
 <p>Then add patterns for the files you want to ignore, where <code>*</code> is a wildcard,</p>
 <pre><code>*~ *.o *.so *.dll *.exe *.class *.jar</code></pre>
 <p>Then, add <code>.gitignore</code> to your repository,</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add .gitignore $ git commit -m <span class="st">&quot;Added rules to ignore vim scratch</span>
-<span class="st">files and binary files&quot;</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add .gitignore $ git commit -m <span class="st">&quot;Added rules to ignore vim scratch</span>
+<span class="st">files and binary files&quot;</span></code></pre></div>
 <hr />
 <h3 id="git-add---patch"><code>git add --patch</code></h3>
 <p>This is a way to stage only parts of a file. If you have done lots of work without committing, it may be useful to commit your changes as a series of small commits. This command allows you to choose which changes go into which commit so you can group the changes logically. See <a href="http://nuclearsquid.com/writings/git-add/">this discussion</a> for more information.</p>
@@ -69,7 +69,7 @@ $ <span class="kw">git</span> commit --help</code></pre>
 <p><code>git add --author=&quot;FirstName Surname &lt;Firstname.Surname@example.com&gt;&quot;</code></p>
 <hr />
 <h3 id="add-colour-to-diff">Add colour to <code>diff</code></h3>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global color.diff auto</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global color.diff auto</code></pre></div>
 <hr />
 <h3 id="git-stash"><code>git stash</code></h3>
 <p>Sometimes you are working on one branch and want to switch to another branch for a while. In order to do so you would normally need to have a clean working directory i.e. no modified files or staged changes. You could commit all the changes you have made, then switch branch, but that would involve committing incomplete work just to return to this state later on. <code>git stash</code> saves the dirty state of your working directory and saves it on a stack of unfinished changes that you can reapply at any time using <code>git stash apply</code>. See <a href="https://git-scm.com/book/en/v1/Git-Tools-Stashing">here</a> for more details and for examples.</p>
@@ -78,24 +78,18 @@ $ <span class="kw">git</span> commit --help</code></pre>
 <p>There are a number of available GUIs for working with Git. The official Git page contains a <a href="http://git-scm.com/downloads/guis">comprehensive list</a>.</p>
 <p>However, Git <a href="https://git-for-windows.github.io/">for Windows</a> already comes with all the tools you need (Git Bash, Git GUI, Shell integration).</p>
 <p>Some IDEs already have integration with version control e.g. MATLAB, R studio.</p>
-<p>We have deliberately avoiding using GUIs in this lesson so that:</p>
-<ul>
-<li>you will have a better understanding of the git commands</li>
-<li>you will be able to use Git on any machine (e.g. when remotely accessing HPC systems, which generally only have Linux command line access)</li>
-<li>you will be able to use any GUI of your chosing, rather than just the one you have learned</li>
-</ul>
 <hr />
 <h3 id="git-configuration">Git configuration</h3>
 <p>The global configuration file for git <code>.gitconfig</code> is automatically created by Git in the <code>home</code> directory. If you set up some basic configuration (in the first steps of this tutorial), it should look like this.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> ~/.gitconfig </code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> ~/.gitconfig </code></pre></div>
 <pre class="output"><code>[user] name = Your Name email = yourname@yourplace.org 
 [core] editor = gedit</code></pre>
 <p>You can add more configuration options. For example, instead of typing <code>git commit -m</code> we can have a shorter version of this command:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global alias.cms <span class="st">&#39;commit -m&#39;</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global alias.cms <span class="st">&#39;commit -m&#39;</span></code></pre></div>
 <p>And now our configuration file will have a new section added:</p>
 <pre><code>… [alias] cms = commit -m</code></pre>
 <p>Next time we can simply type:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> cms <span class="st">&quot;Commit message&quot;</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> cms <span class="st">&quot;Commit message&quot;</span></code></pre></div>
 <hr />
 <h3 id="completely-removing-unwanted-files-from-the-repository">Completely removing unwanted files from the repository</h3>
 <p>As we discussed earlier, there are a number of ways to undo what we did in Git. However, most of the time, we actually want to make some amendments rather than discard everything completely. Also often undoing things means, in fact, creating a new commit (not abandoning them). Since Git is a version control system, everything that we recorded in the past commits will be available in the repository.</p>
