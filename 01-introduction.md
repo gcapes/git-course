@@ -41,6 +41,12 @@ previous versions are saved in the VCS repository. A VCS starts with
 a base version of your project and only saves the changes you make along
 the way, so it is much more space efficient too.
 
+![Add changes sequentially](fig/play-changes.svg)
+
+![Save different versions](fig/versions.svg)
+
+![Merge different versions](fig/merge.svg)
+
 #### Restoring previous versions
 The ability to restore previous versions of a file (or all the files
 in your project) greatly reduces the scope for screw ups. If you make
