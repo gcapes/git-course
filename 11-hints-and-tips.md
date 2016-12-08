@@ -129,15 +129,7 @@ with all the tools you need (Git Bash, Git GUI, Shell integration).
 
 Some IDEs already have integration with version control e.g. MATLAB, R studio.
 
-We have deliberately avoiding using GUIs in this lesson so that:
-
-* you will have a better understanding of the git commands
-* you will be able to use Git on any machine (e.g. when remotely accessing HPC
-systems, which generally only have Linux command line access)
-* you will be able to use any GUI of your chosing, rather than just the one you
-have learned
-
- ---
+---
 
 ### Git configuration
 

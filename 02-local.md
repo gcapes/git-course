@@ -12,6 +12,18 @@ subtitle: Tracking changes with a local repository
 Version control is centred round the notion of a *repository* which holds your
 directories and files. We'll start by looking at a local repository. The local
 repository is set up in a directory in your local filesystem (local machine).
+For this we will use the command line interface.
+
+> ## Why use the command line? {.callout}
+> There are lots of graphical user interfaces (GUIs) for using Git: both stand-alone
+> and integrated into IDEs (e.g. MATLAB, Rstudio).
+> We are deliberately not using a GUI for this course because: 
+>
+> * you will have a better understanding of how the git comands work
+> (some functionality is often missing and/or unclear in GUIs)
+> * you will be able to use Git on any computer
+> (e.g. remotely accessing HPC systems, which generally only have Linux command line access)
+> * you will be able to use any GUI, rather than just the one you have learned
 
 ### Setting up Git
 #### Create a new repository with Git
