@@ -245,21 +245,24 @@ checking out one of the past commits.
 
 But we were then in the "detached HEAD" state.
 
-> ###Exercise{.challenge}
-> 1a. Add a commit to detached HEAD
+> ### Exercise: branching {.challenge}
+> 1. Add a commit to detached HEAD
 >
-> - Checkout one of the previous commits from our repository.
-> - Make some changes and commit them. What happened?
-> - Now try to run `git branch`. What can you see?
+>     - Checkout one of the previous commits from our repository.
+>     - Make some changes and commit them. What happened?
+>     - Now try to run `git branch`. What can you see?
 > 
-> 1b. Commit changes to a new branch
+> 2. Commit changes to a new branch
 >
-> - Checkout the master branch again: `git checkout master` 
-> - Make some changes and save the file(s). 
-> - Create a new branch and check it out.
-> - What happened?
-> - Now commit the file to the new branch
-> - Switch back to (i.e. checkout) the master branch 
+>     - Checkout the master branch again: `git checkout master` 
+>     - Read the message output by Git - it will make more sense after this exercise 
+>     - Make some changes and save the file(s). 
+>     - Create a new branch and check it out.
+>     - What happened?
+>     - Now commit the file to the new branch
+>     - Switch back to (i.e. checkout) the master branch 
+>
+> [Solutions](solutions.html)
 
 Previous: [Committing changes](04-commit-advice.html) Next: [Undoing
 changes](06-undoing.html)
