@@ -33,7 +33,7 @@
           <h2 class="subtitle">Tracking changes with a local repository</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -46,7 +46,7 @@
 <p>Version control is centred round the notion of a <em>repository</em> which holds your directories and files. We’ll start by looking at a local repository. The local repository is set up in a directory in your local filesystem (local machine). For this we will use the command line interface.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2 id="why-use-the-command-line"><span class="glyphicon glyphicon-pushpin"></span>Why use the command line?</h2>
+<h2><span class="glyphicon glyphicon-pushpin"></span>Why use the command line?</h2>
 </div>
 <div class="panel-body">
 <p>There are lots of graphical user interfaces (GUIs) for using Git: both stand-alone and integrated into IDEs (e.g. MATLAB, Rstudio). We are deliberately not using a GUI for this course because:</p>
@@ -61,42 +61,42 @@
 <h4 id="create-a-new-repository-with-git">Create a new repository with Git</h4>
 <p>We will be working with a simple example in this tutorial. It will be a paper that we will first start writing as a single author and then work on it further with one of our colleagues.</p>
 <p>First, let’s create a directory within your home directory:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span>           <span class="co"># Switch to your home directory.</span>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span>           <span class="co"># Switch to your home directory.</span>
 $ <span class="kw">pwd</span>          <span class="co"># Print working directory (output should be /home/&lt;username&gt;)</span>
 $ <span class="kw">mkdir</span> papers 
-$ <span class="kw">cd</span> papers</code></pre></div>
+$ <span class="kw">cd</span> papers</code></pre>
 <p>Now, we need to set up this directory up to be a Git repository (or “initiate the repository”):</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init </code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init </code></pre>
 <pre class="output"><code>Initialized empty Git repository in /home/user/papers/.git/</code></pre>
 <p>The directory “papers” is now our working directory.</p>
 <p>If we look in this directory, we’ll find a <em>.git</em> directory:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> .git</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> .git</code></pre>
 <pre class="output"><code>branches  config  description  HEAD  hooks  info  objects refs</code></pre>
 <p>.git directory contains Git’s configuration files. Be careful not to accidentally delete this directory!</p>
 <h4 id="tell-git-who-we-are">Tell Git who we are</h4>
 <p>As part of the information about changes made to files Git records who made those changes. In teamwork this information is often crucial (do you want to know who rewrote your ‘Conclusions’ section?). So, we need to tell Git about who we are (note that you need to enclose your name in quote marks):</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global user.name <span class="st">&quot;Your Name&quot;</span> 
-$ <span class="kw">git</span> config --global user.email yourname@yourplace.org</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global user.name <span class="st">&quot;Your Name&quot;</span> 
+$ <span class="kw">git</span> config --global user.email yourname@yourplace.org</code></pre>
 <h4 id="set-a-default-editor">Set a default editor</h4>
 <p>When working with Git we will often need to provide some short but useful information. In order to enter this information we need an editor. We’ll now tell Git which editor we want to be the default one (i.e. Git will always bring it up whenever it wants us to provide some information).</p>
 <p>You can choose any editor available on your system. For the purpose of this session we’ll use <em>gedit</em>:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global core.editor gedit</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global core.editor gedit</code></pre>
 <p>To set up alternative editors, follow the same notation e.g. <code>git config --global core.editor vi</code>, <code>git config --global core.editor xemacs</code>.</p>
 <h4 id="colours-in-git">Colours in Git</h4>
 <p>On many computers, the terminal output is automatically coloured which makes reading the output easier. If your output is not coloured (e.g. in the Sackville/G11 cluster) there is a command which will add the colour (<strong>note the spelling of <em>color</em></strong>):</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global --add color.ui true</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> config --global --add color.ui true</code></pre>
 <h4 id="gits-global-configuration">Git’s global configuration</h4>
 <p>We can now preview (and edit, if necessary) Git’s global configuration (such as our name and the default editor which we just set up). If we look in our home directory, we’ll see a <strong>.gitconfig</strong> file,</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> ~/.gitconfig 
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> ~/.gitconfig 
     [<span class="kw">user</span>] name = Your Name email = yourname@yourplace.org
-    [<span class="kw">core</span>] editor = gedit</code></pre></div>
+    [<span class="kw">core</span>] editor = gedit</code></pre>
 <p>This file holds global configuration that is applied to any Git repository in your file system.</p>
 <hr />
 <h3 id="tracking-files-with-a-git-repository">Tracking files with a git repository</h3>
 <p>Now, we’ll create a file. Let’s say we’re going to write a journal paper, so we will start by adding the author names and a title, then save the file.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt</code></pre>
 <p><code>git status</code> allows us to find out about the current status of files in the repository. So we can run,</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
 <pre class="output"><code>On branch master
 
 Initial commit
@@ -111,8 +111,8 @@ nothing added to commit but untracked files present (use &quot;git add&quot; to 
 <p>For now, the important bit of information is that our file is listed as <strong>Untracked</strong> which means it is in our working directory but Git is not tracking it - that is, any changes made to this file will not be recorded by Git.</p>
 <h4 id="add-files-to-a-git-repository">Add files to a Git repository</h4>
 <p>To tell Git about the file, we will use the <code>git add</code> command:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add journal.txt 
-$ <span class="kw">git</span> status journal.txt</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add journal.txt 
+$ <span class="kw">git</span> status journal.txt</code></pre>
 <pre class="output"><code>On branch master
 
 Initial commit
@@ -125,14 +125,13 @@ Changes to be committed:
 <p><code>git add</code> is used for two purposes. Firstly, to tell Git that a given file should be tracked. Secondly, to put the file into the Git <strong>staging area</strong> which is also known as the <em>index</em> or the <em>cache</em>.</p>
 <p>The staging area can be viewed as a “loading dock”, a place to hold files we have added, or changed, until we are ready to tell Git to record those changes in the repository.</p>
 <div class="figure">
-<img src="fig/git-staging-area.svg" alt="The staging area" />
-<p class="caption">The staging area</p>
+<img src="fig/git-staging-area.svg" alt="The staging area" /><p class="caption">The staging area</p>
 </div>
 <h4 id="commit-changes">Commit changes</h4>
 <p>In order to tell Git to record our change, our new file, into the repository, we need to <strong>commit</strong> it:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit
 <span class="co"># Type a commit message: &quot;Add title and authors&quot;</span>
-<span class="co"># Now close gedit</span></code></pre></div>
+<span class="co"># Now close gedit</span></code></pre>
 <p>Our default editor will now pop up. Why? Well, Git can automatically figure out that directories and files are committed, and by whom (thanks to the information we provided before) and even, what changes were made, but it cannot figure out why. So we need to provide this in a commit message.</p>
 <p>If we save our commit message <strong>and exit the editor</strong>, Git will now commit our file.</p>
 <pre class="output"><code>[master (root-commit) 21cfbde] 
@@ -140,15 +139,15 @@ Changes to be committed:
 create mode 100644 journal.txt</code></pre>
 <p>This output shows the number of files changed and the number of lines inserted or deleted across all those files. Here, we have changed (by adding) 1 file and inserted 2 lines.</p>
 <p>Now, if we look at its status,</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
 <pre class="output"><code>On branch master
 nothing to commit, working directory clean</code></pre>
 <p>our file is now in the repository. The output from the <code>git status</code> command means that we have a clean directory i.e. no tracked but modified files.</p>
 <p>Now we will work a bit further on our <em>journal.txt</em> file by writing the introduction section.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt
-<span class="co"># Write introduction section</span></code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt
+<span class="co"># Write introduction section</span></code></pre>
 <p>If we now run,</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
 <p>we see changes not staged for commit section and our file is marked as modified:</p>
 <pre class="output"><code>On branch master
 Changes not staged for commit:
@@ -159,26 +158,25 @@ Changes not staged for commit:
 
 no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</code></pre>
 <p>This means that a file Git knows about has been modified by us but has not yet been committed. So we can add it to the staging area and then commit the changes:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add journal.txt 
-$ <span class="kw">git</span> commit <span class="co"># Write introduction</span></code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add journal.txt 
+$ <span class="kw">git</span> commit <span class="co"># Write introduction</span></code></pre>
 <p>Note that in this case we used <code>git add</code> to put journal.txt to the staging area. Git already knows this file should be tracked but doesn’t know if we want to commit the changes we made to the file in the repository and hence we have to add the file to the staging area.</p>
 <p>It can sometimes be quicker to provide our commit messages at the command-line by doing <code>git commit -m &quot;Write introduction section&quot;</code>.</p>
 <p>Let’s add a directory <em>common</em> and a file <em>references.txt</em> for references we may want to reuse:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> common 
-$ <span class="kw">gedit</span> common/references.txt <span class="co"># Add a reference</span></code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> common 
+$ <span class="kw">gedit</span> common/references.txt <span class="co"># Add a reference</span></code></pre>
 <p>We will also add a citation in our introduction section (in journal.txt).</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt <span class="co"># Use reference in introduction</span></code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt <span class="co"># Use reference in introduction</span></code></pre>
 <p>Now we need to record our work in the repository so we need to make a commit. First we tell Git to track the references. We can actually tell Git to track everything in the given subdirectory:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add common <span class="co"># Track everything currently in the &#39;common&#39; directory</span>
-$ <span class="kw">git</span> status     <span class="co"># Verify that common/references.txt is now tracked</span></code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> add common <span class="co"># Track everything currently in the &#39;common&#39; directory</span>
+$ <span class="kw">git</span> status     <span class="co"># Verify that common/references.txt is now tracked</span></code></pre>
 <p>All files that are in <em>common</em> are now tracked. We would also have to add journal.txt in the staging area. But there is a shortcut. We can use <code>commit -a</code>. This option means “commit all files that are tracked and that have been modified”.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit -am <span class="st">&quot;Reference J Bloggs and add references file&quot;</span>
-<span class="co"># add and commit all tracked files</span></code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> commit -am <span class="st">&quot;Reference J Bloggs and add references file&quot;</span>
+<span class="co"># add and commit all tracked files</span></code></pre>
 <p>and Git will add, then commit, both the directory and the file.</p>
 <p>In order to add all tracked files to the staging area, use <code>git commit -a</code> (which may be very useful if you edit e.g. 10 files and now you want to commit all of them).</p>
 <div class="figure">
-<img src="fig/git-committing.svg" alt="The Git commit workflow" />
-<p class="caption">The Git commit workflow</p>
+<img src="fig/git-committing.svg" alt="The Git commit workflow" /><p class="caption">The Git commit workflow</p>
 </div>
 <p>Previous: <a href="01-introduction.html">Introduction</a> Next: <a href="03-history.html">Looking at history and differences</a></p>
         </div>
