@@ -60,4 +60,8 @@ Plumbley, B. Waugh, E. P. White, P. Wilson (2012) "[Best Practices for
 Scientific Computing](http://arxiv.org/abs/1210.0530)", arXiv:1210.0530
 [cs.MS].
 
+### Feedback
+Please leave some [feedback](https://goo.gl/forms/YZJ05PzX9tPFEtuV2).
+It's good to know how things can be improved.
+
 Previous: [Hints and tips](11-hints-and-tips.html)
