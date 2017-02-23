@@ -53,7 +53,7 @@ technologies.
 Now commit the change we made by adding the second reference:
 ```{.bash}
 $ git add journal.txt
-$ git commit          # Add second reference to introduction
+$ git commit          # "Reference second paper in introduction"
 ```
 
 ### Looking at our history
@@ -80,7 +80,7 @@ current version, we can use  `git diff`  providing the commit identifier of the
 earlier commit:
 
 ~~~{.bash}
-$ git diff COMMITID
+$ git diff COMMITID   # View differences between current version and COMMITID
 ~~~
 
 And, to see changes between two commits:
@@ -190,12 +190,12 @@ We can list tags by doing:
 $ git tag
 ```
 
-Now add a reference and commit the change:
+Now add the second paper to references.txt and commit the change:
 
 ```{.bash}    
-$ gedit common/references.txt
+$ gedit common/references.txt	# Add second paper
 $ git add references.txt 
-$ git commit -m "..." references.txt
+$ git commit -m "Add Jones et al paper" references.txt
 ```
 
 We can checkout our previous version using our tag instead of a commit

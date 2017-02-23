@@ -130,7 +130,7 @@ The * indicates which branch we're currently in. Now let's make the changes to t
 ~~~{.bash}
 $ gedit journal.txt   # Change title and add co-author
 $ git add journal.txt
-$ git commit          # Modify title and add John as co-author
+$ git commit          # "Modify title and add John as co-author"
 ~~~
 
 If we now want to work in our master branch. We can switch back by using:
@@ -148,7 +148,7 @@ the *master* version of the paper.
 ~~~{.bash}
 $ gedit journal       # Rewrite the title
 $ git add journal.txt
-$ git commit          # Rewrite title emphasising measurements
+$ git commit          # "Rewrite title emphasising measurements"
 ~~~
 
 ### Merging and resolving conflicts

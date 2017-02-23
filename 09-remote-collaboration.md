@@ -57,17 +57,17 @@ acknowledgements section, commit the file and push these changes to GitHub:
 
 ```{.bash}    
 $ cd papers 
-$ gedit journal.txt 
+$ gedit journal.txt       # Write acknowledgements section
 $ git add journal.txt 
 $ git commit -m "Add acknowledgements" 
 $ git push
 ```
 
-Now let's change to our other repository and *fetch* the changes from our
+Now let's change to our other repository and `fetch` the changes from our
 remote repository,
 
 ```{.bash}    
-$ cd ../laptop_papers 
+$ cd ../laptop_papers    # Switch to the other directory
 $ git fetch
 ```
 
@@ -104,8 +104,8 @@ $ gedit journal.txt       # Write abstract
 $ git add journal.txt 
 $ git commit -m "Write abstract" journal.txt 
 $ git push origin master
-$ cd ../papers 
-$ git pull origin master
+$ cd ../papers            # Switch back to the papers directory
+$ git pull origin master  # Get changes from remote repository
 ```
 
 And then check that we have our changes,
@@ -123,7 +123,7 @@ Add an affilication for each author.
 Then push these changes to our remote repository:
 
 ```{.bash}    
-$ gedit journal.txt 
+$ gedit journal.txt        # Add author affiliations 
 $ git add journal.txt 
 $ git commit -m "Add author affiliations" journal.txt 
 $ git push origin master
@@ -133,8 +133,8 @@ Now let us suppose, at a later, date, we use our other repository and we want
 to change the order of the authors.
 
 ```{.bash}    
-$ cd ../laptop_papers 
-$ gedit journal.txt 
+$ cd ../laptop_papers      # Switch directory to other copy of our repository 
+$ gedit journal.txt        # Change order of the authors
 $ git add journal.txt 
 $ git commit -m "Change the first author" journal.txt 
 $ git push origin master
@@ -177,7 +177,7 @@ $ git status
 ```
 
 we can see that our file is listed as *Unmerged* and if we look at
-*journal.txt*, we may see something like,
+*journal.txt*, we may see something like:
 
 ```{.output}
 <<<<<<< HEAD
@@ -197,6 +197,9 @@ merging the branches.
 We edit the file. Then commit our changes. Now, if we *push* ...
 
 ```{.bash}
+$ gedit journal.txt        # Edit file to resolve merge conflict
+$ git add journal.txt      # Stage the file
+$ git commit               # Commit to mark the conflict as resolved
 $ git push origin master
 ```
 

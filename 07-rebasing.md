@@ -46,20 +46,22 @@ Commit the changes you made.
 ```{.bash}
 $ gedit journal.txt   # Add results section
 $ git add journal.txt
-$ git commit          # Write results section
+$ git commit          # "Write results section"
 ```
 
 Checkout the **master** branch and write some conclusions. Commit them.
 
 ```{.bash}
+$ git checkout master # Checkout master branch
 $ gedit journal.txt   # Add conclusions section
 $ git add journal.txt
-$ git commit          # Write conclusions section
+$ git commit          # "Write conclusions section"
 ```
 Now check out our **results** branch again and run:
 
 ```{.bash}
-$ git rebase master
+$ git checkout results   # Check out the results branch again
+$ git rebase master      # Rebase onto master
 ```
 
 Depending what changes we have made, there may be conflicts we have to fix in order to rebase.

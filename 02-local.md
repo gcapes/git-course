@@ -266,8 +266,8 @@ commit the changes:
      
 ~~~{.bash}
 $ git add journal.txt 
-$ git commit # Write introduction
-~~~    
+$ git commit # "Write introduction"
+~~~
 Note that in this case we used `git add` to put journal.txt to the staging
 area. Git already knows this file should be tracked but doesn't know if we want
 to commit the changes we made to the file  in the repository and hence we have
@@ -305,8 +305,7 @@ journal.txt in the staging area. But there is a shortcut. We can use
 that have been modified".
 
 ~~~{.bash}
-$ git commit -am "Reference J Bloggs and add references file"
-# add and commit all tracked files
+$ git commit -am "Reference J Bloggs and add references file" # Add and commit all tracked files
 ~~~
 and Git will add, then commit, both the directory and the file.
 
