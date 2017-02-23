@@ -7,28 +7,28 @@ subtitle: Solutions to exercises
 > ## Bio repository {.challenge}
 > 
 > ```{.bash}
-> cd			# navigate out of the papers directory. 
->      			# Avoid creating a repo within a repo - confusion will arise!
-> mkdir bio		# create a new directory
-> cd bio		# navigate into the new directory
-> git init		# initialise a new repository
-> gedit bio.txt		# create a file and write your biography
-> git add bio.txt	# add your biography file to the staging area
-> git commit 		# commit your staged changes
-> gedit bio.tx		# edit your file
-> git diff bio.txt	# display differences between your modified file and the last committed version
+> cd ..                # Navigate out of the papers directory
+>                      # Avoid creating a repo within a repo - confusion will arise!
+> mkdir bio            # Create a new directory
+> cd bio               # Navigate into the new directory
+> git init             # Initialise a new repository
+> gedit me.txt         # Create a file and write your biography
+> git add me.txt       # Add your biography file to the staging area
+> git commit           # Commit your staged changes
+> gedit me.txt         # Edit your file
+> git diff me.txt      # Display differences between your modified file and the last committed version
 > ```
 
 > ## Branching {.challenge}
 > ####1. Detached head
 >
 > ```{.bash}
-> git checkout HEAD~1	# check out the commit one before last
-> gedit journal.txt	# make some edits
-> git add journal.txt	# stage the changes
-> git commit		# commit the changes
-> git branch		# you should see a message like the one below, 
->			# indicating your commit does not belong to a branch
+> git checkout HEAD~1  # Check out the commit one before last
+> gedit journal.txt    # Make some edits
+> git add journal.txt  # Stage the changes
+> git commit           # Commit the changes
+> git branch           # You should see a message like the one below,
+>                      # indicating your commit does not belong to a branch
 > ```
 > ```{.output}
 > * (detached from 57289fb)
