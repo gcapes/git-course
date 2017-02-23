@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Version control with Git  
+title: Version control with Git
 subtitle: Tracking changes with a local repository
 ---
 
@@ -44,7 +44,7 @@ $ cd papers
 Now, we need to set up this directory up to be a Git repository (or "initiate
 the repository"):
 
-~~~{.bash}       
+~~~{.bash}
 $ git init 
 ~~~
 ~~~{.output}
@@ -69,7 +69,7 @@ accidentally delete this directory!
 As part of the information about changes made to files Git records who made
 those changes. In teamwork this information is often crucial (do you want to
 know who rewrote your 'Conclusions' section?). So, we need to tell Git about
-who we are (note that you need to enclose your name in quote marks):  
+who we are (note that you need to enclose your name in quote marks):
 
 ~~~{.bash}
 $ git config --global user.name "Your Name" 
@@ -87,11 +87,13 @@ You can choose any editor available on your system. For the purpose of this
 session we'll use *gedit*:
 
 ~~~{.bash}
-$ git config --global core.editor gedit
+$ git config --global core.editor gedit	   # Linux users only.
+                                           # Windows users should use notepad: see below.
 ~~~
 
-To set up alternative editors, follow the same notation 
-e.g. `git config --global core.editor vi`, `git config --global core.editor xemacs`.    
+To set up alternative editors, follow the same notation e.g.
+`git config --global core.editor notepad`, `git config --global core.editor vi`,
+`git config --global core.editor xemacs`.
 
 #### Colours in Git
 
@@ -127,7 +129,7 @@ Now, we'll create a file. Let's say we're going to write a journal paper, so
 we will start by adding the author names and a title, then save the file.
 
 ~~~{.bash}
-$ gedit journal.txt
+$ gedit journal.txt	# Windows users: use notepad instead of gedit (in this and all future examples)
 ~~~
 
 `git status` allows us to find out about the current status
@@ -197,7 +199,7 @@ we need to  **commit** it:
 ~~~{.bash}
 $ git commit
 # Type a commit message: "Add title and authors"
-# Now close gedit
+# Save the commit message and close your text editor (gedit, notepad etc.)
 ~~~
 
 Our default editor will now pop up. Why? Well, Git can automatically figure out
