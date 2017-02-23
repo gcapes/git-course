@@ -227,6 +227,7 @@ $ git checkout master
 > ## Exercise: "bio" Repository {.challenge}
 >
 > - Create a new Git repository on your computer called "bio"
+> - Be sure not to create your new repo within the 'papers' repo (see above)
 > - Write a three-line biography for yourself in a file called **me.txt**
 > - Commit your changes
 > - Modify one line, add a fourth line, then save the file
