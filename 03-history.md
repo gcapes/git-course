@@ -219,6 +219,11 @@ $ git checkout master
 > For code this might be when it's been submitted to review, or has been
 > released.
 
+> ## Where to create a Git repository? {.callout}
+> Avoid creating a Git repository within another Git repository.
+> Nesting repositories in this way causes the 'outer' repository to
+> track the contents of the 'inner' repository - things will get confusing!
+
 > ## Exercise: "bio" Repository {.challenge}
 >
 > - Create a new Git repository on your computer called "bio"
