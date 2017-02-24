@@ -309,7 +309,7 @@ between them, so no work is ever lost.
 > the remote git log, but the other person's local git log shows no change to the 
 > history. To that person it looks like work has just gone missing from the files
 > in their working directory. Git also thinks that their branch is ahead of
-> origin/<branch>.
+> origin/\<branch>.
 >
 > ----
 >
