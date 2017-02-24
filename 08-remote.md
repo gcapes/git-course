@@ -137,8 +137,8 @@ $ git branch -a
 
 ### Cloning a remote repository
 
-Now, let's do something drastic! (but before that step, make sure that you
-pushed all your local branches into the remote repository)
+Now, let's do something drastic! (but before that step, **make sure that you
+pushed all your local branches into the remote repository**)
 
 ```{.bash}
 $ cd .. 
@@ -146,7 +146,7 @@ $ rm -rf papers
 ```
 
 Gulp! We've just wiped our local repository! But, as we've a copy on GitHub we
-can just copy, or *clone* that,
+can just copy, or `git clone` that,
 
 ```{.bash}
 $ git clone https://github.com/<USERNAME>/papers.git 
