@@ -273,7 +273,8 @@ between them, so no work is ever lost.
 > 
 > Once you have the branches which others created, try to undo one of the commits.
 > 
-> Each one of you should try to revert a commit in a different branch to your partner(s).
+> Each one of you should try to [revert](06-undoing.html) a commit in a different
+> branch to your partner(s).
 > 
 > Push the branch back to the remote repository. The others should pull that
 > branch to get the changes you made.
@@ -330,7 +331,8 @@ between them, so no work is ever lost.
 > - Person A should also make some changes to the *master*  branch and push them back
 > - Person A should then rebase their selected non-master branch on master and push 
 > everything back to the repository
-> - Person B (and C if you're working in a group of 3) should now pull (previously commiting the changes they made in the  branch)
+> - Person B (and C if you're working in a group of 3) should now pull (previously 
+> commiting the changes they made in the  branch)
 > 
 > What is the end result? What happened when the other collaborator rebased the
 > branch against master?
