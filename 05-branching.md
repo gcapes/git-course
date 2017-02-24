@@ -92,7 +92,7 @@ work-in-progress, new features etc
 
 For example:
 
-![Git workflow [(image from http://nurelm.com/our-workflow-git-flow/)](http://nurelm.com/our-workflow-git-flow/)](fig/git-flow.png)
+![Feature branches ([image source)](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow)](fig/feature-branch.svg)
 
 There are different possible workflows when using Git for code development. 
 If you want to learn more about workflows with Git, have a look at the
