@@ -125,12 +125,14 @@ To list all branches (local and remote):
 $ git branch -a
 ```
     
-To delete the remote branch, there are two syntax options:
-
-```{.bash}
-$ git push origin --delete feature2
-$ git push origin :feature2
-```
+> ## Deleting branches (for information only) {.callout}
+> **Don't do this now.** This is just for information.
+> To delete branches, use the following syntax:
+>
+> ```{.bash}
+> $ git branch -d <branch_name>              # For local branches
+> $ git push origin --delete <branch_name>   # For remote branches
+> ```
 
 
 ### Cloning a remote repository
