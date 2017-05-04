@@ -20,7 +20,7 @@ changes into the master branch: merging directly or rebasing then merging.
 The main reason you might want to rebase is to maintain a linear project history. 
 For example if you merge directly and there have been new commits on the master 
 branch since you started working on a feature branch, you have a 3-way merge 
-(common ancestor, HEAD and MERGE_HEAD) and a merge commit. If you rebase first,
+(common ancestor, HEAD and MERGE_HEAD) and a merge commit results. If you rebase first,
 a fast-forward merge results and you have a nice clean linear history.
 
 
@@ -90,7 +90,7 @@ $ git checkout master   # Switch branch to master
 $ git merge results     # Merge results branch into master
 ```
 
-![Merging with and without rebasing - image from [http://gitforteams.com/resources/merge-rebase.html](https://raw.githubusercontent.com/gitforteams/diagrams/master/balsamiq/merge-types.png)](fig/merge-types.png)
+![Merging with and without rebasing - image adapted from [https://www.atlassian.com/git/tutorials/merging-vs-rebasing](https://www.atlassian.com/dam/jcr:df39b1f1-2686-4ee5-90bf-9836783342ce/10.svg)](fig/merge-vs-rebase.svg)
 
 This [online tutorial](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)
 gives a good illustration of what happens during rebasing.
