@@ -33,7 +33,7 @@
           <h2 class="subtitle">Rebasing</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
+<h2><span class="glyphicon glyphicon-certificate"></span>Learning objectives</h2>
 </div>
 <div class="panel-body">
 <ul>
@@ -46,43 +46,43 @@
 <h3 id="what-is-it">What is it?</h3>
 <p>Rebasing is the process of moving a branch to a new base commit. Git does this by creating new commits and applying them to the specified base. As such, your history is rewritten when you rebase.</p>
 <p>When working on a feature branch, you have two options for integrating your changes into the master branch: merging directly or rebasing then merging.</p>
-<p>The main reason you might want to rebase is to maintain a linear project history. For example if you merge directly and there have been new commits on the master branch since you started working on a feature branch, you have a 3-way merge (common ancestor, HEAD and MERGE_HEAD) and a merge commit. If you rebase first, a fast-forward merge results and you have a nice clean linear history.</p>
+<p>The main reason you might want to rebase is to maintain a linear project history. For example if you merge directly and there have been new commits on the master branch since you started working on a feature branch, you have a 3-way merge (common ancestor, HEAD and MERGE_HEAD) and a merge commit results. If you rebase first, a fast-forward merge results and you have a nice clean linear history.</p>
 <div class="figure">
-<img src="fig/git-rebase.svg" alt="Visual illustration of rebasing - image taken from https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase" />
-<p class="caption">Visual illustration of rebasing - image taken from <a href="https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase" class="uri">https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase</a></p>
+<img src="fig/git-rebase.svg" alt="Visual illustration of rebasing - image taken from https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase" /><p class="caption">Visual illustration of rebasing - image taken from <a href="https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase">https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase</a></p>
 </div>
 <h3 id="a-worked-example-using-git-rebase-base">A worked example using <code>git rebase &lt;base&gt;</code></h3>
 <p>Let’s start first with checking out our master branch:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master</code></pre>
 <p>Now create and checkout a new branch.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout -b results</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout -b results</code></pre>
 <p>Add a results section to the paper with a couple of lines to outline the findings. Commit the changes you made.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt   <span class="co"># Add results section</span>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt   <span class="co"># Add results section</span>
 $ <span class="kw">git</span> add journal.txt
-$ <span class="kw">git</span> commit          <span class="co"># Write results section</span></code></pre></div>
+$ <span class="kw">git</span> commit          <span class="co"># &quot;Write results section&quot;</span></code></pre>
 <p>Checkout the <strong>master</strong> branch and write some conclusions. Commit them.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt   <span class="co"># Add conclusions section</span>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master <span class="co"># Checkout master branch</span>
+$ <span class="kw">gedit</span> journal.txt   <span class="co"># Add conclusions section</span>
 $ <span class="kw">git</span> add journal.txt
-$ <span class="kw">git</span> commit          <span class="co"># Write conclusions section</span></code></pre></div>
+$ <span class="kw">git</span> commit          <span class="co"># &quot;Write conclusions section&quot;</span></code></pre>
 <p>Now check out our <strong>results</strong> branch again and run:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> rebase master</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout results   <span class="co"># Check out the results branch again</span>
+$ <span class="kw">git</span> rebase master      <span class="co"># Rebase onto master</span></code></pre>
 <p>Depending what changes we have made, there may be conflicts we have to fix in order to rebase. If this is the case, Git will let us know, and give some instructions on how to proceed. The process for fixing conflicts is the same as before:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt      <span class="co"># Manually fix conficts in affected file(s)</span>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt      <span class="co"># Manually fix conficts in affected file(s)</span>
 $ <span class="kw">git</span> add                <span class="co"># Mark file as resolved</span>
-$ <span class="kw">git</span> rebase --continue  <span class="co"># Continue to rebase</span></code></pre></div>
+$ <span class="kw">git</span> rebase --continue  <span class="co"># Continue to rebase</span></code></pre>
 <p>Finally, run</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> log -3</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">git</span> log -3</code></pre>
 <p>and you will see that rebasing created a new commit and put it on top of the commit pointed at by <strong>master</strong>. If we switch back to the master branch, we can now merge the rebased <strong>results</strong> branch into master and a linear history results.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master   <span class="co"># Switch branch to master</span>
-$ <span class="kw">git</span> merge results     <span class="co"># Merge results branch into master</span></code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout master   <span class="co"># Switch branch to master</span>
+$ <span class="kw">git</span> merge results     <span class="co"># Merge results branch into master</span></code></pre>
 <div class="figure">
-<img src="fig/merge-types.png" alt="Merging with and without rebasing - image from http://gitforteams.com/resources/merge-rebase.html" />
-<p class="caption">Merging with and without rebasing - image from <a href="https://raw.githubusercontent.com/gitforteams/diagrams/master/balsamiq/merge-types.png">http://gitforteams.com/resources/merge-rebase.html</a></p>
+<img src="fig/merge-vs-rebase.svg" alt="Merging with and without rebasing - image adapted from https://www.atlassian.com/git/tutorials/merging-vs-rebasing" /><p class="caption">Merging with and without rebasing - image adapted from <a href="https://www.atlassian.com/dam/jcr:df39b1f1-2686-4ee5-90bf-9836783342ce/10.svg">https://www.atlassian.com/git/tutorials/merging-vs-rebasing</a></p>
 </div>
 <p>This <a href="https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase">online tutorial</a> gives a good illustration of what happens during rebasing.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h1 id="warning-the-perils-of-rebasing"><span class="glyphicon glyphicon-pushpin"></span>Warning: the perils of rebasing</h1>
+<h1><span class="glyphicon glyphicon-pushpin"></span>Warning: the perils of rebasing</h1>
 </div>
 <div class="panel-body">
 <p>The main rule is: <strong>do not rebase branches shared with other contributors</strong>. Rebasing changes history and as with practically any Git command which changes history, it should be used with care.</p>
