@@ -102,7 +102,27 @@ The syntax is:
 ```{.bash}
 $ git config --global color.diff auto
 ```
-    
+
+---
+
+### Configure a visual diff tool
+
+`git diff` is ok, but not very user friendly.
+It represents changes as removal of a line, followed by the addition of a new line.
+There are many diff GUIs available, which can be much easier to work with.
+To view differences with a GUI instead of using the command-line diff tool, first configure
+git to use your chosen diff tool:
+
+```{.bash}
+$ git config --global diff.tool diffmerge    # Set diffmerge as your visual diff tool
+$ git config --global difftool.prompt false  # Suppress confirmation before launching GUI
+```
+Then to use the GUI, use the following command instead of `git diff`:
+
+```{.bash}
+$ git difftool
+```
+
 ---
 
 ### `git stash`

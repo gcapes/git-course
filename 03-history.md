@@ -32,10 +32,12 @@ Looking at differences between commits is one of the most common activities.
 The `git diff` command itself has a number of [useful
 options](http://git-scm.com/docs/git-diff.html).
 
-There is also a more elaborate front end to the `git diff` command - [`git
-difftool`](). `git difftool` is used for comparing and editing files that
+There is also a more elaborate front end to the `git diff` command - `git
+difftool`. `git difftool` is used for comparing and editing files that
 changed between commits using common diff tools. There is a range of such
 tools, including diffmerge, meld, and vimdiff.
+Configuring a visual diff tool is covered on the
+[hints and tips](11-hints-and-tips.html) page.
 
 There is a range of GUI-based tools supporting looking at differences and
 editing files. For example:
