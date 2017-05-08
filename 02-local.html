@@ -96,6 +96,14 @@ $ <span class="kw">git</span> config --global user.email yourname@yourplace.org<
 <h3 id="tracking-files-with-a-git-repository">Tracking files with a git repository</h3>
 <p>Now, we’ll create a file. Let’s say we’re going to write a journal paper, so we will start by adding the author names and a title, then save the file.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">gedit</span> journal.txt <span class="co"># Windows users: use notepad instead of gedit (in this and all future examples)</span></code></pre>
+<aside class="callout panel panel-info">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pushpin"></span>Accessing files from the command line</h2>
+</div>
+<div class="panel-body">
+<p>In this lesson we create and modify text files using a command line interface (e.g. terminal, Git Bash etc), mainly for convenience. These are normal files which are also accessible from the file browser (e.g. Windows explorer), and by other programs.</p>
+</div>
+</aside>
 <p><code>git status</code> allows us to find out about the current status of files in the repository. So we can run,</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
 <pre class="output"><code>On branch master

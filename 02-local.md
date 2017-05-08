@@ -132,6 +132,12 @@ we will start by adding the author names and a title, then save the file.
 $ gedit journal.txt	# Windows users: use notepad instead of gedit (in this and all future examples)
 ~~~
 
+> ## Accessing files from the command line{.callout}
+> In this lesson we create and modify text files using a command line interface
+> (e.g. terminal, Git Bash etc), mainly for convenience.
+> These are normal files which are also accessible from the file browser (e.g. Windows explorer), 
+> and by other programs.
+
 `git status` allows us to find out about the current status
 of files in the repository. So we can run,
 
