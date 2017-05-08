@@ -82,7 +82,7 @@ making commits) in feature1 as well.
        \                      / 
        c4---c8---c9---------------c13            feature1
 ```
-One popular model is to have:
+One popular model is the [Gitflow model](http://nvie.com/posts/a-successful-git-branching-model/):
 
 - A master branch, representing a released version of the code
 - A release branch, representing the beginnings of the next release - a branch 
@@ -95,8 +95,9 @@ For example:
 ![Feature branches ([image source)](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow)](fig/feature-branch.svg)
 
 There are different possible workflows when using Git for code development. 
-If you want to learn more about workflows with Git, have a look at the
-[feature branch workflow](http://nvie.com/posts/a-successful-git-branching-model/).
+If you want to learn more about different workflows with Git, have a look at
+[this discussion](https://www.atlassian.com/git/tutorials/comparing-workflows)
+on the Atlassian website.
 
 
 ### Branching in practice

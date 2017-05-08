@@ -73,7 +73,7 @@ nothing to commit (working directory clean)</code></pre>
 <pre><code>-c1---c2---c3---c5---c6---c7--c10---c11--c12     master
        \                      / 
        c4---c8---c9---------------c13            feature1</code></pre>
-<p>One popular model is to have:</p>
+<p>One popular model is the <a href="http://nvie.com/posts/a-successful-git-branching-model/">Gitflow model</a>:</p>
 <ul>
 <li>A master branch, representing a released version of the code</li>
 <li>A release branch, representing the beginnings of the next release - a branch where the code is still undergoing testing</li>
@@ -83,7 +83,7 @@ nothing to commit (working directory clean)</code></pre>
 <div class="figure">
 <img src="fig/feature-branch.svg" alt="Feature branches (image source)" /><p class="caption">Feature branches (<a href="https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow">image source)</a></p>
 </div>
-<p>There are different possible workflows when using Git for code development. If you want to learn more about workflows with Git, have a look at the <a href="http://nvie.com/posts/a-successful-git-branching-model/">feature branch workflow</a>.</p>
+<p>There are different possible workflows when using Git for code development. If you want to learn more about different workflows with Git, have a look at <a href="https://www.atlassian.com/git/tutorials/comparing-workflows">this discussion</a> on the Atlassian website.</p>
 <h3 id="branching-in-practice">Branching in practice</h3>
 <p>One of our colleagues wants to contribute to the paper but is not quite sure if it will actually make a publication. So it will be safer to create a branch and carry on working on this “experimental” version of the paper in a branch rather than in the master.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> checkout -b paperWJohn</code></pre>
