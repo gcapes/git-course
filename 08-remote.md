@@ -20,7 +20,7 @@ Git and a range of functionalities supporting their use. GitHub allows users to
 set up  their private and public source code Git repositories. It provides
 tools for browsing, collaborating on and documenting code. GitHub, like other
 services such as [Launchpad](https://launchpad.net),
-[Bitucket](https://bitbucket.org), [GoogleCode](http://code.google.com), and
+[Bitbucket](https://bitbucket.org), [GoogleCode](http://code.google.com), and
 [SourceForge](http://sourceforge.net) supports a wealth of resources to support
 projects including:
 
