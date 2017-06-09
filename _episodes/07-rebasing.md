@@ -24,7 +24,7 @@ branch since you started working on a feature branch, you have a 3-way merge
 a fast-forward merge results and you have a nice clean linear history.
 
 
-![Visual illustration of rebasing - image taken from [https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)](fig/git-rebase.svg)
+![Visual illustration of rebasing - image taken from [https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)](../fig/git-rebase.svg)
 
 ### A worked example using `git rebase <base>` 
 
@@ -90,12 +90,12 @@ $ git checkout master   # Switch branch to master
 $ git merge results     # Merge results branch into master
 ```
 
-![Merging with and without rebasing - image adapted from [https://www.atlassian.com/git/tutorials/merging-vs-rebasing](https://www.atlassian.com/dam/jcr:df39b1f1-2686-4ee5-90bf-9836783342ce/10.svg)](fig/merge-vs-rebase.svg)
+![Merging with and without rebasing - image adapted from [https://www.atlassian.com/git/tutorials/merging-vs-rebasing](https://www.atlassian.com/dam/jcr:df39b1f1-2686-4ee5-90bf-9836783342ce/10.svg)](../fig/merge-vs-rebase.svg)
 
 This [online tutorial](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)
 gives a good illustration of what happens during rebasing.
 
-> # Warning: the perils of rebasing {.callout}
+> ## Warning: the perils of rebasing {.callout}
 >
 > The main rule is: **do not rebase branches shared with other contributors**.
 > Rebasing changes history and as with practically any Git command which changes

@@ -207,7 +207,7 @@ depth `git reset` showing the differences between the three options:
 * `--hard`
 
 
-> # Top tip: do not use `git reset` with remote branches {.callout}
+> ## Top tip: do not use `git reset` with remote branches {.callout}
 > There is one important thing to remember about the `reset` command - it
 > should only be used with branches that have not been shared yet (that is they
 > haven't been pushed into a remote repository that others are using). Resetting
@@ -224,7 +224,7 @@ depth `git reset` showing the differences between the three options:
 > with others? We need to use the `revert` command.
 
 
-![Reset vs revert](fig/git-revert-vs-reset.svg)
+![Reset vs revert](../fig/git-revert-vs-reset.svg)
 
 See this [Atlassian online tutorial](
 https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting/commit-level-operations)

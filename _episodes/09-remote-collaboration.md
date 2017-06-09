@@ -212,7 +212,7 @@ between them, so no work is ever lost.
 
 
     
-> # Exercises following good practice {.challenge}
+> ## Exercises following good practice {.challenge}
 > 
 > #### Exercise 1: Collaborating on a remote repository
 > 
@@ -288,7 +288,7 @@ between them, so no work is ever lost.
 > A: It works fine. The revert shows up in everyone's copy.
 >
 
-> # Exercises following bad practice {.challenge}
+> ## Exercises following bad practice {.challenge}
 >
 > #### Exercise 4: Undoing changes using reset
 > 

@@ -1,27 +1,32 @@
 ---
-layout: page
-title: Version control with Git  
-subtitle: Introduction - Why use version control?
+title: "Introduction"
+teaching: 15
+exercises: 0
+questions:
+- "Why use version control?"
+objectives:
+- "Understand the benefits of an automated version control system."
+keypoints:
+- "Store versions neatly."
+- "Restore previous versions."
+- "Understand what happened and why."
+- "Always know which is the current version."
 ---
 
-> ## Learning Objectives {.objectives}
->
-> *   Understand the benefits of an automated version control system.
-
-### What is a version control system?
+## What is a version control system?
 
 Version control is a piece of software which allows you to record and
 preserve the history of changes made to directories and files. If you
 mess things up, you can retrieve an earlier version of your project.
 
-### Why use a version control system?
+## Why use a version control system?
 
-![[Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com](http://www.phdcomics.com)](fig/phd101212s.png)
+![[Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com](http://www.phdcomics.com)](../fig/phd101212s.png)
 
 The comic above illustrates some of pitfalls of working without version
 control. Some of the benefits are given below:
 
-#### Storing versions (properly)
+## Storing versions (properly)
 Saving files after you have made changes should be an automatic habit.
 However if you want to have different versions of your code, you will
 need to save the new version somewhere else or with a different name.
@@ -41,13 +46,16 @@ previous versions are saved in the VCS repository. A VCS starts with
 a base version of your project and only saves the changes you make along
 the way, so it is much more space efficient too.
 
-![Add changes sequentially](fig/play-changes.svg)
+Add changes sequentially
+![Add changes sequentially](../fig/play-changes.svg)
 
-![Save different versions](fig/versions.svg)
+Save different versions
+![Save different versions](../fig/versions.svg)
 
-![Merge different versions](fig/merge.svg)
+Merge different versions
+![Merge different versions](../fig/merge.svg)
 
-#### Restoring previous versions
+## Restoring previous versions
 The ability to restore previous versions of a file (or all the files
 in your project) greatly reduces the scope for screw ups. If you make
 changes which you later want to abandon (e.g. the wording of your
@@ -56,18 +64,18 @@ code changes end up breaking things which previously worked and you
 can't figure out why etc), you can just undo them by restoring a previous
 version.
 
-#### Understanding what happened
+## Understanding what happened
 Each time you save a new version of your project, VCS requires you to
 give a description of why you made the changes. This helps identify
 which version is which.
 
-#### Backup
+## Backup
 For distributed version control like Git, each person working on the
 project has a complete copy of the project's  history (i.e. the repository)
 on their hard drive. This acts as a backup for the server hosting the
 remote repository.
 
-#### Collaboration
+## Collaboration
 Without VCS, you are probably using a shared drive and taking turns to
 edit files, or emailing files back and forth. This makes it really
 easy to overwrite or abandon someone else's changes because you have
@@ -80,7 +88,7 @@ into a common version. It is also always clear where the most recent
 version is kept (in the repository).
 
 
-#### Example scenario
+## Example scenario
 Think about the following situation:
 
 You are working on a handful of MATLAB files. You make a few changes,
@@ -103,7 +111,7 @@ that might have been only on that other machine, and so on.
 
 You should easily be able to see the benefits of VCS in the situation above.
 
-### What files can I track using version control?
+## What files can I track using version control?
 VCS is typically used for software source code, but it can be used for
 any kind of text[^1] file: 
 
@@ -124,7 +132,7 @@ See [here](https://git.wiki.kernel.org/index.php/GitSvnComparsion) for a more
 detailed comparison of Git and Subversion.
 
 
-Next: [Tracking changes using a local repository](02-local.html)
+Next: [Tracking changes using a local repository]({{page.root }}/02-local/)
 
 [^1]: VCS can be used for binary (non-text) files, but viewing differences
 between versions becomes problematic.
