@@ -1,7 +1,13 @@
 ---
-layout: page
-title: Version control with Git  
-subtitle: Conclusions and further information
+title: "Conclusions and further information"
+teaching: 10
+exercises: 0
+questions:
+- "Where can I find out more?"
+objectives:
+- "Reflect on how version control would help with the starting scenario"
+keypoints:
+- "Use version control whenever possible"
 ---
 
 
@@ -63,5 +69,3 @@ Scientific Computing](http://arxiv.org/abs/1210.0530)", arXiv:1210.0530
 ### Feedback
 Please leave some [feedback](https://goo.gl/forms/YZJ05PzX9tPFEtuV2).
 It's good to know how things can be improved.
-
-Previous: [Hints and tips](11-hints-and-tips.html)

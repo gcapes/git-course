@@ -1,13 +1,22 @@
 ---
-layout: page
-title: Version control with Git  
-subtitle: Looking at history and differences
+title: "Looking at history and differences"
+teaching: 25
+exercises: 10
+questions:
+- "How do I get started with Git?"
+- "Where does Git store information?"
+objectives:
+- "Be able to view history of changes to a repository"
+- "Be able to view differences between commits"
+- "Understand how and when to use tags to label commits"
+keypoints:
+- "`git log` shows the commit history"
+- "`git diff` displays differences between commits"
+- "`git checkout` recovers old versions of files"
+- "`HEAD` points to the commit you have checked out"
+- "`master` points to the tip of the master branch"
 ---
 
-> ## Learning objectives {.objectives}
-> * Be able to view history of changes to a repository
-> * Be able to view differences between commits
-> * Understand how and when to use tags to label commits
 
 ### Looking at differences
 
@@ -15,10 +24,11 @@ We forgot to reference a second paper in the introduction section.
 Correct it, save the file but do not commit it yet.
 We can review the changes that we made using:
 
-~~~{.bash}
+~~~
 $ gedit journal.txt    # Add second reference to introduction
 $ git diff journal.txt # View changes to file
 ~~~
+{: .bash}
 
 This shows the difference between the latest copy in the repository and the
 changes we made. 
@@ -53,17 +63,18 @@ are working and your own preferences related to choosing tools and
 technologies.
 
 Now commit the change we made by adding the second reference:
-```{.bash}
+```
 $ git add journal.txt
 $ git commit          # "Reference second paper in introduction"
 ```
+{: .bash}
 
 ### Looking at our history
 
 To see the history of changes that we made to our repository (the most recent
 changes will be displayed at the top):
 
-~~~{.bash}
+~~~
 $ git log
 ~~~
 
@@ -72,37 +83,41 @@ uniquely identifies the changes made in this commit, author, date, and your
 comment. *git log* command has many options to print information in various
 ways, for example:
 
-~~~{.bash}
+~~~
 $ git log --relative-date
 ~~~
+{: .bash}
 
 Git automatically assigns an identifier (*COMMITID*) to each commit made to the
 repository. In order to see the changes made between any earlier commit and our
 current version, we can use  `git diff`  providing the commit identifier of the
 earlier commit:
 
-~~~{.bash}
+~~~
 $ git diff COMMITID   # View differences between current version and COMMITID
 ~~~
+{: .bash}
 
 And, to see changes between two commits:
 
-~~~{.bash}
+~~~
 $ git diff OLDER_COMMITID NEWER_COMMITID
 ~~~
+{: .bash}
 
 Using our commit identifiers we can set our working directory to contain the
 state of the repository as it was at any commit. So, let's go back to the very
 first commit we made,
 
-~~~{.bash}
+~~~
 $ git log 
 $ git checkout COMMITID
 ~~~
+{: .bash}
 
 We will get something like this:
 
-~~~{.output}
+~~~
 Note: checking out '21cfbdec'.
 
 You are in 'detached HEAD' state. You can look around, make experimental
@@ -116,6 +131,7 @@ do so (now or later) by using -b with the checkout command again. Example:
   
 HEAD is now at 21cfbde... Add title and authors
 ~~~
+{: .output}
 
 This strange concept of the 'detached HEAD' is covered in the next section ...
 just bear with me for now!
@@ -123,30 +139,34 @@ just bear with me for now!
 If we look at `journal.txt` we'll see it's our very first version. And if we
 look at our directory,
 
-~~~{.bash}
+~~~
 $ ls
 ~~~
-~~~{.output}
+{: .bash}
+~~~
 journal.txt
 ~~~
-
+{: .output}
 
 then we see that our `references` directory is gone. But, rest easy, while it's
 gone from our working directory, it's still in our repository. We can jump back
 to the latest commit by doing:
 
-~~~{.bash}
+~~~
 $ git checkout master
 ~~~
+{: .bash}
 
 And `references` will be there once more,
 
-~~~{.bash}
+~~~
 $ ls
 ~~~
-~~~{.output}
+{: .bash}
+~~~
 common journal.txt
 ~~~
+{: .output}
 So we can get any version of our files from any point in time. In other words,
 we can set up our working directory back to any stage it was when we made
 a commit.
@@ -182,51 +202,57 @@ act as easy-to-remember nicknames for commit identifiers.
 
 For example,
 
-```{.bash}    
+```    
 $ git tag PAPER_STUB
 ```
+{: .bash}
 
 We can list tags by doing:
 
-```{.bash}    
+```    
 $ git tag
 ```
+{: .bash}
 
 Now add the second paper to references.txt and commit the change:
 
-```{.bash}    
+```    
 $ gedit common/references.txt	# Add second paper
 $ git add references.txt 
 $ git commit -m "Add Jones et al paper" references.txt
 ```
+{: .bash}
 
 We can checkout our previous version using our tag instead of a commit
 identifier.
 
-```{.bash}    
+```    
 $ git checkout PAPER_STUB
 ```
+{: .bash}
 
 And return to the latest checkout,
 
-```{.bash}    
+```    
 $ git checkout master
 ```
+{: .bash}
 
-> ##Top tip: tag significant events {.callout}
->
+> ## Top tip: tag significant events 
 > When do you tag? Well, whenever you might want to get back to the exact
 > version you've been working on. For a paper, this might be a version that has
 > been submitted to an internal review, or has been submitted to a conference.
 > For code this might be when it's been submitted to review, or has been
 > released.
+{: .callout}
 
-> ## Where to create a Git repository? {.callout}
+> ## Where to create a Git repository?
 > Avoid creating a Git repository within another Git repository.
 > Nesting repositories in this way causes the 'outer' repository to
 > track the contents of the 'inner' repository - things will get confusing!
+{: .callout}
 
-> ## Exercise: "bio" Repository {.challenge}
+> ## Exercise: "bio" Repository 
 >
 > - Create a new Git repository on your computer called "bio"
 > - Be sure not to create your new repo within the 'papers' repo (see above)
@@ -235,6 +261,21 @@ $ git checkout master
 > - Modify one line, add a fourth line, then save the file
 > - Display the differences between the updated file and the original
 >
-> [Solution](solutions.html)
+> > ## Solution
+> > 
+> > ```
+> > cd ..                # Navigate out of the papers directory
+> >                      # Avoid creating a repo within a repo - confusion will arise!
+> > mkdir bio            # Create a new directory
+> > cd bio               # Navigate into the new directory
+> > git init             # Initialise a new repository
+> > gedit me.txt         # Create a file and write your biography
+> > git add me.txt       # Add your biography file to the staging area
+> > git commit           # Commit your staged changes
+> > gedit me.txt         # Edit your file
+> > git diff me.txt      # Display differences between your modified file and the last committed version
+> > ```
+> > {: .bash}
+> {: .solution}
+{: .challenge}
 
-Previous: [Setting up a local repository](02-local.html) Next: [Advice on commits](04-commit-advice.html)

@@ -1,13 +1,19 @@
 ---
-layout: page
-title: Version control with Git  
-subtitle: How, what and when to commit
+title: "Commit advice" 
+teaching: 15
+exercises: 0
+questions:
+- "How, what, and when to commit?"
+- "What makes a good commit message?"
+objectives:
+- "Understand what makes a good commit message"
+- "Know which types of files not to commit"
+- "Know when to commit changes"
+keypoints:
+- "Commit messages explain why changes were made, so make them clear and concise"
+- "Follow conventions to give a history that is both useful, and easy to read"
+- "Only commit files which can't be automatically recreated"
 ---
-
-> ## Learning objectives {.objectives}
-> * Understand what makes a good commit message
-> * Know which types of files not to commit
-> * Know when to commit changes
 
 ### How to write a good commit message
 
@@ -75,8 +81,3 @@ first hour, after which reviewers can become exhausted and the issues they find
 become ever more trivial.
 [Best Kept Secrets of Peer Code
 Review](http://smartbear.com/SmartBear/media/pdfs/best-kept-secrets-of-peer-code-review.pdf). SmartBear, 2006. ISBN-10: 1599160676. ISBN-13: 978-1599160672.
-
-----
-
-Previous: [Looking at history and differences](03-history.html) Next: [Branching, merging and 
-resolving conflicts](05-branching.html)

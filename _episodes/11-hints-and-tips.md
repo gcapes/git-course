@@ -1,7 +1,18 @@
 ---
-layout: page
-title: Version control with Git  
-subtitle: Git hints and tips
+title: "Git hints and tips"
+teaching: 10
+exercises: 0
+questions:
+- "How can I find help?"
+- "How can I further customise Git to suit my preferences?"
+objectives:
+- "Access help online and from command prompt" 
+- "Configure Git to ignore certain types of files"
+- "Understand how to build a commit selectively using `git add --patch`"
+keypoints:
+- "List files to ignore by committing a `.gitignore` file"
+- "Selectively stage changes to files using `git add --patch`"
+- "Configure a visual diff tool and use `git difftool` to view changes"
 ---
 
 ### Getting help
@@ -10,7 +21,7 @@ subtitle: Git hints and tips
 
 Like many Unix/Linux commands, `git` has a `man` page,
 
-```{.bash}
+```
 $ man git
 ```
 
@@ -26,19 +37,21 @@ To exit the manual page, type `q`.
 
 Type,
 
-```{.bash}
+```
 $ git --help
 ```
+{: .bash}
 
 and Git gives a list of commands it is able to help with, as well as their
 descriptions. 
 
 You can get more help on a specific command, by providing the command name e.g.
 
-```{.bash}
+```
 $ git init --help 
 $ git commit --help
 ```
+{: .bash}
 
 #### Google
 Search for your problem online. Someone has probably already asked (and answered) your question on stackoverflow.com.
@@ -62,9 +75,10 @@ these to `.gitignore` means Git won't complain about them being untracked.
 
 Create or edit `gitignore`,
 
-```{.bash}
+```
 $ gedit .gitignore
 ```
+{: .bash}
 
 Then add patterns for the files you want to ignore, where `*` is a wildcard,
 
@@ -72,10 +86,11 @@ Then add patterns for the files you want to ignore, where `*` is a wildcard,
 
 Then, add `.gitignore` to your repository,
 
-```{.bash}
+```
 $ git add .gitignore $ git commit -m "Added rules to ignore vim scratch
 files and binary files"
 ```
+{: .bash}
 
 ---
 
@@ -99,9 +114,10 @@ The syntax is:
 
 ### Add colour to `diff`
 
-```{.bash}
+```
 $ git config --global color.diff auto
 ```
+{: .bash}
 
 ---
 
@@ -113,15 +129,17 @@ There are many diff GUIs available, which can be much easier to work with.
 To view differences with a GUI instead of using the command-line diff tool, first configure
 git to use your chosen diff tool:
 
-```{.bash}
+```
 $ git config --global diff.tool diffmerge    # Set diffmerge as your visual diff tool
 $ git config --global difftool.prompt false  # Suppress confirmation before launching GUI
 ```
+{: .bash}
 Then to use the GUI, use the following command instead of `git diff`:
 
-```{.bash}
+```
 $ git difftool
 ```
+{: .bash}
 
 ---
 
@@ -157,20 +175,24 @@ The global configuration file for git `.gitconfig` is automatically created by
 Git in the `home` directory. If you set up some basic configuration (in the
 first steps of this tutorial), it should look like this.
 
-```{.bash}
+```
 $ cat ~/.gitconfig 
 ```
-```{.output}
+{: .bash}
+
+```
 [user] name = Your Name email = yourname@yourplace.org 
 [core] editor = gedit
 ```
+{: .output}
      	
 You can add more configuration options. For example, instead of typing `git
 commit -m` we can have a shorter version of this command:
 
-```{.bash}
+```
 $ git config --global alias.cms 'commit -m'
 ```
+{: .bash}
 
 And now our configuration file will have a new section added:
 	
@@ -180,9 +202,10 @@ And now our configuration file will have a new section added:
 
 Next time we can simply type:
 	
-```{.bash}
+```
 $ git cms "Commit message"
 ```
+{: .bash}
 	
 ---	
 
@@ -219,8 +242,3 @@ provider that allows for large files).
 
 Again, as always with Git **before** you execute the above, make sure you know
 what you're doing!
-
----
-
-Previous: [Pull Requests](10-pull-requests.html) Next:
-[Conclusion](12-conclusion.html)

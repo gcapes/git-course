@@ -1,13 +1,22 @@
 ---
-layout: page
-title: Version control with Git  
-subtitle: Undoing changes
+title: "Undoing changes"
+teaching: 25
+exercises: 0
+questions:
+- "How can I discard unstaged changes?"
+- "How do I edit the last commit?"
+- "How can I undo a commit?"
+objectives:
+- "Be able to discard unstaged changes"
+- "Be able to amend the most recent commit"
+- "Be able to discard all changes since a particular commit"
+- "Be able to undo the changes introduced by a commit"
+keypoints:
+- "`git checkout <file>` discards unstaged changes"
+- "`git commit --amend` allows you to edit the last commit"
+- "`git revert` undoes a commit, preserving history"
+- "`git reset` undoes a commit by deleting history"
 ---
-> ## Learning objectives {.objectives}
-> * Be able to discard local changes
-> * Be able to amend the most recent commit
-> * Be able to discard all changes since a particular commit
-> * Be able to undo the changes introduced by a commit
 
 There are a number of things which we can amend and change after they have been
 commited in Git.
@@ -19,18 +28,20 @@ quickly try something out. But we may be unhappy with our changes. If we
 haven't get done a `git add` we can just throw the changes away and return
 our file to the most recent version we committed to the repository by using:
 
-```{.bash}
+```
 $ gedit journal.txt            # Make some small edits to the file
 $ git checkout journal.txt     # Discard edits we just made
 ```
+{: .bash}
 
 and we can see that our file has reverted to being the most up-to-date one in
 the repository:
 
-```{.bash}
+```
 $ git status         # See that we have a clean working directory
 $ gedit journal.txt  # Inspect file to verify changes have been discarded
 ```
+{: .bash}
 
 ---
 
@@ -41,9 +52,10 @@ and the files are not yet ready to be commited. Or, which is not as uncommon as
 you think, your commit message is not as it is supposed to be. You can fix that
 using the command:
 
-```{.bash}
+```
 $ git commit --amend   # Edit previous commit message
 ```
+{: .bash}
 
 This opens up the default editor for Git which includes the previous commit
 message - you can edit it and close the editor. This will simply fix the commit
@@ -56,13 +68,15 @@ the references file. We will add a methodology section to the paper where we
 detail the instrumentation used, and add a reference for this to the references
 file.
 
-```{.bash}
+```
 $ gedit journal.txt           # Add methodology section, including a reference
 $ gedit common/references.txt # Add new reference to references file
 $ git status                  # Get a status update on file modifications
 ```
+{: .output}
+{: .bash}
 	
-```{.output}
+```
 $ On branch master 
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -73,20 +87,23 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
+{: .output}
 
 Let's then add and commit *journal.txt* but not the references file.
 
-```{.bash}
+```
 $ git add journal.txt            # Add journal to staging area
 $ git commit -m "Add methodology section"
 ```
+{: .bash}
 	
 Let's have a look at our working directory now:
 
-```{.bash}
+```
 $ git status
 ```
-```{.output}
+{: .bash}
+```
 $ On branch master 
 Changes not staged for commit: 
   (use "git add <file>..." to update what will be committed) 
@@ -96,25 +113,28 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
+{: .output}
 
 Also, run `git log -2` to see what is the latest commit message and ID.
 
 Now, we want to fix our commit and add the references file.
 
-```{.bash}
+```
 $ git add common/references.txt # Add reference file
 $ git commit --amend            # Amend most recent commit
 ```
+{: .bash}
 
 This will again bring up the editor and we can amend the commit message if required.
 
 Now when we run `git status` and then `git log` we can see that our Working
 Directory is clean and that both files were added. 
 
-```{.bash}
+```
 $ git status
 $ git log -3
 ```
+{: .bash}
 
 ---
 
@@ -127,11 +147,12 @@ introduced by the commit, and appends a new commit with the resulting content.
 Let's try it on our example. Modify the journal, describing which other instruments were
 used, and then make a commit.
 
-```{.bash}
+```
 $ gedit journal.txt       # Describe other instruments
 $ git add journal.txt
 $ git commit -m "Describe Aerosol Mass Spectrometer"
 ```
+{: .bash}
 
 We now realise that what we've just done in our journal file is incorrect
 because we are not using the data from that instrument.
@@ -139,9 +160,10 @@ Some of the data got corrupted, and due to problems with the logging computer
 we are not going to use that data.
 So it makes sense to abandon the commit completely.
 
-```{.bash}	
+```	
 $ git revert HEAD         # Undo changes introduced by most recent commit
 ```
+{: .bash}
 
 When we revert, a new commit is created. The *HEAD* pointer and the branch
 pointer are in fact moved forward rather than backwards. 	
@@ -150,12 +172,13 @@ We can revert any previous commit. That is, we can "abandon" any of the
 previous changes. However, depending on the changes we made, we may bump into
 a *conflict* (which we will cover in more detail further on). 
 
-```{.output}
+```
 error: could not revert 848361e... Describe Aerosol Mass Spectrometer
 hint: after resolving the conflicts, mark the corrected paths
 hint: with 'git add <paths>' or 'git rm <paths>'
 hint: and commit the result with 'git commit'
 ```
+{: .output}
 	
 Behind the scenes Git gets confused trying to merge the commit *HEAD* is pointing
 to with the past commit we're reverting. 
@@ -184,12 +207,14 @@ commit we want to keep.
 
 We can do that by running:
 
-```{.bash}
+```
 $ git reset --hard HEAD^^          # Move tip of branch to two commits before HEAD
 ```
-```{.output}
+{: .bash}
+```
 HEAD is now at fbdc44b Add methodology section and update references file
 ```
+{: .output}
 
 This moves the tip of the branch back to the specified commit. If we look in-depth, 
 this command moves back two pointers: `HEAD` and the pointer to the tip of the
@@ -207,7 +232,7 @@ depth `git reset` showing the differences between the three options:
 * `--hard`
 
 
-> ## Top tip: do not use `git reset` with remote branches {.callout}
+> ## Top tip: do not use `git reset` with remote branches 
 > There is one important thing to remember about the `reset` command - it
 > should only be used with branches that have not been shared yet (that is they
 > haven't been pushed into a remote repository that others are using). Resetting
@@ -222,7 +247,7 @@ depth `git reset` showing the differences between the three options:
 > 
 > So what can we do if we want to abandon changes in branches that are shared
 > with others? We need to use the `revert` command.
-
+{: .callout}
 
 ![Reset vs revert](../fig/git-revert-vs-reset.svg)
 
@@ -232,5 +257,3 @@ for further reading about the differences between `git revert` and `git reset`.
 
 ### How to undo almost anything with Git
 See [this blog post](https://github.com/blog/2019-how-to-undo-almost-anything-with-git) for more example scenarios and how to recover from them.
-
-Previous: [Branching, merging and resolving conflicts](05-branching.html) Next: [Rebasing](07-rebasing.html)

@@ -1,25 +1,32 @@
 ---
-layout: page
-title: Version control with Git 
-subtitle: Branching
+title: "Branching"
+teaching: 20
+exercises: 15
+questions:
+- "What is a branch?"
+- "How can I merge changes from another branch?"
+objectives:
+- "Know what branches are and why you would use them"
+- "Understand how to merge branches"
+- "Understand how to resolve conflicts during a merge"
+keypoints:
+- "`git branch` creates a new branch"
+- "Use feature branches for new ideas and fixes, before merging into `master`"
 ---
-
-> ## Learning objectives {.objectives}
-> * Know what branches are and why you would use them
-> * Understand how to merge branches
-> * Understand how to resolve conflicts during a merge
 
 ### What is a branch?
 
 You might have noticed the term *branch* in status messages:
 
-~~~{.bash}
+~~~
 $ git status 
 ~~~
-~~~{.output}
+{: .bash}
+~~~
 On branch master 
 nothing to commit (working directory clean)
 ~~~
+{: .output}
 
 and when we wanted to get back to our most recent version of the repository, we
 used `git checkout master`.
@@ -107,50 +114,58 @@ if it will actually make a publication. So it will be safer to create a branch
 and carry on working on this "experimental" version of the paper in a branch
 rather than in the master.
 
-~~~{.bash}
+~~~
 $ git checkout -b paperWJohn
 ~~~
-~~~{.output}
+{: .bash}
+~~~
 Switched to a new branch 'paperWJohn'
 ~~~
+{: .output}
 
 We're going to change the title of the paper and update the author list (adding John Smith).
 However, before we get started it's a good practice to check that we're working
 on the right branch.
 
-~~~{.bash}
+~~~
 $ git branch        # Double check which branch we are working on
 ~~~
-~~~{.output}
+{: .bash}
+~~~
   master
 * paperWJohn 
 ~~~
+{: .output}
 
 The * indicates which branch we're currently in. Now let's make the changes to the paper.
 
-~~~{.bash}
+~~~
 $ gedit journal.txt   # Change title and add co-author
 $ git add journal.txt
 $ git commit          # "Modify title and add John as co-author"
 ~~~
+{: .bash}
 
 If we now want to work in our master branch. We can switch back by using:
 
-~~~{.bash}
+~~~
 $ git checkout master 
 ~~~
-~~~{.output}
+{: .bash}
+~~~
 Switched to branch 'master'
 ~~~
+{: .output}
 
 Having written some of the paper, we have thought of a better title for
 the *master* version of the paper.
 
-~~~{.bash}
+~~~
 $ gedit journal       # Rewrite the title
 $ git add journal.txt
 $ git commit          # "Rewrite title emphasising measurements"
 ~~~
+{: .bash}
 
 ### Merging and resolving conflicts
 
@@ -158,12 +173,13 @@ We are now working on two papers: the main one in our master branch and the one
 which may possibly be collaborative work in our "paperWJohn" branch.
 Let's add another section to the paper to write about John's simulations.
 
-~~~{.bash}
+~~~
 $ git checkout paperWJohn       # Switch branch
 $ gedit journal.txt             # Add 'simulations' section
 $ git add journal.txt 
 $ git commit -m "Add simulations" journal.txt
 ~~~
+{: .bash}
 
 After some discussions with John we decided that we will publish together,
 hence it makes sense to now merge all that was authored together with John 
@@ -172,25 +188,28 @@ in branch "paperWJohn".
  We can do that by *merging* that branch with the master branch. Let's try
  doing that:
 
-~~~{.bash}
+~~~
 $ git checkout master   # Switch branch
 $ git merge paperWJohn  # Merge paperWJohn into master
 ~~~
-~~~{.output}
+{: .bash}
+~~~
 Auto-merging journal.txt
 CONFLICT (content): Merge conflict in journal.txt
 Automatic merge failed; fix conflicts and then commit the result.
 ~~~
+{: .output}
 
 Git cannot complete the merge because there is a conflict - if you recall,
 after creating the new branch, we changed the title of the paper on both branches.
 We have to resolve the conflict and then complete the merge. We can get
 some more detail
 
-~~~{.bash}
+~~~
 $ git status
 ~~~
-~~~{.output}
+{: .bash}
+~~~
 On branch master
 You have unmerged paths.
   (fix conflicts and run "git commit")
@@ -200,6 +219,7 @@ Unmerged paths:
 
     	both modified:      journal.txt
 ~~~
+{: .output}
 
 Let's look inside journal.txt:
 
@@ -227,11 +247,12 @@ of the two e.g. "Measurement-model comparison of atmospheric particle formation 
 
 We edit the file. Then commit our changes:
 
-~~~{.bash}
+~~~
 $ gedit journal.txt    # Resolve conflict by editing journal.txt
 $ git add journal.txt  # Let Git know we have resolved the conflict
 $ git commit -m "Rewrite title to incorporate simulations"
 ~~~
+{: .bash}
 
 This is where version control proves itself better than DropBox or GoogleDrive,
 this ability to merge text files line-by-line and highlight the conflicts
@@ -246,24 +267,90 @@ checking out one of the past commits.
 
 But we were then in the "detached HEAD" state.
 
-> ### Exercise: branching {.challenge}
-> 1. Add a commit to detached HEAD
+> ## Add a commit to detached HEAD
 >
->     - Checkout one of the previous commits from our repository.
->     - Make some changes and commit them. What happened?
->     - Now try to run `git branch`. What can you see?
-> 
-> 2. Commit changes to a new branch
+> - Checkout one of the previous commits from our repository.
+> - Make some changes and commit them. What happened?
+> - Now try to run `git branch`. What can you see?
 >
->     - Checkout the master branch again: `git checkout master` 
->     - Read the message output by Git - it will make more sense after this exercise 
->     - Make some changes and save the file(s). 
->     - Create a new branch and check it out.
->     - What happened?
->     - Now commit the file to the new branch
->     - Switch back to (i.e. checkout) the master branch 
->
-> [Solutions](solutions.html)
+> > ## Solution
+> > ```
+> > git checkout HEAD~1  # Check out the commit one before last
+> > gedit journal.txt    # Make some edits
+> > git add journal.txt  # Stage the changes
+> > git commit           # Commit the changes
+> > git branch           # You should see a message like the one below,
+> >                      # indicating your commit does not belong to a branch
+> > ```
+> > {: .bash}
+> > ```
+> > * (detached from 57289fb)
+> >   master
+> > ```
+> > {: .output}
+> {: .solution} 
+{: .challenge}
 
-Previous: [Committing changes](04-commit-advice.html) Next: [Undoing
-changes](06-undoing.html)
+> ## Commit changes to a new branch
+>
+> - Checkout the master branch again: `git checkout master` 
+> - Read the message output by Git - it will make more sense after this exercise 
+> - Make some changes and save the file(s). 
+> - Create a new branch and check it out.
+> - What happened?
+> - Now commit the file to the new branch
+> - Switch back to (i.e. checkout) the master branch 
+>
+> > ## Solution 
+> > ```
+> > git checkout master
+> > ```
+> > {: .bash}
+> > The output you see will be slightly different to that below,
+> > reflecting your previous commit message and commit ID.
+> >
+> > ```
+> > Warning: you are leaving 1 commit behind, not connected to
+> > any of your branches:
+> >
+> > eb7c650 Add empty line for branching exercise
+> >
+> > If you want to keep them by creating a new branch, this may be a good time
+> > to do so with:
+> >
+> >  git branch new_branch_name eb7c650
+> >
+> >  Switched to branch 'master'
+> >  Your branch is up-to-date with 'master'.
+> > ```
+> > {: .output}
+> >
+> > We will ignore this message for now and discard the changes.
+> > Make some new changes so you can follow the process coming from a clean working directory.
+> > This is effectively the start of the exercise - we have just been clearing up so far.
+> >
+> > ```
+> > gedit journal.txt		# Modify the paper, but don't stage or commit the changes yet
+> > git branch exercise		# Create a new branch
+> > git checkout exercise		# Switch to the new branch 
+> > ```
+> > {: .bash}
+> >
+> > You should see similar output to below. 
+> > This means you have created a new branch, starting from the previous commit you checked out.
+> > The 'M' next to the file name indicates this file has modifications.
+> > You can now stage, then commit your changes.
+> >
+> > ```
+> > M	journal.txt
+> > Switched to branch 'exercise'
+> > ```
+> > {: .output}
+> > ```
+> > git add journal.txt	# Stage your modified file
+> > git commit			# Commit your staged changes
+> > git checkout master	# Switch back to the 'master' branch
+> > ```
+> > {: .bash}
+> {: .solution}
+{: .challenge}

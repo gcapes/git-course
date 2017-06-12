@@ -1,7 +1,16 @@
 ---
-layout: page
-title: Version control with Git  
-subtitle: Pull Requests
+title: "Pull Requests"
+teaching: 20
+exercises: 15
+questions:
+- "How can I contribute to a repository to which I don't have write access?"
+objectives:
+- "Understand what it means to fork a repository"
+- "Be able to fork a repository on GitHub"
+- "Understand how to submit a pull request"
+keypoints:
+- "A fork is a `git clone` into your (GitHub) account"
+- "A pull request asks the owner of a repository to incorporate your changes"
 ---
 
 Pull Requests are a great solution for contributing to repositories to which
@@ -30,7 +39,7 @@ The process looks like this:
 
 ![Conceptual illustration of a pull request - image adapted from [here](http://acrl.ala.org/techconnect/post/coding-collaboration-on-github)](../fig/github-diagram.png)
 
-> ## Exercise {.challenge}
+> ## Exercise 
 > Let's look at the workflow and try to repeat it:
 > 
 > 1. **Fork** [this
@@ -51,6 +60,4 @@ The process looks like this:
 > 5. The owner of the original repository gets a notification that someone 
 > created a pull request - the request can be reviewed, commented and merged in 
 > (or not) via GitHub.
-
-Previous: [Collaborating with remote repositories](09-remote-collaboration.html) 
-Next: [Hints and Tips](11-hints-and-tips.html)
+{: .challenge}

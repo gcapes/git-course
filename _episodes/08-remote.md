@@ -1,13 +1,19 @@
 ---
-layout: page
-title: Version control with Git  
-subtitle: Working from multiple locations with a remote repository
+title: "Working from multiple locations with a remote repository"
+teaching: 20
+exercises: 0
+questions:
+- "What is a remote repository"
+- "How can I use GitHub to work from multiple locations?"
+objectives:
+- "Understand how to set up remote repository"
+- "Understand how to push local changes to a remote repository"
+- "Understand how to clone a remote repository"
+keypoints:
+- "Git is the version control system: GitHub is a remote repositories provider."
+- "`git clone` to make a local copy of a remote repository"
+- "`git push` to send local changes to remote repository"
 ---
-
-> ## Learning objectives {.objectives}
-> * Understand how to set up remote repository
-> * Understand how to push local changes to a remote repository
-> * Understand how to clone a remote repository
 
 We're going to set up a remote repository that we can use from multiple
 locations. The remote repository can also be shared with colleagues, if we want
@@ -72,10 +78,11 @@ You'll get a page with new information about your repository. We already have
 our local repository and we will be *pushing* it to GitHub, so this is the
 option we will use:
 
-```{.bash}
+```
 $ git remote add origin https://github.com/<USERNAME>/papers.git 
 $ git push -u origin master
 ```
+{: .bash}
 
 The first line sets up an alias **origin**, to correspond to the URL of our
 new repository on GitHub.
@@ -85,10 +92,11 @@ new repository on GitHub.
 
 Now copy and paste the second line,
 
-```{.bash}
+```
 $ git push -u origin master 
 ```
-```{.output}
+{: .bash}
+```
 Counting objects: 32, done.
 Delta compression using up to 8 threads.
 Compressing objects: 100% (28/28), done.
@@ -98,6 +106,7 @@ To https://github.com/gcapes/papers.git
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ```
+{: .output}
 
 This **pushes** our *master* branch to the remote repository, named via the alias
 *origin* and creates a new *master* branch in the remote repository.
@@ -113,45 +122,50 @@ GitHub, we can access our repository.
   
 Let's push each of our local branches into our remote repository:
 
-```{.bash}
+```
 $ git push origin branch_name
 ```
+{: .bash}
     
 The branch should now be created in our GitHub repository.    
 
 To list all branches (local and remote):
 
-```{.bash}
+```
 $ git branch -a
 ```
+{: .bash}
     
-> ## Deleting branches (for information only) {.callout}
+> ## Deleting branches (for information only) 
 > **Don't do this now.** This is just for information.
 > To delete branches, use the following syntax:
 >
-> ```{.bash}
+> ```
 > $ git branch -d <branch_name>              # For local branches
 > $ git push origin --delete <branch_name>   # For remote branches
 > ```
-
+> {: .bash}
+{: .callout}
 
 ### Cloning a remote repository
 
 Now, let's do something drastic! (but before that step, **make sure that you
 pushed all your local branches into the remote repository**)
 
-```{.bash}
+```
 $ cd .. 
 $ rm -rf papers
 ```
+{: .bash}
 
 Gulp! We've just wiped our local repository! But, as we've a copy on GitHub we
 can just copy, or `git clone` that,
 
-```{.bash}
+```
 $ git clone https://github.com/<USERNAME>/papers.git 
 ```
-```{.output}
+{: .bash}
+```
 Cloning into 'papers'...
 remote: Counting objects: 32, done.
 remote: Compressing objects: 100% (21/21), done.
@@ -159,54 +173,60 @@ remote: Total 32 (delta 7), reused 32 (delta 7), pack-reused 0
 Unpacking objects: 100% (32/32), done.
 Checking connectivity... done.
 ```
+{: .output}
 
 Cloning creates an exact copy of the repository. By deafult it creates
 a directory with the same name as the name of the repository. 
 
 Now, if we change into *papers* we can see that we have our repository,
 
-```{.bash}    
+```    
 $ cd papers 
 $ git log
 ```
+{: .bash}
 and we can see our Git configuration files too:
 
-```{.bash}    
+```    
 $ ls -A
 ```
+{: .bash}
 
 In order to see the other branches locally, we can check them out as before:
 
-```{.bash}
+```
 $ git branch -r        # Show remote branches
 $ git checkout results # Check out the results branch
 ```
+{: .bash}
 
 ### Push changes to a remote repository
 
 We can use our cloned repository just as if it was a local repository so let's
 make some changes to our files and commit these.
 
-```{.bash}
+```
 $ gedit journal.txt     # Add section which will contain the figures 
 $ git add journal.txt   # Add figures section
 $ git commit
 ```
+{: .bash}
 
 Having done that, how do we send our changes back to the remote repository? We
 can do this by *pushing* our changes,
 
-```{.bash}
+```
 $ git push origin master
 ```
+{: .bash}
 
 If we now check our GitHub page we should be able to see our new changes under
 the *Commit* tab.
 
 To see all remote repositories (we can have multiple ones!) type:
 	
-```{.bash}
+```
 $ git remote -v
 ```
-Previous: [Rebasing](07-rebasing.html) Next: [Collaborating using a remote
-repository](09-remote-collaboration.html)
+{: .bash}
+{: .bash}
