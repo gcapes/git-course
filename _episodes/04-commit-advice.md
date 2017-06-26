@@ -1,6 +1,6 @@
 ---
 title: "Commit advice" 
-teaching: 15
+teaching: 10
 exercises: 0
 questions:
 - "How, what, and when to commit?"

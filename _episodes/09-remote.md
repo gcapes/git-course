@@ -1,6 +1,6 @@
 ---
 title: "Working from multiple locations with a remote repository"
-teaching: 20
+teaching: 25
 exercises: 0
 questions:
 - "What is a remote repository"

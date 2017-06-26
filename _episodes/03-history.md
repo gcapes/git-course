@@ -1,7 +1,7 @@
 ---
 title: "Looking at history and differences"
-teaching: 25
-exercises: 10
+teaching: 30
+exercises: 15 (inc 10 for break)
 questions:
 - "How do I get started with Git?"
 - "Where does Git store information?"

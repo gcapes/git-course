@@ -1,6 +1,6 @@
 ---
 title: "Conclusions and further information"
-teaching: 10
+teaching: 5
 exercises: 0
 questions:
 - "Where can I find out more?"

@@ -1,6 +1,6 @@
 ---
 title: "Git hints and tips"
-teaching: 10
+teaching: 15
 exercises: 0
 questions:
 - "How can I find help?"
