@@ -77,10 +77,11 @@ changes will be displayed at the top):
 ~~~
 $ git log
 ~~~
+{: .bash}
 
 The output shows: the commit identifier (also called revision number) which
 uniquely identifies the changes made in this commit, author, date, and your
-comment. *git log* command has many options to print information in various
+comment. The `git log` command has many options to print information in various
 ways, for example:
 
 ~~~
@@ -148,7 +149,7 @@ journal.txt
 ~~~
 {: .output}
 
-then we see that our `references` directory is gone. But, rest easy, while it's
+then we see that our `common` directory is gone. But, rest easy, while it's
 gone from our working directory, it's still in our repository. We can jump back
 to the latest commit by doing:
 
@@ -157,7 +158,7 @@ $ git checkout master
 ~~~
 {: .bash}
 
-And `references` will be there once more,
+And `common` will be there once more,
 
 ~~~
 $ ls

@@ -16,7 +16,7 @@ keypoints:
 Pull Requests are a great solution for contributing to repositories to which
 you don't have write access. Adding other people as *collaborators* to a remote
 repository is a good idea but sometimes (or even most of the time) you want to
-make sure that their contributions will provide more benefits that the
+make sure that their contributions will provide more benefits than the
 potential mistakes they may introduce.
 
 In large projects, primarily Open Source ones, in which the community of
