@@ -43,10 +43,12 @@ The process looks like this:
 > Let's look at the workflow and try to repeat it:
 > 
 > 1. **Fork** [this
-> repository](https://github.com/gcapes/manchester-papers.git).  
+> repository](https://github.com/gcapes/manchester-papers.git)
+> by  clicking on the `Fork` button at the top of the page.
+>
 > 2. Clone the repository from **YOUR** GitHub account. When you run `git remote -v`
 > you should get something like this:
-> 	
+>
 > ```{.output}
 > origin	https://github.com/YOUR_USERNAME/manchester-papers.git(fetch)
 > origin 	https://github.com/YOUR_USERNAME/manchester-papers.git(push)
