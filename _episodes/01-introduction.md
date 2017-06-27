@@ -131,8 +131,4 @@ this will be one of the major differences to how you are used to working.
 See [here](https://git.wiki.kernel.org/index.php/GitSvnComparsion) for a more 
 detailed comparison of Git and Subversion.
 
-
-Next: [Tracking changes using a local repository]({{page.root }}/02-local/)
-
-[^1]: VCS can be used for binary (non-text) files, but viewing differences
-between versions becomes problematic.
+[^1]: VCS can be used for binary (non-text) files, but viewing differences between versions becomes problematic.

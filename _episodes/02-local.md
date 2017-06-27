@@ -356,5 +356,3 @@ In order to add all tracked files to the staging area, use `git commit -a`
 (which may be very useful if you edit e.g. 10 files and now you want to commit all of them).
 
 ![The Git commit workflow](../fig/git-committing.svg)
-
-Previous: [Introduction](01-introduction.html) Next: [Looking at history and differences](03-history.html)
