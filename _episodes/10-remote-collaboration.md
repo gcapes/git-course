@@ -235,10 +235,6 @@ This is where version control proves itself better than DropBox or GoogleDrive,
 this ability to merge text files line-by-line and highlight the conflicts
 between them, so no work is ever lost.
 
-
-    
-## Exercises following good practice 
- 
 > ## Collaborating on a remote repository
 > 
 > In this exercise you should work with a partner or a group of three. 
@@ -315,69 +311,5 @@ between them, so no work is ever lost.
 > 
 > > ## Solution	
 > > It works fine. The revert shows up in everyone's copy.
-> {: .solution}
-{: .challenge}
-
-## Exercises following bad practice
-
-> ## Undoing changes using reset
-> 
-> Now let's try to  undo a commit using `git reset`.
-> Remember that it is a **bad** practice to use `git reset` for branches which are
-> shared. The purpose of this exercise is to demonstrate what happens. 
-> 
-> Select a different branch for this exercise than the one you used for the
-> previous one.
-> 
-> Reset to one of the previous commits and push it back to the remote repository.
-> Pull the branches which your colleagues reset in a similar way.
-> 
-> What happens? Look through the history using `git log` - what can you notice?
-> 
-> > ## Solution
-> > You can't push the change to remote repository unless you use `git push -f`.
-> > After force pushing the changes, your git log shows what you've done, as does
-> > the remote git log, but the other person's local git log shows no change to the 
-> > history. To that person it looks like work has just gone missing from the files
-> > in their working directory. Git also thinks that their branch is ahead of
-> > origin/\<branch>.
-> {: .solution}
-{: .challenge}
-
-> ## Rebasing
-> 
-> This exercise is again designed to explore what happens when you follow *bad
-> practice*. In this case, the bad practice is rebasing branches which are shared
-> with others.
-> 
-> Preparation:
->
-> 1. Firstly, make sure that you have all branches (so all of you working on the
-> repository should have the same set of branches). 
-> 2. Secondly, make sure that you all have these branches up to date. So if 
-> you have any uncommited changes, commit them and push them. 
-> 3. Pull the changes that your colleagues committed.
-> 
-> The exercise:
->
-> - Pick a (non-master) branch - this time you should both be working on the same one
-> - Both do some work on it and commit your changes
-> - Person A should also make some changes to the *master*  branch and push them back
-> - Person A should then rebase their selected non-master branch on master and push 
-> everything back to the repository
-> - Person B (and C if you're working in a group of 3) should now pull (previously 
-> commiting the changes they made in the  branch)
-> 
-> What is the end result? What happened when the other collaborator rebased the
-> branch against master?
->
-> > ## Solution
-> > It is confusing. When pushing person A's rebased branch back, it failed because tip
-> > of current branch is behind its remote counterpart. So I did a pull. Auto-merge failed
-> > so after editing the file to resolve the merge, add, commit, push, I finally got the 
-> > rebased branch pushed but with an extra commit merging changes from remote. These 
-> > changes were actually already in the rebased version.
-> > Person B then gets a merge conflict when they pull. After resolving, their history 
-> > is different to person A's history. One commit has a new hash ID, and others are missing.
 > {: .solution}
 {: .challenge}
