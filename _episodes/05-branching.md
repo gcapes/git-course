@@ -12,6 +12,7 @@ objectives:
 keypoints:
 - "`git branch` creates a new branch"
 - "Use feature branches for new ideas and fixes, before merging into `master`"
+- merging does not delete any branches
 ---
 
 ### What is a branch?
@@ -36,66 +37,32 @@ can store multiple sets of these, which we can use and edit and update in
 parallel. Each of these sets, or parallel instances, is termed a **branch** and
 *master* is Git's default branch. 
 
- A new branch can be created from any commit. Branches can also be *merged*
- together. 
+A new branch can be created from any commit. Branches can also be *merged*
+together. 
 
- Why is this useful? Suppose we've developed some software and now we want to
- try out some new ideas but we're not sure yet whether we'll keep them. We
- can then create a branch 'feature1' and keep our master branch clean. When
- we're done developing the feature and we are sure that we want to include it
- in our program, we can merge the feature branch with the master branch. 
- This keeps all the work-in-progress separate from the master branch, which 
- contains tested, working code.
- 
- We create our branch for the new feature.
+### Why are branches useful?
+Suppose we've developed some software and now we want to
+try out some new ideas but we're not sure yet whether we'll keep them. We
+can then create a branch 'feature1' and keep our master branch clean. When
+we're done developing the feature and we are sure that we want to include it
+in our program, we can merge the feature branch with the master branch. 
+This keeps all the work-in-progress separate from the master branch, which 
+contains tested, working code.
 
-```    
--c1---c2---c3        master 
-       \
-       c4            feature1
-```
-
-We can then continue developing our software in our default, or master, branch,
-
-```     
--c1---c2---c3---c5---c6---c7    master
-       \ 
-       c4                       feature1
-```
-And, we can work on the new feature in the feature1 branch
-
-```    
--c1---c2---c3---c5---c6---c7         master 
-       \
-       c4---c8---c9                  feature1
-```
-
-We can then merge the feature1 branch adding new feature to our master branch
-(main program):
-
-```
--c1---c2---c3---c5---c6---c7--c10       master
-       \                      /
-       c4---c8---c9----------           feature1
-
-```
-When we merge our feature1 branch with master git creates a new commit which
+When we merge our feature branch with master git creates a new commit which
 contains merged files from master and feature1. After the merge we can continue
 developing. **The merged branch is not deleted.** We can continue developing (and
 making commits) in feature1 as well.
 
-```    
--c1---c2---c3---c5---c6---c7--c10---c11--c12     master
-       \                      / 
-       c4---c8---c9---------------c13            feature1
-```
+### Branching workflows
+
 One popular model is the [Gitflow model](http://nvie.com/posts/a-successful-git-branching-model/):
 
 - A master branch, representing a released version of the code
 - A release branch, representing the beginnings of the next release - a branch 
 where the code is still undergoing testing
 - Various feature and/or developer-specific branches representing
-work-in-progress, new features etc
+work-in-progress, new features, bug fixes etc
 
 For example:
 
