@@ -6,11 +6,12 @@ questions:
 - "Why use version control?"
 objectives:
 - "Understand the benefits of an automated version control system."
+- "Understand the difference between Git and GitHub."
 keypoints:
-- "Store versions neatly."
-- "Restore previous versions."
-- "Understand what happened and why."
-- "Always know which is the current version."
+- "Git is a version control tool; one of many."
+- "GitHub is a repository hosting service; one of many."
+- "Use version control to store versions neatly, restore previous versions, 
+understand what happened (and why), and always know which is the current version."
 ---
 
 ## What is a version control system?
@@ -122,6 +123,7 @@ any kind of text[^1] file:
 LaTeX, XML, md etc
 - Have a look at some of the projects on [GitHub](https://github.com/explore)
 
+## Git vs GitHub
 For this session, we'll be using Git, a popular distributed version control system
 and [GitHub](http://github.com), a web-based service providing remote
 repositories. *Distributed* means that each user has a complete copy of
