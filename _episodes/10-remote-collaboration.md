@@ -300,7 +300,7 @@ between them, so no work is ever lost.
 > 
 > Once you have the branches which others created, try to undo one of the commits.
 >  
-> Each one of you should try to [revert](06-undoing.html) a commit in a different
+> Each one of you should try to [revert]({{ page.root }}/07-undoing) a commit in a different
 > branch to your partner(s).
 > 
 > Push the branch back to the remote repository. The others should pull that
