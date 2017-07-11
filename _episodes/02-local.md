@@ -36,6 +36,9 @@ For this we will use the command line interface.
 {: .callout}
 
 ## Setting up Git
+Git is already installed on the training machines, whether you're using Windows or Linux.
+Instructions for setting up Git on your own machine are given under [setup]({{ page.root }}/setup).
+
 ## Create a new repository with Git
 
 We will be working with a simple example in this tutorial. It will be a paper
