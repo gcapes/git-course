@@ -79,9 +79,29 @@ $ git log
 ~~~
 {: .bash}
 
-The output shows: the commit identifier (also called revision number) which
-uniquely identifies the changes made in this commit, author, date, and your
-comment. The `git log` command has many options to print information in various
+```
+commit 4dd7f5c948fdc11814041927e2c419283f5fe84c
+Author: Your Name <your.name@manchester.ac.uk>
+Date:   Mon Jun 26 10:21:48 2017 +0100
+
+    Write introduction
+
+commit c38d2243df9ad41eec57678841d462af93a2d4a5
+Author: Your Name <your.name@manchester.ac.uk>
+Date:   Mon Jun 26 10:14:30 2017 +0100
+
+    Add author and title
+```
+{: .output}
+
+The output shows (on separate lines):
+- the commit identifier (also called revision number) which
+uniquely identifies the changes made in this commit
+- author
+- date
+- your commit message
+
+The `git log` command has many options to print information in various
 ways, for example:
 
 ~~~
