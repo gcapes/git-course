@@ -44,6 +44,9 @@ or `jar` files) we don't save as we can recreate it from the source. Adopting
 this approach also means there's no risk of the auto-generated files becoming
 out of sync with the manual ones.
 
+We can automatically ignore such files using a `.gitignore` file.
+See [hints and tips]({{page.root}}/12-hints-and-tips).
+
 ---
 
 ### When to commit changes?
