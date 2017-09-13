@@ -198,7 +198,7 @@ To tell Git about the file, we will use the `git add` command:
 
 ~~~
 $ git add journal.txt 
-$ git status journal.txt
+$ git status 
 ~~~
 {: .bash}
 ~~~
