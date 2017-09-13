@@ -114,7 +114,7 @@ You should easily be able to see the benefits of VCS in the situation above.
 
 ## What files can I track using version control?
 VCS is typically used for software source code, but it can be used for
-any kind of text[^1] file: 
+any kind of **text** file: 
 
 - Configuration files
 - Parameter sets
@@ -122,6 +122,17 @@ any kind of text[^1] file:
 - User documentation, manuals, and journal papers,  whether they be plain-text,
 LaTeX, XML, md etc
 - Have a look at some of the projects on [GitHub](https://github.com/explore)
+
+## Why should I avoid tracking binary files with version control?
+It is possible to add binary files to a Git repository, but this is usually
+a bad idea:
+- diffs between versions become meaningless
+- binary files are often large, and thus slow down your repository
+- changes to binary files often required a whole new copy to be saved, so your
+repository can quickly grow in size
+
+Strategies for dealing with large binary files are discussed
+[here](https://www.perforce.com/blog/storing-large-binary-files-in-git-repositories).
 
 ## Git vs GitHub
 For this session, we'll be using Git, a popular distributed version control system
@@ -132,5 +143,3 @@ have used a centralized version control system before e.g. Subversion,
 this will be one of the major differences to how you are used to working.
 See [here](https://git.wiki.kernel.org/index.php/GitSvnComparsion) for a more 
 detailed comparison of Git and Subversion.
-
-[^1]: VCS can be used for binary (non-text) files, but viewing differences between versions becomes problematic.
