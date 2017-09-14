@@ -10,25 +10,41 @@ objectives:
 - "When (and when not) to rebase"
 keypoints:
 - "rebase applies your changes on top of a new base (parent) commit"
-- "a rebase is typically followed by a merge"
+- "rebasing rewrites history"
 ---
 
 ### What is it?
-Rebasing is the process of moving a branch to a new base commit. Git does this
-by creating new commits and applying them to the specified base. As such, your
-history is rewritten when you rebase. 
-
-When working on a feature branch, you have two options for integrating your
-changes into the master branch: merging directly or rebasing then merging. 
-
-The main reason you might want to rebase is to maintain a linear project history. 
-For example if you merge directly and there have been new commits on the master 
-branch since you started working on a feature branch, you have a 3-way merge 
-(common ancestor, HEAD and MERGE_HEAD) and a merge commit results. If you rebase first,
-a fast-forward merge results and you have a nice clean linear history.
-
+Rebasing is the process of moving a whole branch to a new base commit. 
+Git takes your changes, and "replays" them onto the new base commit.
+This creates a brand new commit for each commit in the original branch. 
+As such, your history is rewritten when you rebase.
 
 ![Visual illustration of rebasing - image taken from [https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)](../fig/git-rebase.svg)
+
+### Merge vs rebase
+Imagine you create a new feature branch to work in, and meanwhile there have been
+commits added to the master branch, as shown below.
+
+![](../fig/forked-history.svg)
+
+You have two choices for incorporating those changes into your feature branch:
+merging or rebasing. We have already encountered merging, and it looks like this.
+
+![](../fig/merge-without-rebase.svg)
+
+The main reason you might want to rebase is to maintain a linear project history. 
+In the example above, if you merge directly (recall that there are new commits on 
+both the master branch and feature branch), you have a 3-way merge 
+(common ancestor, HEAD and MERGE_HEAD) and a merge commit results. 
+Note that you get a merge commit whether or not there are any merge conflicts.
+
+If you rebase, the subsequent changes on `master` are replayed on top of `feature`,
+creating brand new commits in the process.
+If there are any merge conflicts, you are prompted to resolve these. 
+Changes are thus incorporated without an extra merge commit at the end,
+and you have a nice clean linear history.
+
+![](../fig/rebase-master.svg)
 
 ### A worked example using `git rebase <base>` 
 
@@ -102,7 +118,6 @@ $ git merge results     # Merge results branch into master
 ```
 {: .bash}
 
-![Merging with and without rebasing - image adapted from [https://www.atlassian.com/git/tutorials/merging-vs-rebasing](https://www.atlassian.com/dam/jcr:df39b1f1-2686-4ee5-90bf-9836783342ce/10.svg)](../fig/merge-vs-rebase.svg)
 
 This [online tutorial](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)
 gives a good illustration of what happens during rebasing.
