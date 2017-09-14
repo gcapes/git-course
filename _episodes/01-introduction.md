@@ -40,6 +40,9 @@ of what is what.
 Without a VCS you will probably end up with lots of nearly-identical
 (but critically different) copies of the same file, which is confusing
 and wastes hard drive space.
+Your project will probably start to look like this:
+
+![](../fig/astorytoldinfilenames.gif)
 
 A VCS treats your files as one project, so you only have one current
 version on your disk (the working copy) - all the other variants and
