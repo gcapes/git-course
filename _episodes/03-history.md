@@ -208,7 +208,7 @@ not pointing to master any more.
 That is what Git means by a 'detached HEAD' state and advises us that if we want to make a commit
 now, we should create a new branch to retain these commits. 
 
-![Checking out a previous commit - detached head](../fig/detached_head.svg)
+![Checking out a previous commit - detached head](../fig/detached-head.svg)
 
 If we created a new commit without first creating a new branch, i.e. working from
 the 'detached HEAD' these commits would not overwrite any of our existing work,
