@@ -141,8 +141,8 @@ $ git branch -a
 > To delete branches, use the following syntax:
 >
 > ```
-> $ git branch -d <branch_name>              # For local branches
-> $ git push origin --delete <branch_name>   # For remote branches
+> $ git branch -d <branch_name>			# For local branches
+> $ git push origin --delete <branch_name>	# For remote branches
 > ```
 > {: .bash}
 {: .callout}
@@ -195,8 +195,8 @@ $ ls -A
 In order to see the other branches locally, we can check them out as before:
 
 ```
-$ git branch -r        # Show remote branches
-$ git checkout results # Check out the results branch
+$ git branch -r					# Show remote branches
+$ git checkout results				# Check out the results branch
 ```
 {: .bash}
 
@@ -206,8 +206,8 @@ We can use our cloned repository just as if it was a local repository so let's
 make some changes to our files and commit these.
 
 ```
-$ gedit journal.txt     # Add section which will contain the figures 
-$ git add journal.txt   # Add figures section
+$ gedit journal.txt				# Add section which will contain the figures 
+$ git add journal.txt				# Add figures section
 $ git commit
 ```
 {: .bash}

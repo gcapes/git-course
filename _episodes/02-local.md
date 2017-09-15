@@ -48,11 +48,11 @@ with one of our colleagues.
  First, let's create a directory within your home directory:
 
 ```
-$ cd           # Switch to your home directory.
-$ pwd          # Print working directory (output should be /home/<username>)
+$ cd								# Switch to your home directory.
+$ pwd								# Print working directory (output should be /home/<username>)
 $ mkdir papers 
 $ cd papers
-```
+```	
 {: .bash}
 
 Now, we need to set up this directory up to be a Git repository (or "initiate
@@ -106,8 +106,8 @@ You can choose any editor available on your system. For the purpose of this
 session we'll use *gedit*:
 
 ~~~
-$ git config --global core.editor gedit	   # Linux users only.
-                                           # Windows users should use notepad: see below.
+$ git config --global core.editor gedit				# Linux users only.
+								# Windows users should use notepad: see below.
 ~~~
 {: .bash}
 
@@ -151,7 +151,7 @@ Now, we'll create a file. Let's say we're going to write a journal paper, so
 we will start by adding the author names and a title, then save the file.
 
 ~~~
-$ gedit journal.txt	# Windows users: use notepad instead of gedit (in this and all future examples)
+$ gedit journal.txt						# Windows users: use notepad instead of gedit (throughout this course)
 ~~~
 {: .bash}
 
@@ -307,7 +307,7 @@ commit the changes:
      
 ~~~
 $ git add journal.txt 
-$ git commit # "Write introduction"
+$ git commit							# "Write introduction"
 ~~~
 {: .bash}
 Note that in this case we used `git add` to put journal.txt to the staging
@@ -323,14 +323,14 @@ want to reuse:
 
 ~~~
 $ mkdir common 
-$ gedit common/references.txt # Add a reference
+$ gedit common/references.txt					# Add a reference
 ~~~
 {: .bash}
 
 We will also add a citation in our introduction section (in journal.txt).
 
 ~~~
-$ gedit journal.txt # Use reference in introduction
+$ gedit journal.txt 	# Use reference in introduction
 ~~~
 {: .bash}
 
@@ -339,8 +339,8 @@ First we tell Git to track the references.
 We can actually tell Git to track everything in the given subdirectory:
 
 ~~~
-$ git add common # Track everything currently in the 'common' directory
-$ git status     # Verify that common/references.txt is now tracked
+$ git add common						# Track everything currently in the 'common' directory
+$ git status							# Verify that common/references.txt is now tracked
 ~~~
 {: .bash}
 

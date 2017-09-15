@@ -29,8 +29,8 @@ haven't get done a `git add` we can just throw the changes away and return
 our file to the most recent version we committed to the repository by using:
 
 ```
-$ gedit journal.txt            # Make some small edits to the file
-$ git checkout journal.txt     # Discard edits we just made
+$ gedit journal.txt		# Make some small edits to the file
+$ git checkout journal.txt	# Discard edits we just made
 ```
 {: .bash}
 
@@ -38,8 +38,8 @@ and we can see that our file has reverted to being the most up-to-date one in
 the repository:
 
 ```
-$ git status         # See that we have a clean working directory
-$ gedit journal.txt  # Inspect file to verify changes have been discarded
+$ git status			# See that we have a clean working directory
+$ gedit journal.txt		# Inspect file to verify changes have been discarded
 ```
 {: .bash}
 
@@ -53,7 +53,7 @@ you think, your commit message is not as it is supposed to be. You can fix that
 using the command:
 
 ```
-$ git commit --amend   # Edit previous commit message
+$ git commit --amend		# Edit previous commit message
 ```
 {: .bash}
 
@@ -69,9 +69,9 @@ detail the instrumentation used, and add a reference for this to the references
 file.
 
 ```
-$ gedit journal.txt           # Add methodology section, including a reference
-$ gedit common/references.txt # Add new reference to references file
-$ git status                  # Get a status update on file modifications
+$ gedit journal.txt		# Add methodology section, including a reference
+$ gedit common/references.txt	# Add new reference to references file
+$ git status			# Get a status update on file modifications
 ```
 {: .output}
 {: .bash}
@@ -92,7 +92,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 Let's then add and commit *journal.txt* but not the references file.
 
 ```
-$ git add journal.txt            # Add journal to staging area
+$ git add journal.txt		 # Add journal to staging area
 $ git commit -m "Add methodology section"
 ```
 {: .bash}
@@ -120,8 +120,8 @@ Also, run `git log -2` to see what is the latest commit message and ID.
 Now, we want to fix our commit and add the references file.
 
 ```
-$ git add common/references.txt # Add reference file
-$ git commit --amend            # Amend most recent commit
+$ git add common/references.txt	# Add reference file
+$ git commit --amend		# Amend most recent commit
 ```
 {: .bash}
 
@@ -148,7 +148,7 @@ Let's try it on our example. Modify the journal, describing which other instrume
 used, and then make a commit.
 
 ```
-$ gedit journal.txt       # Describe other instruments
+$ gedit journal.txt		# Describe other instruments
 $ git add journal.txt
 $ git commit -m "Describe Aerosol Mass Spectrometer"
 ```
@@ -161,7 +161,7 @@ we are not going to use that data.
 So it makes sense to abandon the commit completely.
 
 ```	
-$ git revert HEAD         # Undo changes introduced by most recent commit
+$ git revert HEAD		# Undo changes introduced by most recent commit
 ```
 {: .bash}
 
@@ -208,7 +208,7 @@ commit we want to keep.
 We can do that by running:
 
 ```
-$ git reset --hard HEAD^^          # Move tip of branch to two commits before HEAD
+$ git reset --hard HEAD^^	# Move tip of branch to two commits before HEAD
 ```
 {: .bash}
 ```

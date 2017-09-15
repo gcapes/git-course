@@ -25,8 +25,8 @@ Correct it, save the file but do not commit it yet.
 We can review the changes that we made using:
 
 ~~~
-$ gedit journal.txt    # Add second reference to introduction
-$ git diff journal.txt # View changes to file
+$ gedit journal.txt		# Add second reference to introduction
+$ git diff journal.txt		# View changes to file
 ~~~
 {: .bash}
 
@@ -61,7 +61,7 @@ technologies.
 Now commit the change we made by adding the second reference:
 ```
 $ git add journal.txt
-$ git commit          # "Reference second paper in introduction"
+$ git commit			# "Reference second paper in introduction"
 ```
 {: .bash}
 
@@ -111,7 +111,7 @@ current version, we can use  `git diff`  providing the commit identifier of the
 earlier commit:
 
 ~~~
-$ git diff COMMITID   # View differences between current version and COMMITID
+$ git diff COMMITID		# View differences between current version and COMMITID
 ~~~
 {: .bash}
 

@@ -95,7 +95,7 @@ However, before we get started it's a good practice to check that we're working
 on the right branch.
 
 ~~~
-$ git branch        # Double check which branch we are working on
+$ git branch			# Double check which branch we are working on
 ~~~
 {: .bash}
 ~~~
@@ -107,9 +107,9 @@ $ git branch        # Double check which branch we are working on
 The * indicates which branch we're currently in. Now let's make the changes to the paper.
 
 ~~~
-$ gedit journal.txt   # Change title and add co-author
+$ gedit journal.txt		# Change title and add co-author
 $ git add journal.txt
-$ git commit          # "Modify title and add John as co-author"
+$ git commit			# "Modify title and add John as co-author"
 ~~~
 {: .bash}
 
@@ -128,9 +128,9 @@ Having written some of the paper, we have thought of a better title for
 the *master* version of the paper.
 
 ~~~
-$ gedit journal       # Rewrite the title
+$ gedit journal			# Rewrite the title
 $ git add journal.txt
-$ git commit          # "Rewrite title emphasising measurements"
+$ git commit			# "Rewrite title emphasising measurements"
 ~~~
 {: .bash}
 
@@ -141,8 +141,8 @@ which may possibly be collaborative work in our "paperWJohn" branch.
 Let's add another section to the paper to write about John's simulations.
 
 ~~~
-$ git checkout paperWJohn       # Switch branch
-$ gedit journal.txt             # Add 'simulations' section
+$ git checkout paperWJohn	# Switch branch
+$ gedit journal.txt		# Add 'simulations' section
 $ git add journal.txt 
 $ git commit -m "Add simulations" journal.txt
 ~~~
@@ -156,8 +156,8 @@ in branch "paperWJohn".
  doing that:
 
 ~~~
-$ git checkout master   # Switch branch
-$ git merge paperWJohn  # Merge paperWJohn into master
+$ git checkout master		# Switch branch
+$ git merge paperWJohn		# Merge paperWJohn into master
 ~~~
 {: .bash}
 ~~~
@@ -215,8 +215,8 @@ of the two e.g. "Measurement-model comparison of atmospheric particle formation 
 We edit the file. Then commit our changes:
 
 ~~~
-$ gedit journal.txt    # Resolve conflict by editing journal.txt
-$ git add journal.txt  # Let Git know we have resolved the conflict
+$ gedit journal.txt		# Resolve conflict by editing journal.txt
+$ git add journal.txt		# Let Git know we have resolved the conflict
 $ git commit -m "Rewrite title to incorporate simulations"
 ~~~
 {: .bash}
@@ -314,9 +314,9 @@ But we were then in the "detached HEAD" state.
 > > ```
 > > {: .output}
 > > ```
-> > git add journal.txt	# Stage your modified file
+> > git add journal.txt		# Stage your modified file
 > > git commit			# Commit your staged changes
-> > git checkout master	# Switch back to the 'master' branch
+> > git checkout master		# Switch back to the 'master' branch
 > > ```
 > > {: .bash}
 > {: .solution}

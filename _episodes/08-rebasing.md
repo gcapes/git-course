@@ -66,26 +66,26 @@ Add a results section to the paper with a couple of lines to outline the finding
 Commit the changes you made.
 
 ```
-$ gedit journal.txt   # Add results section
+$ gedit journal.txt	# Add results section
 $ git add journal.txt
-$ git commit          # "Write results section"
+$ git commit		# "Write results section"
 ```
 {: .bash}
 
 Checkout the **master** branch and write some conclusions. Commit them.
 
 ```
-$ git checkout master # Checkout master branch
-$ gedit journal.txt   # Add conclusions section
+$ git checkout master	# Checkout master branch
+$ gedit journal.txt	# Add conclusions section
 $ git add journal.txt
-$ git commit          # "Write conclusions section"
+$ git commit		# "Write conclusions section"
 ```
 {: .bash}
 Now check out our **results** branch again and run:
 
 ```
-$ git checkout results   # Check out the results branch again
-$ git rebase master      # Rebase onto master
+$ git checkout results	# Check out the results branch again
+$ git rebase master	# Rebase onto master
 ```
 {: .bash}
 
