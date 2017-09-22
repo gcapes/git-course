@@ -27,8 +27,8 @@ commits added to the master branch, as shown below.
 
 ![](../fig/forked-history.svg)
 
-You have two choices for incorporating those changes into your feature branch:
-merging or rebasing. We have already encountered merging, and it looks like this.
+You have two choices for incorporating those changes into the master branch:
+merging directly or rebasing then merging. We have already encountered merging, and it looks like this:
 
 ![](../fig/merge-without-rebase.svg)
 
@@ -38,13 +38,16 @@ both the master branch and feature branch), you have a 3-way merge
 (common ancestor, HEAD and MERGE_HEAD) and a merge commit results. 
 Note that you get a merge commit whether or not there are any merge conflicts.
 
-If you rebase, the subsequent changes on `master` are replayed on top of `feature`,
+If you rebase, your commits from the `feature` branch are replayed onto `master`,
 creating brand new commits in the process.
 If there are any merge conflicts, you are prompted to resolve these. 
-Changes are thus incorporated without an extra merge commit at the end,
-and you have a nice clean linear history.
 
 ![](../fig/rebase-master.svg)
+
+After rebasing, you can then perform a fast-forward merge into `master` i.e. without
+an extra merge commit at the end, so you have a nice clean linear history.
+
+![](../fig/rebase-then-merge.svg)
 
 ### A worked example using `git rebase <base>` 
 
