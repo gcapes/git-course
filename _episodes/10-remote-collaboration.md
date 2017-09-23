@@ -254,9 +254,12 @@ between them, so no work is ever lost.
 > 
 > Working with the same remote repository, each of you should create a new branch
 > locally and push it back to the remote repo.
+> Each person should use a different name for their local branch.
+> The following commands assume your new branch is called `new_branch` --
+> you should use the name of your local branch instead of `new_branch`.
 > 
 > ```
-> $ git push origin new_branch
+> $ git push origin new_branch		# Substitute your local branch name for 'new_branch'.
 > ```
 > {: .bash}
 > 
@@ -310,6 +313,7 @@ between them, so no work is ever lost.
 > colleagues changed using `git revert`?	
 > 
 > > ## Solution	
-> > It works fine. The revert shows up in everyone's copy.
+> > The revert shows up in everyone's copy.
+> > You should always use `revert` to undo changes which have been shared with others.
 > {: .solution}
 {: .challenge}
