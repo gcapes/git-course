@@ -239,14 +239,14 @@ depth `git reset` showing the differences between the three options:
 > is changing the history **without** leaving trace. This is always a bad practice
 > when using remote repositories and can lead to a horrible mess.
 > 
-> Reverting thus records the fact of "abandoning the commit" in the history.
+> Reverting records the fact of "abandoning the commit" in the history.
 > When we revert in a branch that is shared with others and then push that branch
 > into the remote repository, it is as if we "came clean" about what we were
 > doing. Everyone who pulls the branch in which we reverted changes will see it.
 > With `git reset` we "keep it secret" that we have undone some changes.
 > 
-> So what can we do if we want to abandon changes in branches that are shared
-> with others? We need to use the `revert` command.
+> As such, if we want to abandon changes in branches that are shared
+> with others, we should to use the `revert` command.
 {: .callout}
 
 ![Reset vs revert](../fig/git-revert-vs-reset.svg)
