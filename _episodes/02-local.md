@@ -39,6 +39,70 @@ For this we will use the command line interface.
 Git is already installed on the training machines, whether you're using Windows or Linux.
 Instructions for setting up Git on your own machine are given under [setup]({{ page.root }}/setup).
 
+## Tell Git who we are
+
+As part of the information about changes made to files Git records who made
+those changes. In teamwork this information is often crucial (do you want to
+know who rewrote your 'Conclusions' section?). So, we need to tell Git about
+who we are (note that you need to enclose your name in quote marks):
+
+~~~
+$ git config --global user.name "Your Name" 			# Put your quote marks around your name
+$ git config --global user.email yourname@yourplace.org
+~~~
+{: .bash}
+
+## Set a default editor
+
+When working with Git we will often need to provide some short but useful
+information. In order to enter this information we need an editor. We'll now
+tell Git which editor we want to be the default one (i.e. Git will always bring
+it up whenever it wants us to provide some information).
+
+You can choose any editor available on your system. For the purpose of this
+session we'll use *gedit*:
+
+~~~
+$ git config --global core.editor gedit				# Linux users only.
+								# Windows users should use notepad: see below.
+~~~
+{: .bash}
+
+To set up alternative editors, follow the same notation e.g.
+`git config --global core.editor notepad`, `git config --global core.editor vi`,
+`git config --global core.editor xemacs`.
+
+## Colours in Git
+
+On many computers, the terminal output is automatically coloured which makes
+reading the output easier.
+If your output is not coloured (e.g. in the Sackville/G11 cluster) there is a command
+which will add the colour (**note the spelling of *color***):
+
+```
+$ git config --global --add color.ui true			# Note US spelling of color
+```
+{: .bash}
+
+## Git's global configuration
+
+We can now preview (and edit, if necessary) Git's global configuration (such as
+our name and the default editor which we just set up). If we look in our home
+directory, we'll see a `.gitconfig` file,
+
+~~~
+$ cat ~/.gitconfig 
+    [user] name = Your Name email = yourname@yourplace.org
+    [core] editor = gedit
+~~~
+{: .bash}
+
+**These global configuration settings will apply to any new Git repository
+you create on your computer.**
+i.e. the `--global` commands above are only required once per computer.
+
+---
+
 ## Create a new repository with Git
 
 We will be working with a simple example in this tutorial. It will be a paper
@@ -81,69 +145,6 @@ branches  config  description  HEAD  hooks  info  objects refs
 {: .output}
 The `.git` directory contains Git's configuration files. Be careful not to
 accidentally delete this directory!
-
-## Tell Git who we are
-
-As part of the information about changes made to files Git records who made
-those changes. In teamwork this information is often crucial (do you want to
-know who rewrote your 'Conclusions' section?). So, we need to tell Git about
-who we are (note that you need to enclose your name in quote marks):
-
-~~~
-$ git config --global user.name "Your Name" 
-$ git config --global user.email yourname@yourplace.org
-~~~
-{: .bash}
-
-## Set a default editor
-
-When working with Git we will often need to provide some short but useful
-information. In order to enter this information we need an editor. We'll now
-tell Git which editor we want to be the default one (i.e. Git will always bring
-it up whenever it wants us to provide some information).
-
-You can choose any editor available on your system. For the purpose of this
-session we'll use *gedit*:
-
-~~~
-$ git config --global core.editor gedit				# Linux users only.
-								# Windows users should use notepad: see below.
-~~~
-{: .bash}
-
-To set up alternative editors, follow the same notation e.g.
-`git config --global core.editor notepad`, `git config --global core.editor vi`,
-`git config --global core.editor xemacs`.
-
-## Colours in Git
-
-On many computers, the terminal output is automatically coloured which makes
-reading the output easier.
-If your output is not coloured (e.g. in the Sackville/G11 cluster) there is a command
-which will add the colour (**note the spelling of *color***):
-
-```
-$ git config --global --add color.ui true
-```
-{: .bash}
-
-## Git's global configuration
-
-We can now preview (and edit, if necessary) Git's global configuration (such as
-our name and the default editor which we just set up). If we look in our home
-directory, we'll see a `.gitconfig` file,
-
-~~~
-$ cat ~/.gitconfig 
-    [user] name = Your Name email = yourname@yourplace.org
-    [core] editor = gedit
-~~~
-{: .bash}
-
-This file holds global configuration that is applied to any Git repository in
-your file system. 
-
----
 
 ## Tracking files with a git repository
 
