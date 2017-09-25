@@ -255,24 +255,23 @@ But we were then in the "detached HEAD" state.
 > >   master
 > > ```
 > > {: .output}
+> > You have just made a commit on a detached HEAD --
+> > as you can see from the output above, a new temporary branch has been created,
+> > which doesn't have a name.
 > {: .solution} 
 {: .challenge}
 
-> ## Commit changes to a new branch
->
-> - Checkout the master branch again: `git checkout master` 
-> - Read the message output by Git - it will make more sense after this exercise 
-> - Make some changes and save the file(s). 
-> - Create a new branch and check it out.
-> - What happened?
-> - Now commit the file to the new branch
-> - Switch back to (i.e. checkout) the master branch 
+> ## Abandon the commit on a detached HEAD
+> You decide that you want to abandon that commit.
+> How would you get back to the current version of your project?
 >
 > > ## Solution 
 > > ```
 > > git checkout master
 > > ```
 > > {: .bash}
+> > Git will warn you that you are leaving behind changes that would be lost:
+> >
 > > The output you see will be slightly different to that below,
 > > reflecting your previous commit message and commit ID.
 > >
@@ -291,31 +290,64 @@ But we were then in the "detached HEAD" state.
 > >  Your branch is up-to-date with 'master'.
 > > ```
 > > {: .output}
-> >
-> > We will ignore this message for now and discard the changes.
-> > Make some new changes so you can follow the process coming from a clean working directory.
-> > This is effectively the start of the exercise - we have just been clearing up so far.
+> {: .solution}
+{: .challenge}
+
+> ## Save your changes in a new branch
+> Preparation:
+>
+> - You should be on the master branch after that last exercise.
+> If not, check out master again: `git checkout master` 
+> - Checkout one of the previous commits from your repository.
+> - Make some changes, save the file(s), and make a commit on the detached HEAD as
+> you did in the first exercise.
+> - Run `git branch` to list your local branches, and see that you are on a temporary branch.
+>
+> This time we want to keep the commit rather than abandon it. 
+> - Create a new branch and check it out.
+> - Now run `git log` and see that your new commit belongs to this new branch.
+> - List your local branches again and see that the temporary branch has gone.
+> - Switch back to (i.e. checkout) the master branch 
+>
+> > ## Solution 
 > >
 > > ```
-> > gedit journal.txt		# Modify the paper, but don't stage or commit the changes yet
-> > git branch exercise		# Create a new branch
-> > git checkout exercise		# Switch to the new branch 
+> > git checkout HEAD~1		# Checkout the commit before last
+> > gedit journal.txt		# Modify one of your files
+> > git commit -a			# Commit all the modified files
+> > git branch			# List local branches
 > > ```
 > > {: .bash}
 > >
-> > You should see similar output to below. 
-> > This means you have created a new branch, starting from the previous commit you checked out.
-> > The 'M' next to the file name indicates this file has modifications.
-> > You can now stage, then commit your changes.
-> >
 > > ```
-> > M	journal.txt
-> > Switched to branch 'exercise'
+> > * (HEAD detached from f908519)
+> >  master
+> >  paperwjohn
+> > ```
+> > {: .output}
+> > You are currently on a temporary, unnamed branch, as indicated by the `*`.
+> > ```
+> > git branch dh-exercise		# Create a new branch
+> > git checkout dh-exercise	# Switch to the new branch 
+> > ```
+> > {: .bash}
+> > ```
+> > Switched to a new branch 'dh-exericise'
 > > ```
 > > {: .output}
 > > ```
-> > git add journal.txt		# Stage your modified file
-> > git commit			# Commit your staged changes
+> > git branch			# View local branches
+> > ```
+> > {: .bash}
+> > ```
+> > * dh-exericise
+> >  master
+> >  paperwjohn
+> > ```
+> > {: .output}
+> > The commit you made on the detached HEAD now belongs to a named branch
+> > (`dh-exercise` in the example above), rather than a temporary branch.
+> > ```
 > > git checkout master		# Switch back to the 'master' branch
 > > ```
 > > {: .bash}
