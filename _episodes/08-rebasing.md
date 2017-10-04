@@ -69,19 +69,19 @@ Add a results section to the paper with a couple of lines to outline the finding
 Commit the changes you made.
 
 ```
-$ gedit journal.txt	# Add results section
+$ gedit journal.txt				# Add results section
 $ git add journal.txt
-$ git commit		# "Write results section"
+$ git commit					# "Write results section"
 ```
 {: .bash}
 
 Checkout the **master** branch and write some conclusions. Commit them.
 
 ```
-$ git checkout master	# Checkout master branch
-$ gedit journal.txt	# Add conclusions section
+$ git checkout master				# Checkout master branch
+$ gedit journal.txt				# Add conclusions section
 $ git add journal.txt
-$ git commit		# "Write conclusions section"
+$ git commit					# "Write conclusions section"
 ```
 {: .bash}
 At this point we can view a graph of project history,
@@ -103,8 +103,8 @@ $ git log --graph --all --oneline --decorate	# View project history before rebas
 Now check out our **results** branch again and rebase:
 
 ```
-$ git checkout results	# Check out the results branch again
-$ git rebase master	# Rebase onto master
+$ git checkout results				# Check out the results branch again
+$ git rebase master				# Rebase onto master
 ```
 {: .bash}
 
@@ -113,9 +113,9 @@ If this is the case, Git will let us know, and give some instructions on how to 
 The process for fixing conflicts is the same as before:
 
 ```
-$ gedit journal.txt      # Manually fix conficts in affected file(s)
-$ git add                # Mark file as resolved
-$ git rebase --continue  # Continue to rebase
+$ gedit journal.txt      			# Manually fix conficts in affected file(s)
+$ git add                			# Mark file as resolved
+$ git rebase --continue  			# Continue to rebase
 ```
 {: .bash}
 
@@ -141,8 +141,8 @@ If we switch back to the master branch, we can now merge the rebased **results**
 master and a linear history results.
 
 ```
-$ git checkout master   # Switch branch to master
-$ git merge results     # Merge results branch into master
+$ git checkout master   			# Switch branch to master
+$ git merge results     			# Merge results branch into master
 $ git log --graph --oneline --decorate		# View project history after merging rebased branch
 ```
 {: .bash}
