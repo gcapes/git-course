@@ -90,11 +90,11 @@ $ git diff origin/master
 ```
 {: .bash}
 
-which compares our current, *master* branch, with an *origin/master* branch
-which is the name of the *master* branch in *origin* which is the alias for our
+which compares our current, `master` branch, with an `origin/master` branch
+which is the name of the `master` branch in `origin` which is the alias for our
 cloned repository, the one on GitHub.
 
-We can then *merge* these changes into our current repository, which merges the
+We can then `merge` these changes into our current repository, which merges the
 branches together,
 
 ```    
@@ -283,7 +283,7 @@ between them, so no work is ever lost.
 > {: .output}
 >	
 > This command gets us all branches from the remote repository (aliased as
-> 'origin') but doesn't actually pull any contents.
+> `origin`) but doesn't actually pull any contents.
 > 
 > Now we can set up a new branch locally and pull the contents of the
 > corresponding remote branch into the new one which we set up:

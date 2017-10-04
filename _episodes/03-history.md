@@ -14,7 +14,7 @@ keypoints:
 - "`git diff` displays differences between commits"
 - "`git checkout` recovers old versions of files"
 - "`HEAD` points to the commit you have checked out"
-- "`master` points to the tip of the master branch"
+- "`master` points to the tip of the `master` branch"
 ---
 
 
@@ -180,20 +180,20 @@ So we can get any version of our files from any point in time. In other words,
 we can set up our working directory back to any stage it was when we made
 a commit.
 
-### The *HEAD* and *master* pointers
+### The `HEAD` and `master` pointers
 
 *HEAD* is a reference, or pointer, which points to the branch at the commit where
 you currently are. 
-We said previously that *master* is the default branch. But *master* is
-actually a pointer - that points to the tip of the master branch (the sequence
-of commits that is created by default by Git). You may think of *master* as two
+We said previously that `master` is the default branch. But `master` is
+actually a pointer - that points to the tip of the `master` branch (the sequence
+of commits that is created by default by Git). You may think of `master` as two
 things:
 
 1. a pointer
 2. the default branch.
 
 Before we checked out one of the past commits, the *HEAD* pointer was pointing to
-*master* i.e. the most recent commit of the master branch. 
+`master` i.e. the most recent commit of the `master` branch. 
 After checking out one of the past commits, *HEAD* was pointing to that commit i.e.
 not pointing to master any more. 
 That is what Git means by a 'detached HEAD' state and advises us that if we want to make a commit
