@@ -84,7 +84,23 @@ $ git add journal.txt
 $ git commit		# "Write conclusions section"
 ```
 {: .bash}
-Now check out our **results** branch again and run:
+At this point we can view a graph of project history,
+and see where the `results` branch splits off from the `master` branch:
+```
+$ git log --graph --all --oneline --decorate	# View project history before rebasing
+```
+{: .bash}
+```
+* c9aa3ad (HEAD -> master)  Write conclusion
+| * e26fa5e (results) Write results section
+|/
+* 9a7fd0b Add methodology section and include reference
+*   39cc80d Merge branch 'paperwjohn'
+
+```
+{: .output}
+
+Now check out our **results** branch again and rebase:
 
 ```
 $ git checkout results	# Check out the results branch again
@@ -103,14 +119,23 @@ $ git rebase --continue  # Continue to rebase
 ```
 {: .bash}
 
-Finally, run 
+Let's now visualise our project history again, having rebased `results` onto `master`,
+and observe that we now have a linear project history.
 
 ```
-git log -3
+$ git log --graph --all --oneline --decorate	# View project history after rebasing
 ```
 {: .bash}
 
-and you will see that rebasing created a new commit and put it on
+```
+* 7e52408 (HEAD -> results) Write results section
+* c9aa3ad (master) Write conclusion
+* 9a7fd0b Add methodology section and include reference
+*   39cc80d Merge branch 'paperwjohn'
+```
+{:  .output}
+
+See how rebasing created a new commit and put it on
 top of the commit pointed at by **master**.
 If we switch back to the master branch, we can now merge the rebased **results** branch into
 master and a linear history results.
@@ -118,9 +143,17 @@ master and a linear history results.
 ```
 $ git checkout master   # Switch branch to master
 $ git merge results     # Merge results branch into master
+$ git log --graph --oneline --decorate		# View project history after merging rebased branch
 ```
 {: .bash}
 
+```
+* 7e52408 (HEAD -> master, results) Write results section
+* c9aa3ad Write conclusion
+* 9a7fd0b Add methodology section and include reference
+*   39cc80d Merge branch 'paperwjohn'
+```
+{: .output}
 
 This [online tutorial](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)
 gives a good illustration of what happens during rebasing.
