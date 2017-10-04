@@ -97,14 +97,6 @@ uniquely identifies the changes made in this commit
 - date
 - your commit message
 
-The `git log` command has many options to print information in various
-ways, for example:
-
-~~~
-$ git log --relative-date
-~~~
-{: .bash}
-
 Git automatically assigns an identifier (*COMMITID*) to each commit made to the
 repository. In order to see the changes made between any earlier commit and our
 current version, we can use  `git diff`  providing the commit identifier of the
