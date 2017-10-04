@@ -97,14 +97,6 @@ uniquely identifies the changes made in this commit
 - date
 - your commit message
 
-The `git log` command has many options to print information in various
-ways, for example:
-
-~~~
-$ git log --relative-date
-~~~
-{: .bash}
-
 Git automatically assigns an identifier (*COMMITID*) to each commit made to the
 repository. In order to see the changes made between any earlier commit and our
 current version, we can use  `git diff`  providing the commit identifier of the
@@ -211,6 +203,50 @@ the 'detached HEAD' these commits would not overwrite any of our existing work,
 but they would not belong to any branch. In order to save this work, we would need
 to checkout a new branch. To discard any changes we make from the detached HEAD
 state, we can just checkout master again.
+
+## Visualising your own repository as a graph
+If we use `git log` with a couple of options, we can display the history as a graph,
+and decorate those commits corresponding to Git references (e.g. `HEAD`, `master`):
+
+~~~
+$ git log --graph --decorate --oneline
+~~~
+{: .bash}
+
+```
+* 6a48241 (HEAD, master) Reference second paper in introduction
+* ed26351 Reference Allen et al in introduction
+* 7446b1d Write introduction
+* 4f572d5 Add title and authors
+```
+{: .output}
+
+Notice how `HEAD` and `master` point to the same commit.
+Now checkout a previous commit again, and look at the graph again.
+We can display, this time specifying that we want to look at `--all` the history,
+rather than just up to the current commit.
+
+```
+$ git checkout HEAD~
+$ git log --graph --decorate --oneline --all
+```
+{: .bash}
+
+```
+* 6a48241 (master) Reference second paper in introduction
+* ed26351 (HEAD) Reference Allen et al in introduction
+* 7446b1d Write introduction
+* 4f572d5 Add title and authors
+```
+{: .output}
+
+Notice how `HEAD` no longer points to the same commit as `master`.
+Let's return to the current version of the project by checking out `master` again.
+
+```
+$ git checkout master
+```
+{: .bash}
 
 ### Using tags as nicknames for commit identifiers
 

@@ -148,12 +148,33 @@ $ git commit -m "Add simulations" journal.txt
 ~~~
 {: .bash}
 
+At this point let's just quickly visualise the state of our repo,
+and we can see the forked commit history reflecting the recent work
+on our two branches:
+
+```
+git log --graph --all --oneline --decorate
+```
+{: .bash}
+
+```
+* 89d5c6e (paperwjohn) Add simulations section
+* 05d393a Modify title and add coauthor
+| * (HEAD, master) bdebbe0 Rewrite title emphasising location
+|/  
+* 87a65e6 Add Bloggs et al paper
+* 6a48241 Reference second paper in introduction
+* ed26351 Reference Allen et al in introduction
+* 7446b1d Write introduction
+* 4f572d5 Add title and authors
+```
+{: .output}
+
 After some discussions with John we decided that we will publish together,
 hence it makes sense to now merge all that was authored together with John 
 in branch "paperWJohn". 
-
- We can do that by *merging* that branch with the master branch. Let's try
- doing that:
+We can do that by *merging* that branch with the master branch. Let's try
+doing that:
 
 ~~~
 $ git checkout master		# Switch branch
@@ -225,6 +246,26 @@ This is where version control proves itself better than DropBox or GoogleDrive,
 this ability to merge text files line-by-line and highlight the conflicts
 between them, so no work is ever lost.
 
+We can see the two branches merged if we take another look at the log graph:
+
+```
+$ git log --graph --decorate --all --oneline
+```
+{: .bash}
+
+```
+*   39cc80d (HEAD, master) Merge branch 'paperwjohn'
+|\  
+| * 89d5c6e (paperwjohn) Add simulations section
+| * 05d393a Modify title and add coauthor
+* | bdebbe0 Rewrite title emphasising location
+|/  
+* 87a65e6 Add Bloggs et al paper
+* 6a48241 Reference second paper in introduction
+* ed26351 Reference Allen et al in introduction
+* 7446b1d Write introduction
+```
+{: .output}
 
 ### Looking at our history - revisited
 We already looked at "going back in time with Git". But now we'll look at it in

@@ -69,26 +69,42 @@ Add a results section to the paper with a couple of lines to outline the finding
 Commit the changes you made.
 
 ```
-$ gedit journal.txt	# Add results section
+$ gedit journal.txt				# Add results section
 $ git add journal.txt
-$ git commit		# "Write results section"
+$ git commit					# "Write results section"
 ```
 {: .bash}
 
 Checkout the **master** branch and write some conclusions. Commit them.
 
 ```
-$ git checkout master	# Checkout master branch
-$ gedit journal.txt	# Add conclusions section
+$ git checkout master				# Checkout master branch
+$ gedit journal.txt				# Add conclusions section
 $ git add journal.txt
-$ git commit		# "Write conclusions section"
+$ git commit					# "Write conclusions section"
 ```
 {: .bash}
-Now check out our **results** branch again and run:
+At this point we can view a graph of project history,
+and see where the `results` branch splits off from the `master` branch:
+```
+$ git log --graph --all --oneline --decorate	# View project history before rebasing
+```
+{: .bash}
+```
+* c9aa3ad (HEAD -> master)  Write conclusion
+| * e26fa5e (results) Write results section
+|/
+* 9a7fd0b Add methodology section and include reference
+*   39cc80d Merge branch 'paperwjohn'
 
 ```
-$ git checkout results	# Check out the results branch again
-$ git rebase master	# Rebase onto master
+{: .output}
+
+Now check out our **results** branch again and rebase:
+
+```
+$ git checkout results				# Check out the results branch again
+$ git rebase master				# Rebase onto master
 ```
 {: .bash}
 
@@ -97,30 +113,47 @@ If this is the case, Git will let us know, and give some instructions on how to 
 The process for fixing conflicts is the same as before:
 
 ```
-$ gedit journal.txt      # Manually fix conficts in affected file(s)
-$ git add                # Mark file as resolved
-$ git rebase --continue  # Continue to rebase
+$ gedit journal.txt      			# Manually fix conficts in affected file(s)
+$ git add                			# Mark file as resolved
+$ git rebase --continue  			# Continue to rebase
 ```
 {: .bash}
 
-Finally, run 
+Let's now visualise our project history again, having rebased `results` onto `master`,
+and observe that we now have a linear project history.
 
 ```
-git log -3
+$ git log --graph --all --oneline --decorate	# View project history after rebasing
 ```
 {: .bash}
 
-and you will see that rebasing created a new commit and put it on
+```
+* 7e52408 (HEAD -> results) Write results section
+* c9aa3ad (master) Write conclusion
+* 9a7fd0b Add methodology section and include reference
+*   39cc80d Merge branch 'paperwjohn'
+```
+{:  .output}
+
+See how rebasing created a new commit and put it on
 top of the commit pointed at by **master**.
 If we switch back to the master branch, we can now merge the rebased **results** branch into
 master and a linear history results.
 
 ```
-$ git checkout master   # Switch branch to master
-$ git merge results     # Merge results branch into master
+$ git checkout master   			# Switch branch to master
+$ git merge results     			# Merge results branch into master
+$ git log --graph --oneline --decorate		# View project history after merging rebased branch
 ```
 {: .bash}
 
+```
+* 7e52408 (HEAD -> master, results) Write results section
+* c9aa3ad Write conclusion
+* 9a7fd0b Add methodology section and include reference
+*   39cc80d Merge branch 'paperwjohn'
+```
+{: .output}
 
 This [online tutorial](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)
 gives a good illustration of what happens during rebasing.

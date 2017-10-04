@@ -331,7 +331,7 @@ $ gedit common/references.txt					# Add a reference
 We will also add a citation in our introduction section (in journal.txt).
 
 ~~~
-$ gedit journal.txt 	# Use reference in introduction
+$ gedit journal.txt 						# Use reference in introduction
 ~~~
 {: .bash}
 
@@ -351,7 +351,7 @@ journal.txt in the staging area. But there is a shortcut. We can use
 that have been modified".
 
 ~~~
-$ git commit -am "Reference J Bloggs and add references file" # Add and commit all tracked files
+$ git commit -am "Reference J Bloggs and add references file" 	# Add and commit all tracked files
 ~~~
 {: .bash}
 and Git will add, then commit, both the directory and the file.
