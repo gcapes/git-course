@@ -182,12 +182,15 @@ a commit.
 
 ### The *HEAD* and *master* pointers
 
-*HEAD* is essentially a pointer which points to the branch at the commit where
+*HEAD* is a reference, or pointer, which points to the branch at the commit where
 you currently are. 
 We said previously that *master* is the default branch. But *master* is
 actually a pointer - that points to the tip of the master branch (the sequence
 of commits that is created by default by Git). You may think of *master* as two
-things: one as a pointer and one as the default branch. 
+things:
+
+1. a pointer
+2. the default branch.
 
 Before we checked out one of the past commits, the *HEAD* pointer was pointing to
 *master* i.e. the most recent commit of the master branch. 

@@ -142,7 +142,7 @@ Then push these changes to our remote repository:
 ```    
 $ gedit journal.txt		# Add author affiliations 
 $ git add journal.txt 
-$ git commit -m "Add author affiliations" journal.txt 
+$ git commit -m "Add author affiliations"
 $ git push origin master
 ```
 {: .bash}
