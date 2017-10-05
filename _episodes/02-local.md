@@ -12,7 +12,7 @@ objectives:
 keypoints:
 - "`git init` initializes a new repository"
 - "`git status` shows the status of a repository"
-- "Files can be stored in a project’s working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded)"
+- "Files can be stored in a project’s `working directory` (which users see), the `staging area` (where the next commit is being built up) and the `local repository` (where commits are permanently recorded)"
 - "`git add` puts files in the staging area"
 - "`git commit` saves the staged content as a new commit in the local repository"
 - "Always write a log message when committing changes"
@@ -185,7 +185,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 {: .output}
 
 Information about what Git knows about the directory is displayed. We are on
-the **master** branch, which is the default branch in a Git respository
+the `master` branch, which is the default branch in a Git respository
 (one way to think of branches is like parallel versions of the project - more
 on branches later).
 

@@ -84,7 +84,7 @@ $ git push -u origin master
 ```
 {: .bash}
 
-The first line sets up an alias **origin**, to correspond to the URL of our
+The first line sets up an alias `origin`, to correspond to the URL of our
 new repository on GitHub.
 
 
@@ -108,10 +108,10 @@ Branch master set up to track remote branch master from origin.
 ```
 {: .output}
 
-This **pushes** our *master* branch to the remote repository, named via the alias
-*origin* and creates a new *master* branch in the remote repository.
+This **pushes** our `master` branch to the remote repository, named via the alias
+`origin` and creates a new `master` branch in the remote repository.
 
-Now, on GitHub, we should see our code and if we click the **Commits** tab we should see
+Now, on GitHub, we should see our code and if we click the `Commits` tab we should see
 our complete history of commits.  
 
 Our local repository is now available on GitHub. So, anywhere we can access

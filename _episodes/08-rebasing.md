@@ -9,7 +9,7 @@ objectives:
 - "Understand the difference between merging and rebasing"
 - "When (and when not) to rebase"
 keypoints:
-- "rebase applies your changes on top of a new base (parent) commit"
+- "`rebase` applies your changes on top of a new base (parent) commit"
 - "rebasing rewrites history"
 ---
 
@@ -23,18 +23,18 @@ As such, your history is rewritten when you rebase.
 
 ### Merge vs rebase
 Imagine you create a new feature branch to work in, and meanwhile there have been
-commits added to the master branch, as shown below.
+commits added to the `master` branch, as shown below.
 
 ![](../fig/forked-history.svg)
 
-You have two choices for incorporating those changes into the master branch:
+You have two choices for incorporating those changes into the `master` branch:
 merging directly or rebasing then merging. We have already encountered merging, and it looks like this:
 
 ![](../fig/merge-without-rebase.svg)
 
 The main reason you might want to rebase is to maintain a linear project history. 
 In the example above, if you merge directly (recall that there are new commits on 
-both the master branch and feature branch), you have a 3-way merge 
+both the `master` branch and feature branch), you have a 3-way merge 
 (common ancestor, HEAD and MERGE_HEAD) and a merge commit results. 
 Note that you get a merge commit whether or not there are any merge conflicts.
 
@@ -51,7 +51,7 @@ an extra merge commit at the end, so you have a nice clean linear history.
 
 ### A worked example using `git rebase <base>` 
 
-Let's start first with checking out our master branch:
+Let's start first with checking out our `master` branch:
 
 ```
 $ git checkout master
@@ -75,7 +75,7 @@ $ git commit					# "Write results section"
 ```
 {: .bash}
 
-Checkout the **master** branch and write some conclusions. Commit them.
+Checkout the `master` branch and write some conclusions. Commit them.
 
 ```
 $ git checkout master				# Checkout master branch
@@ -100,7 +100,7 @@ $ git log --graph --all --oneline --decorate	# View project history before rebas
 ```
 {: .output}
 
-Now check out our **results** branch again and rebase:
+Now check out our `results` branch again and rebase:
 
 ```
 $ git checkout results				# Check out the results branch again
@@ -136,8 +136,8 @@ $ git log --graph --all --oneline --decorate	# View project history after rebasi
 {:  .output}
 
 See how rebasing created a new commit and put it on
-top of the commit pointed at by **master**.
-If we switch back to the master branch, we can now merge the rebased **results** branch into
+top of the commit pointed at by `master`.
+If we switch back to the `master` branch, we can now merge the rebased `results` branch into
 master and a linear history results.
 
 ```

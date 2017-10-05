@@ -9,8 +9,8 @@ objectives:
 - "Be able to fork a repository on GitHub"
 - "Understand how to submit a pull request"
 keypoints:
-- "A fork is a `git clone` into your (GitHub) account"
-- "A pull request asks the owner of a repository to incorporate your changes"
+- "A `fork` is a `git clone` into your (GitHub) account"
+- "A `pull request` asks the owner of a repository to incorporate your changes"
 ---
 
 Pull Requests are a great solution for contributing to repositories to which

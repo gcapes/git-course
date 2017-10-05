@@ -34,8 +34,8 @@ used `git checkout master`.
 
 Not only can our repository store the changes made to files and directories, it
 can store multiple sets of these, which we can use and edit and update in
-parallel. Each of these sets, or parallel instances, is termed a **branch** and
-*master* is Git's default branch. 
+parallel. Each of these sets, or parallel instances, is termed a `branch` and
+`master` is Git's default branch. 
 
 A new branch can be created from any commit. Branches can also be *merged*
 together. 
@@ -43,10 +43,10 @@ together.
 ### Why are branches useful?
 Suppose we've developed some software and now we want to
 try out some new ideas but we're not sure yet whether we'll keep them. We
-can then create a branch 'feature1' and keep our master branch clean. When
+can then create a branch 'feature1' and keep our `master` branch clean. When
 we're done developing the feature and we are sure that we want to include it
-in our program, we can merge the feature branch with the master branch. 
-This keeps all the work-in-progress separate from the master branch, which 
+in our program, we can merge the feature branch with the `master` branch. 
+This keeps all the work-in-progress separate from the `master` branch, which 
 contains tested, working code.
 
 When we merge our feature branch with master git creates a new commit which
@@ -58,7 +58,7 @@ making commits) in feature1 as well.
 
 One popular model is the [Gitflow model](http://nvie.com/posts/a-successful-git-branching-model/):
 
-- A master branch, representing a released version of the code
+- A `master` branch, representing a released version of the code
 - A release branch, representing the beginnings of the next release - a branch 
 where the code is still undergoing testing
 - Various feature and/or developer-specific branches representing
@@ -113,7 +113,7 @@ $ git commit			# "Modify title and add John as co-author"
 ~~~
 {: .bash}
 
-If we now want to work in our master branch. We can switch back by using:
+If we now want to work in our `master` branch. We can switch back by using:
 
 ~~~
 $ git checkout master 
@@ -125,7 +125,7 @@ Switched to branch 'master'
 {: .output}
 
 Having written some of the paper, we have thought of a better title for
-the *master* version of the paper.
+the `master` version of the paper.
 
 ~~~
 $ gedit journal			# Rewrite the title
@@ -136,7 +136,7 @@ $ git commit			# "Rewrite title emphasising measurements"
 
 ### Merging and resolving conflicts
 
-We are now working on two papers: the main one in our master branch and the one
+We are now working on two papers: the main one in our `master` branch and the one
 which may possibly be collaborative work in our "paperWJohn" branch.
 Let's add another section to the paper to write about John's simulations.
 
@@ -173,7 +173,7 @@ git log --graph --all --oneline --decorate
 After some discussions with John we decided that we will publish together,
 hence it makes sense to now merge all that was authored together with John 
 in branch "paperWJohn". 
-We can do that by *merging* that branch with the master branch. Let's try
+We can do that by *merging* that branch with the `master` branch. Let's try
 doing that:
 
 ~~~
@@ -337,7 +337,7 @@ But we were then in the "detached HEAD" state.
 > ## Save your changes in a new branch
 > Preparation:
 >
-> - You should be on the master branch after that last exercise.
+> - You should be on the `master` branch after that last exercise.
 > If not, check out master again: `git checkout master` 
 > - Checkout one of the previous commits from your repository.
 > - Make some changes, save the file(s), and make a commit on the detached HEAD as
@@ -348,7 +348,7 @@ But we were then in the "detached HEAD" state.
 > - Create a new branch and check it out.
 > - Now run `git log` and see that your new commit belongs to this new branch.
 > - List your local branches again and see that the temporary branch has gone.
-> - Switch back to (i.e. checkout) the master branch 
+> - Switch back to (i.e. checkout) the `master` branch 
 >
 > > ## Solution 
 > >
