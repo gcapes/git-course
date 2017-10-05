@@ -132,6 +132,19 @@ $ git log
 ```
 {: .bash}
 
+> ## `Fetch` vs `pull`
+> If `git pull` is a shortcut for `git fetch` followed by `git merge` then, why would
+> you ever want to do these steps separately?
+>
+> Well, depending on what the commits on the remote branch contain,
+> you might want to abandon your local commits before merging
+> (e.g. your local commits duplicate the changes on the remote),
+> rebase your local branch to avoid a merge commit, or something else.
+>
+> Fetching first lets you inspect the changes
+> before deciding what you want to do with them.
+{: .callout}
+
 ### Conflicts and how to resolve them
 
 Let's continue to pretend that our two local, cloned, repositories are hosted
