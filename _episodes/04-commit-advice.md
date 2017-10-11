@@ -51,18 +51,21 @@ See [hints and tips]({{page.root}}/12-hints-and-tips).
 
 ### When to commit changes?
 
-There are no hard and fast rules, but good commits are atomic - they are the
-smallest change that remain meaningful.  
-
-In the same way that it is wise to frequently save a document that you are
-working on, so too is it wise to save numerous revisions of your files. More
-frequent commits increase the granularity of your "undo" button.
-
-While DropBox and GoogleDrive also preserve every version, they delete old
-versions after 30 days, or, for GoogleDrive, 100 revisions. DropBox allows for
-old versions to be stored for longer but you have to pay for this. Using
-revision control the only bound is how much space you have!
-
-For code, it's useful to commit changes that can be reviewed by someone else 
-in under an hour. 
-
+- Commit frequently.
+	- There are no hard and fast rules, but good commits are atomic -
+	  they are the smallest change that remain meaningful.
+	- In the same way that it is wise to frequently save a document that you are
+	  working on, so too is it wise to save numerous revisions of your files.
+	  More frequent commits increase the granularity of your "undo" button.
+	- Small commits also help to avoid large merge conflicts.
+- Test before you commit
+	- Don't commit changes until you've tested that your code works.
+	- Non-working code should be fixed before you commit.
+- Don't commit unfinished work
+	- Break your code changes into small, but working chunks.
+	- If you need to temporarily save some work-in-progress
+	  (e.g. in order to work in another branch),
+	  use `git stash` -- see [hints and tips]({{page.root}}/12-hints-and-tips).
+- Commit related changes.
+	- Confine your commit to directly related changes.
+	  If you fix two separate bugs, you should have two separate commits.
