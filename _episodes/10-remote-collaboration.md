@@ -252,7 +252,7 @@ between them, so no work is ever lost.
 > 
 > In this exercise you should work with a partner or a group of three. 
 > One of you should give access to your remote repository on GitHub to
-> the others (by selecting Settings -> Collaborators).
+> the others (by selecting `Settings -> Collaborators`).
 > 
 > Now those of you who are added as collaborators should clone the repository of
 > the first person on your machines. (make sure that you **don't clone into
@@ -267,6 +267,7 @@ between them, so no work is ever lost.
 > 
 > Working with the same remote repository, each of you should create a new branch
 > locally and push it back to the remote repo.
+>
 > Each person should use a different name for their local branch.
 > The following commands assume your new branch is called `new_branch` --
 > you should use the name of your local branch instead of `new_branch`.
@@ -276,11 +277,11 @@ between them, so no work is ever lost.
 > ```
 > {: .bash}
 > 
-> The other person should try to get the branches created by others locally
+> The other person should try to get local copies of the branches created by others
 > (so eventually everybody should have the same number of branches as the remote
 > repository).
 > 
-> To pull new branches from remote repository (into new local branches):
+> To fetch new branches from the remote repository (into your local `.git` database):
 > 
 > ```
 > $ git fetch origin 
@@ -295,11 +296,11 @@ between them, so no work is ever lost.
 > ```
 > {: .output}
 >	
-> This command gets us all branches from the remote repository (aliased as
-> `origin`) but doesn't actually pull any contents.
+> Your local repository should now contain all the branches from the remote repository,
+> but the `fetch` command doesn't actually update your local branches.
 > 
-> Now we can set up a new branch locally and pull the contents of the
-> corresponding remote branch into the new one which we set up:
+> The next step is to check out a new branch locally to track the upstream branch
+> i.e. the remote branch.
 > 
 > ```
 > $ git checkout new_branch
