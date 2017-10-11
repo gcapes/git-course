@@ -66,21 +66,3 @@ revision control the only bound is how much space you have!
 For code, it's useful to commit changes that can be reviewed by someone else 
 in under an hour. 
 
-----
-
-> **What we know about software development - code reviews work** 
->
-> Fagan (1976) discovered that a rigorous inspection can remove 60-90% of
-errors before the first test is run. [Design and Code
-inspections to reduce errors in program
-development](http://www.mfagan.com/pdfs/ibmfagan.pdf). IBM Systems Journal 15
-(3): pp. 182-211.
->
-> **What we know about software development - code reviews should be about 60
-minutes long** 
->
-> Cohen (2006) discovered that all the value of a code review comes within the
-first hour, after which reviewers can become exhausted and the issues they find
-become ever more trivial.
-[Best Kept Secrets of Peer Code
-Review](http://smartbear.com/SmartBear/media/pdfs/best-kept-secrets-of-peer-code-review.pdf). SmartBear, 2006. ISBN-10: 1599160676. ISBN-13: 978-1599160672.
