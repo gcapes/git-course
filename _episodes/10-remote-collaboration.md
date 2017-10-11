@@ -302,7 +302,7 @@ between them, so no work is ever lost.
 > corresponding remote branch into the new one which we set up:
 > 
 > ```
-> $ git checkout -b new_branch origin/new_branch 
+> $ git checkout new_branch
 > ```
 > {: .bash}
 > ```
