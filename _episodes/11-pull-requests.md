@@ -29,7 +29,7 @@ Requests*. Esentially it's "requesting the owner of the repository to pull in
 your contributions". The owner may or may not accept them. But for you as
 a contributor, it was really easy to make the contribution.
 
-The process looks like this:
+## The process
 
 - Find a repository on GitHub that belongs to someone else
 - **Fork** it (`git clone` it on GitHub's servers into your GitHub account)
@@ -38,6 +38,33 @@ The process looks like this:
 - Request that the owner of the repository you *forked* pulls in your changes
 
 ![Conceptual illustration of a pull request - image adapted from [here](http://acrl.ala.org/techconnect/post/coding-collaboration-on-github)](../fig/github-diagram.png)
+
+## Advice for submitting Pull Requests
+- Keep your Pull Request small and focussed (makes it easier to process)
+	- Submit one PR per issue
+	- Create a separate branch for each issue you work on
+	  (you can submit a PR from any branch)
+- R.T.F.M.
+	- If the repository has contributing guidelines, read them,
+	  and follow the guidance. This gives your PR a better chance of being accepted.
+	- Some repositories pre-populate the body of the PR or issue message
+	  with a template.
+		- Follow the instructions (e.g. provide the information requested)
+- Consider creating a new issue first to discuss your ideas before submitting a PR.
+  Some repositories ask for this in their contributing guidelines,
+  but this can be a good approach even if it isn't required,
+  so that you know whether the owner agress with your suggestion,
+  and might bring up ideas and/or challenges you haven't considered.
+
+## After submitting your pull request
+If things go well, your PR may get merged just as it is.
+However, for most PRs, you can expect some discussion (on GitHub)
+and a request for further edits to be made.
+Given your changes haven't been merged get, you can make changes either by adding
+further commits to your branch and pushing them,
+or you could consider rewriting your history neatly using an interactive rebase onto
+an earlier commit.
+In either case, your PR will update automatically once you have pushed your commits.
 
 > ## Exercise 
 > Let's look at the workflow and try to repeat it:
