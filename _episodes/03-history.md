@@ -31,7 +31,7 @@ $ git diff journal.txt		# View changes to file
 {: .bash}
 
 This shows the difference between the latest copy in the repository and the
-changes we made. 
+unstaged changes we have made.
 
 * `-` means a line was deleted.  
 * `+` means a line was added.  
