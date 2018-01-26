@@ -98,8 +98,10 @@ files and binary files"
 This is a way to stage only parts of a file. If you have done lots of work
 without committing, it may be useful to commit your changes as a series of
 small commits. This command allows you to choose which changes go into which
-commit so you can group the changes logically. See [this discussion](
-http://nuclearsquid.com/writings/git-add/) for more information.
+commit so you can group the changes logically.
+- [Guide to `git add --patch`](
+http://nuclearsquid.com/writings/git-add/)
+- Manually [editing hunks] is the  most difficult aspect.
 
 ---
 
@@ -242,3 +244,5 @@ provider that allows for large files).
 
 Again, as always with Git **before** you execute the above, make sure you know
 what you're doing!
+
+[editing hunks]: http://joaquin.windmuller.ca/2011/11/16/selectively-select-changes-to-commit-with-git-or-imma-edit-your-hunk
