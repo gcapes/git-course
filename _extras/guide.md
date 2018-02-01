@@ -15,3 +15,13 @@ permalink: /guide/
 - Is Git installed?
 - Which text editors are installed?
 	- How do you change the font size?
+
+# Cut-down version
+For teaching as part of a Software Carpentry workshop:
+- 1 Intro
+- 2 Tracking changes
+- 3 History and differences
+- 4 Commit advice
+- 5 Branching
+- ? 6 Undoing changes (if time)
+- 9 Remote repositories
