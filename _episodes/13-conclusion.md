@@ -57,9 +57,8 @@ of the range of ways in which version control can help research.
 * [Pro Git](http://git-scm.com/book) - the "official" online Git book.  
 * [Version control by example](http://www.ericsink.com/vcbe/) - an acclaimed online book
 on version control by Eric Sink.  
-* [Gitolite](https://github.com/sitaramc/gitolite) - a way for you to host 
-your own multi-user Git repositories. Your collaborators send you their public
-SSH keys then they can pull and push from/to the repositories.  
+* [Git beyond the basics](https://speakerdeck.com/zakkak/git-beyond-the-basics) -- a nice reference
+slideshow covering some more advanced topics
 * G. Wilson, D. A. Aruliah, C. T. Brown, N. P. Chue
 Hong, M. Davis, R. T. Guy, S. H. D. Haddock, K. Huff, I. M. Mitchell, M.
 Plumbley, B. Waugh, E. P. White, P. Wilson (2012) "[Best Practices for
