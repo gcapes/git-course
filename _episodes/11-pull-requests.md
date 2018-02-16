@@ -25,7 +25,7 @@ allow people to make contributions without making them "pass" tests for their
 skills and trustworthiness may be one of the keys to success. 
 
 Leveraging the power of Git, GitHub provides a functionality called *Pull
-Requests*. Esentially it's "requesting the owner of the repository to pull in
+Requests*. Essentially it's "requesting the owner of the repository to pull in
 your contributions". The owner may or may not accept them. But for you as
 a contributor, it was really easy to make the contribution.
 
@@ -53,7 +53,7 @@ a contributor, it was really easy to make the contribution.
 - Consider creating a new issue first to discuss your ideas before submitting a PR.
   Some repositories ask for this in their contributing guidelines,
   but this can be a good approach even if it isn't required,
-  so that you know whether the owner agress with your suggestion,
+  so that you know whether the owner agrees with your suggestion,
   and might bring up ideas and/or challenges you haven't considered.
 
 ## After submitting your pull request
