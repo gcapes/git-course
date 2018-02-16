@@ -230,7 +230,7 @@ We can display, this time specifying that we want to look at `--all` the history
 rather than just up to the current commit.
 
 ```
-$ git checkout HEAD~
+$ git checkout HEAD~				# This syntax refers to the commit before HEAD
 $ git log --graph --decorate --oneline --all
 ```
 {: .bash}
