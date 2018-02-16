@@ -224,7 +224,7 @@ branch we currently are working on (master). (`HEAD^` = the commit right before 
 The final effect is what we need: we abandoned the commits and we are now back
 to where we were before making the commit about the data we are not using.
 
-[This article](http://git-scm.com/2011/07/11/reset.html) discusses more in
+[This article](https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified) discusses more in
 depth `git reset` showing the differences between the three options:
 
 * `--soft`
