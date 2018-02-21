@@ -274,8 +274,8 @@ Now add the second paper to references.txt and commit the change:
 
 ```    
 $ gedit common/references.txt	# Add second paper
-$ git add references.txt 
-$ git commit -m "Add Jones et al paper" references.txt
+$ git add common/references.txt 
+$ git commit -m "Add Jones et al paper" common/references.txt
 ```
 {: .bash}
 
