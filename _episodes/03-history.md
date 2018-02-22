@@ -97,9 +97,11 @@ uniquely identifies the changes made in this commit
 - date
 - your commit message
 
-Git automatically assigns an identifier (*COMMITID*) to each commit made to the
-repository. In order to see the changes made between any earlier commit and our
-current version, we can use  `git diff`  providing the commit identifier of the
+Git automatically assigns an identifier (e.g. 4dd7f5) to each commit
+made to the repository
+--- we refer to this as *COMMITID* in the code blocks below.
+In order to see the changes made between any earlier commit and our
+current version, we can use  `git diff` followed by the commit identifier of the
 earlier commit:
 
 ~~~
@@ -120,7 +122,7 @@ first commit we made,
 
 ~~~
 $ git log 
-$ git checkout COMMITID
+$ git checkout INITIAL_COMMITID
 ~~~
 {: .bash}
 
