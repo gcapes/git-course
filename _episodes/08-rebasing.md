@@ -17,24 +17,27 @@ keypoints:
 Rebasing is the process of moving a whole branch to a new base commit. 
 Git takes your changes, and "replays" them onto the new base commit.
 This creates a brand new commit for each commit in the original branch. 
-As such, your history is rewritten when you rebase.
+As such, **your history is rewritten when you rebase**.
+
+It's like saying "add my changes to what has already been done".
 
 ![Visual illustration of rebasing - image taken from [https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)](../fig/git-rebase.svg)
 
-### Merge vs rebase
+### How's that different to merging?
 Imagine you create a new feature branch to work in, and meanwhile there have been
 commits added to the `master` branch, as shown below.
 
 ![](../fig/forked-history.svg)
 
-You have two choices for incorporating those changes into the `master` branch:
-merging directly or rebasing then merging. We have already encountered merging, and it looks like this:
+You've finished working on the feature, and
+you want to incorporate your changes from the `feature` branch into the `master` branch.
+You could merge directly or rebase then merge. We have already encountered merging, and it looks like this:
 
 ![](../fig/merge-without-rebase.svg)
 
 The main reason you might want to rebase is to maintain a linear project history. 
 In the example above, if you merge directly (recall that there are new commits on 
-both the `master` branch and feature branch), you have a 3-way merge 
+both the `master` branch and `feature` branch), you have a 3-way merge
 (common ancestor, HEAD and MERGE_HEAD) and a merge commit results. 
 Note that you get a merge commit whether or not there are any merge conflicts.
 
@@ -50,6 +53,8 @@ an extra merge commit at the end, so you have a nice clean linear history.
 ![](../fig/rebase-then-merge.svg)
 
 ### A worked example using `git rebase <base>` 
+
+We'll create a feature branch, and rebase it onto master before merging.
 
 Let's start first with checking out our `master` branch:
 
