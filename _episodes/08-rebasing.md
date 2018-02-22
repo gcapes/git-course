@@ -52,6 +52,25 @@ an extra merge commit at the end, so you have a nice clean linear history.
 
 ![](../fig/rebase-then-merge.svg)
 
+### Why would I consider rebasing?
+`Rebase` and `merge` solve the same problem: integrating commits from one branch into another.
+Which method you use is largely personal preference.
+
+Some reasons to consider rebasing:
+- To give a linear project history, which is easier to follow
+	- This makes using `git log`, and `git bisect` easier
+- To integrate upstream changes into your local repository, without creating any merge commits
+- To keep a feature branch up to date with master, without polluting your feature branch with extraneous merge commits
+- Makes pull requests easier to manage (because you've already resolved any merge conflicts while rebasing)
+- To tidy up a feature branch before merging into master (requires interactive rebase)
+
+
+> ## Interactive rebasing
+> `git rebase -i` will open an interactive rebasing session. This provides an opportunity
+> to edit, delete, combine, and reorder individual commits as they are moved onto the new
+> base commit. This can be useful for cleaning up history before sharing it with others.
+{: .callout}
+
 ### A worked example using `git rebase <base>` 
 
 We'll create a feature branch, and rebase it onto master before merging.
@@ -175,8 +194,3 @@ gives a good illustration of what happens during rebasing.
 > conflicts in the long run. But again, it is considered a better practice to use
 > merge and deal with conflicts rather than mess up shared branches using rebase.
 {: .callout}
-
-## Interactive rebasing
-`git rebase -i` will open an interactive rebasing session. This provides an opportunity
-to edit, delete, combine, and reorder individual commits as they are moved onto the new
-base commit. This can be useful for cleaning up history before sharing it with others.
