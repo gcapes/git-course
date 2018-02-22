@@ -67,8 +67,8 @@ acknowledgements section, commit the file and push these changes to GitHub:
 
 ```    
 $ cd papers 
-$ gedit journal.txt		# Write acknowledgements section
-$ git add journal.txt 
+$ gedit journal.md		# Write acknowledgements section
+$ git add journal.md 
 $ git commit -m "Add acknowledgements" 
 $ git push
 ```
@@ -105,7 +105,7 @@ $ git merge origin/master
 And then we can check that we have our changes,
 
 ```    
-$ cat journal.txt 
+$ cat journal.md 
 $ git log
 ```
 {: .bash}
@@ -115,9 +115,9 @@ Now try the same process, but this time starting in the laptop_papers folder (yo
 should already be in the laptop_papers folder), and write an abstract:
 
 ```    
-$ gedit journal.txt		# Write abstract
-$ git add journal.txt 
-$ git commit -m "Write abstract" journal.txt 
+$ gedit journal.md		# Write abstract
+$ git add journal.md 
+$ git commit -m "Write abstract" journal.md 
 $ git push origin master
 $ cd ../papers			# Switch back to the papers directory
 $ git pull origin master	# Get changes from remote repository
@@ -127,7 +127,7 @@ $ git pull origin master	# Get changes from remote repository
 And then check that we have our changes,
 
 ```    
-$ cat journal.txt 
+$ cat journal.md 
 $ git log
 ```
 {: .bash}
@@ -153,8 +153,8 @@ Add an affilication for each author.
 Then push these changes to our remote repository:
 
 ```    
-$ gedit journal.txt		# Add author affiliations 
-$ git add journal.txt 
+$ gedit journal.md		# Add author affiliations 
+$ git add journal.md 
 $ git commit -m "Add author affiliations"
 $ git push origin master
 ```
@@ -165,9 +165,9 @@ to change the order of the authors.
 
 ```    
 $ cd ../laptop_papers		# Switch directory to other copy of our repository 
-$ gedit journal.txt		# Change order of the authors
-$ git add journal.txt 
-$ git commit -m "Change the first author" journal.txt 
+$ gedit journal.md		# Change order of the authors
+$ git add journal.md 
+$ git commit -m "Change the first author" journal.md 
 $ git push origin master
 ```
 {: .bash}
@@ -194,8 +194,8 @@ $ git pull origin master
 and we get:
 
 ```    
-Auto-merging journal.txt
-CONFLICT (content): Merge conflict in journal.txt
+Auto-merging journal.md
+CONFLICT (content): Merge conflict in journal.md
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 {: .output}
@@ -213,7 +213,7 @@ $ git status
 {: .bash}
 
 we can see that our file is listed as *Unmerged* and if we look at
-*journal.txt*, we may see something like:
+*journal.md*, we may see something like:
 
 ```
 <<<<<<< HEAD
@@ -233,8 +233,8 @@ merging the branches.
 We edit the file. Then commit our changes. Now, if we *push* ...
 
 ```
-$ gedit journal.txt		# Edit file to resolve merge conflict
-$ git add journal.txt		# Stage the file
+$ gedit journal.md		# Edit file to resolve merge conflict
+$ git add journal.md		# Stage the file
 $ git commit			# Commit to mark the conflict as resolved
 $ git push origin master
 ```

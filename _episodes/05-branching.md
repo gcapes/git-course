@@ -107,8 +107,8 @@ $ git branch			# Double check which branch we are working on
 The * indicates which branch we're currently in. Now let's make the changes to the paper.
 
 ~~~
-$ gedit journal.txt		# Change title and add co-author
-$ git add journal.txt
+$ gedit journal.md		# Change title and add co-author
+$ git add journal.md
 $ git commit			# "Modify title and add John as co-author"
 ~~~
 {: .bash}
@@ -129,7 +129,7 @@ the `master` version of the paper.
 
 ~~~
 $ gedit journal			# Rewrite the title
-$ git add journal.txt
+$ git add journal.md
 $ git commit			# "Rewrite title emphasising measurements"
 ~~~
 {: .bash}
@@ -142,9 +142,9 @@ Let's add another section to the paper to write about John's simulations.
 
 ~~~
 $ git checkout paperWJohn	# Switch branch
-$ gedit journal.txt		# Add 'simulations' section
-$ git add journal.txt 
-$ git commit -m "Add simulations" journal.txt
+$ gedit journal.md		# Add 'simulations' section
+$ git add journal.md 
+$ git commit -m "Add simulations" journal.md
 ~~~
 {: .bash}
 
@@ -182,8 +182,8 @@ $ git merge paperWJohn		# Merge paperWJohn into master
 ~~~
 {: .bash}
 ~~~
-Auto-merging journal.txt
-CONFLICT (content): Merge conflict in journal.txt
+Auto-merging journal.md
+CONFLICT (content): Merge conflict in journal.md
 Automatic merge failed; fix conflicts and then commit the result.
 ~~~
 {: .output}
@@ -205,11 +205,11 @@ You have unmerged paths.
 Unmerged paths:
   (use "git add <file>..." to mark resolution)
 
-    	both modified:      journal.txt
+    	both modified:      journal.md
 ~~~
 {: .output}
 
-Let's look inside journal.txt:
+Let's look inside journal.md:
 
 ```
 title
@@ -236,8 +236,8 @@ of the two e.g. "Measurement-model comparison of atmospheric particle formation 
 We edit the file. Then commit our changes:
 
 ~~~
-$ gedit journal.txt		# Resolve conflict by editing journal.txt
-$ git add journal.txt		# Let Git know we have resolved the conflict
+$ gedit journal.md		# Resolve conflict by editing journal.md
+$ git add journal.md		# Let Git know we have resolved the conflict
 $ git commit -m "Rewrite title to incorporate simulations"
 ~~~
 {: .bash}
@@ -284,8 +284,8 @@ But we were then in the "detached HEAD" state.
 > > ## Solution
 > > ```
 > > git checkout HEAD~1  # Check out the commit one before last
-> > gedit journal.txt    # Make some edits
-> > git add journal.txt  # Stage the changes
+> > gedit journal.md     # Make some edits
+> > git add journal.md   # Stage the changes
 > > git commit           # Commit the changes
 > > git branch           # You should see a message like the one below,
 > >                      # indicating your commit does not belong to a branch
@@ -354,7 +354,7 @@ But we were then in the "detached HEAD" state.
 > >
 > > ```
 > > git checkout HEAD~1		# Checkout the commit before last
-> > gedit journal.txt		# Modify one of your files
+> > gedit journal.md		# Modify one of your files
 > > git commit -a			# Commit all the modified files
 > > git branch			# List local branches
 > > ```

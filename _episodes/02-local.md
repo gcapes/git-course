@@ -152,7 +152,7 @@ Now, we'll create a file. Let's say we're going to write a journal paper, so
 we will start by adding the author names and a title, then save the file.
 
 ~~~
-$ gedit journal.txt						# Windows users: use notepad instead of gedit (throughout this course)
+$ gedit journal.md						# Windows users: use notepad instead of gedit (throughout this course)
 ~~~
 {: .bash}
 
@@ -178,7 +178,7 @@ Initial commit
 Untracked files:
 (use "git add <file>..." to include in what will be committed)
 
-journal.txt
+journal.md
 
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
@@ -198,7 +198,7 @@ Git.
 To tell Git about the file, we will use the `git add` command:
 
 ~~~
-$ git add journal.txt 
+$ git add journal.md 
 $ git status 
 ~~~
 {: .bash}
@@ -210,7 +210,7 @@ Initial commit
 Changes to be committed:
 (use "git rm --cached <file>..." to unstage)
 
-      	new file:   journal.txt
+      	new file:   journal.md
 ~~~
 {: .output}
 
@@ -248,7 +248,7 @@ If we save our commit message **and exit the editor**, Git will now commit our f
 ~~~
 [master (root-commit) 21cfbde] 
 1 file changed, 2 insertions(+) Add title and authors
-create mode 100644 journal.txt
+create mode 100644 journal.md
 ~~~
 {: .output}
 
@@ -272,11 +272,11 @@ our file is now in the repository.
 The output from the `git status` command means that we have a clean directory
 i.e. no tracked but modified files. 
 
-Now we will work a bit further on our *journal.txt* file by writing the introduction
+Now we will work a bit further on our *journal.md* file by writing the introduction
 section.
    
 ```
-$ gedit journal.txt
+$ gedit journal.md
 # Write introduction section
 ```
 {: .bash}
@@ -296,7 +296,7 @@ Changes not staged for commit:
 (use "git add <file>..." to update what will be committed)
 (use "git checkout -- <file>..." to discard changes in working directory)
 
-     modified:   journal.txt
+     modified:   journal.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -307,11 +307,11 @@ has not yet been committed. So we can add it to the staging area and then
 commit the changes:
      
 ~~~
-$ git add journal.txt 
+$ git add journal.md 
 $ git commit							# "Write introduction"
 ~~~
 {: .bash}
-Note that in this case we used `git add` to put journal.txt to the staging
+Note that in this case we used `git add` to put journal.md to the staging
 area. Git already knows this file should be tracked but doesn't know if we want
 to commit the changes we made to the file  in the repository and hence we have
 to add the file to the staging area. 
@@ -328,10 +328,10 @@ $ gedit common/references.txt					# Add a reference
 ~~~
 {: .bash}
 
-We will also add a citation in our introduction section (in journal.txt).
+We will also add a citation in our introduction section (in journal.md).
 
 ~~~
-$ gedit journal.txt 						# Use reference in introduction
+$ gedit journal.md 						# Use reference in introduction
 ~~~
 {: .bash}
 
@@ -346,7 +346,7 @@ $ git status							# Verify that common/references.txt is now tracked
 {: .bash}
 
 All files that are in *common* are now tracked.  We would also have to add
-journal.txt in the staging area. But there is a shortcut. We can use
+journal.md in the staging area. But there is a shortcut. We can use
 `commit -a`. This option means "commit all files that are tracked and
 that have been modified".
 

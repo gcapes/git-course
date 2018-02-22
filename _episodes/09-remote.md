@@ -206,8 +206,8 @@ We can use our cloned repository just as if it was a local repository so let's
 make some changes to our files and commit these.
 
 ```
-$ gedit journal.txt				# Add section which will contain the figures 
-$ git add journal.txt				# Add figures section
+$ gedit journal.md				# Add section which will contain the figures 
+$ git add journal.md				# Add figures section
 $ git commit
 ```
 {: .bash}

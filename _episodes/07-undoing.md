@@ -29,8 +29,8 @@ haven't get done a `git add` we can just throw the changes away and return
 our file to the most recent version we committed to the repository by using:
 
 ```
-$ gedit journal.txt		# Make some small edits to the file
-$ git checkout journal.txt	# Discard edits we just made
+$ gedit journal.md		# Make some small edits to the file
+$ git checkout journal.md	# Discard edits we just made
 ```
 {: .bash}
 
@@ -39,7 +39,7 @@ the repository:
 
 ```
 $ git status			# See that we have a clean working directory
-$ gedit journal.txt		# Inspect file to verify changes have been discarded
+$ gedit journal.md		# Inspect file to verify changes have been discarded
 ```
 {: .bash}
 
@@ -69,7 +69,7 @@ detail the instrumentation used, and add a reference for this to the references
 file.
 
 ```
-$ gedit journal.txt		# Add methodology section, including a reference
+$ gedit journal.md		# Add methodology section, including a reference
 $ gedit common/references.txt	# Add new reference to references file
 $ git status			# Get a status update on file modifications
 ```
@@ -83,16 +83,16 @@ Changes not staged for commit:
   (use "git checkout -- <file>..." to discard changes in working directory)
 
 	modified:   common/references.txt
-	modified:   journal.txt
+	modified:   journal.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 {: .output}
 
-Let's then add and commit *journal.txt* but not the references file.
+Let's then add and commit *journal.md* but not the references file.
 
 ```
-$ git add journal.txt		 # Add journal to staging area
+$ git add journal.md		 # Add journal to staging area
 $ git commit -m "Add methodology section"
 ```
 {: .bash}
@@ -148,8 +148,8 @@ Let's try it on our example. Modify the journal, describing which other instrume
 used, and then make a commit.
 
 ```
-$ gedit journal.txt		# Describe other instruments
-$ git add journal.txt
+$ gedit journal.md		# Describe other instruments
+$ git add journal.md
 $ git commit -m "Describe Aerosol Mass Spectrometer"
 ```
 {: .bash}

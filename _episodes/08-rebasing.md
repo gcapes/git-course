@@ -69,8 +69,8 @@ Add a results section to the paper with a couple of lines to outline the finding
 Commit the changes you made.
 
 ```
-$ gedit journal.txt				# Add results section
-$ git add journal.txt
+$ gedit journal.md				# Add results section
+$ git add journal.md
 $ git commit					# "Write results section"
 ```
 {: .bash}
@@ -79,8 +79,8 @@ Checkout the `master` branch and write some conclusions. Commit them.
 
 ```
 $ git checkout master				# Checkout master branch
-$ gedit journal.txt				# Add conclusions section
-$ git add journal.txt
+$ gedit journal.md				# Add conclusions section
+$ git add journal.md
 $ git commit					# "Write conclusions section"
 ```
 {: .bash}
@@ -113,7 +113,7 @@ If this is the case, Git will let us know, and give some instructions on how to 
 The process for fixing conflicts is the same as before:
 
 ```
-$ gedit journal.txt      			# Manually fix conficts in affected file(s)
+$ gedit journal.md      			# Manually fix conficts in affected file(s)
 $ git add                			# Mark file as resolved
 $ git rebase --continue  			# Continue to rebase
 ```
