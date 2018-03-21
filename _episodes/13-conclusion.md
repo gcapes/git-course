@@ -46,18 +46,19 @@ understand who changed what, when, and why.
 ### Find out more...
 
 * [Download](https://git-scm.com/downloads) and install Git on your own computer (it's free!)
-* [Atlassian Git tutorials](https://www.atlassian.com/git/tutorials/) (an
-excellent resource with clear explanations and illustrations)
+* [Atlassian Git tutorials](https://www.atlassian.com/git/tutorials/) --- an
+excellent resource with clear explanations and illustrations
+* [Learn Git branching](https://learngitbranching.js.org/) --- interactive, visual tutorials
 * K. Ram  (2013) "git can facilitate greater reproducibility and increased
 transparency in science", Source Code for Biology and Medicine 2013, 8:7
-doi:[10.1186/1751-0473-8-7](http://dx.doi.org/10.1186/1751-0473-8-7) - survey
+doi:[10.1186/1751-0473-8-7](http://dx.doi.org/10.1186/1751-0473-8-7) --- survey
 of the range of ways in which version control can help research.  
 * [Visual Git Reference](http://marklodato.github.com/visual-git-guide/index-en.html)
-(pictorial representations of what Git commands do)
-* [Pro Git](http://git-scm.com/book) - the "official" online Git book.  
-* [Version control by example](http://www.ericsink.com/vcbe/) - an acclaimed online book
+--- pictorial representations of what Git commands do
+* [Pro Git](http://git-scm.com/book) --- the "official" online Git book.  
+* [Version control by example](http://www.ericsink.com/vcbe/) --- an acclaimed online book
 on version control by Eric Sink.  
-* [Git beyond the basics](https://speakerdeck.com/zakkak/git-beyond-the-basics) -- a nice reference
+* [Git beyond the basics](https://speakerdeck.com/zakkak/git-beyond-the-basics) --- a nice reference
 slideshow covering some more advanced topics
 * G. Wilson, D. A. Aruliah, C. T. Brown, N. P. Chue
 Hong, M. Davis, R. T. Guy, S. H. D. Haddock, K. Huff, I. M. Mitchell, M.
