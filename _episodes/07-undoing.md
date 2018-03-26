@@ -224,6 +224,11 @@ branch we currently are working on (master). (`HEAD^` = the commit right before 
 The final effect is what we need: we abandoned the commits and we are now back
 to where we were before making the commit about the data we are not using.
 
+---
+Click for an [animation] of the revert and reset operations we just used.
+
+[animation]: https://learngitbranching.js.org/?NODEMO&command=git%20commit;git%20revert%20C0;git%20reset%20HEAD~
+
 [This article](https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified) discusses more in
 depth `git reset` showing the differences between the three options:
 
@@ -250,6 +255,7 @@ depth `git reset` showing the differences between the three options:
 {: .callout}
 
 ![Reset vs revert](../fig/git-revert-vs-reset.svg)
+
 
 See this [Atlassian online tutorial](
 https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting/commit-level-operations)
