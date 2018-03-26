@@ -299,8 +299,12 @@ But we were then in the "detached HEAD" state.
 > > You have just made a commit on a detached HEAD --
 > > as you can see from the output above, a new temporary branch has been created,
 > > which doesn't have a name.
+> >
+> > See this [detached HEAD animation] of the above process.
 > {: .solution} 
 {: .challenge}
+
+[detached HEAD animation]: https://learngitbranching.js.org/?NODEMO&command=git%20checkout%20HEAD~;git%20commit
 
 > ## Abandon the commit on a detached HEAD
 > You decide that you want to abandon that commit.
@@ -331,8 +335,11 @@ But we were then in the "detached HEAD" state.
 > >  Your branch is up-to-date with 'master'.
 > > ```
 > > {: .output}
+> > See this [abandon detached HEAD] animation.
 > {: .solution}
 {: .challenge}
+
+[abandon detached HEAD]: https://learngitbranching.js.org/?NODEMO&command=git%20checkout%20HEAD~;git%20commit;git%20checkout%20master
 
 > ## Save your changes in a new branch
 > Preparation:
@@ -392,5 +399,8 @@ But we were then in the "detached HEAD" state.
 > > git checkout master		# Switch back to the 'master' branch
 > > ```
 > > {: .bash}
+> > See this [new branch animation] for the key points in this exercise.
 > {: .solution}
 {: .challenge}
+
+[new branch animation]: https://learngitbranching.js.org/?NODEMO&command=git%20checkout%20HEAD~;git%20commit;git%20branch%20dh-ex;git%20checkout%20dh-ex;git%20checkout%20master
