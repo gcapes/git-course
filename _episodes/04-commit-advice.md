@@ -18,11 +18,18 @@ keypoints:
 ### How to write a good commit message
 
 Commit messages should explain why you have made your changes. They should mean
-something to others who may read them - including your future self in 6 months
+something to others who may read them --- including your future self in 6 months
 from now.
+As such you should be able to understand why something happened months
+or years ago.
+
+Well written commit messages make reviewing code much easier, and more enjoyable.
+They also make interacting with the log easier --- commands like `blame`, `revert`,
+`rebase`, and `log`.
 
 [Here is an excellent summary](http://chris.beams.io/posts/git-commit/) of
-best-practice. It's well worth a read but the key points are given below:
+best-practice, following established conventions.
+It's well worth a read but the key points are given below:
 
 1. Separate the subject from body with a blank line
 2. Limit the subject line to 50 characters
