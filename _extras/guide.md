@@ -10,6 +10,9 @@ permalink: /guide/
 	- Use black-on-white colour scheme
 	- Set a minimal shell prompt `PS1="$ "`
 	- Also set a larger font size in your text editor
+- Don't create the directory on the P-drive
+	- Explain to learners about the drop outs
+	- No need to copy directory at end of the day -- it's on GitHub!
 
 ## Ahead of time
 - Is Git installed?
