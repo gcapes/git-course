@@ -224,7 +224,7 @@ $ git push origin master
 If we now check our GitHub page we should be able to see our new changes under
 the *Commit* tab.
 
-To see all remote repositories (we can have multiple ones!) type:
+To see all remote repositories (we can have multiple!) type:
 	
 ```
 $ git remote -v
