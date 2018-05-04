@@ -227,7 +227,7 @@ to where we were before making the commit about the data we are not using.
 ---
 Click for an [animation] of the revert and reset operations we just used.
 
-[animation]: https://learngitbranching.js.org/?NODEMO&command=git%20commit;git%20revert%20C0;git%20reset%20HEAD~
+[animation]: https://learngitbranching.js.org/?NODEMO&command=git%20commit;git%20revert%20C2;git%20reset%20HEAD~2
 
 [This article](https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified) discusses more in
 depth `git reset` showing the differences between the three options:
