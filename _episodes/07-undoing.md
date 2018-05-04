@@ -50,12 +50,7 @@ $ gedit journal.md		# Inspect file to verify changes have been discarded
 If you just made a commit and realised that either you did it a bit too early
 and the files are not yet ready to be commited. Or, which is not as uncommon as
 you think, your commit message is not as it is supposed to be. You can fix that
-using the command:
-
-```
-$ git commit --amend		# Edit previous commit message
-```
-{: .bash}
+using the command `$ git commit --amend`
 
 This opens up the default editor for Git which includes the previous commit
 message - you can edit it and close the editor. This will simply fix the commit

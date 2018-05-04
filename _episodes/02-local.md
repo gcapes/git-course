@@ -153,6 +153,7 @@ we will start by adding the author names and a title, then save the file.
 
 ~~~
 $ gedit journal.md						# Windows users: use notepad instead of gedit (throughout this course)
+# Add author names and paper title
 ~~~
 {: .bash}
 
