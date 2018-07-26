@@ -319,8 +319,24 @@ $ git checkout master
 > - Modify one line, add a fourth line, then save the file
 > - Display the differences between the updated file and the original
 >
+> You may wish to use the faded example below as a guide
+>
+> ```
+> cd ..                # Navigate out of the papers directory
+>                      # Avoid creating a repo within a repo - confusion will arise!
+> mkdir ___            # Create a new directory called 'bio'
+> cd ___               # Navigate into the new directory
+> git ____             # Initialise a new repository
+> _____ me.txt         # Create a file and write your biography
+> git ___ me.txt       # Add your biography file to the staging area
+> git ______           # Commit your staged changes
+> _____ me.txt         # Edit your file
+> git ____ me.txt      # Display differences between your modified file and the last committed version
+> ```
+> {: .bash}
+>
 > > ## Solution
-> > 
+> >
 > > ```
 > > cd ..                # Navigate out of the papers directory
 > >                      # Avoid creating a repo within a repo - confusion will arise!
