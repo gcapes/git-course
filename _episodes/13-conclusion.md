@@ -40,9 +40,6 @@ code or papers, down to the level of individual files, without the risk of
 overwriting and losing each others work, and being able to record and
 understand who changed what, when, and why. 
 
-> "If you are not using version control then, whatever else you may be doing
-> with a computer, you are not doing science" -- Greg Wilson
-
 ### Find out more...
 
 * [Download](https://git-scm.com/downloads) and install Git on your own computer (it's free!)
