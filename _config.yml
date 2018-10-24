@@ -11,7 +11,7 @@ title: "Version control with Git"
 # Contact.  This *must* include the protocol: if it's an email
 # address, it must look like "mailto:lessons@software-carpentry.org",
 # or if it's a URL, "https://gitter.im/username/ProjectName".
-contact: "its-research-training@manchester.ac.uk"
+contact: "mailto:its-research-training@manchester.ac.uk?subject=Git course"
 
 #------------------------------------------------------------
 # Generic settings (should not need to change).
