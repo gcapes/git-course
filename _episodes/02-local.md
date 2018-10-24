@@ -65,12 +65,15 @@ session we'll use *gedit*:
 ~~~
 $ git config --global core.editor gedit				# Linux users only.
 								# Windows users should use notepad: see below.
+								# Mac users should use TextEdit: see below.
 ~~~
 {: .bash}
 
 To set up alternative editors, follow the same notation e.g.
 `git config --global core.editor notepad`, `git config --global core.editor vi`,
 `git config --global core.editor xemacs`.
+
+Mac users can use *TextEdit*: `git config --global core.editor 'open -W -n'`.
 
 ## Colours in Git
 
