@@ -83,6 +83,34 @@ $ git fetch
 ```
 {: .bash}
 
+We can visualise the remote branches in the same way as we did for local branches,
+so let's draw a network graph before going any further:
+
+```
+git log --graph --all --decorate --oneline
+```
+{: .bash}
+
+```
+* 7c239c3 (origin/master, origin/HEAD) Write acknowledgements section
+* 0cc2a2d (HEAD -> master) Add figures section
+* 3011ee0 Explain SMPS in methodology section
+*   6420699 Merge branch 'paperwjohn'
+|\  
+| * 7138785 (origin/paperwjohn) Write simulations section
+| * e695fa8 Add coauthor and update title
+* | e950911 Emphasise these are aircraft measurements
+|/  
+* 0b28b0a Add Haywood et al paper
+* 7cacba8 Cite ground based measurements
+* 56781f4 Reference Allen et al and add refs file
+* 5033467 Write introduction section
+* e08262e Add title and author
+```
+{: .output}
+
+As expected, we see that the origin/master branch is ahead of our local master branch.
+
 We can now see what the differences are by doing,
 
 ```    
@@ -90,7 +118,7 @@ $ git diff origin/master
 ```
 {: .bash}
 
-which compares our current, `master` branch, with an `origin/master` branch
+which compares our current, `master` branch, with the `origin/master` branch
 which is the name of the `master` branch in `origin` which is the alias for our
 cloned repository, the one on GitHub.
 
@@ -110,9 +138,26 @@ $ git log
 ```
 {: .bash}
 
+There was no merge conflict, so this is a *fast-forward* merge.
+If we look at the network graph again, we can see that `master` now points to the
+same commit as `origin/master`.
+
+```
+git log --graph --all --decorate --oneline -4
+```
+{: .bash}
+
+```
+* 7c239c3 (HEAD -> master, origin/master, origin/HEAD) Write acknowledgements section
+* 0cc2a2d Add figures section
+* 3011ee0 Explain SMPS in methodology section
+*   6420699 Merge branch 'paperwjohn'
+```
+{: .output}
+
 As a short-hand, we can do a `git pull` which does a `git fetch` then a `git merge`. 
-Now try the same process, but this time starting in the laptop_papers folder (you
-should already be in the laptop_papers folder), and write an abstract:
+We will now update our repo using `pull`, but this time starting in the laptop_papers folder (you
+should already be in the laptop_papers folder). Let's write the abstract:
 
 ```    
 $ gedit journal.md		# Write abstract
@@ -149,7 +194,7 @@ $ git log
 
 Let's continue to pretend that our two local, cloned, repositories are hosted
 on two different machines. You should still be in the original *papers* folder.
-Add an affilication for each author.
+Add an affiliation for each author.
 Then push these changes to our remote repository:
 
 ```    
