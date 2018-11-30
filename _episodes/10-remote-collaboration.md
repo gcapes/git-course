@@ -269,15 +269,24 @@ between them, so no work is ever lost.
 > locally and push it back to the remote repo.
 >
 > Each person should use a different name for their local branch.
-> The following commands assume your new branch is called `new_branch` --
-> you should use the name of your local branch instead of `new_branch`.
+> The following commands assume your new branch is called `my_branch`,
+> and your partnet's branch is called `their_branch` ---
+> you should substitute the name of your new branch and your partner's new branch.
 > 
 > ```
-> $ git push origin new_branch		# Substitute your local branch name for 'new_branch'.
+> $ git checkout -b my_branch		# Create and check out a new branch.
+>				 	# Substitute your local branch name for 'my_branch'.
+> ```
+> {: .bash}
+>
+> Now create/edit a file, and then commit your changes.
+>
+> ```
+> $ git push origin my_branch		# Push your new branch to remote repo.
 > ```
 > {: .bash}
 > 
-> The other person should try to get local copies of the branches created by others
+> The other person should check out local copies of the branches created by others
 > (so eventually everybody should have the same number of branches as the remote
 > repository).
 > 
@@ -289,26 +298,26 @@ between them, so no work is ever lost.
 > {: .bash}
 > ```
 > Counting objects: 3, done.  remote:
-> Compressing objects: 100% (3/3), done.  remote: Total 3 (delta 0),
-> reused 2 (delta 0) Unpacking objects: 100% (3/3), done.  From
-> https://github.com/apawlik/papers 9e1705a..640210a  master     ->
-> origin/master * [new branch]      new_branch -> origin/new_branch
+> Compressing objects: 100% (3/3), done.
+> remote: Total 3 (delta 0), reused 2 (delta 0) Unpacking objects: 100% (3/3), done.
+> From  https://github.com/gcapes/papers 
+> 9e1705a..640210a master -> origin/master 
+> * [new branch] their_branch -> origin/their_branch
 > ```
 > {: .output}
 >	
 > Your local repository should now contain all the branches from the remote repository,
 > but the `fetch` command doesn't actually update your local branches.
 > 
-> The next step is to check out a new branch locally to track the upstream branch
-> i.e. the remote branch.
+> The next step is to check out a new branch locally to track the new remote branch.
 > 
 > ```
-> $ git checkout new_branch
+> $ git checkout their_branch
 > ```
 > {: .bash}
 > ```
-> Branch new_branch set up to track remote branch new_branch from origin.
-> Switched to a new branch 'new_branch'
+> Branch their_branch set up to track remote branch their_branch from origin.
+> Switched to a new branch 'their_branch'
 > ```
 > {: .output}
 {: .challenge}
