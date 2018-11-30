@@ -76,13 +76,14 @@ In either case, your PR will update automatically once you have pushed your comm
 > 2. Clone the repository from **YOUR** GitHub account. When you run `git remote -v`
 > you should get something like this:
 >
-> ```{.output}
-> origin	https://github.com/YOUR_USERNAME/manchester-papers.git(fetch)
-> origin 	https://github.com/YOUR_USERNAME/manchester-papers.git(push)
-> ```
+> 	```{.output}
+>	origin	https://github.com/YOUR_USERNAME/manchester-papers.git(fetch)
+> 	origin	https://github.com/YOUR_USERNAME/manchester-papers.git(push)
+> 	```
 > 
-> 3. Make changes you want to contribute. Commit and push them back to your
-> repository. You won't be able to push back to the repository you forked from
+> 3. `cd` into the directory you just cloned. Make changes you want to contribute.
+> Commit and push them back to your repository.
+> You won't be able to push back to the repository you forked from
 > because you are not added as a contributor!
 > 4. Go to your GitHub account and in the forked repository find a green button
 > for creating Pull Requests. Click it and follow the instructions.
