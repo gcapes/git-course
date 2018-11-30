@@ -138,7 +138,7 @@ $ git log
 ```
 {: .bash}
 
-There was no merge conflict, so this is a *fast-forward* merge.
+There was no merge commit, so this is a *fast-forward* merge.
 If we look at the network graph again, we can see that `master` now points to the
 same commit as `origin/master`.
 
