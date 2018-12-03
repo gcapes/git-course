@@ -62,14 +62,14 @@ $ papers laptop_papers
 
 Let's pretend these clones are on two separate machines! So we have 3 versions
 of our repository - our two local versions, on our separate machines (we're
-still pretending!) and one on GitHub. So let's go into one of our clones, add an
-acknowledgements section, commit the file and push these changes to GitHub:
+still pretending!) and one on GitHub. So let's go into one of our clones, add a
+figures section, commit the file and push these changes to GitHub:
 
 ```    
 $ cd papers 
-$ gedit journal.md		# Write acknowledgements section
+$ gedit journal.md		# Add figures section
 $ git add journal.md 
-$ git commit -m "Add acknowledgements" 
+$ git commit -m "Add figures"
 $ git push
 ```
 {: .bash}
@@ -92,8 +92,8 @@ git log --graph --all --decorate --oneline
 {: .bash}
 
 ```
-* 7c239c3 (origin/master, origin/HEAD) Write acknowledgements section
-* 0cc2a2d (HEAD -> master) Add figures section
+* 7c239c3 (origin/master, origin/HEAD) Add figures
+* 0cc2a2d (HEAD -> master) Add results section
 * 3011ee0 Explain SMPS in methodology section
 *   6420699 Merge branch 'paperwjohn'
 |\  
@@ -109,7 +109,9 @@ git log --graph --all --decorate --oneline
 ```
 {: .output}
 
-As expected, we see that the origin/master branch is ahead of our local master branch.
+As expected, we see that the `origin/master` branch is ahead of our local `master` branch
+by one commit  --- note that the history hasn't diverged,
+rather our local branch is missing the most recent commit on `origin/master`.
 
 We can now see what the differences are by doing,
 
@@ -118,29 +120,29 @@ $ git diff origin/master
 ```
 {: .bash}
 
-which compares our current, `master` branch, with the `origin/master` branch
+which compares our `master` branch with the `origin/master` branch
 which is the name of the `master` branch in `origin` which is the alias for our
 cloned repository, the one on GitHub.
 
-We can then `merge` these changes into our current repository, which merges the
-branches together,
+We can then `merge` these changes into our current repository, 
+but given the history hasn't diverged, we don't get a merge commit ---
+instead we get a *fast-forward* merge.
 
 ```    
 $ git merge origin/master
 ```
 {: .bash}
 
-And then we can check that we have our changes,
-
-```    
-$ cat journal.md 
-$ git log
 ```
-{: .bash}
+Updating 0cc2a2d..7c239c3
+Fast-forward
+ journal.md | 4 ++++
+ 1 file changed, 4 insertions(+)
+```
+{: .output}
 
-There was no merge commit, so this is a *fast-forward* merge.
-If we look at the network graph again, we can see that `master` now points to the
-same commit as `origin/master`.
+If we look at the network graph again, all that has changed
+is that `master` now points to the same commit as `origin/master`.
 
 ```
 git log --graph --all --decorate --oneline -4
@@ -148,28 +150,38 @@ git log --graph --all --decorate --oneline -4
 {: .bash}
 
 ```
-* 7c239c3 (HEAD -> master, origin/master, origin/HEAD) Write acknowledgements section
-* 0cc2a2d Add figures section
+* 7c239c3 (HEAD -> master, origin/master, origin/HEAD) Add figures
+* 0cc2a2d Add results section
 * 3011ee0 Explain SMPS in methodology section
 *   6420699 Merge branch 'paperwjohn'
 ```
 {: .output}
 
-As a short-hand, we can do a `git pull` which does a `git fetch` then a `git merge`. 
-We will now update our repo using `pull`, but this time starting in the laptop_papers folder (you
-should already be in the laptop_papers folder). Let's write the abstract:
+We can check that we have our changes.
 
 ```    
-$ gedit journal.md		# Write abstract
+$ cat journal.md 
+$ git log
+```
+{: .bash}
+
+As a short-hand, we can do a `git pull` which does a `git fetch` then a `git merge`. 
+We will now update our repo using `pull`, but this time starting in the laptop_papers folder (you
+should already be in the laptop_papers folder). Let's write the conclusions:
+
+```    
+$ gedit journal.md		# Write Conclusions
 $ git add journal.md 
-$ git commit -m "Write abstract" journal.md 
+$ git commit -m "Write Conclusions" journal.md 
 $ git push origin master
 $ cd ../papers			# Switch back to the papers directory
 $ git pull origin master	# Get changes from remote repository
 ```
 {: .bash}
 
-And then check that we have our changes,
+This is the same scenario as before, so we get another fast-forward merge.
+
+We can check that we have our changes:
 
 ```    
 $ cat journal.md 
@@ -205,8 +217,11 @@ $ git push origin master
 ```
 {: .bash}
 
-Now let us suppose, at a later, date, we use our other repository and we want
-to change the order of the authors.
+Now let us suppose, at a later date, we use our other repository (on the laptop)
+and we want to change the order of the authors.
+
+The remote branch `origin/master` is now ahead of our local `master` branch on the laptop,
+because we haven't yet updated our local branch using `git pull`.
 
 ```    
 $ cd ../laptop_papers		# Switch directory to other copy of our repository 
@@ -258,7 +273,7 @@ $ git status
 {: .bash}
 
 we can see that our file is listed as *Unmerged* and if we look at
-*journal.md*, we may see something like:
+*journal.md*, we see something like:
 
 ```
 <<<<<<< HEAD
@@ -283,7 +298,6 @@ $ git add journal.md		# Stage the file
 $ git commit			# Commit to mark the conflict as resolved
 $ git push origin master
 ```
-{: .bash}
 {: .bash}
 
 ... all goes well. If we now go to GitHub and click on the "Overview" tab we can
