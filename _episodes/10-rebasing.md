@@ -13,6 +13,9 @@ keypoints:
 - "rebasing rewrites history"
 ---
 
+We were in the *papers* directory at the end of the last episode,
+which is where this episode continues.
+
 Let's review the recent history of our project,
 noting particularly the commit message which results when `origin/master` and `master` diverge,
 and `origin/master` is merged back into `master`.
@@ -112,22 +115,21 @@ We'll repeat the scenario from the last episode where the local and remote branc
 but instead of merging the remote branch `origin/master` into `master`,
 we'll rebase `master` onto `origin/master`.
 
-You should be in the `laptop_papers` directory as your starting point.
 We'll write some acknowledgements, then commit and push.
 
 ```
-$ gedit journal.md		# Write acknowledgements
+$ gedit journal.md				# Write acknowledgements
 $ git add journal.md
 $ git commit -m "Write acknowledgements section"
-$ git push origin master	# Push master branch to remote
+$ git push origin master			# Push master branch to remote
 ```
 {: .bash}
 
 
-We'll now switch machine to our desktop, and write the abstract:
+We'll now switch machine to our laptop, and write the abstract:
 
 ```
-$ cd ../papers					# Pretend we're on the 'desktop' computer
+$ cd ../laptop_papers				# Pretend we're on the laptop
 $ gedit journal.md				# Add abstract section
 $ git add journal.md
 $ git commit					# "Write abstract"
@@ -164,12 +166,12 @@ We did that in the last episode, which resulted in a 'forgot-to-pull' merge comm
 This time we will replay our local branch onto to the remote branch.
 
 ```
-$ git rebase origin/master				# Rebase current branch onto origin/master
+$ git rebase origin/master			# Rebase current branch onto origin/master
 ```
 {: .bash}
 
-Note that this only works because we just did a `git fetch`.
-Typically, you would use `git pull --rebase` to combine the fetch and rebase steps.
+Note that this syntax only works because we just did a `git fetch`.
+Typically, you would use `git pull --rebase` instead, which combines the fetch and rebase steps.
 
 > ## Merge conflicts during a rebase
 > Depending what changes we have made, there may be conflicts we have to fix in order to rebase.
@@ -177,9 +179,9 @@ Typically, you would use `git pull --rebase` to combine the fetch and rebase ste
 > The process for fixing conflicts is the same as before:
 > 
 > ```
-> $ gedit journal.md      			# Manually fix conficts in affected file(s)
-> $ git add                			# Mark file as resolved
-> $ git rebase --continue  			# Continue to rebase
+> $ gedit file					# Manually fix conficts in affected file(s)
+> $ git add file					# Mark file(s) as resolved
+> $ git rebase --continue				# Continue to rebase
 > ```
 > {: .bash}
 {: .callout}
@@ -206,7 +208,7 @@ $ git log --graph --all --oneline --decorate	# View project history after rebasi
 ```
 {:  .output}
 
-Having integrated the remote changed into our local branch, we can now push our local branch
+Having integrated the remote changes into our local branch, we can now push our local branch
 back to 'origin'.
 
 ```
