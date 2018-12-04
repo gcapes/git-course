@@ -306,6 +306,15 @@ This is where version control proves itself better than DropBox or GoogleDrive,
 this ability to merge text files line-by-line and highlight the conflicts
 between them, so no work is ever lost.
 
+We'll finish by pulling these changes into other copy of the repo,
+so both copies are up to date:
+
+```
+$ cd ../papers			# Switch to 'papers' directory
+$ git pull origin master	# Merge remote branch into local
+```
+{: .bash}
+
 > ## Collaborating on a remote repository
 > 
 > In this exercise you should work with a partner or a group of three. 
