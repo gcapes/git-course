@@ -13,6 +13,41 @@ keypoints:
 - "rebasing rewrites history"
 ---
 
+Let's review the recent history of our project,
+noting particularly the commit message which results when `origin/master` and `master` diverge,
+and `origin/master` is merged back into `master`.
+
+```
+$ git log --graph --all --oneline --decorate -6
+```
+{: .bash}
+
+```
+*   365748e (HEAD -> master, origin/master, origin/HEAD) Merge branch 'master' of github.com:gcapes/papers
+|\  
+| * ff18da4 Add author affiliations
+* | 8f44540 Change first author
+|/  
+* 8494909 Add figures
+* e90a501 Add results section
+* 3011ee0 Explain SMPS in methodology section
+```
+{: .output}
+
+Normally a merge commit indicates that a feature branch has been completed,
+a bug has been fixed, or marks a release version of our project.
+Our most recent merge commit doesn't mark any real milestone in the history of the project ---
+all it tells us is that we didn't pull before we tried to push.
+Merge commits like this don't add any real value[^opinion],
+and can quickly clutter the history of a project.
+
+If only there were a way to avoid them,
+e.g. by starting with the tip of the remote branch
+and reapplying our local commits from this new starting point.
+You could also describe this as moving the local commits onto a new *base* commit
+i.e. **rebasing**.
+
+
 ### What is it?
 Rebasing is the process of moving a whole branch to a new base commit. 
 Git takes your changes, and "replays" them onto the new base commit.
@@ -194,3 +229,5 @@ gives a good illustration of what happens during rebasing.
 > conflicts in the long run. But again, it is considered a better practice to use
 > merge and deal with conflicts rather than mess up shared branches using rebase.
 {: .callout}
+
+[^opinion]: This statement contains elements of opinion.
