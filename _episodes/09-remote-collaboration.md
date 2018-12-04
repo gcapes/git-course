@@ -66,7 +66,7 @@ still pretending!) and one on GitHub. So let's go into one of our clones, add a
 figures section, commit the file and push these changes to GitHub:
 
 ```    
-$ cd papers 
+$ cd papers 			# Switch to the 'papers' directory
 $ gedit journal.md		# Add figures section
 $ git add journal.md 
 $ git commit -m "Add figures"
@@ -74,7 +74,7 @@ $ git push
 ```
 {: .bash}
 
-Now let's change to our other repository and `fetch` the changes from our
+Now let's change directory to our other repository and `fetch` the commits from our
 remote repository,
 
 ```    
@@ -157,17 +157,16 @@ git log --graph --all --decorate --oneline -4
 ```
 {: .output}
 
-We can check that we have our changes.
+We can inspect the file to confirm that we have our changes.
 
 ```    
 $ cat journal.md 
-$ git log
 ```
 {: .bash}
 
 As a short-hand, we can do a `git pull` which does a `git fetch` then a `git merge`. 
-We will now update our repo using `pull`, but this time starting in the laptop_papers folder (you
-should already be in the laptop_papers folder). Let's write the conclusions:
+Next we will update our repo using `pull`, but this time starting in the *laptop_papers* folder (you
+should already be in the *laptop_papers* folder). Let's write the conclusions:
 
 ```    
 $ gedit journal.md		# Write Conclusions
@@ -260,12 +259,12 @@ Automatic merge failed; fix conflicts and then commit the result.
 ```
 {: .output}
 
-As we saw earlier, with the fetch and merge, a `git pull` pulls down changes from the
+As we saw earlier, with the fetch and merge, `git pull` pulls down changes from the
 repository and tries to merge them. It does this on a file-by-file basis,
 merging files line by line. We get a **conflict** if a file has changes that
 affect the same lines and those changes can't be seamlessly merged. We had this
-situation before when we worked with branches and tried to merge two of them. If
-we look at the status,
+situation before in the *branching* episode when we merged a *feature* branch into *master*.
+If we look at the status,
 
 ```
 $ git status
