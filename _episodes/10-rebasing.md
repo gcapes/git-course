@@ -13,6 +13,44 @@ keypoints:
 - "rebasing rewrites history"
 ---
 
+We were in the *papers* directory at the end of the last episode,
+which is where this episode continues.
+
+Let's review the recent history of our project,
+noting particularly the commit message which results when `origin/master` and `master` diverge,
+and `origin/master` is merged back into `master`.
+
+```
+$ git log --graph --all --oneline --decorate -6
+```
+{: .bash}
+
+```
+*   365748e (HEAD -> master, origin/master, origin/HEAD) Merge branch 'master' of github.com:gcapes/papers
+|\  
+| * ff18da4 Add author affiliations
+* | 8f44540 Change first author
+|/  
+* 8494909 Add figures
+* e90a501 Add results section
+* 3011ee0 Explain SMPS in methodology section
+```
+{: .output}
+
+Normally a merge commit indicates that a feature branch has been completed,
+a bug has been fixed, or marks a release version of our project.
+Our most recent merge commit doesn't mark any real milestone in the history of the project ---
+all it tells us is that we didn't pull before we tried to push.
+Merge commits like this don't add any real value[^opinion],
+and can quickly clutter the history of a project.
+
+If only there were a way to avoid them,
+e.g. by starting with the tip of the remote branch
+and reapplying our local commits from this new starting point.
+You could also describe this as moving the local commits onto a new *base* commit
+i.e. **rebasing**.
+
+
 ### What is it?
 Rebasing is the process of moving a whole branch to a new base commit. 
 Git takes your changes, and "replays" them onto the new base commit.
@@ -73,78 +111,85 @@ Some reasons to consider rebasing:
 
 ### A worked example using `git rebase <base>` 
 
-We'll create a feature branch, and rebase it onto master before merging.
+We'll repeat the scenario from the last episode where the local and remote branches diverge,
+but instead of merging the remote branch `origin/master` into `master`,
+we'll rebase `master` onto `origin/master`.
 
-Let's start first with checking out our `master` branch:
-
-```
-$ git checkout master
-```
-{: .bash}
-	
-Now create and checkout a new branch.
+We'll write some acknowledgements, then commit and push.
 
 ```
-$ git checkout -b results
-```
-{: .bash}
-	
-Add a results section to the paper with a couple of lines to outline the findings.
-Commit the changes you made.
-
-```
-$ gedit journal.md				# Add results section
+$ gedit journal.md				# Write acknowledgements
 $ git add journal.md
-$ git commit					# "Write results section"
+$ git commit -m "Write acknowledgements section"
+$ git push origin master			# Push master branch to remote
 ```
 {: .bash}
 
-Checkout the `master` branch and write some conclusions. Commit them.
+
+We'll now switch machine to our laptop, and write the abstract:
 
 ```
-$ git checkout master				# Checkout master branch
-$ gedit journal.md				# Add conclusions section
+$ cd ../laptop_papers				# Pretend we're on the laptop
+$ gedit journal.md				# Add abstract section
 $ git add journal.md
-$ git commit					# "Write conclusions section"
+$ git commit					# "Write abstract"
 ```
 {: .bash}
+
 At this point we can view a graph of project history,
-and see where the `results` branch splits off from the `master` branch:
+and see where the `master` branch diverges from `origin/master`:
+
 ```
+$ git fetch					# Retrieve information about remote branches
 $ git log --graph --all --oneline --decorate	# View project history before rebasing
 ```
 {: .bash}
+
 ```
-* c9aa3ad (HEAD -> master)  Write conclusion
-| * e26fa5e (results) Write results section
-|/
-* 9a7fd0b Add methodology section and include reference
-*   39cc80d Merge branch 'paperwjohn'
+* 21cfe5f (HEAD -> master) Write abstract
+| * 13aa7e3 (origin/master, origin/HEAD) Add acknowledgements
+|/  
+*   365748e Merge branch 'master' of github.com:gcapes/papers
+|\  
+| * ff18da4 Add author affiliations
+* | 8f44540 Change first author
+|/  
+* 8494909 Add figures
 
 ```
 {: .output}
 
-Now check out our `results` branch again and rebase:
+As before, if we try to push our local branch, it will fail ---
+git will suggest that we `pull` in order to merge the remote commit into our local branch,
+before pushing again.
+We did that in the last episode, which resulted in a 'forgot-to-pull' merge commit.
+This time we will replay our local branch onto to the remote branch.
 
 ```
-$ git checkout results				# Check out the results branch again
-$ git rebase master				# Rebase onto master
-```
-{: .bash}
-
-Depending what changes we have made, there may be conflicts we have to fix in order to rebase.
-If this is the case, Git will let us know, and give some instructions on how to proceed.
-The process for fixing conflicts is the same as before:
-
-```
-$ gedit journal.md      			# Manually fix conficts in affected file(s)
-$ git add                			# Mark file as resolved
-$ git rebase --continue  			# Continue to rebase
+$ git rebase origin/master			# Rebase current branch onto origin/master
 ```
 {: .bash}
 
-Let's now visualise our project history again, having rebased `results` onto `master`,
+Note that this syntax only works because we just did a `git fetch`.
+Typically, you would use `git pull --rebase` instead, which combines the fetch and rebase steps.
+
+> ## Merge conflicts during a rebase
+> Depending what changes we have made, there may be conflicts we have to fix in order to rebase.
+> If this is the case, Git will let us know, and give some instructions on how to proceed.
+> The process for fixing conflicts is the same as before:
+> 
+> ```
+> $ gedit file					# Manually fix conficts in affected file(s)
+> $ git add file					# Mark file(s) as resolved
+> $ git rebase --continue				# Continue to rebase
+> ```
+> {: .bash}
+{: .callout}
+
+Let's now visualise our project history again, having rebased `master` onto `origin/master`,
 and observe that we now have a linear project history.
+Rebasing has created a new commit (with a new commit ID) and put it on top of 
+the commit pointed at by `origin/master` --- thus avoiding that forgot-to-pull merge commit!
 
 ```
 $ git log --graph --all --oneline --decorate	# View project history after rebasing
@@ -152,32 +197,24 @@ $ git log --graph --all --oneline --decorate	# View project history after rebasi
 {: .bash}
 
 ```
-* 7e52408 (HEAD -> results) Write results section
-* c9aa3ad (master) Write conclusion
-* 9a7fd0b Add methodology section and include reference
-*   39cc80d Merge branch 'paperwjohn'
+* 6105e61 (HEAD -> master) Write abstract
+* 13aa7e3 (origin/master, origin/HEAD) Add acknowledgements
+*   365748e Merge branch 'master' of github.com:gcapes/papers
+|\  
+| * ff18da4 Add author affiliations
+* | 8f44540 Change first author
+|/  
+* 8494909 Add figures
 ```
 {:  .output}
 
-See how rebasing created a new commit and put it on
-top of the commit pointed at by `master`.
-If we switch back to the `master` branch, we can now merge the rebased `results` branch into
-master and a linear history results.
+Having integrated the remote changes into our local branch, we can now push our local branch
+back to 'origin'.
 
 ```
-$ git checkout master   			# Switch branch to master
-$ git merge results     			# Merge results branch into master
-$ git log --graph --oneline --decorate		# View project history after merging rebased branch
+$ git push origin master
 ```
 {: .bash}
-
-```
-* 7e52408 (HEAD -> master, results) Write results section
-* c9aa3ad Write conclusion
-* 9a7fd0b Add methodology section and include reference
-*   39cc80d Merge branch 'paperwjohn'
-```
-{: .output}
 
 This [online tutorial](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)
 gives a good illustration of what happens during rebasing.
@@ -194,3 +231,5 @@ gives a good illustration of what happens during rebasing.
 > conflicts in the long run. But again, it is considered a better practice to use
 > merge and deal with conflicts rather than mess up shared branches using rebase.
 {: .callout}
+
+[^opinion]: This statement contains elements of opinion.

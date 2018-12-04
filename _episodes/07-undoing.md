@@ -25,7 +25,7 @@ commited in Git.
 
 Maybe we made our change just to see how something looks, or to
 quickly try something out. But we may be unhappy with our changes. If we
-haven't get done a `git add` we can just throw the changes away and return
+haven't yet done a `git add` we can just throw the changes away and return
 our file to the most recent version we committed to the repository by using:
 
 ```

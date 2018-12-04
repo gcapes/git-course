@@ -196,7 +196,7 @@ In order to see the other branches locally, we can check them out as before:
 
 ```
 $ git branch -r					# Show remote branches
-$ git checkout results				# Check out the results branch
+$ git checkout paperWJohn			# Check out the paperWJohn branch
 ```
 {: .bash}
 
@@ -207,8 +207,8 @@ make some changes to our files and commit these.
 
 ```
 $ git checkout master				# We'll continue working on the master branch
-$ gedit journal.md				# Add section which will contain the figures 
-$ git add journal.md				# Add figures section
+$ gedit journal.md				# Add results section
+$ git add journal.md				# Stage changes
 $ git commit
 ```
 {: .bash}
