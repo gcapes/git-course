@@ -50,7 +50,7 @@ who we are (note that you need to enclose your name in quote marks):
 $ git config --global user.name "Your Name" 			# Put your quote marks around your name
 $ git config --global user.email yourname@yourplace.org
 ~~~
-{: .bash}
+{: .language-bash}
 
 ## Set a default editor
 
@@ -67,7 +67,7 @@ $ git config --global core.editor gedit				# Linux users only.
 								# Windows users should use notepad: see below.
 								# Mac users should use TextEdit: see below.
 ~~~
-{: .bash}
+{: .language-bash}
 
 To set up alternative editors, follow the same notation e.g.
 `git config --global core.editor notepad`, `git config --global core.editor vi`,
@@ -85,7 +85,7 @@ which will add the colour (**note the spelling of *color***):
 ```
 $ git config --global --add color.ui true			# Note US spelling of color
 ```
-{: .bash}
+{: .language-bash}
 
 ## Git's global configuration
 
@@ -98,7 +98,7 @@ $ cat ~/.gitconfig
     [user] name = Your Name email = yourname@yourplace.org
     [core] editor = gedit
 ~~~
-{: .bash}
+{: .language-bash}
 
 **These global configuration settings will apply to any new Git repository
 you create on your computer.**
@@ -120,7 +120,7 @@ $ pwd								# Print working directory (output should be /home/<username>)
 $ mkdir papers 
 $ cd papers
 ```	
-{: .bash}
+{: .language-bash}
 
 Now, we need to set up this directory up to be a Git repository (or "initiate
 the repository"):
@@ -128,7 +128,7 @@ the repository"):
 ~~~
 $ git init 
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 Initialized empty Git repository in /home/user/papers/.git/
 ~~~
@@ -141,7 +141,7 @@ The directory "papers" is now our working directory.
 ~~~
 $ ls .git
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 branches  config  description  HEAD  hooks  info  objects refs
 ~~~
@@ -158,7 +158,7 @@ we will start by adding the author names and a title, then save the file.
 $ gedit journal.md						# Windows users: use notepad instead of gedit (throughout this course)
 # Add author names and paper title
 ~~~
-{: .bash}
+{: .language-bash}
 
 > ## Accessing files from the command line
 > In this lesson we create and modify text files using a command line interface
@@ -173,7 +173,7 @@ of files in the repository. So we can run,
 ~~~
 $ git status
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 On branch master
 
@@ -205,7 +205,7 @@ To tell Git about the file, we will use the `git add` command:
 $ git add journal.md 
 $ git status 
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 On branch master
 
@@ -240,7 +240,7 @@ $ git commit
 # Type a commit message: "Add title and authors"
 # Save the commit message and close your text editor (gedit, notepad etc.)
 ~~~
-{: .bash}
+{: .language-bash}
 
 Our default editor will now pop up. Why? Well, Git can automatically figure out
 that directories and files are committed, and by whom (thanks to the information
@@ -265,7 +265,7 @@ Now, if we look at its status,
 ~~~
 $ git status
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 On branch master
 nothing to commit, working directory clean
@@ -283,13 +283,13 @@ section.
 $ gedit journal.md
 # Write introduction section
 ```
-{: .bash}
+{: .language-bash}
 If we now run,
 
 ~~~
 $ git status
 ~~~
-{: .bash}
+{: .language-bash}
 
 we see changes not staged for commit section and our file is marked as
 modified: 
@@ -314,7 +314,7 @@ commit the changes:
 $ git add journal.md 
 $ git commit							# "Write introduction"
 ~~~
-{: .bash}
+{: .language-bash}
 Note that in this case we used `git add` to put journal.md to the staging
 area. Git already knows this file should be tracked but doesn't know if we want
 to commit the changes we made to the file  in the repository and hence we have
@@ -330,14 +330,14 @@ want to reuse:
 $ mkdir common 
 $ gedit common/references.txt					# Add a reference
 ~~~
-{: .bash}
+{: .language-bash}
 
 We will also add a citation in our introduction section (in journal.md).
 
 ~~~
 $ gedit journal.md 						# Use reference in introduction
 ~~~
-{: .bash}
+{: .language-bash}
 
 Now we need to record our work in the repository so we need to make a commit.
 First we tell Git to track the references.
@@ -347,7 +347,7 @@ We can actually tell Git to track everything in the given subdirectory:
 $ git add common						# Track everything currently in the 'common' directory
 $ git status							# Verify that common/references.txt is now tracked
 ~~~
-{: .bash}
+{: .language-bash}
 
 All files that are in *common* are now tracked.  We would also have to add
 journal.md in the staging area. But there is a shortcut. We can use
@@ -357,7 +357,7 @@ that have been modified".
 ~~~
 $ git commit -am "Reference J Bloggs and add references file" 	# Add and commit all tracked files
 ~~~
-{: .bash}
+{: .language-bash}
 and Git will add, then commit, both the directory and the file.
 
 In order to add all tracked files to the staging area, use `git commit -a`

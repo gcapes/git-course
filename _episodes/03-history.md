@@ -28,7 +28,7 @@ We can review the changes that we made using:
 $ gedit journal.md		# Add second reference to introduction
 $ git diff journal.md		# View changes to file
 ~~~
-{: .bash}
+{: .language-bash}
 
 This shows the difference between the latest copy in the repository and the
 unstaged changes we have made.
@@ -63,7 +63,7 @@ Now commit the change we made by adding the second reference:
 $ git add journal.md
 $ git commit			# "Reference second paper in introduction"
 ```
-{: .bash}
+{: .language-bash}
 
 ### Looking at our history
 
@@ -73,7 +73,7 @@ changes will be displayed at the top):
 ~~~
 $ git log
 ~~~
-{: .bash}
+{: .language-bash}
 
 ```
 commit 4dd7f5c948fdc11814041927e2c419283f5fe84c
@@ -107,14 +107,14 @@ earlier commit:
 ~~~
 $ git diff COMMITID		# View differences between current version and COMMITID
 ~~~
-{: .bash}
+{: .language-bash}
 
 And, to see changes between two commits:
 
 ~~~
 $ git diff OLDER_COMMITID NEWER_COMMITID
 ~~~
-{: .bash}
+{: .language-bash}
 
 Using our commit identifiers we can set our working directory to contain the
 state of the repository as it was at any commit. So, let's go back to the very
@@ -124,7 +124,7 @@ first commit we made,
 $ git log 
 $ git checkout INITIAL_COMMITID
 ~~~
-{: .bash}
+{: .language-bash}
 
 We will get something like this:
 
@@ -153,7 +153,7 @@ look at our directory,
 ~~~
 $ ls
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 journal.md
 ~~~
@@ -166,14 +166,14 @@ to the latest commit by doing:
 ~~~
 $ git checkout master
 ~~~
-{: .bash}
+{: .language-bash}
 
 And `common` will be there once more,
 
 ~~~
 $ ls
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 common journal.md
 ~~~
@@ -216,7 +216,7 @@ and decorate those commits corresponding to Git references (e.g. `HEAD`, `master
 ~~~
 $ git log --graph --decorate --oneline
 ~~~
-{: .bash}
+{: .language-bash}
 
 ```
 * 6a48241 (HEAD, master) Reference second paper in introduction
@@ -235,7 +235,7 @@ rather than just up to the current commit.
 $ git checkout HEAD~				# This syntax refers to the commit before HEAD
 $ git log --graph --decorate --oneline --all
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 * 6a48241 (master) Reference second paper in introduction
@@ -251,7 +251,7 @@ Let's return to the current version of the project by checking out `master` agai
 ```
 $ git checkout master
 ```
-{: .bash}
+{: .language-bash}
 
 ### Using tags as nicknames for commit identifiers
 
@@ -263,14 +263,14 @@ For example,
 ```    
 $ git tag PAPER_STUB
 ```
-{: .bash}
+{: .language-bash}
 
 We can list tags by doing:
 
 ```    
 $ git tag
 ```
-{: .bash}
+{: .language-bash}
 
 Now add the second paper to references.txt and commit the change:
 
@@ -279,7 +279,7 @@ $ gedit common/references.txt	# Add second paper
 $ git add common/references.txt 
 $ git commit -m "Add Jones et al paper" common/references.txt
 ```
-{: .bash}
+{: .language-bash}
 
 We can checkout our previous version using our tag instead of a commit
 identifier.
@@ -287,14 +287,14 @@ identifier.
 ```    
 $ git checkout PAPER_STUB
 ```
-{: .bash}
+{: .language-bash}
 
 And return to the latest checkout,
 
 ```    
 $ git checkout master
 ```
-{: .bash}
+{: .language-bash}
 
 > ## Top tip: tag significant events 
 > When do you tag? Well, whenever you might want to get back to the exact
@@ -333,7 +333,7 @@ $ git checkout master
 > _____ me.txt         # Edit your file
 > git ____ me.txt      # Display differences between your modified file and the last committed version
 > ```
-> {: .bash}
+> {: .language-bash}
 >
 > > ## Solution
 > >
@@ -349,7 +349,7 @@ $ git checkout master
 > > gedit me.txt         # Edit your file
 > > git diff me.txt      # Display differences between your modified file and the last committed version
 > > ```
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
 

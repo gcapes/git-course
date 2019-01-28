@@ -82,7 +82,7 @@ option we will use:
 $ git remote add origin https://github.com/<USERNAME>/papers.git 
 $ git push -u origin master
 ```
-{: .bash}
+{: .language-bash}
 
 The first line sets up an alias `origin`, to correspond to the URL of our
 new repository on GitHub.
@@ -95,7 +95,7 @@ Now copy and paste the second line,
 ```
 $ git push -u origin master 
 ```
-{: .bash}
+{: .language-bash}
 ```
 Counting objects: 32, done.
 Delta compression using up to 8 threads.
@@ -125,7 +125,7 @@ Let's push each of our local branches into our remote repository:
 ```
 $ git push origin branch_name
 ```
-{: .bash}
+{: .language-bash}
     
 The branch should now be created in our GitHub repository.    
 
@@ -134,7 +134,7 @@ To list all branches (local and remote):
 ```
 $ git branch -a
 ```
-{: .bash}
+{: .language-bash}
     
 > ## Deleting branches (for information only) 
 > **Don't do this now.** This is just for information.
@@ -144,7 +144,7 @@ $ git branch -a
 > $ git branch -d <branch_name>			# For local branches
 > $ git push origin --delete <branch_name>	# For remote branches
 > ```
-> {: .bash}
+> {: .language-bash}
 {: .callout}
 
 ### Cloning a remote repository
@@ -156,7 +156,7 @@ pushed all your local branches into the remote repository**)
 $ cd .. 
 $ rm -rf papers
 ```
-{: .bash}
+{: .language-bash}
 
 Gulp! We've just wiped our local repository! But, as we've a copy on GitHub we
 can just copy, or `git clone` that,
@@ -164,7 +164,7 @@ can just copy, or `git clone` that,
 ```
 $ git clone https://github.com/<USERNAME>/papers.git 
 ```
-{: .bash}
+{: .language-bash}
 ```
 Cloning into 'papers'...
 remote: Counting objects: 32, done.
@@ -184,13 +184,13 @@ Now, if we change into *papers* we can see that we have our repository,
 $ cd papers 
 $ git log
 ```
-{: .bash}
+{: .language-bash}
 and we can see our Git configuration files too:
 
 ```    
 $ ls -A
 ```
-{: .bash}
+{: .language-bash}
 
 In order to see the other branches locally, we can check them out as before:
 
@@ -198,7 +198,7 @@ In order to see the other branches locally, we can check them out as before:
 $ git branch -r					# Show remote branches
 $ git checkout paperWJohn			# Check out the paperWJohn branch
 ```
-{: .bash}
+{: .language-bash}
 
 ### Push changes to a remote repository
 
@@ -211,7 +211,7 @@ $ gedit journal.md				# Add results section
 $ git add journal.md				# Stage changes
 $ git commit
 ```
-{: .bash}
+{: .language-bash}
 
 Having done that, how do we send our changes back to the remote repository? We
 can do this by *pushing* our changes,
@@ -219,7 +219,7 @@ can do this by *pushing* our changes,
 ```
 $ git push origin master
 ```
-{: .bash}
+{: .language-bash}
 
 If we now check our GitHub page we should be able to see our new changes under
 the *Commit* tab.
@@ -229,5 +229,5 @@ To see all remote repositories (we can have multiple!) type:
 ```
 $ git remote -v
 ```
-{: .bash}
-{: .bash}
+{: .language-bash}
+{: .language-bash}

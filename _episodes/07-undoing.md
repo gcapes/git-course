@@ -32,7 +32,7 @@ our file to the most recent version we committed to the repository by using:
 $ gedit journal.md		# Make some small edits to the file
 $ git checkout journal.md	# Discard edits we just made
 ```
-{: .bash}
+{: .language-bash}
 
 and we can see that our file has reverted to being the most up-to-date one in
 the repository:
@@ -41,7 +41,7 @@ the repository:
 $ git status			# See that we have a clean working directory
 $ gedit journal.md		# Inspect file to verify changes have been discarded
 ```
-{: .bash}
+{: .language-bash}
 
 ---
 
@@ -69,7 +69,7 @@ $ gedit common/references.txt	# Add new reference to references file
 $ git status			# Get a status update on file modifications
 ```
 {: .output}
-{: .bash}
+{: .language-bash}
 	
 ```
 $ On branch master 
@@ -90,14 +90,14 @@ Let's then add and commit *journal.md* but not the references file.
 $ git add journal.md		 # Add journal to staging area
 $ git commit -m "Add methodology section"
 ```
-{: .bash}
+{: .language-bash}
 	
 Let's have a look at our working directory now:
 
 ```
 $ git status
 ```
-{: .bash}
+{: .language-bash}
 ```
 $ On branch master 
 Changes not staged for commit: 
@@ -118,7 +118,7 @@ Now, we want to fix our commit and add the references file.
 $ git add common/references.txt	# Add reference file
 $ git commit --amend		# Amend most recent commit
 ```
-{: .bash}
+{: .language-bash}
 
 This will again bring up the editor and we can amend the commit message if required.
 
@@ -129,7 +129,7 @@ Directory is clean and that both files were added.
 $ git status
 $ git log -3
 ```
-{: .bash}
+{: .language-bash}
 
 ---
 
@@ -147,7 +147,7 @@ $ gedit journal.md		# Describe other instruments
 $ git add journal.md
 $ git commit -m "Describe Aerosol Mass Spectrometer"
 ```
-{: .bash}
+{: .language-bash}
 
 We now realise that what we've just done in our journal file is incorrect
 because we are not using the data from that instrument.
@@ -158,7 +158,7 @@ So it makes sense to abandon the commit completely.
 ```	
 $ git revert HEAD		# Undo changes introduced by most recent commit
 ```
-{: .bash}
+{: .language-bash}
 
 When we revert, a new commit is created. The *HEAD* pointer and the branch
 pointer are in fact moved forward rather than backwards. 	
@@ -205,7 +205,7 @@ We can do that by running:
 ```
 $ git reset --hard HEAD^^	# Move tip of branch to two commits before HEAD
 ```
-{: .bash}
+{: .language-bash}
 ```
 HEAD is now at fbdc44b Add methodology section and update references file
 ```
