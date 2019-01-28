@@ -22,7 +22,7 @@ You might have noticed the term *branch* in status messages:
 ~~~
 $ git status 
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 On branch master 
 nothing to commit (working directory clean)
@@ -84,7 +84,7 @@ rather than in the master.
 ~~~
 $ git checkout -b paperWJohn
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 Switched to a new branch 'paperWJohn'
 ~~~
@@ -97,7 +97,7 @@ on the right branch.
 ~~~
 $ git branch			# Double check which branch we are working on
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
   master
 * paperWJohn 
@@ -111,14 +111,14 @@ $ gedit journal.md		# Change title and add co-author
 $ git add journal.md
 $ git commit			# "Modify title and add John as co-author"
 ~~~
-{: .bash}
+{: .language-bash}
 
 If we now want to work in our `master` branch. We can switch back by using:
 
 ~~~
 $ git checkout master 
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 Switched to branch 'master'
 ~~~
@@ -132,7 +132,7 @@ $ gedit journal			# Rewrite the title
 $ git add journal.md
 $ git commit			# "Rewrite title emphasising measurements"
 ~~~
-{: .bash}
+{: .language-bash}
 
 ### Merging and resolving conflicts
 
@@ -146,7 +146,7 @@ $ gedit journal.md		# Add 'simulations' section
 $ git add journal.md 
 $ git commit -m "Add simulations" journal.md
 ~~~
-{: .bash}
+{: .language-bash}
 
 At this point let's just quickly visualise the state of our repo,
 and we can see the forked commit history reflecting the recent work
@@ -155,7 +155,7 @@ on our two branches:
 ```
 git log --graph --all --oneline --decorate
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 * 89d5c6e (paperwjohn) Add simulations section
@@ -180,7 +180,7 @@ doing that:
 $ git checkout master		# Switch branch
 $ git merge paperWJohn		# Merge paperWJohn into master
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 Auto-merging journal.md
 CONFLICT (content): Merge conflict in journal.md
@@ -196,7 +196,7 @@ some more detail
 ~~~
 $ git status
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 On branch master
 You have unmerged paths.
@@ -240,7 +240,7 @@ $ gedit journal.md		# Resolve conflict by editing journal.md
 $ git add journal.md		# Let Git know we have resolved the conflict
 $ git commit -m "Rewrite title to incorporate simulations"
 ~~~
-{: .bash}
+{: .language-bash}
 
 This is where version control proves itself better than DropBox or GoogleDrive,
 this ability to merge text files line-by-line and highlight the conflicts
@@ -251,7 +251,7 @@ We can see the two branches merged if we take another look at the log graph:
 ```
 $ git log --graph --decorate --all --oneline
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 *   39cc80d (HEAD, master) Merge branch 'paperwjohn'
@@ -290,7 +290,7 @@ But we were then in the "detached HEAD" state.
 > > git branch           # You should see a message like the one below,
 > >                      # indicating your commit does not belong to a branch
 > > ```
-> > {: .bash}
+> > {: .language-bash}
 > > ```
 > > * (detached from 57289fb)
 > >   master
@@ -314,7 +314,7 @@ But we were then in the "detached HEAD" state.
 > > ```
 > > git checkout master
 > > ```
-> > {: .bash}
+> > {: .language-bash}
 > > Git will warn you that you are leaving behind changes that would be lost:
 > >
 > > The output you see will be slightly different to that below,
@@ -365,7 +365,7 @@ But we were then in the "detached HEAD" state.
 > > git commit -a			# Commit all the modified files
 > > git branch			# List local branches
 > > ```
-> > {: .bash}
+> > {: .language-bash}
 > >
 > > ```
 > > * (HEAD detached from f908519)
@@ -378,7 +378,7 @@ But we were then in the "detached HEAD" state.
 > > git branch dh-exercise		# Create a new branch
 > > git checkout dh-exercise	# Switch to the new branch 
 > > ```
-> > {: .bash}
+> > {: .language-bash}
 > > ```
 > > Switched to a new branch 'dh-exericise'
 > > ```
@@ -386,7 +386,7 @@ But we were then in the "detached HEAD" state.
 > > ```
 > > git branch			# View local branches
 > > ```
-> > {: .bash}
+> > {: .language-bash}
 > > ```
 > > * dh-exericise
 > >  master
@@ -398,7 +398,7 @@ But we were then in the "detached HEAD" state.
 > > ```
 > > git checkout master		# Switch back to the 'master' branch
 > > ```
-> > {: .bash}
+> > {: .language-bash}
 > > See this [new branch animation] for the key points in this exercise.
 > {: .solution}
 {: .challenge}

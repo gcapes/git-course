@@ -31,7 +31,7 @@ First, let us leave our current local repository,
 $ cd ..  
 $ ls
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 $ papers
@@ -45,7 +45,7 @@ directory name,
 $ git clone https://github.com/<USERNAME>/papers.git laptop_papers 
 Cloning into 'laptop_papers'...
 ```
-{: .bash}
+{: .language-bash}
 
 
 So we now have two clones of our repository,
@@ -53,7 +53,7 @@ So we now have two clones of our repository,
 ```
 $ ls
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 $ papers laptop_papers
@@ -72,7 +72,7 @@ $ git add journal.md
 $ git commit -m "Add figures"
 $ git push
 ```
-{: .bash}
+{: .language-bash}
 
 Now let's change directory to our other repository and `fetch` the commits from our
 remote repository,
@@ -81,7 +81,7 @@ remote repository,
 $ cd ../laptop_papers		# Switch to the other directory
 $ git fetch
 ```
-{: .bash}
+{: .language-bash}
 
 We can visualise the remote branches in the same way as we did for local branches,
 so let's draw a network graph before going any further:
@@ -89,7 +89,7 @@ so let's draw a network graph before going any further:
 ```
 git log --graph --all --decorate --oneline
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 * 7c239c3 (origin/master, origin/HEAD) Add figures
@@ -118,7 +118,7 @@ We can now see what the differences are by doing,
 ```    
 $ git diff origin/master
 ```
-{: .bash}
+{: .language-bash}
 
 which compares our `master` branch with the `origin/master` branch
 which is the name of the `master` branch in `origin` which is the alias for our
@@ -131,7 +131,7 @@ instead we get a *fast-forward* merge.
 ```    
 $ git merge origin/master
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 Updating 0cc2a2d..7c239c3
@@ -147,7 +147,7 @@ is that `master` now points to the same commit as `origin/master`.
 ```
 git log --graph --all --decorate --oneline -4
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 * 7c239c3 (HEAD -> master, origin/master, origin/HEAD) Add figures
@@ -162,7 +162,7 @@ We can inspect the file to confirm that we have our changes.
 ```    
 $ cat journal.md 
 ```
-{: .bash}
+{: .language-bash}
 
 As a short-hand, we can do a `git pull` which does a `git fetch` then a `git merge`. 
 Next we will update our repo using `pull`, but this time starting in the *laptop_papers* folder (you
@@ -176,7 +176,7 @@ $ git push origin master
 $ cd ../papers			# Switch back to the papers directory
 $ git pull origin master	# Get changes from remote repository
 ```
-{: .bash}
+{: .language-bash}
 
 This is the same scenario as before, so we get another fast-forward merge.
 
@@ -186,7 +186,7 @@ We can check that we have our changes:
 $ cat journal.md 
 $ git log
 ```
-{: .bash}
+{: .language-bash}
 
 > ## `Fetch` vs `pull`
 > If `git pull` is a shortcut for `git fetch` followed by `git merge` then, why would
@@ -214,7 +214,7 @@ $ git add journal.md
 $ git commit -m "Add author affiliations"
 $ git push origin master
 ```
-{: .bash}
+{: .language-bash}
 
 Now let us suppose, at a later date, we use our other repository (on the laptop)
 and we want to change the order of the authors.
@@ -229,7 +229,7 @@ $ git add journal.md
 $ git commit -m "Change the first author" journal.md 
 $ git push origin master
 ```
-{: .bash}
+{: .language-bash}
 ```
 To https://github.com/<USERNAME>/papers.git
  ! [rejected]        master -> master (fetch first)
@@ -248,7 +248,7 @@ repository. Before pushing we should always pull, so let's do that...
 ```    
 $ git pull origin master
 ```
-{: .bash}
+{: .language-bash}
 
 and we get:
 
@@ -269,7 +269,7 @@ If we look at the status,
 ```
 $ git status
 ```
-{: .bash}
+{: .language-bash}
 
 we can see that our file is listed as *Unmerged* and if we look at
 *journal.md*, we see something like:
@@ -297,7 +297,7 @@ $ git add journal.md		# Stage the file
 $ git commit			# Commit to mark the conflict as resolved
 $ git push origin master
 ```
-{: .bash}
+{: .language-bash}
 
 ... all goes well. If we now go to GitHub and click on the "Overview" tab we can
 see where our repository diverged and came together again.
@@ -313,7 +313,7 @@ so both copies are up to date:
 $ cd ../papers			# Switch to 'papers' directory
 $ git pull origin master	# Merge remote branch into local
 ```
-{: .bash}
+{: .language-bash}
 
 > ## Collaborating on a remote repository
 > 
@@ -344,14 +344,14 @@ $ git pull origin master	# Merge remote branch into local
 > $ git checkout -b my_branch		# Create and check out a new branch.
 >				 	# Substitute your local branch name for 'my_branch'.
 > ```
-> {: .bash}
+> {: .language-bash}
 >
 > Now create/edit a file, and then commit your changes.
 >
 > ```
 > $ git push origin my_branch		# Push your new branch to remote repo.
 > ```
-> {: .bash}
+> {: .language-bash}
 > 
 > The other person should check out local copies of the branches created by others
 > (so eventually everybody should have the same number of branches as the remote
@@ -362,7 +362,7 @@ $ git pull origin master	# Merge remote branch into local
 > ```
 > $ git fetch origin 
 > ```
-> {: .bash}
+> {: .language-bash}
 > ```
 > Counting objects: 3, done.  remote:
 > Compressing objects: 100% (3/3), done.
@@ -381,7 +381,7 @@ $ git pull origin master	# Merge remote branch into local
 > ```
 > $ git checkout their_branch
 > ```
-> {: .bash}
+> {: .language-bash}
 > ```
 > Branch their_branch set up to track remote branch their_branch from origin.
 > Switched to a new branch 'their_branch'

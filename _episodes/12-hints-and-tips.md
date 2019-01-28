@@ -40,7 +40,7 @@ Type,
 ```
 $ git --help
 ```
-{: .bash}
+{: .language-bash}
 
 and Git gives a list of commands it is able to help with, as well as their
 descriptions. 
@@ -51,7 +51,7 @@ You can get more help on a specific command, by providing the command name e.g.
 $ git init --help 
 $ git commit --help
 ```
-{: .bash}
+{: .language-bash}
 
 #### Google
 Search for your problem online. Someone has probably already asked (and answered) your question on stackoverflow.com.
@@ -78,7 +78,7 @@ Create or edit `gitignore`,
 ```
 $ gedit .gitignore
 ```
-{: .bash}
+{: .language-bash}
 
 Then add patterns for the files you want to ignore, where `*` is a wildcard,
 
@@ -90,7 +90,7 @@ Then, add `.gitignore` to your repository,
 $ git add .gitignore $ git commit -m "Added rules to ignore vim scratch
 files and binary files"
 ```
-{: .bash}
+{: .language-bash}
 
 ---
 
@@ -119,7 +119,7 @@ The syntax is:
 ```
 $ git config --global color.diff auto
 ```
-{: .bash}
+{: .language-bash}
 
 ---
 
@@ -135,13 +135,13 @@ git to use your chosen diff tool:
 $ git config --global diff.tool diffmerge    # Set diffmerge as your visual diff tool
 $ git config --global difftool.prompt false  # Suppress confirmation before launching GUI
 ```
-{: .bash}
+{: .language-bash}
 Then to use the GUI, use the following command instead of `git diff`:
 
 ```
 $ git difftool
 ```
-{: .bash}
+{: .language-bash}
 
 ---
 
@@ -180,7 +180,7 @@ first steps of this tutorial), it should look like this.
 ```
 $ cat ~/.gitconfig 
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 [user] name = Your Name email = yourname@yourplace.org 
@@ -194,7 +194,7 @@ commit -m` we can have a shorter version of this command:
 ```
 $ git config --global alias.cms 'commit -m'
 ```
-{: .bash}
+{: .language-bash}
 
 And now our configuration file will have a new section added:
 	
@@ -207,7 +207,7 @@ Next time we can simply type:
 ```
 $ git cms "Commit message"
 ```
-{: .bash}
+{: .language-bash}
 	
 ---	
 

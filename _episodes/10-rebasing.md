@@ -23,7 +23,7 @@ and `origin/master` is merged back into `master`.
 ```
 $ git log --graph --all --oneline --decorate -6
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 *   365748e (HEAD -> master, origin/master, origin/HEAD) Merge branch 'master' of github.com:gcapes/papers
@@ -123,7 +123,7 @@ $ git add journal.md
 $ git commit -m "Write acknowledgements section"
 $ git push origin master			# Push master branch to remote
 ```
-{: .bash}
+{: .language-bash}
 
 
 We'll now switch machine to our laptop, and write the abstract:
@@ -134,7 +134,7 @@ $ gedit journal.md				# Add abstract section
 $ git add journal.md
 $ git commit					# "Write abstract"
 ```
-{: .bash}
+{: .language-bash}
 
 At this point we can view a graph of project history,
 and see where the `master` branch diverges from `origin/master`:
@@ -143,7 +143,7 @@ and see where the `master` branch diverges from `origin/master`:
 $ git fetch					# Retrieve information about remote branches
 $ git log --graph --all --oneline --decorate	# View project history before rebasing
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 * 21cfe5f (HEAD -> master) Write abstract
@@ -168,7 +168,7 @@ This time we will replay our local branch onto to the remote branch.
 ```
 $ git rebase origin/master			# Rebase current branch onto origin/master
 ```
-{: .bash}
+{: .language-bash}
 
 Note that this syntax only works because we just did a `git fetch`.
 Typically, you would use `git pull --rebase` instead, which combines the fetch and rebase steps.
@@ -183,7 +183,7 @@ Typically, you would use `git pull --rebase` instead, which combines the fetch a
 > $ git add file					# Mark file(s) as resolved
 > $ git rebase --continue				# Continue to rebase
 > ```
-> {: .bash}
+> {: .language-bash}
 {: .callout}
 
 Let's now visualise our project history again, having rebased `master` onto `origin/master`,
@@ -194,7 +194,7 @@ the commit pointed at by `origin/master` --- thus avoiding that forgot-to-pull m
 ```
 $ git log --graph --all --oneline --decorate	# View project history after rebasing
 ```
-{: .bash}
+{: .language-bash}
 
 ```
 * 6105e61 (HEAD -> master) Write abstract
@@ -214,7 +214,7 @@ back to 'origin'.
 ```
 $ git push origin master
 ```
-{: .bash}
+{: .language-bash}
 
 This [online tutorial](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)
 gives a good illustration of what happens during rebasing.
