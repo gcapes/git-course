@@ -203,7 +203,7 @@ commit we want to keep.
 We can do that by running:
 
 ```
-$ git reset --hard HEAD^^	# Move tip of branch to two commits before HEAD
+$ git reset --hard HEAD~2	# Move tip of branch to two commits before HEAD
 ```
 {: .language-bash}
 ```
@@ -213,8 +213,8 @@ HEAD is now at fbdc44b Add methodology section and update references file
 
 This moves the tip of the branch back to the specified commit. If we look in-depth, 
 this command moves back two pointers: `HEAD` and the pointer to the tip of the
-branch we currently are working on (master). (`HEAD^` = the commit right before HEAD;
-`HEAD^^` = two commits before HEAD)
+branch we currently are working on (master). (`HEAD~` = the commit right before HEAD;
+`HEAD~2` = two commits before HEAD)
 
 The final effect is what we need: we abandoned the commits and we are now back
 to where we were before making the commit about the data we are not using.
