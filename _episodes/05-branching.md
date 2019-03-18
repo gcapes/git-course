@@ -148,8 +148,8 @@ $ git commit -m "Add simulations" journal.md
 ~~~
 {: .language-bash}
 
-At this point let's just quickly visualise the state of our repo,
-and we can see the forked commit history reflecting the recent work
+At this point let's visualise the state of our repo,
+and we can see the diverged commit history reflecting the recent work
 on our two branches:
 
 ```
