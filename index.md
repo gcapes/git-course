@@ -25,5 +25,5 @@ root: .
 ## Resources
 [Workshop slideshow](http://slides.com/gcapes/git)
 
-[Git cheat sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
+[Git cheat sheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
 (You may want to download a copy of this for reference during this workshop)
