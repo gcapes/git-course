@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Gerard Capes">
+  <title>Version control with Git and GitHub</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/mywhite.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Version control with Git and GitHub</h1>
+  <p class="author">Gerard Capes</p>
+</section>
+
+<section id="version-control-with-git-and-github" class="slide level1">
+<h1>Version control with Git and GitHub</h1>
+<ol type="1">
+<li>Please sit near the front</li>
+<li>Open the notes at <a href="http://gcapes.github.io/git-course/" class="uri">http://gcapes.github.io/git-course/</a></li>
+<li>Sign up for a <a href="https://github.com/">GitHub account</a></li>
+<li>Attendance is recorded using a <a href="https://goo.gl/forms/YZJ05PzX9tPFEtuV2">feedback form</a>; there is no sign-in sheet</li>
+<li>You can use Windows or Linux on the training PCs</li>
+</ol>
+</section>
+<section id="research-related-it-services" class="slide level1">
+<h1>Research-related IT services</h1>
+<ul>
+<li>Described on <a href="http://www.itservices.manchester.ac.uk/research/">IT Services website</a></li>
+<li>Announcements given via <a href="https://researchitnews.org/">Research IT News</a></li>
+<li><a href="http://www.staffnet.manchester.ac.uk/staff-learning-and-development/academicandresearch/practical-skills-and-knowledge/it-skills/research-computing/research-courses/">Training courses</a> teaching computing skills for Research</li>
+<li>General guidance and advice about research software</li>
+<li>Access to specialist support and consultancy e.g. code reviews</li>
+<li>Access to HPC systems</li>
+<li><a href="http://www.itservices.manchester.ac.uk/our-services/research/">Full list of services on offer</a></li>
+<li>For help and support, use the <a href="http://www.itservices.manchester.ac.uk/help/">Support Portal</a></li>
+</ul>
+</section>
+<section id="housekeeping" class="slide level1">
+<h1>Housekeeping</h1>
+<ul>
+<li>Fire exit</li>
+<li>Toilets</li>
+<li>Course timing
+<ul>
+<li>09:30 – 12:00 Morning session</li>
+<li>12:00 – 13:00 Lunch</li>
+<li>13:00 – 16:00 Afternoon session</li>
+</ul></li>
+</ul>
+</section>
+<section id="teaching-methods" class="slide level1">
+<h1>Teaching methods</h1>
+<ul>
+<li>Interactive, workshop-style course
+<ul>
+<li>Code along with the examples</li>
+<li>Test your understanding in the exercises</li>
+</ul></li>
+<li>Course notes
+<ul>
+<li>All examples and exercises are in the notes</li>
+<li>Slides will remain online after the course</li>
+</ul></li>
+</ul>
+</section>
+<section id="getting-help" class="slide level1">
+<h1>Getting help</h1>
+<ul>
+<li>Sticky notes
+<ul>
+<li>Used for getting help and giving real-time feedback</li>
+<li>Green: :), OK, ready to continue</li>
+<li>Red: :( (too fast, don’t understand, computer says no etc)</li>
+</ul></li>
+<li>Please interrupt me to ask questions</li>
+<li>Peer learning
+<ul>
+<li>During exercises, please help each other as required</li>
+<li>Please try to be quiet during worked examples so everyone can hear</li>
+</ul></li>
+</ul>
+</section>
+<section id="what-is-a-version-control-system" class="slide level1">
+<h1>What is a version control system?</h1>
+<ul>
+<li>Version control is a piece of software which allows you to record and preserve the history of changes made to directories and files.</li>
+<li>If you mess things up, you can retrieve an earlier version of your project.</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p><img src="../fig/phd101212s.png" width="50%"></p>
+</section>
+<section id="storing-versions-without-vcs" class="slide level1">
+<h1>Storing versions without VCS</h1>
+<ul>
+<li>Save a copy elsewhere?</li>
+<li>Save with a different name?</li>
+<li>How do you name different versions?</li>
+<li>What’s different between them?</li>
+<li>Many of copies of nearly-identical but critically different files.</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<p><img data-src="../fig/astorytoldinfilenames.gif" /></p>
+</section>
+<section id="why-use-version-control" class="slide level1">
+<h1>Why use version control</h1>
+<h2 id="to-store-versions-properly">To store versions properly</h2>
+<ul>
+<li>VCS treats files as one project - one current version on disk, previous versions and variations are saved in a repository</li>
+<li>VCS starts with a base version of the project, and only saves the subsequent changes you make</li>
+<li>In order to save a new revision, a commit message is required, which explains why the changes were made.</li>
+</ul>
+</section>
+<section class="slide level1">
+
+<h2 id="changes-are-saved-sequentially">Changes are saved sequentially</h2>
+<p><img data-src="../fig/play-changes.svg" /></p>
+</section>
+<section class="slide level1">
+
+<h2 id="different-versions-can-be-saved">Different versions can be saved</h2>
+<p style="text-align:center;">
+<img src="../fig/versions.svg" alt="Drawing" style="width: 500px;"/>
+</p>
+</section>
+<section class="slide level1">
+
+<h2 id="multiple-versions-can-be-merged">Multiple versions can be merged</h2>
+<p style="text-align:center;">
+<img src="../fig/merge.svg" alt="Drawing" style="width: 500px;"/>
+</p>
+</section>
+<section id="why-use-version-control-1" class="slide level1">
+<h1>Why use version control?</h1>
+<ul>
+<li>Restore previous versions</li>
+<li>Understand what happened</li>
+<li>Backup</li>
+<li>Collaboration</li>
+</ul>
+</section>
+<section id="before-we-get-started" class="slide level1">
+<h1>Before we get started</h1>
+<ul>
+<li>Example scenario</li>
+<li>Text files vs binary files</li>
+<li>Git vs GitHub</li>
+</ul>
+</section>
+<section id="open-the-notes" class="slide level1">
+<h1>Open the notes</h1>
+<h2 id="httpsgcapes.github.iogit-course"><a href="https://gcapes.github.io/git-course" class="uri">https://gcapes.github.io/git-course</a></h2>
+</section>
+<section class="slide level1">
+
+<h2 id="why-learn-the-commands">Why learn the commands?</h2>
+<p><img data-src="https://imgs.xkcd.com/comics/git.png" /></p>
+</section>
+<section id="the-staging-area" class="slide level1">
+<h1>The staging area</h1>
+<p><img data-src="../fig/git-staging-area.svg" /></p>
+</section>
+<section class="slide level1">
+
+<h2 id="checking-out-a-previous-commit-detached-head">Checking out a previous commit: “detached HEAD”</h2>
+<p><img data-src="../fig/detached-head.svg" /></p>
+</section>
+<section id="exercise-1" class="slide level1">
+<h1>Exercise 1</h1>
+<h2 id="create-your-own-repo">Create your own repo</h2>
+<p><a href="http://gcapes.github.io/git-course/03-history/#exercise-bio-repository">http://gcapes.github.io/git-course/03-history</a></p>
+</section>
+<section id="branches" class="slide level1">
+<h1>Branches</h1>
+<p><img data-src="../fig/feature-branch.svg" /></p>
+</section>
+<section id="exercises-on-branching" class="slide level1">
+<h1>3 Exercises on Branching</h1>
+<p><a href="http://gcapes.github.io/git-course/05-branching/#add-a-commit-to-detached-head">http://gcapes.github.io/git-course/05-branching/</a></p>
+</section>
+<section id="revert" class="slide level1">
+<h1>Revert</h1>
+<h3 id="create-a-new-commit">Create a new commit</h3>
+<p><img data-src="../fig/git-revert.svg" /></p>
+</section>
+<section id="reset" class="slide level1">
+<h1>Reset</h1>
+<h3 id="delete-commits">Delete commit(s)</h3>
+<p><img data-src="../fig/git-reset.svg" /></p>
+</section>
+<section id="exercises-on-remote-collaboration" class="slide level1">
+<h1>Exercises on remote collaboration</h1>
+<p><a href="http://gcapes.github.io/git-course/09-remote-collaboration/#collaborating-on-a-remote-repository">https://gcapes.github.io/git-course/09-remote-collaboration</a></p>
+<p> </p>
+<h2 id="feedback-formfeedback-form-attendance-record"><a href="https://goo.gl/forms/YZJ05PzX9tPFEtuV2">Feedback form</a> = attendance record</h2>
+</section>
+<section id="merge-vs-rebase" class="slide level1">
+<h1>Merge vs rebase</h1>
+<p><img data-src="../fig/slideshow/forked-history.svg" /></p>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
