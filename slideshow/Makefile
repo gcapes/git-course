@@ -1,4 +1,5 @@
 .PHONY: slides
+slides: index.html
 
-slides:
-	pandoc -t revealjs -s -o $@.html $@.md -V theme=mywhite
+index.html: slides.md
+	pandoc -t revealjs -s -o $@ $^ -V theme=mywhite
