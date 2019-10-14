@@ -323,12 +323,10 @@ to add the file to the staging area.
 It can sometimes be quicker to provide our commit messages at the command-line
 by doing `git commit -m "Write introduction section"`.
 
-Let's add a directory *common* and a file *references.txt* for references we may
-want to reuse:
+Let's create a file `references.txt` to hold our references:
 
 ~~~
-$ mkdir common 
-$ gedit common/references.txt					# Add a reference
+$ gedit references.txt					# Add a reference
 ~~~
 {: .language-bash}
 
@@ -341,16 +339,15 @@ $ gedit journal.md 						# Use reference in introduction
 
 Now we need to record our work in the repository so we need to make a commit.
 First we tell Git to track the references.
-We can actually tell Git to track everything in the given subdirectory:
 
 ~~~
-$ git add common						# Track everything currently in the 'common' directory
-$ git status							# Verify that common/references.txt is now tracked
+$ git add references.txt					# Track the references.txt file
+$ git status							# Verify that references.txt is now tracked
 ~~~
 {: .language-bash}
 
-All files that are in *common* are now tracked.  We would also have to add
-journal.md in the staging area. But there is a shortcut. We can use
+The file `references.txt` is now tracked.  We also have to add
+journal.md to the staging area. But there is a shortcut. We can use
 `commit -a`. This option means "commit all files that are tracked and
 that have been modified".
 
