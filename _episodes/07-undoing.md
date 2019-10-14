@@ -65,7 +65,7 @@ file.
 
 ```
 $ gedit journal.md		# Add methodology section, including a reference
-$ gedit common/references.txt	# Add new reference to references file
+$ gedit references.txt		# Add new reference to references file
 $ git status			# Get a status update on file modifications
 ```
 {: .output}
@@ -77,7 +77,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   common/references.txt
+	modified:   references.txt
 	modified:   journal.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
@@ -104,7 +104,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed) 
   (use "git checkout --	<file>..." to discard changes in working directory)
 
-	modified:   common/references.txt
+	modified:   references.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -115,7 +115,7 @@ Also, run `git log -2` to see what is the latest commit message and ID.
 Now, we want to fix our commit and add the references file.
 
 ```
-$ git add common/references.txt	# Add reference file
+$ git add references.txt	# Add reference file
 $ git commit --amend		# Amend most recent commit
 ```
 {: .language-bash}
