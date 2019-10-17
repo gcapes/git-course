@@ -21,12 +21,13 @@ keypoints:
 ### Looking at differences
 
 We forgot to reference a second paper in the introduction section.
-Correct it, save the file but do not commit it yet.
+Correct it, save both files but do not commit the changes yet.
 We can review the changes that we made using:
 
 ~~~
 $ gedit journal.md		# Add second reference to introduction
-$ git diff journal.md		# View changes to file
+$ gedit references.txt		# Add the reference to the database
+$ git diff 			# View changes
 ~~~
 {: .language-bash}
 
@@ -60,7 +61,7 @@ technologies.
 
 Now commit the change we made by adding the second reference:
 ```
-$ git add journal.md
+$ git add journal.md references.txt 
 $ git commit			# "Reference second paper in introduction"
 ```
 {: .language-bash}
@@ -76,6 +77,13 @@ $ git log
 {: .language-bash}
 
 ```
+commit 8bf67f3862828ec51b3fdad00c5805de934563aa
+Author: Your Name <your.name@manchester.ac.uk>
+Date:   Mon Jun 26 10:22:39 2017 +0100
+
+    Reference second paper in introduction
+
+
 commit 4dd7f5c948fdc11814041927e2c419283f5fe84c
 Author: Your Name <your.name@manchester.ac.uk>
 Date:   Mon Jun 26 10:21:48 2017 +0100
