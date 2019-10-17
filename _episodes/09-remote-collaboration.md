@@ -34,7 +34,7 @@ $ ls
 {: .language-bash}
 
 ```
-$ papers
+$ paper
 ```
 {: .output}
 
@@ -42,8 +42,8 @@ And let us clone our repository again, but this time specify the local
 directory name,
 
 ```
-$ git clone https://github.com/<USERNAME>/papers.git laptop_papers 
-Cloning into 'laptop_papers'...
+$ git clone https://github.com/<USERNAME>/paper.git laptop_paper 
+Cloning into 'laptop_paper'...
 ```
 {: .language-bash}
 
@@ -56,7 +56,7 @@ $ ls
 {: .language-bash}
 
 ```
-$ papers laptop_papers
+$ paper laptop_paper
 ```
 {: .output}
 
@@ -66,7 +66,7 @@ still pretending!) and one on GitHub. So let's go into one of our clones, add a
 figures section, commit the file and push these changes to GitHub:
 
 ```    
-$ cd papers 			# Switch to the 'papers' directory
+$ cd paper 			# Switch to the 'paper' directory
 $ gedit journal.md		# Add figures section
 $ git add journal.md 
 $ git commit -m "Add figures"
@@ -78,7 +78,7 @@ Now let's change directory to our other repository and `fetch` the commits from 
 remote repository,
 
 ```    
-$ cd ../laptop_papers		# Switch to the other directory
+$ cd ../laptop_paper		# Switch to the other directory
 $ git fetch
 ```
 {: .language-bash}
@@ -165,15 +165,15 @@ $ cat journal.md
 {: .language-bash}
 
 As a short-hand, we can do a `git pull` which does a `git fetch` then a `git merge`. 
-Next we will update our repo using `pull`, but this time starting in the *laptop_papers* folder (you
-should already be in the *laptop_papers* folder). Let's write the conclusions:
+Next we will update our repo using `pull`, but this time starting in the *laptop_paper* folder (you
+should already be in the *laptop_paper* folder). Let's write the conclusions:
 
 ```    
 $ gedit journal.md		# Write Conclusions
 $ git add journal.md 
 $ git commit -m "Write Conclusions" journal.md 
 $ git push origin master
-$ cd ../papers			# Switch back to the papers directory
+$ cd ../paper			# Switch back to the paper directory
 $ git pull origin master	# Get changes from remote repository
 ```
 {: .language-bash}
@@ -204,7 +204,7 @@ $ git log
 ### Conflicts and how to resolve them
 
 Let's continue to pretend that our two local, cloned, repositories are hosted
-on two different machines. You should still be in the original *papers* folder.
+on two different machines. You should still be in the original *paper* folder.
 Add an affiliation for each author.
 Then push these changes to our remote repository:
 
@@ -223,7 +223,7 @@ The remote branch `origin/master` is now ahead of our local `master` branch on t
 because we haven't yet updated our local branch using `git pull`.
 
 ```    
-$ cd ../laptop_papers		# Switch directory to other copy of our repository 
+$ cd ../laptop_paper		# Switch directory to other copy of our repository 
 $ gedit journal.md		# Change order of the authors
 $ git add journal.md 
 $ git commit -m "Change the first author" journal.md 
@@ -231,9 +231,9 @@ $ git push origin master
 ```
 {: .language-bash}
 ```
-To https://github.com/<USERNAME>/papers.git
+To https://github.com/<USERNAME>/paper.git
  ! [rejected]        master -> master (fetch first)
-error: failed to push some refs to 'https://github.com/<USERNAME>/papers.git'
+error: failed to push some refs to 'https://github.com/<USERNAME>/paper.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
@@ -310,7 +310,7 @@ We'll finish by pulling these changes into other copy of the repo,
 so both copies are up to date:
 
 ```
-$ cd ../papers			# Switch to 'papers' directory
+$ cd ../paper			# Switch to 'paper' directory
 $ git pull origin master	# Merge remote branch into local
 ```
 {: .language-bash}
@@ -367,7 +367,7 @@ $ git pull origin master	# Merge remote branch into local
 > Counting objects: 3, done.  remote:
 > Compressing objects: 100% (3/3), done.
 > remote: Total 3 (delta 0), reused 2 (delta 0) Unpacking objects: 100% (3/3), done.
-> From  https://github.com/gcapes/papers 
+> From  https://github.com/gcapes/paper 
 > 9e1705a..640210a master -> origin/master 
 > * [new branch] their_branch -> origin/their_branch
 > ```

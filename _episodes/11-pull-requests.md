@@ -70,15 +70,15 @@ In either case, your PR will update automatically once you have pushed your comm
 > Let's look at the workflow and try to repeat it:
 > 
 > 1. **Fork** [this
-> repository](https://github.com/gcapes/manchester-papers.git)
+> repository](https://github.com/gcapes/manchester-paper.git)
 > by  clicking on the `Fork` button at the top of the page.
 >
 > 2. Clone the repository from **YOUR** GitHub account. When you run `git remote -v`
 > you should get something like this:
 >
 > 	```{.output}
->	origin	https://github.com/YOUR_USERNAME/manchester-papers.git(fetch)
-> 	origin	https://github.com/YOUR_USERNAME/manchester-papers.git(push)
+>	origin	https://github.com/YOUR_USERNAME/manchester-paper.git(fetch)
+> 	origin	https://github.com/YOUR_USERNAME/manchester-paper.git(push)
 > 	```
 > 
 > 3. `cd` into the directory you just cloned. Make changes you want to contribute.

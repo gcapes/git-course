@@ -117,8 +117,8 @@ with one of our colleagues.
 ```
 $ cd								# Switch to your home directory.
 $ pwd								# Print working directory (output should be /home/<username>)
-$ mkdir papers 
-$ cd papers
+$ mkdir paper 
+$ cd paper
 ```	
 {: .language-bash}
 
@@ -130,11 +130,11 @@ $ git init
 ~~~
 {: .language-bash}
 ~~~
-Initialized empty Git repository in /home/user/papers/.git/
+Initialized empty Git repository in /home/user/paper/.git/
 ~~~
 {: .output}
 
-The directory "papers" is now our working directory. 
+The directory "paper" is now our working directory. 
 
  If we look in this directory, we'll find a `.git` directory:
 

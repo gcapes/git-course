@@ -321,7 +321,7 @@ $ git checkout master
 > ## Exercise: "bio" Repository 
 >
 > - Create a new Git repository on your computer called "bio"
-> - Be sure not to create your new repo within the 'papers' repo (see above)
+> - Be sure not to create your new repo within the 'paper' repo (see above)
 > - Write a three-line biography for yourself in a file called **me.txt**
 > - Commit your changes
 > - Modify one line, add a fourth line, then save the file
@@ -330,7 +330,7 @@ $ git checkout master
 > You may wish to use the faded example below as a guide
 >
 > ```
-> cd ..                # Navigate out of the papers directory
+> cd ..                # Navigate out of the paper directory
 >                      # Avoid creating a repo within a repo - confusion will arise!
 > mkdir ___            # Create a new directory called 'bio'
 > cd ___               # Navigate into the new directory
@@ -346,7 +346,7 @@ $ git checkout master
 > > ## Solution
 > >
 > > ```
-> > cd ..                # Navigate out of the papers directory
+> > cd ..                # Navigate out of the paper directory
 > >                      # Avoid creating a repo within a repo - confusion will arise!
 > > mkdir bio            # Create a new directory
 > > cd bio               # Navigate into the new directory

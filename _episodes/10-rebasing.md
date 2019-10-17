@@ -13,7 +13,7 @@ keypoints:
 - "rebasing rewrites history"
 ---
 
-We were in the *papers* directory at the end of the last episode,
+We were in the *paper* directory at the end of the last episode,
 which is where this episode continues.
 
 Let's review the recent history of our project,
@@ -26,7 +26,7 @@ $ git log --graph --all --oneline --decorate -6
 {: .language-bash}
 
 ```
-*   365748e (HEAD -> master, origin/master, origin/HEAD) Merge branch 'master' of github.com:gcapes/papers
+*   365748e (HEAD -> master, origin/master, origin/HEAD) Merge branch 'master' of github.com:gcapes/paper
 |\  
 | * ff18da4 Add author affiliations
 * | 8f44540 Change first author
@@ -129,7 +129,7 @@ $ git push origin master			# Push master branch to remote
 We'll now switch machine to our laptop, and write the abstract:
 
 ```
-$ cd ../laptop_papers				# Pretend we're on the laptop
+$ cd ../laptop_paper				# Pretend we're on the laptop
 $ gedit journal.md				# Add abstract section
 $ git add journal.md
 $ git commit					# "Write abstract"
@@ -149,7 +149,7 @@ $ git log --graph --all --oneline --decorate	# View project history before rebas
 * 21cfe5f (HEAD -> master) Write abstract
 | * 13aa7e3 (origin/master, origin/HEAD) Add acknowledgements
 |/  
-*   365748e Merge branch 'master' of github.com:gcapes/papers
+*   365748e Merge branch 'master' of github.com:gcapes/paper
 |\  
 | * ff18da4 Add author affiliations
 * | 8f44540 Change first author
@@ -199,7 +199,7 @@ $ git log --graph --all --oneline --decorate	# View project history after rebasi
 ```
 * 6105e61 (HEAD -> master) Write abstract
 * 13aa7e3 (origin/master, origin/HEAD) Add acknowledgements
-*   365748e Merge branch 'master' of github.com:gcapes/papers
+*   365748e Merge branch 'master' of github.com:gcapes/paper
 |\  
 | * ff18da4 Add author affiliations
 * | 8f44540 Change first author
