@@ -77,6 +77,13 @@ $ git log
 {: .language-bash}
 
 ```
+commit 8bf67f3862828ec51b3fdad00c5805de934563aa
+Author: Your Name <your.name@manchester.ac.uk>
+Date:   Mon Jun 26 10:22:39 2017 +0100
+
+    Reference second paper in introduction
+
+
 commit 4dd7f5c948fdc11814041927e2c419283f5fe84c
 Author: Your Name <your.name@manchester.ac.uk>
 Date:   Mon Jun 26 10:21:48 2017 +0100
