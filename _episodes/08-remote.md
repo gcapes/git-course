@@ -207,8 +207,8 @@ make some changes to our files and commit these.
 
 ```
 $ git checkout master				# We'll continue working on the master branch
-$ gedit journal.md				# Add results section
-$ git add journal.md				# Stage changes
+$ gedit paper.md				# Add results section
+$ git add paper.md				# Stage changes
 $ git commit
 ```
 {: .language-bash}

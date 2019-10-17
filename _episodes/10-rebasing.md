@@ -118,8 +118,8 @@ we'll rebase `master` onto `origin/master`.
 We'll write some acknowledgements, then commit and push.
 
 ```
-$ gedit journal.md				# Write acknowledgements
-$ git add journal.md
+$ gedit paper.md				# Write acknowledgements
+$ git add paper.md
 $ git commit -m "Write acknowledgements section"
 $ git push origin master			# Push master branch to remote
 ```
@@ -130,8 +130,8 @@ We'll now switch machine to our laptop, and write the abstract:
 
 ```
 $ cd ../laptop_paper				# Pretend we're on the laptop
-$ gedit journal.md				# Add abstract section
-$ git add journal.md
+$ gedit paper.md				# Add abstract section
+$ git add paper.md
 $ git commit					# "Write abstract"
 ```
 {: .language-bash}

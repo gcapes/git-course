@@ -25,7 +25,7 @@ Correct it, save both files but do not commit the changes yet.
 We can review the changes that we made using:
 
 ~~~
-$ gedit journal.md		# Add second reference to introduction
+$ gedit paper.md		# Add second reference to introduction
 $ gedit references.txt		# Add the reference to the database
 $ git diff 			# View changes
 ~~~
@@ -61,7 +61,7 @@ technologies.
 
 Now commit the change we made by adding the second reference:
 ```
-$ git add journal.md references.txt 
+$ git add paper.md references.txt 
 $ git commit			# "Reference second paper in introduction"
 ```
 {: .language-bash}
@@ -155,7 +155,7 @@ HEAD is now at 21cfbde... Add title and authors
 This strange concept of the 'detached HEAD' is covered in the next section ...
 just bear with me for now!
 
-If we look at `journal.md` we'll see it's our very first version. And if we
+If we look at `paper.md` we'll see it's our very first version. And if we
 look at our directory,
 
 ~~~
@@ -163,7 +163,7 @@ $ ls
 ~~~
 {: .language-bash}
 ~~~
-journal.md
+paper.md
 ~~~
 {: .output}
 
@@ -183,7 +183,7 @@ $ ls
 ~~~
 {: .language-bash}
 ~~~
-journal.md references.txt
+paper.md references.txt
 ~~~
 {: .output}
 So we can get any version of our files from any point in time. In other words,

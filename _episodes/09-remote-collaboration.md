@@ -67,8 +67,8 @@ figures section, commit the file and push these changes to GitHub:
 
 ```    
 $ cd paper 			# Switch to the 'paper' directory
-$ gedit journal.md		# Add figures section
-$ git add journal.md 
+$ gedit paper.md		# Add figures section
+$ git add paper.md 
 $ git commit -m "Add figures"
 $ git push
 ```
@@ -136,7 +136,7 @@ $ git merge origin/master
 ```
 Updating 0cc2a2d..7c239c3
 Fast-forward
- journal.md | 4 ++++
+ paper.md | 4 ++++
  1 file changed, 4 insertions(+)
 ```
 {: .output}
@@ -160,7 +160,7 @@ git log --graph --all --decorate --oneline -4
 We can inspect the file to confirm that we have our changes.
 
 ```    
-$ cat journal.md 
+$ cat paper.md 
 ```
 {: .language-bash}
 
@@ -169,9 +169,9 @@ Next we will update our repo using `pull`, but this time starting in the *laptop
 should already be in the *laptop_paper* folder). Let's write the conclusions:
 
 ```    
-$ gedit journal.md		# Write Conclusions
-$ git add journal.md 
-$ git commit -m "Write Conclusions" journal.md 
+$ gedit paper.md		# Write Conclusions
+$ git add paper.md 
+$ git commit -m "Write Conclusions" paper.md 
 $ git push origin master
 $ cd ../paper			# Switch back to the paper directory
 $ git pull origin master	# Get changes from remote repository
@@ -183,7 +183,7 @@ This is the same scenario as before, so we get another fast-forward merge.
 We can check that we have our changes:
 
 ```    
-$ cat journal.md 
+$ cat paper.md 
 $ git log
 ```
 {: .language-bash}
@@ -209,8 +209,8 @@ Add an affiliation for each author.
 Then push these changes to our remote repository:
 
 ```    
-$ gedit journal.md		# Add author affiliations 
-$ git add journal.md 
+$ gedit paper.md		# Add author affiliations 
+$ git add paper.md 
 $ git commit -m "Add author affiliations"
 $ git push origin master
 ```
@@ -224,9 +224,9 @@ because we haven't yet updated our local branch using `git pull`.
 
 ```    
 $ cd ../laptop_paper		# Switch directory to other copy of our repository 
-$ gedit journal.md		# Change order of the authors
-$ git add journal.md 
-$ git commit -m "Change the first author" journal.md 
+$ gedit paper.md		# Change order of the authors
+$ git add paper.md 
+$ git commit -m "Change the first author" paper.md 
 $ git push origin master
 ```
 {: .language-bash}
@@ -253,8 +253,8 @@ $ git pull origin master
 and we get:
 
 ```    
-Auto-merging journal.md
-CONFLICT (content): Merge conflict in journal.md
+Auto-merging paper.md
+CONFLICT (content): Merge conflict in paper.md
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 {: .output}
@@ -272,7 +272,7 @@ $ git status
 {: .language-bash}
 
 we can see that our file is listed as *Unmerged* and if we look at
-*journal.md*, we see something like:
+*paper.md*, we see something like:
 
 ```
 <<<<<<< HEAD
@@ -292,8 +292,8 @@ merging the branches.
 We edit the file. Then commit our changes. Now, if we *push* ...
 
 ```
-$ gedit journal.md		# Edit file to resolve merge conflict
-$ git add journal.md		# Stage the file
+$ gedit paper.md		# Edit file to resolve merge conflict
+$ git add paper.md		# Stage the file
 $ git commit			# Commit to mark the conflict as resolved
 $ git push origin master
 ```
