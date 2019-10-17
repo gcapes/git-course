@@ -117,8 +117,8 @@ with one of our colleagues.
 ```
 $ cd								# Switch to your home directory.
 $ pwd								# Print working directory (output should be /home/<username>)
-$ mkdir papers 
-$ cd papers
+$ mkdir paper 
+$ cd paper
 ```	
 {: .language-bash}
 
@@ -130,11 +130,11 @@ $ git init
 ~~~
 {: .language-bash}
 ~~~
-Initialized empty Git repository in /home/user/papers/.git/
+Initialized empty Git repository in /home/user/paper/.git/
 ~~~
 {: .output}
 
-The directory "papers" is now our working directory. 
+The directory "paper" is now our working directory. 
 
  If we look in this directory, we'll find a `.git` directory:
 
@@ -155,7 +155,7 @@ Now, we'll create a file. Let's say we're going to write a journal paper, so
 we will start by adding the author names and a title, then save the file.
 
 ~~~
-$ gedit journal.md						# Windows users: use notepad instead of gedit (throughout this course)
+$ gedit paper.md						# Windows users: use notepad instead of gedit (throughout this course)
 # Add author names and paper title
 ~~~
 {: .language-bash}
@@ -182,7 +182,7 @@ Initial commit
 Untracked files:
 (use "git add <file>..." to include in what will be committed)
 
-journal.md
+paper.md
 
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
@@ -202,7 +202,7 @@ Git.
 To tell Git about the file, we will use the `git add` command:
 
 ~~~
-$ git add journal.md 
+$ git add paper.md 
 $ git status 
 ~~~
 {: .language-bash}
@@ -214,7 +214,7 @@ Initial commit
 Changes to be committed:
 (use "git rm --cached <file>..." to unstage)
 
-      	new file:   journal.md
+      	new file:   paper.md
 ~~~
 {: .output}
 
@@ -252,7 +252,7 @@ If we save our commit message **and exit the editor**, Git will now commit our f
 ~~~
 [master (root-commit) 21cfbde] 
 1 file changed, 2 insertions(+) Add title and authors
-create mode 100644 journal.md
+create mode 100644 paper.md
 ~~~
 {: .output}
 
@@ -276,11 +276,11 @@ our file is now in the repository.
 The output from the `git status` command means that we have a clean directory
 i.e. no tracked but modified files. 
 
-Now we will work a bit further on our *journal.md* file by writing the introduction
+Now we will work a bit further on our *paper.md* file by writing the introduction
 section.
    
 ```
-$ gedit journal.md
+$ gedit paper.md
 # Write introduction section
 ```
 {: .language-bash}
@@ -300,7 +300,7 @@ Changes not staged for commit:
 (use "git add <file>..." to update what will be committed)
 (use "git checkout -- <file>..." to discard changes in working directory)
 
-     modified:   journal.md
+     modified:   paper.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -311,11 +311,11 @@ has not yet been committed. So we can add it to the staging area and then
 commit the changes:
      
 ~~~
-$ git add journal.md 
+$ git add paper.md 
 $ git commit							# "Write introduction"
 ~~~
 {: .language-bash}
-Note that in this case we used `git add` to put journal.md to the staging
+Note that in this case we used `git add` to put paper.md to the staging
 area. Git already knows this file should be tracked but doesn't know if we want
 to commit the changes we made to the file  in the repository and hence we have
 to add the file to the staging area. 
@@ -330,10 +330,10 @@ $ gedit references.txt					# Add a reference
 ~~~
 {: .language-bash}
 
-We will also add a citation in our introduction section (in journal.md).
+We will also add a citation in our introduction section (in paper.md).
 
 ~~~
-$ gedit journal.md 						# Use reference in introduction
+$ gedit paper.md 						# Use reference in introduction
 ~~~
 {: .language-bash}
 
@@ -347,7 +347,7 @@ $ git status							# Verify that references.txt is now tracked
 {: .language-bash}
 
 The file `references.txt` is now tracked.  We also have to add
-journal.md to the staging area. But there is a shortcut. We can use
+paper.md to the staging area. But there is a shortcut. We can use
 `commit -a`. This option means "commit all files that are tracked and
 that have been modified".
 
