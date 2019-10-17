@@ -28,3 +28,7 @@ For teaching as part of a Software Carpentry workshop:
 - 5 Branching
 - ? 6 Undoing changes (if time)
 - 9 Remote repositories
+
+# Example paper
+I use variations on [this paper](https://github.com/gcapes/manchester-papers/blob/master/gerard-paper.md)
+when delivering the course.
