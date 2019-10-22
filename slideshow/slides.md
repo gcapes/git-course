@@ -44,8 +44,8 @@ author: 'Gerard Capes'
 # Getting help
 - Sticky notes
 	- Used for getting help and giving real-time feedback
-	- Green: :), OK, ready to continue
-	- Red: :( (too fast, don't understand, computer says no etc)
+	- Green = OK, ready to continue
+	- Red = too fast, don't understand, computer says no etc
 - Please interrupt me to ask questions
 - Peer learning
 	- During exercises, please help each other as required
@@ -146,7 +146,7 @@ which explains why the changes were made.
 
 ---
 
-# 3 Exercises on Branching
+# Three exercises on branching
 [http://gcapes.github.io/git-course/05-branching/](http://gcapes.github.io/git-course/05-branching/#add-a-commit-to-detached-head)
 
 ---
