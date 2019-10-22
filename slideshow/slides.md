@@ -146,7 +146,7 @@ which explains why the changes were made.
 
 ---
 
-# 3 Exercises on Branching
+# Three exercises on branching
 [http://gcapes.github.io/git-course/05-branching/](http://gcapes.github.io/git-course/05-branching/#add-a-commit-to-detached-head)
 
 ---
