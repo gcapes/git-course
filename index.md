@@ -23,7 +23,7 @@ root: .
 {: .prereq}
 
 ## Resources
-[Workshop slideshow](http://slides.com/gcapes/git)
+[Workshop slideshow](slideshow/slides.html)
 
 [Git cheat sheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
 (You may want to download a copy of this for reference during this workshop)
