@@ -60,12 +60,12 @@ But what if we forgot to include some files in the commit?
 
 Let's try it on our example. First, let's modify two files: our paper file and
 the references file. We will add a methodology section to the paper where we
-detail the instrumentation used, and add a reference for this to the references
+detail the model used for the simulations, and add a reference for this to the references
 file.
 
 ```
-$ gedit paper.md		# Add methodology section, including a reference
-$ gedit references.txt		# Add new reference to references file
+$ gedit paper.md		# Add methodology section, including a reference to model
+$ gedit references.txt		# Add new reference for the model used
 $ git status			# Get a status update on file modifications
 ```
 {: .output}
@@ -84,11 +84,11 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 {: .output}
 
-Let's then add and commit *paper.md* but not the references file.
+Let's then add and commit *paper.md* but **not the references file**.
 
 ```
-$ git add paper.md		 # Add journal to staging area
-$ git commit -m "Add methodology section"
+$ git add paper.md		 # Add paper to staging area
+$ git commit -m "Describe methodology"
 ```
 {: .language-bash}
 	

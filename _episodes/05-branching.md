@@ -82,11 +82,11 @@ and carry on working on this "experimental" version of the paper in a branch
 rather than in the master.
 
 ~~~
-$ git checkout -b paperWJohn
+$ git checkout -b simulations
 ~~~
 {: .language-bash}
 ~~~
-Switched to a new branch 'paperWJohn'
+Switched to a new branch 'simulations'
 ~~~
 {: .output}
 
@@ -100,7 +100,7 @@ $ git branch			# Double check which branch we are working on
 {: .language-bash}
 ~~~
   master
-* paperWJohn 
+* simulations 
 ~~~
 {: .output}
 
@@ -130,18 +130,18 @@ the `master` version of the paper.
 ~~~
 $ gedit journal			# Rewrite the title
 $ git add paper.md
-$ git commit			# "Rewrite title emphasising measurements"
+$ git commit			# "Include aircraft in title"
 ~~~
 {: .language-bash}
 
 ### Merging and resolving conflicts
 
 We are now working on two papers: the main one in our `master` branch and the one
-which may possibly be collaborative work in our "paperWJohn" branch.
+which may possibly be collaborative work in our "simulations" branch.
 Let's add another section to the paper to write about John's simulations.
 
 ~~~
-$ git checkout paperWJohn	# Switch branch
+$ git checkout simulations	# Switch branch
 $ gedit paper.md		# Add 'simulations' section
 $ git add paper.md 
 $ git commit -m "Add simulations" paper.md
@@ -158,27 +158,27 @@ git log --graph --all --oneline --decorate
 {: .language-bash}
 
 ```
-* 89d5c6e (paperwjohn) Add simulations section
-* 05d393a Modify title and add coauthor
-| * (HEAD, master) bdebbe0 Rewrite title emphasising location
+* 89d5c6e (simulations) Add simulations
+* 05d393a Change title and add coauthor
+| * (HEAD, master) bdebbe0 Include aircraft in title
 |/  
-* 87a65e6 Add Bloggs et al paper
-* 6a48241 Reference second paper in introduction
-* ed26351 Reference Allen et al in introduction
-* 7446b1d Write introduction
-* 4f572d5 Add title and authors
+* 87a65e6 Explain motivation for research
+* 6a48241 Cite previous work in introduction
+* ed26351 Cite PCASP paper
+* 7446b1d Start the introduction
+* 4f572d5 Add title and author
 ```
 {: .output}
 
 After some discussions with John we decided that we will publish together,
 hence it makes sense to now merge all that was authored together with John 
-in branch "paperWJohn". 
+in branch "simulations". 
 We can do that by *merging* that branch with the `master` branch. Let's try
 doing that:
 
 ~~~
 $ git checkout master		# Switch branch
-$ git merge paperWJohn		# Merge paperWJohn into master
+$ git merge simulations		# Merge simulations into master
 ~~~
 {: .language-bash}
 ~~~
@@ -212,33 +212,33 @@ Unmerged paths:
 Let's look inside paper.md:
 
 ```
-title
+# Title
 <<<<<<< HEAD
-Laboratory measurements of atmospheric particle formation
+Aircraft measurements of biomass burning aerosols over West Africa
 =======
-Simulations of atmospheric particle formation
->>>>>>> paperwjohn
+Simulations of biomass burning aerosols over West Africa
+>>>>>>> simulations
 ```
 
 The mark-up shows us the parts of the file causing the conflict and the
 versions they come from. We now need to manually edit the file to resolve the
 conflict. This means removing the mark-up and doing one of:
 
-- Keep the local version, which is the one marked-up by HEAD i.e.
-"Laboratory measurements of atmospheric particle formation"
+- Keep the current version, which is the one marked-up by HEAD i.e.
+"Aircraft measurements of biomass burning aerosols over West Africa"
 
-- Keep the remote version, which is the one marked-up by paperWJohn
-i.e. "Simulations of atmospheric particle formation"
+- Keep the version from the other branch, which is the one marked-up by simulations
+i.e. "Simulations of biomass burning aerosols over West Africa"
 
 - Or manually edit the line to something new which might combine some elements
-of the two e.g. "Measurement-model comparison of atmospheric particle formation in laboratory experiments"
+of the two e.g. "Aircraft measurements and simulations of biomass burning aerosols over West Africa"
 
 We edit the file. Then commit our changes:
 
 ~~~
 $ gedit paper.md		# Resolve conflict by editing paper.md
 $ git add paper.md		# Let Git know we have resolved the conflict
-$ git commit -m "Rewrite title to incorporate simulations"
+$ git commit
 ~~~
 {: .language-bash}
 
@@ -254,16 +254,17 @@ $ git log --graph --decorate --all --oneline
 {: .language-bash}
 
 ```
-*   39cc80d (HEAD, master) Merge branch 'paperwjohn'
+*   39cc80d (HEAD, master) Merge branch 'simulations'
 |\  
-| * 89d5c6e (paperwjohn) Add simulations section
-| * 05d393a Modify title and add coauthor
-* | bdebbe0 Rewrite title emphasising location
+| * 89d5c6e (simulations) Add simulations
+| * 05d393a Change title and add coauthor
+* | bdebbe0 Include aircraft in title
 |/  
-* 87a65e6 Add Bloggs et al paper
-* 6a48241 Reference second paper in introduction
-* ed26351 Reference Allen et al in introduction
-* 7446b1d Write introduction
+* 87a65e6 Explain motivation for research
+* 6a48241 Cite previous work in introduction
+* ed26351 Cite PCASP paper
+* 7446b1d Start the introduction
+* 4f572d5 Add title and author
 ```
 {: .output}
 
@@ -370,7 +371,7 @@ But we were then in the "detached HEAD" state.
 > > ```
 > > * (HEAD detached from f908519)
 > >  master
-> >  paperwjohn
+> >  simulations
 > > ```
 > > {: .output}
 > > You are currently on a temporary, unnamed branch, as indicated by the `*`.
@@ -390,7 +391,7 @@ But we were then in the "detached HEAD" state.
 > > ```
 > > * dh-exericise
 > >  master
-> >  paperwjohn
+> >  simulations
 > > ```
 > > {: .output}
 > > The commit you made on the detached HEAD now belongs to a named branch
