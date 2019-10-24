@@ -130,7 +130,7 @@ the `master` version of the paper.
 ~~~
 $ gedit journal			# Rewrite the title
 $ git add paper.md
-$ git commit			# "Rewrite title emphasising measurements"
+$ git commit			# "Include aircraft in title"
 ~~~
 {: .language-bash}
 
@@ -158,15 +158,15 @@ git log --graph --all --oneline --decorate
 {: .language-bash}
 
 ```
-* 89d5c6e (simulations) Add simulations section
-* 05d393a Modify title and add coauthor
-| * (HEAD, master) bdebbe0 Rewrite title emphasising location
+* 89d5c6e (simulations) Add simulations
+* 05d393a Change title and add coauthor
+| * (HEAD, master) bdebbe0 Include aircraft in title
 |/  
-* 87a65e6 Add Bloggs et al paper
-* 6a48241 Reference second paper in introduction
-* ed26351 Reference Allen et al in introduction
-* 7446b1d Write introduction
-* 4f572d5 Add title and authors
+* 87a65e6 Explain motivation for research
+* 6a48241 Cite previous work in introduction
+* ed26351 Cite PCASP paper
+* 7446b1d Start the introduction
+* 4f572d5 Add title and author
 ```
 {: .output}
 
@@ -214,9 +214,9 @@ Let's look inside paper.md:
 ```
 # Title
 <<<<<<< HEAD
-Laboratory measurements of atmospheric particle formation
+Aircraft measurements of biomass burning aerosols over West Africa
 =======
-Simulations of atmospheric particle formation
+Simulations of biomass burning aerosols over West Africa
 >>>>>>> simulations
 ```
 
@@ -224,21 +224,21 @@ The mark-up shows us the parts of the file causing the conflict and the
 versions they come from. We now need to manually edit the file to resolve the
 conflict. This means removing the mark-up and doing one of:
 
-- Keep the local version, which is the one marked-up by HEAD i.e.
-"Laboratory measurements of atmospheric particle formation"
+- Keep the current version, which is the one marked-up by HEAD i.e.
+"Aircraft measurements of biomass burning aerosols over West Africa"
 
 - Keep the version from the other branch, which is the one marked-up by simulations
 i.e. "Simulations of biomass burning aerosols over West Africa"
 
 - Or manually edit the line to something new which might combine some elements
-of the two e.g. "Measurement-model comparison of atmospheric particle formation in laboratory experiments"
+of the two e.g. "Aircraft measurements and simulations of biomass burning aerosols over West Africa"
 
 We edit the file. Then commit our changes:
 
 ~~~
 $ gedit paper.md		# Resolve conflict by editing paper.md
 $ git add paper.md		# Let Git know we have resolved the conflict
-$ git commit -m "Rewrite title to incorporate simulations"
+$ git commit
 ~~~
 {: .language-bash}
 
@@ -256,14 +256,15 @@ $ git log --graph --decorate --all --oneline
 ```
 *   39cc80d (HEAD, master) Merge branch 'simulations'
 |\  
-| * 89d5c6e (simulations) Add simulations section
-| * 05d393a Modify title and add coauthor
-* | bdebbe0 Rewrite title emphasising location
+| * 89d5c6e (simulations) Add simulations
+| * 05d393a Change title and add coauthor
+* | bdebbe0 Include aircraft in title
 |/  
-* 87a65e6 Add Bloggs et al paper
-* 6a48241 Reference second paper in introduction
-* ed26351 Reference Allen et al in introduction
-* 7446b1d Write introduction
+* 87a65e6 Explain motivation for research
+* 6a48241 Cite previous work in introduction
+* ed26351 Cite PCASP paper
+* 7446b1d Start the introduction
+* 4f572d5 Add title and author
 ```
 {: .output}
 
