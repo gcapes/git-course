@@ -31,9 +31,9 @@ $ git log --graph --all --oneline --decorate -6
 | * ff18da4 Add author affiliations
 * | 8f44540 Change first author
 |/  
-* 8494909 Add figures
-* e90a501 Add results section
-* 3011ee0 Explain SMPS in methodology section
+* 8494909 Write conclusions
+* e90a501 Add figures
+* 3011ee0 Discuss results
 ```
 {: .output}
 

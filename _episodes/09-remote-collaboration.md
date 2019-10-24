@@ -93,18 +93,18 @@ git log --graph --all --decorate --oneline
 
 ```
 * 7c239c3 (origin/master, origin/HEAD) Add figures
-* 0cc2a2d (HEAD -> master) Add results section
-* 3011ee0 Explain SMPS in methodology section
+* 0cc2a2d (HEAD -> master) Discuss results
+* 3011ee0 Describe methodology
 *   6420699 Merge branch 'simulations'
 |\  
-| * 7138785 (origin/simulations) Write simulations section
-| * e695fa8 Add coauthor and update title
-* | e950911 Emphasise these are aircraft measurements
+| * 7138785 (origin/simulations) Add simulations
+| * e695fa8 Change title and add coauthor
+* | e950911 Include aircraft in title
 |/  
-* 0b28b0a Add Haywood et al paper
-* 7cacba8 Cite ground based measurements
-* 56781f4 Reference Allen et al and add refs file
-* 5033467 Write introduction section
+* 0b28b0a Explain motivation for research
+* 7cacba8 Cite previous work in introduction
+* 56781f4 Cite PCASP paper
+* 5033467 Start the introduction
 * e08262e Add title and author
 ```
 {: .output}
@@ -151,8 +151,8 @@ git log --graph --all --decorate --oneline -4
 
 ```
 * 7c239c3 (HEAD -> master, origin/master, origin/HEAD) Add figures
-* 0cc2a2d Add results section
-* 3011ee0 Explain SMPS in methodology section
+* 0cc2a2d Discuss results
+* 3011ee0 Describe methodology
 *   6420699 Merge branch 'simulations'
 ```
 {: .output}
