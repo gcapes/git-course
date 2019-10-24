@@ -185,3 +185,6 @@ which explains why the changes were made.
 
 # Forks and Pull Requests
 ![](../fig/github-diagram.png)
+
+# Send me a PR!
+[http://gcapes.github.io/git-course/11-pull-requests/#exercise](http://gcapes.github.io/git-course/11-pull-requests/#exercise)
