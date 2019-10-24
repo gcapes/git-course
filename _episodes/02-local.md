@@ -323,17 +323,17 @@ to add the file to the staging area.
 It can sometimes be quicker to provide our commit messages at the command-line
 by doing `git commit -m "Write introduction section"`.
 
-Let's create a file `references.txt` to hold our references:
+In our introduction, we should cite a paper describing the main instrument used.
 
 ~~~
-$ gedit references.txt					# Add a reference
+$ gedit paper.md 						# Cite instrument paper in introduction
 ~~~
 {: .language-bash}
 
-We will also add a citation in our introduction section (in paper.md).
+Let's also create a file `references.txt` to hold our references:
 
 ~~~
-$ gedit paper.md 						# Use reference in introduction
+$ gedit references.txt					# Add the reference
 ~~~
 {: .language-bash}
 
