@@ -20,12 +20,12 @@ keypoints:
 
 ### Looking at differences
 
-We forgot to reference a second paper in the introduction section.
-Correct it, save both files but do not commit the changes yet.
+We should reference some previous work in the introduction section.
+Make the required changes, save both files but do not commit the changes yet.
 We can review the changes that we made using:
 
 ~~~
-$ gedit paper.md		# Add second reference to introduction
+$ gedit paper.md		# Cite previous studies in introduction
 $ gedit references.txt		# Add the reference to the database
 $ git diff 			# View changes
 ~~~
@@ -62,7 +62,7 @@ technologies.
 Now commit the change we made by adding the second reference:
 ```
 $ git add paper.md references.txt 
-$ git commit			# "Reference second paper in introduction"
+$ git commit			# "Cite previous work in introduction"
 ```
 {: .language-bash}
 
@@ -81,7 +81,7 @@ commit 8bf67f3862828ec51b3fdad00c5805de934563aa
 Author: Your Name <your.name@manchester.ac.uk>
 Date:   Mon Jun 26 10:22:39 2017 +0100
 
-    Reference second paper in introduction
+    Cite PCASP paper
 
 
 commit 4dd7f5c948fdc11814041927e2c419283f5fe84c
@@ -227,10 +227,10 @@ $ git log --graph --decorate --oneline
 {: .language-bash}
 
 ```
-* 6a48241 (HEAD, master) Reference second paper in introduction
-* ed26351 Reference Allen et al in introduction
+* 6a48241 (HEAD, master) Cite previous work in introduction
+* ed26351 Cite PCASP paper
 * 7446b1d Write introduction
-* 4f572d5 Add title and authors
+* 4f572d5 Add title and author
 ```
 {: .output}
 
@@ -280,12 +280,12 @@ $ git tag
 ```
 {: .language-bash}
 
-Now add the second paper to references.txt and commit the change:
+Let's explain to the reader why this research is important:
 
 ```    
-$ gedit references.txt	# Add second paper
-$ git add references.txt 
-$ git commit -m "Add Jones et al paper" references.txt
+$ gedit paper.md	# Give context for research
+$ git add paper.md 
+$ git commit -m "Explain motivation for research" paper.md
 ```
 {: .language-bash}
 
