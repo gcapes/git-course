@@ -196,7 +196,7 @@ In order to see the other branches locally, we can check them out as before:
 
 ```
 $ git branch -r					# Show remote branches
-$ git checkout paperWJohn			# Check out the paperWJohn branch
+$ git checkout simulations			# Check out the simulations branch
 ```
 {: .language-bash}
 

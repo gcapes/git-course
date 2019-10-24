@@ -95,9 +95,9 @@ git log --graph --all --decorate --oneline
 * 7c239c3 (origin/master, origin/HEAD) Add figures
 * 0cc2a2d (HEAD -> master) Add results section
 * 3011ee0 Explain SMPS in methodology section
-*   6420699 Merge branch 'paperwjohn'
+*   6420699 Merge branch 'simulations'
 |\  
-| * 7138785 (origin/paperwjohn) Write simulations section
+| * 7138785 (origin/simulations) Write simulations section
 | * e695fa8 Add coauthor and update title
 * | e950911 Emphasise these are aircraft measurements
 |/  
@@ -153,7 +153,7 @@ git log --graph --all --decorate --oneline -4
 * 7c239c3 (HEAD -> master, origin/master, origin/HEAD) Add figures
 * 0cc2a2d Add results section
 * 3011ee0 Explain SMPS in methodology section
-*   6420699 Merge branch 'paperwjohn'
+*   6420699 Merge branch 'simulations'
 ```
 {: .output}
 
