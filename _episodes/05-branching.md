@@ -128,7 +128,7 @@ Having written some of the paper, we have thought of a better title for
 the `master` version of the paper.
 
 ~~~
-$ gedit journal			# Rewrite the title
+$ gedit paper.md		# Rewrite the title
 $ git add paper.md
 $ git commit			# "Include aircraft in title"
 ~~~

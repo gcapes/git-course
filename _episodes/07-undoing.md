@@ -149,7 +149,7 @@ $ git commit -m "Describe SMPS"
 ```
 {: .language-bash}
 
-We now realise that what we've just done in our journal file is incorrect
+We now realise that what we've just done in our journal article is incorrect
 because we are not using the data from that instrument.
 Some of the data got corrupted, and due to problems with the logging computer
 we are not going to use that data.
