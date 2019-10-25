@@ -168,7 +168,7 @@ previous changes. However, depending on the changes we made, we may bump into
 a *conflict* (which we will cover in more detail further on). 
 
 ```
-error: could not revert 848361e... Describe Aerosol Mass Spectrometer
+error: could not revert 848361e... Describe SMPS
 hint: after resolving the conflicts, mark the corrected paths
 hint: with 'git add <paths>' or 'git rm <paths>'
 hint: and commit the result with 'git commit'
