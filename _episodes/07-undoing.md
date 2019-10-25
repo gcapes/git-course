@@ -139,13 +139,13 @@ $ git log -3
 than deleting the commit from history, git works out how to undo those changes
 introduced by the commit, and appends a new commit with the resulting content.
 
-Let's try it on our example. Modify the journal, describing which other instruments were
-used, and then make a commit.
+Let's try it on our example. Modify the paper, describing the SMPS which is
+another instrument used to measure particle sizes, and then make a commit.
 
 ```
-$ gedit paper.md		# Describe other instruments
+$ gedit paper.md		# Describe other instrument
 $ git add paper.md
-$ git commit -m "Describe Aerosol Mass Spectrometer"
+$ git commit -m "Describe SMPS"
 ```
 {: .language-bash}
 
