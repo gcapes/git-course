@@ -26,8 +26,8 @@ For teaching as part of a Software Carpentry workshop:
 - 3 History and differences
 - 4 Commit advice
 - 5 Branching
-- ? 6 Undoing changes (if time)
-- 9 Remote repositories
+- ? 6 Undoing changes (if there's time)
+- 8 Remote repositories (just push local repo to GitHub)
 
 # Example paper
 I use variations on [this paper](https://github.com/gcapes/git-course-paper)
