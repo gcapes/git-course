@@ -337,7 +337,7 @@ $ git pull origin master	# Merge remote branch into local
 >
 > Each person should use a different name for their local branch.
 > The following commands assume your new branch is called `my_branch`,
-> and your partnet's branch is called `their_branch` ---
+> and your partner's branch is called `their_branch` ---
 > you should substitute the name of your new branch and your partner's new branch.
 > 
 > ```
