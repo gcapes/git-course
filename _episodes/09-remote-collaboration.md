@@ -325,7 +325,8 @@ $ git pull origin master	# Merge remote branch into local
 > the first person on your machines. (make sure that you **don't clone into
 > a directory that is already a repository**!)
 > 
-> Each of you should now make some changes to the files in the repository.
+> Each of you should now make some changes to the files in the repository
+> e.g. fix a typo, add a file containing supplementary material.
 > Commit the changes and then push them back to the remote repository.  
 > Remember to pull changes before you push.
 {: .challenge}
@@ -346,7 +347,7 @@ $ git pull origin master	# Merge remote branch into local
 > ```
 > {: .language-bash}
 >
-> Now create/edit a file, and then commit your changes.
+> Now create/edit a file (e.g. fix a typo, add supplementary material etc), and then commit your changes.
 >
 > ```
 > $ git push origin my_branch		# Push your new branch to remote repo.
