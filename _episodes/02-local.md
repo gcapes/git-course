@@ -155,10 +155,22 @@ Now, we'll create a file. Let's say we're going to write a journal paper, so
 we will start by adding the author names and a title, then save the file.
 
 ~~~
-$ gedit paper.md						# Windows users: use notepad instead of gedit (throughout this course)
+$ gedit paper.md				# Windows and Mac users see below for text editors available on your system
 # Add author names and paper title
 ~~~
 {: .language-bash}
+
+> ## Text editors on your OS
+> This course is written for Linux, where `gedit` should be available.
+> If you are using Windows, use `notepad` instead:
+> ```
+> notepad paper.md
+> ```
+> Similarly, if you are using macOS, use TextEdit:
+> ```
+> open -e paper.md
+> ```
+{: .callout}
 
 > ## Accessing files from the command line
 > In this lesson we create and modify text files using a command line interface
