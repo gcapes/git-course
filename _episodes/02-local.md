@@ -75,17 +75,6 @@ To set up alternative editors, follow the same notation e.g.
 
 Mac users can use *TextEdit*: `git config --global core.editor 'open -W -n'`.
 
-## Colours in Git
-
-On many computers, the terminal output is automatically coloured which makes
-reading the output easier.
-If your output is not coloured (e.g. in the Sackville/G11 cluster) there is a command
-which will add the colour (**note the spelling of *color***):
-
-```
-$ git config --global --add color.ui true			# Note US spelling of color
-```
-{: .language-bash}
 
 ## Git's global configuration
 
