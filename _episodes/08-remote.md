@@ -230,4 +230,3 @@ To see all remote repositories (we can have multiple!) type:
 $ git remote -v
 ```
 {: .language-bash}
-{: .language-bash}
