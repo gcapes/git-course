@@ -203,7 +203,7 @@ $ git checkout simulations			# Check out the simulations branch
 ### Push changes to a remote repository
 
 We can use our cloned repository just as if it was a local repository so let's
-make some changes to our files and commit these.
+[add a results section][add-results] and commit the changes.
 
 ```
 $ git checkout master				# We'll continue working on the master branch
@@ -230,3 +230,5 @@ To see all remote repositories (we can have multiple!) type:
 $ git remote -v
 ```
 {: .language-bash}
+
+[add-results]: https://github.com/gcapes/git-course-paper/commit/0c4573e5ea15d6f5dc877e8db8c0696e7675d5ed

@@ -20,7 +20,7 @@ keypoints:
 
 ### Looking at differences
 
-We should reference some previous work in the introduction section.
+We should [reference some previous work][reference-previous-work] in the introduction section.
 Make the required changes, save both files but do not commit the changes yet.
 We can review the changes that we made using:
 
@@ -280,7 +280,7 @@ $ git tag
 ```
 {: .language-bash}
 
-Let's explain to the reader why this research is important:
+Let's explain to the reader [why this research is important][give-context]:
 
 ```    
 $ gedit paper.md	# Give context for research
@@ -361,3 +361,5 @@ $ git checkout master
 > {: .solution}
 {: .challenge}
 
+[reference-previous-work]: https://github.com/gcapes/git-course-paper/commit/add59ba7d0b963531195eb3774b79bb9bcd749d1#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
+[give-context]: https://github.com/gcapes/git-course-paper/commit/92f674de54c77afd7ae32342f9f03d2bdd8fb76d#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6

@@ -115,7 +115,7 @@ We'll repeat the scenario from the last episode where the local and remote branc
 but instead of merging the remote branch `origin/master` into `master`,
 we'll rebase `master` onto `origin/master`.
 
-We'll write some acknowledgements, then commit and push.
+We'll [write some acknowledgements][acknowledgements], then commit and push.
 
 ```
 $ gedit paper.md				# Write acknowledgements
@@ -126,7 +126,7 @@ $ git push origin master			# Push master branch to remote
 {: .language-bash}
 
 
-We'll now switch machine to our laptop, and write the abstract:
+We'll now switch machine to our laptop, and [write the abstract][abstract]:
 
 ```
 $ cd ../laptop_paper				# Pretend we're on the laptop
@@ -233,3 +233,5 @@ gives a good illustration of what happens during rebasing.
 {: .callout}
 
 [^opinion]: This statement contains elements of opinion.
+[acknowledgements]: https://github.com/gcapes/git-course-paper/commit/db0d7c74b532979242525cff88830f743f5e5bdc
+[abstract]: https://github.com/gcapes/git-course-paper/commit/3c7af5d5ec501c94729c222fe3271da0c03c7265
