@@ -20,13 +20,13 @@ keypoints:
 
 ### Looking at differences
 
-We should reference some previous work in the introduction section.
+We should [reference some previous work][reference-previous-work] in the introduction section.
 Make the required changes, save both files but do not commit the changes yet.
 We can review the changes that we made using:
 
 ~~~
 $ gedit paper.md		# Cite previous studies in introduction
-$ gedit references.txt		# Add the reference to the database
+$ gedit refs.txt		# Add the reference to the database
 $ git diff 			# View changes
 ~~~
 {: .language-bash}
@@ -34,8 +34,8 @@ $ git diff 			# View changes
 This shows the difference between the latest copy in the repository and the
 unstaged changes we have made.
 
-* `-` means a line was deleted.  
-* `+` means a line was added.  
+* `-` means a line was deleted.
+* `+` means a line was added.
 * Note that a line that has been edited is shown as a removal of the old line and an
 addition of the updated line.
 
@@ -61,7 +61,7 @@ technologies.
 
 Now commit the change we made by adding the second reference:
 ```
-$ git add paper.md references.txt 
+$ git add paper.md refs.txt
 $ git commit			# "Cite previous work in introduction"
 ```
 {: .language-bash}
@@ -129,7 +129,7 @@ state of the repository as it was at any commit. So, let's go back to the very
 first commit we made,
 
 ~~~
-$ git log 
+$ git log
 $ git checkout INITIAL_COMMITID
 ~~~
 {: .language-bash}
@@ -147,7 +147,7 @@ If you want to create a new branch to retain commits you create, you may
 do so (now or later) by using -b with the checkout command again. Example:
 
   git checkout -b new_branch_name
-  
+
 HEAD is now at 21cfbde... Add title and authors
 ~~~
 {: .output}
@@ -167,7 +167,7 @@ paper.md
 ~~~
 {: .output}
 
-then we see that our `references.txt` file is gone. But, rest easy, while it's
+then we see that our `refs.txt` file is gone. But, rest easy, while it's
 gone from our working directory, it's still in our repository. We can jump back
 to the latest commit by doing:
 
@@ -176,14 +176,14 @@ $ git checkout master
 ~~~
 {: .language-bash}
 
-And `references.txt` will be there once more,
+And `refs.txt` will be there once more,
 
 ~~~
 $ ls
 ~~~
 {: .language-bash}
 ~~~
-paper.md references.txt
+paper.md refs.txt
 ~~~
 {: .output}
 So we can get any version of our files from any point in time. In other words,
@@ -193,7 +193,7 @@ a commit.
 ### The `HEAD` and `master` pointers
 
 *HEAD* is a reference, or pointer, which points to the branch at the commit where
-you currently are. 
+you currently are.
 We said previously that `master` is the default branch. But `master` is
 actually a pointer - that points to the tip of the `master` branch (the sequence
 of commits that is created by default by Git). You may think of `master` as two
@@ -203,11 +203,11 @@ things:
 2. the default branch.
 
 Before we checked out one of the past commits, the *HEAD* pointer was pointing to
-`master` i.e. the most recent commit of the `master` branch. 
+`master` i.e. the most recent commit of the `master` branch.
 After checking out one of the past commits, *HEAD* was pointing to that commit i.e.
-not pointing to master any more. 
+not pointing to master any more.
 That is what Git means by a 'detached HEAD' state and advises us that if we want to make a commit
-now, we should create a new branch to retain these commits. 
+now, we should create a new branch to retain these commits.
 
 ![Checking out a previous commit - detached head](../fig/detached-head.svg)
 
@@ -268,23 +268,23 @@ act as easy-to-remember nicknames for commit identifiers.
 
 For example,
 
-```    
+```
 $ git tag PAPER_STUB
 ```
 {: .language-bash}
 
 We can list tags by doing:
 
-```    
+```
 $ git tag
 ```
 {: .language-bash}
 
-Let's explain to the reader why this research is important:
+Let's explain to the reader [why this research is important][give-context]:
 
-```    
+```
 $ gedit paper.md	# Give context for research
-$ git add paper.md 
+$ git add paper.md
 $ git commit -m "Explain motivation for research" paper.md
 ```
 {: .language-bash}
@@ -292,19 +292,19 @@ $ git commit -m "Explain motivation for research" paper.md
 We can checkout our previous version using our tag instead of a commit
 identifier.
 
-```    
+```
 $ git checkout PAPER_STUB
 ```
 {: .language-bash}
 
 And return to the latest checkout,
 
-```    
+```
 $ git checkout master
 ```
 {: .language-bash}
 
-> ## Top tip: tag significant events 
+> ## Top tip: tag significant events
 > When do you tag? Well, whenever you might want to get back to the exact
 > version you've been working on. For a paper, this might be a version that has
 > been submitted to an internal review, or has been submitted to a conference.
@@ -318,7 +318,7 @@ $ git checkout master
 > track the contents of the 'inner' repository - things will get confusing!
 {: .callout}
 
-> ## Exercise: "bio" Repository 
+> ## Exercise: "bio" Repository
 >
 > - Create a new Git repository on your computer called "bio"
 > - Be sure not to create your new repo within the 'paper' repo (see above)
@@ -361,3 +361,5 @@ $ git checkout master
 > {: .solution}
 {: .challenge}
 
+[reference-previous-work]: https://github.com/gcapes/git-course-paper/commit/add59ba7d0b963531195eb3774b79bb9bcd749d1#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
+[give-context]: https://github.com/gcapes/git-course-paper/commit/92f674de54c77afd7ae32342f9f03d2bdd8fb76d#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6

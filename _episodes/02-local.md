@@ -26,7 +26,7 @@ For this we will use the command line interface.
 > ## Why use the command line?
 > There are lots of graphical user interfaces (GUIs) for using Git: both stand-alone
 > and integrated into IDEs (e.g. MATLAB, Rstudio).
-> We are deliberately not using a GUI for this course because: 
+> We are deliberately not using a GUI for this course because:
 >
 > * you will have a better understanding of how the git comands work
 > (some functionality is often missing and/or unclear in GUIs)
@@ -83,7 +83,7 @@ our name and the default editor which we just set up). If we look in our home
 directory, we'll see a `.gitconfig` file,
 
 ~~~
-$ cat ~/.gitconfig 
+$ cat ~/.gitconfig
     [user] name = Your Name email = yourname@yourplace.org
     [core] editor = gedit
 ~~~
@@ -99,23 +99,23 @@ i.e. the `--global` commands above are only required once per computer.
 
 We will be working with a simple example in this tutorial. It will be a paper
 that we will first start writing as a single author and then work on it further
-with one of our colleagues. 
+with one of our colleagues.
 
  First, let's create a directory within your home directory:
 
 ```
 $ cd								# Switch to your home directory.
 $ pwd								# Print working directory (output should be /home/<username>)
-$ mkdir paper 
+$ mkdir paper
 $ cd paper
-```	
+```
 {: .language-bash}
 
 Now, we need to set up this directory up to be a Git repository (or "initiate
 the repository"):
 
 ~~~
-$ git init 
+$ git init
 ~~~
 {: .language-bash}
 ~~~
@@ -123,7 +123,7 @@ Initialized empty Git repository in /home/user/paper/.git/
 ~~~
 {: .output}
 
-The directory "paper" is now our working directory. 
+The directory "paper" is now our working directory.
 
  If we look in this directory, we'll find a `.git` directory:
 
@@ -141,8 +141,7 @@ accidentally delete this directory!
 ## Tracking files with a git repository
 
 Now, we'll create a file. Let's say we're going to write a journal paper, so
-we will start by adding the author names and a title, then save the file.
-
+we will start by [adding the author names and a title][add-author-title], then save the file.
 ~~~
 $ gedit paper.md				# Windows and Mac users see below for text editors available on your system
 # Add author names and paper title
@@ -164,7 +163,7 @@ $ gedit paper.md				# Windows and Mac users see below for text editors available
 > ## Accessing files from the command line
 > In this lesson we create and modify text files using a command line interface
 > (e.g. terminal, Git Bash etc), mainly for convenience.
-> These are normal files which are also accessible from the file browser (e.g. Windows explorer), 
+> These are normal files which are also accessible from the file browser (e.g. Windows explorer),
 > and by other programs.
 {: .callout}
 
@@ -203,8 +202,8 @@ Git.
 To tell Git about the file, we will use the `git add` command:
 
 ~~~
-$ git add paper.md 
-$ git status 
+$ git add paper.md
+$ git status
 ~~~
 {: .language-bash}
 ~~~
@@ -219,15 +218,15 @@ Changes to be committed:
 ~~~
 {: .output}
 
-Now our file is listed underneath where it says **Changes to be committed**. 
-    
+Now our file is listed underneath where it says **Changes to be committed**.
+
 `git add` is used for two purposes. Firstly, to tell Git that a given file
 should be tracked. Secondly, to put the file into the Git **staging area**
-which is also known as the *index* or the *cache*. 
+which is also known as the *index* or the *cache*.
 
 The staging area can be viewed as a "loading dock", a place to hold files we have
 added, or changed, until we are ready to tell Git to record those changes in the
-repository. 
+repository.
 
 ![The staging area](../fig/git-staging-area.svg)
 
@@ -251,7 +250,7 @@ why. So we need to provide this in a commit message.
 If we save our commit message **and exit the editor**, Git will now commit our file.
 
 ~~~
-[master (root-commit) 21cfbde] 
+[master (root-commit) 21cfbde]
 1 file changed, 2 insertions(+) Add title and authors
 create mode 100644 paper.md
 ~~~
@@ -273,13 +272,13 @@ nothing to commit, working directory clean
 ~~~
 {: .output}
 
-our file is now in the repository. 
+our file is now in the repository.
 The output from the `git status` command means that we have a clean directory
-i.e. no tracked but modified files. 
+i.e. no tracked but modified files.
 
-Now we will work a bit further on our *paper.md* file by writing the introduction
+Now we will work a bit further on our *paper.md* file by [starting the introduction][start-intro]
 section.
-   
+
 ```
 $ gedit paper.md
 # Write introduction section
@@ -293,7 +292,7 @@ $ git status
 {: .language-bash}
 
 we see changes not staged for commit section and our file is marked as
-modified: 
+modified:
 
 ~~~
 On branch master
@@ -310,31 +309,31 @@ no changes added to commit (use "git add" and/or "git commit -a")
 This means that a file Git knows about has been modified by us but
 has not yet been committed. So we can add it to the staging area and then
 commit the changes:
-     
+
 ~~~
-$ git add paper.md 
+$ git add paper.md
 $ git commit							# "Write introduction"
 ~~~
 {: .language-bash}
 Note that in this case we used `git add` to put paper.md to the staging
 area. Git already knows this file should be tracked but doesn't know if we want
 to commit the changes we made to the file  in the repository and hence we have
-to add the file to the staging area. 
+to add the file to the staging area.
 
 It can sometimes be quicker to provide our commit messages at the command-line
 by doing `git commit -m "Write introduction section"`.
 
-In our introduction, we should cite a paper describing the main instrument used.
+In our introduction, we should [cite a paper] describing the main instrument used.
 
 ~~~
 $ gedit paper.md 						# Cite instrument paper in introduction
 ~~~
 {: .language-bash}
 
-Let's also create a file `references.txt` to hold our references:
+Let's also create a file `refs.txt` to hold our references:
 
 ~~~
-$ gedit references.txt					# Add the reference
+$ gedit refs.txt					# Add the reference
 ~~~
 {: .language-bash}
 
@@ -342,12 +341,12 @@ Now we need to record our work in the repository so we need to make a commit.
 First we tell Git to track the references.
 
 ~~~
-$ git add references.txt					# Track the references.txt file
-$ git status							# Verify that references.txt is now tracked
+$ git add refs.txt					# Track the refs.txt file
+$ git status							# Verify that refs.txt is now tracked
 ~~~
 {: .language-bash}
 
-The file `references.txt` is now tracked.  We also have to add
+The file `refs.txt` is now tracked.  We also have to add
 paper.md to the staging area. But there is a shortcut. We can use
 `commit -a`. This option means "commit all files that are tracked and
 that have been modified".
@@ -362,3 +361,7 @@ In order to add all tracked files to the staging area, use `git commit -a`
 (which may be very useful if you edit e.g. 10 files and now you want to commit all of them).
 
 ![The Git commit workflow](../fig/git-committing.svg)
+
+[add-author-title]: https://github.com/gcapes/git-course-paper/commit/8bd913361c97cdf754b9952ac6c2ac40531aed84#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
+[start-intro]: https://github.com/gcapes/git-course-paper/commit/fd89f56eaf67c60318e3111268e0097359a3fa4e#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
+[cite a paper]: https://github.com/gcapes/git-course-paper/commit/6e3919a05cd1b3ce922d35c65815204e0c0db711#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6

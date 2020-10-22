@@ -104,7 +104,7 @@ $ git branch			# Double check which branch we are working on
 ~~~
 {: .output}
 
-The * indicates which branch we're currently in. Now let's make the changes to the paper.
+The * indicates which branch we're currently in. Now let's [make the changes][change-title] to the paper.
 
 ~~~
 $ gedit paper.md		# Change title and add co-author
@@ -124,7 +124,7 @@ Switched to branch 'master'
 ~~~
 {: .output}
 
-Having written some of the paper, we have thought of a better title for
+Having written some of the paper, we have thought of a [better title][aircraft-title] for
 the `master` version of the paper.
 
 ~~~
@@ -138,7 +138,7 @@ $ git commit			# "Include aircraft in title"
 
 We are now working on two papers: the main one in our `master` branch and the one
 which may possibly be collaborative work in our "simulations" branch.
-Let's add another section to the paper to write about John's simulations.
+Let's [add another section][simulations-section] to the paper to write about John's simulations.
 
 ~~~
 $ git checkout simulations	# Switch branch
@@ -233,7 +233,7 @@ i.e. "Simulations of biomass burning aerosols over West Africa"
 - Or manually edit the line to something new which might combine some elements
 of the two e.g. "Aircraft measurements and simulations of biomass burning aerosols over West Africa"
 
-We edit the file. Then commit our changes:
+[We edit the file][resolve-conflict]. Then commit our changes:
 
 ~~~
 $ gedit paper.md		# Resolve conflict by editing paper.md
@@ -405,3 +405,7 @@ But we were then in the "detached HEAD" state.
 {: .challenge}
 
 [new branch animation]: https://learngitbranching.js.org/?NODEMO&command=git%20checkout%20HEAD~;git%20commit;git%20branch%20dh-ex;git%20checkout%20dh-ex;git%20checkout%20master
+[change-title]: https://github.com/gcapes/git-course-paper/commit/6d3e6fb24213f796a36fc8bec9db4cc779685482#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
+[aircraft-title]: https://github.com/gcapes/git-course-paper/commit/adcd2a0ceba5d87f8c56873d7984020fa3d82809
+[simulations-section]: https://github.com/gcapes/git-course-paper/commit/804bd97911c7b8191e5a372df364e87d27ea8c05
+[resolve-conflict]: https://github.com/gcapes/git-course-paper/commit/366bc48f3529ea740f5345b2307e105b942ad48b

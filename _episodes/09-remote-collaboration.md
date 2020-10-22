@@ -62,8 +62,8 @@ $ paper laptop_paper
 
 Let's pretend these clones are on two separate machines! So we have 3 versions
 of our repository - our two local versions, on our separate machines (we're
-still pretending!) and one on GitHub. So let's go into one of our clones, add a
-figures section, commit the file and push these changes to GitHub:
+still pretending!) and one on GitHub. So let's go into one of our clones, [add a
+figures section][add-figures], commit the file and push these changes to GitHub:
 
 ```    
 $ cd paper 			# Switch to the 'paper' directory
@@ -166,7 +166,7 @@ $ cat paper.md
 
 As a short-hand, we can do a `git pull` which does a `git fetch` then a `git merge`. 
 Next we will update our repo using `pull`, but this time starting in the *laptop_paper* folder (you
-should already be in the *laptop_paper* folder). Let's write the conclusions:
+should already be in the *laptop_paper* folder). Let's [write the conclusions][write-conclusions]:
 
 ```    
 $ gedit paper.md		# Write Conclusions
@@ -205,7 +205,7 @@ $ git log
 
 Let's continue to pretend that our two local, cloned, repositories are hosted
 on two different machines. You should still be in the original *paper* folder.
-Add an affiliation for each author.
+[Add an affiliation for each author][author-affiliations].
 Then push these changes to our remote repository:
 
 ```    
@@ -217,7 +217,7 @@ $ git push origin master
 {: .language-bash}
 
 Now let us suppose, at a later date, we use our other repository (on the laptop)
-and we want to change the order of the authors.
+and we want to [change the order of the authors][change-first-author].
 
 The remote branch `origin/master` is now ahead of our local `master` branch on the laptop,
 because we haven't yet updated our local branch using `git pull`.
@@ -289,7 +289,7 @@ versions they come from. We now need to manually edit the file to *resolve* the
 conflict. Just like we did when we had to deal with the conflict when we were
 merging the branches.
 
-We edit the file. Then commit our changes. Now, if we *push* ...
+[We edit the file][merge-conflict]. Then commit our changes. Now, if we *push* ...
 
 ```
 $ gedit paper.md		# Edit file to resolve merge conflict
@@ -408,3 +408,9 @@ $ git pull origin master	# Merge remote branch into local
 > > You should always use `revert` to undo changes which have been shared with others.
 > {: .solution}
 {: .challenge}
+
+[add-figures]: https://github.com/gcapes/git-course-paper/commit/8bfe74f715173b3f000134d56678e39e64d4bfbb
+[write-conclusions]: https://github.com/gcapes/git-course-paper/commit/7f9d94849c7de7c8dd915938b13fecae037f675a
+[author-affiliations]: https://github.com/gcapes/git-course-paper/commit/047e3f80e6530a3559efea82fe56229baf57f0b4
+[change-first-author]: https://github.com/gcapes/git-course-paper/commit/3e431fe1e6b9111a614e156994209c78169bb7f5
+[merge-conflict]: https://github.com/gcapes/git-course-paper/commit/0bba3e4aff27b7f8fa92736ab6e07429fd1fc49d

@@ -30,7 +30,7 @@ our file to the most recent version we committed to the repository by using:
 
 ```
 $ gedit paper.md		# Make some small edits to the file
-$ git checkout paper.md	# Discard edits we just made
+$ git checkout paper.md		# Discard edits we just made
 ```
 {: .language-bash}
 
@@ -58,14 +58,14 @@ message.
 
 But what if we forgot to include some files in the commit?
 
-Let's try it on our example. First, let's modify two files: our paper file and
+Let's try it on our example. First, let's [modify two files][describe-methodology]: our paper file and
 the references file. We will add a methodology section to the paper where we
 detail the model used for the simulations, and add a reference for this to the references
 file.
 
 ```
 $ gedit paper.md		# Add methodology section, including a reference to model
-$ gedit references.txt		# Add new reference for the model used
+$ gedit refs.txt		# Add new reference for the model used
 $ git status			# Get a status update on file modifications
 ```
 {: .output}
@@ -77,7 +77,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   references.txt
+	modified:   refs.txt
 	modified:   paper.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
@@ -104,7 +104,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed) 
   (use "git checkout --	<file>..." to discard changes in working directory)
 
-	modified:   references.txt
+	modified:   refs.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -115,7 +115,7 @@ Also, run `git log -2` to see what is the latest commit message and ID.
 Now, we want to fix our commit and add the references file.
 
 ```
-$ git add references.txt	# Add reference file
+$ git add refs.txt	# Add reference file
 $ git commit --amend		# Amend most recent commit
 ```
 {: .language-bash}
@@ -139,7 +139,7 @@ $ git log -3
 than deleting the commit from history, git works out how to undo those changes
 introduced by the commit, and appends a new commit with the resulting content.
 
-Let's try it on our example. Modify the paper, describing the SMPS which is
+Let's try it on our example. Modify the paper, [describing the SMPS][SMPS] which is
 another instrument used to measure particle sizes, and then make a commit.
 
 ```
@@ -164,8 +164,9 @@ When we revert, a new commit is created. The *HEAD* pointer and the branch
 pointer are in fact moved forward rather than backwards. 	
 	
 We can revert any previous commit. That is, we can "abandon" any of the
-previous changes. However, depending on the changes we made, we may bump into
-a *conflict* (which we will cover in more detail further on). 
+previous changes. However, depending on the changes we have made since,
+we may bump into a *conflict* (which we will cover in more detail later on).
+For example:
 
 ```
 error: could not revert 848361e... Describe SMPS
@@ -258,3 +259,6 @@ for further reading about the differences between `git revert` and `git reset`.
 
 ### How to undo almost anything with Git
 See [this blog post](https://github.com/blog/2019-how-to-undo-almost-anything-with-git) for more example scenarios and how to recover from them.
+
+[describe-methodology]: https://github.com/gcapes/git-course-paper/commit/00c685625b66952e33a7d88150232b7d6716a185
+[SMPS]: https://github.com/gcapes/git-course-paper/commit/bb77f4eafaf8a5c374a00ae17c79585d30343461
