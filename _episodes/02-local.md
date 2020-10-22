@@ -330,10 +330,10 @@ $ gedit paper.md 						# Cite instrument paper in introduction
 ~~~
 {: .language-bash}
 
-Let's also create a file `references.txt` to hold our references:
+Let's also create a file `refs.txt` to hold our references:
 
 ~~~
-$ gedit references.txt					# Add the reference
+$ gedit refs.txt					# Add the reference
 ~~~
 {: .language-bash}
 
@@ -341,12 +341,12 @@ Now we need to record our work in the repository so we need to make a commit.
 First we tell Git to track the references.
 
 ~~~
-$ git add references.txt					# Track the references.txt file
-$ git status							# Verify that references.txt is now tracked
+$ git add refs.txt					# Track the refs.txt file
+$ git status							# Verify that refs.txt is now tracked
 ~~~
 {: .language-bash}
 
-The file `references.txt` is now tracked.  We also have to add
+The file `refs.txt` is now tracked.  We also have to add
 paper.md to the staging area. But there is a shortcut. We can use
 `commit -a`. This option means "commit all files that are tracked and
 that have been modified".
