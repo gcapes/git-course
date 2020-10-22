@@ -164,8 +164,9 @@ When we revert, a new commit is created. The *HEAD* pointer and the branch
 pointer are in fact moved forward rather than backwards. 	
 	
 We can revert any previous commit. That is, we can "abandon" any of the
-previous changes. However, depending on the changes we made, we may bump into
-a *conflict* (which we will cover in more detail further on). 
+previous changes. However, depending on the changes we have made since,
+we may bump into a *conflict* (which we will cover in more detail later on).
+For example:
 
 ```
 error: could not revert 848361e... Describe SMPS
