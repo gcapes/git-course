@@ -63,6 +63,13 @@ Let's get back to our tutorial. We will first need a GitHub account.
 [Sign up](https://GitHub.com) or if you already have an account [sign
 in](https://GitHub.com).
 
+
+### Set up SSH keys
+[SSH] is an encrypted network protocol which we will use to securely access
+our remote repository.
+In order to use it, we need to [set up SSH keys].
+
+
 ### Create a new repository
 
 Now, we can create a repository on GitHub,
@@ -75,17 +82,25 @@ Now, we can create a repository on GitHub,
 * Click **Create Repository**
 
 You'll get a page with new information about your repository. We already have
-our local repository and we will be *pushing* it to GitHub, so this is the
-option we will use:
+our local repository and we will be *pushing* it to GitHub using SSH,
+so this is the option we will use:
 
 ```
-$ git remote add origin https://github.com/<USERNAME>/paper.git
+$ git remote add origin git@github.com:<USERNAME>/paper.git
 $ git push -u origin master
 ```
 {: .language-bash}
 
 The first line sets up an alias `origin`, to correspond to the URL of our
 new repository on GitHub.
+
+> ## `master` or `main`?
+> The `master` branch is the name of the default branch when you create a git repo.
+> Some people think that `main` is a better name,
+> and GitHub now has an extra line of code to rename the default branch.
+>
+> For simplicity and consistency with the Git software, this course will continue to use `master`.
+{: .callout}
 
 
 ### Push locally tracked files to a remote repository
@@ -236,3 +251,5 @@ $ git remote -v
 {: .language-bash}
 
 [add-results]: https://github.com/gcapes/git-course-paper/commit/0c4573e5ea15d6f5dc877e8db8c0696e7675d5ed
+[SSH]: https://en.wikipedia.org/wiki/Secure_Shell_Protocol
+[set up SSH keys]: https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent
