@@ -22,7 +22,7 @@ author: 'Gerard Capes'
 - [Full list of services on offer](http://www.itservices.manchester.ac.uk/our-services/research/)
 - For help and support, use the [Support Portal](http://www.itservices.manchester.ac.uk/help/)
 
-[Training courses]: http://www.staffnet.manchester.ac.uk/staff-learning-and-development/academicandresearch/practical-skills-and-knowledge/it-skills/research-computing/research-courses/
+[Training courses]: https://www.staffnet.manchester.ac.uk/staff-learning-and-development/learning-pathways/professional-and-technical-development/it-skills/research-computing/research-courses/
 
 # Housekeeping
 - Fire exit
