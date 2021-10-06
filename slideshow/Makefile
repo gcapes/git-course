@@ -1,20 +1,14 @@
 theme=mywhite
 reveal=reveal.js-4.1.2
 theme_css=${reveal}/dist/theme/${theme}.css
-
 previous_theme=$(shell ack -o ${theme_css} index.html)
-ifeq (${previous_theme}, ${theme_css})
-  different_theme=False
-else
-  different_theme=True
-endif
 
 .PHONY: all
-all: touch_theme index.html
+all: switch_theme index.html
 
-.PHONY: touch_theme
-touch_theme:
-ifeq (${different_theme},True)
+.PHONY: switch_theme
+switch_theme:
+ifneq (${previous_theme}, ${theme_css})
 	touch ${theme_css}
 endif
 
