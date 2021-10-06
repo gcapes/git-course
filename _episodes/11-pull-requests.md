@@ -34,6 +34,7 @@ a contributor, it was really easy to make the contribution.
 - Find a repository on GitHub that belongs to someone else
 - **Fork** it (`git clone` it on GitHub's servers into your GitHub account)
 - `git clone` it to your PC/laptop
+- Create a new branch
 - Make changes, and push them to your repository on GitHub
 - Request that the owner of the repository you *forked* pulls in your changes
 
@@ -80,8 +81,9 @@ In either case, your PR will update automatically once you have pushed your comm
 >	origin	https://github.com/YOUR_USERNAME/manchester-paper.git(fetch)
 > 	origin	https://github.com/YOUR_USERNAME/manchester-paper.git(push)
 > 	```
-> 
-> 3. `cd` into the directory you just cloned. Make changes you want to contribute.
+>
+> 3. `cd` into the directory you just cloned.
+> Create a new branch, then make changes you want to contribute.
 > Commit and push them back to your repository.
 > You won't be able to push back to the repository you forked from
 > because you are not added as a contributor!
