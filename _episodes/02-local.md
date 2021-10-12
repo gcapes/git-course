@@ -84,10 +84,17 @@ directory, we'll see a `.gitconfig` file,
 
 ~~~
 $ cat ~/.gitconfig
-    [user] name = Your Name email = yourname@yourplace.org
-    [core] editor = gedit
 ~~~
 {: .language-bash}
+
+~~~
+[user]
+	name = Your Name
+	email = yourname@yourplace.org
+[core]
+	editor = gedit
+~~~
+{: .output}
 
 **These global configuration settings will apply to any new Git repository
 you create on your computer.**
