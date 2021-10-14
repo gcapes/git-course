@@ -166,6 +166,26 @@ for examples.
 
 ---
 
+### Password manager/ssh-agent
+You can have the ssh-agent manage your password for you so you don't have to
+keep entering it.
+
+Start the ssh-agent
+
+~~~
+$ eval `ssh-agent`
+~~~
+{: .language-bash}
+
+Add your key(s) to the agent:
+
+~~~
+$ ssh-add
+~~~
+{: .language-bash}
+
+---
+
 ### Git GUIs
 
 There are a number of available GUIs for working with Git. The official Git
