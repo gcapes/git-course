@@ -46,7 +46,7 @@ private GitHub repositories (GitHub offers up to 5 free private repositories,
 if you are an academic - but do check this information as T&C may change).
 
 ### GitHub for research
-GitHub **isn't** the only remote repostitories provider. It is however very popular,
+GitHub **isn't** the only remote repositories provider. It is however very popular,
 in particular within the Open Source communities. The reason why we teach GitHub
 in this tutorial is mainly due to popular demand.
 
@@ -67,14 +67,117 @@ in](https://GitHub.com).
 ### Set up SSH keys
 [SSH] is an encrypted network protocol which we will use to securely access
 our remote repository.
-In order to use it, we need to [set up SSH keys].
+In order to use it, we need to set up a pair of SSH keys,
+which are used together to validate access.
+There's a private key, and a public key - GitHub needs to know the public key, but the private key stays only on your computer.
+A useful analogy is to think of the public key as a padlock,
+and the private key as the only key to the padlock.
 
+Let's first check whether we already have ssh keys set up:
+
+~~~
+$ ls ~/.ssh
+~~~
+{: .language-bash}
+
+If you already have ssh keys set up, your output will look something like this:
+
+~~~
+id_ed25519  id_ed25519.pub
+~~~
+{: .output}
+
+If you still need to set up ssh keys, you'll get a message like this:
+
+~~~
+ls: cannot access '/home/yourusername/.ssh': No such file or directory
+~~~
+{: .output}
+
+To set up the key pair, we use the following command
+~~~
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+~~~
+{: .language-bash}
+
+You *might* get an error from this if your system doesn't support
+the ed25519 algorithm, in which case you can try `$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+
+~~~
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/you/.ssh/id_ed25519):
+~~~
+{: .output}
+
+Accept the default option using <kbd>Enter</kbd>.
+
+~~~
+Created directory  '/home/you/.ssh'.
+Enter passphrase (empty for no passphrase):
+~~~
+{: .output}
+
+Enter a password (you'll be prompted to enter it twice)
+
+~~~
+Your identification has been saved in /home/you/.ssh/id_ed25519
+Your public key has been saved in /home/you/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:SMSPIStNyA00KPxuYu94KpZgRAYjgt9g4BA4kFy3g1o your_email@example.com
+The key's randomart image is:
++--[ED25519 256]--+
+|^B== o.          |
+|%*=.*.+          |
+|+=.E =.+         |
+| .=.+.o..        |
+|....  . S        |
+|.+ o             |
+|+ =              |
+|.o.o             |
+|oo+.             |
++----[SHA256]-----+
+~~~
+{: .output}
+
+Now that we have generated the SSH keys, we will find the SSH files when we check.
+
+~~~
+$ ls ~/.ssh
+~~~
+{: .language-bash}	
+
+~~~
+id_ed25519  id_ed25519.pub
+~~~
+{: .output}
+
+We can view the public key using
+
+~~~
+$ cat ~/.ssh/id_ed25519.pub
+~~~
+{: .language-bash}
+
+~~~
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI your_email@example.com
+~~~
+{: .output}
+
+Now you should copy the output from this command ready for the final step.
+
+The final step is to add the public key to our GitHub accounts.
+- On [GitHub], click on your profile icon in the top right corner
+- Click “Settings,” then on the settings page
+- Click “SSH and GPG keys”
+- Click the “New SSH key” button on the right side.
+- Add a title e.g. "my_work_laptop" and paste your SSH key into
+  the field, and click the “Add SSH key” to complete the setup.
 
 ### Create a new repository
 
 Now, we can create a repository on GitHub,
 
-* Log in to [GitHub](https://GitHub.com/)
+* Log in to [GitHub]
 * Click on the **Create** icon on the top right
 * Enter Repository name: "paper"
 * For the purpose of this exercise we'll create a public repository
@@ -250,6 +353,7 @@ $ git remote -v
 ```
 {: .language-bash}
 
+[GitHub]: https://github.com/
 [add-results]: https://github.com/gcapes/git-course-paper/commit/0c4573e5ea15d6f5dc877e8db8c0696e7675d5ed
 [SSH]: https://en.wikipedia.org/wiki/Secure_Shell_Protocol
-[set up SSH keys]: https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent
+	
