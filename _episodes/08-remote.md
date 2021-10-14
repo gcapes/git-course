@@ -46,7 +46,7 @@ private GitHub repositories (GitHub offers up to 5 free private repositories,
 if you are an academic - but do check this information as T&C may change).
 
 ### GitHub for research
-GitHub **isn't** the only remote repostitories provider. It is however very popular,
+GitHub **isn't** the only remote repositories provider. It is however very popular,
 in particular within the Open Source communities. The reason why we teach GitHub
 in this tutorial is mainly due to popular demand.
 
