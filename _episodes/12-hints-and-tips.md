@@ -58,13 +58,6 @@ Search for your problem online. Someone has probably already asked (and answered
 
 ---
 
-### Add a repository description
-
-You can edit the file `.git/description` and give your repository a name e.g.
-"My first repository".
-
----
-
 ### Ignore scratch, temporary and binary files
 
 You can create a `.gitignore` file which lists the patterns of files you want
