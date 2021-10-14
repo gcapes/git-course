@@ -58,13 +58,6 @@ Search for your problem online. Someone has probably already asked (and answered
 
 ---
 
-### Add a repository description
-
-You can edit the file `.git/description` and give your repository a name e.g.
-"My first repository".
-
----
-
 ### Ignore scratch, temporary and binary files
 
 You can create a `.gitignore` file which lists the patterns of files you want
@@ -170,6 +163,26 @@ involve committing incomplete work just to return to this state later on.
 of unfinished changes that you can reapply at any time using `git stash apply`.
 See [here](https://git-scm.com/book/en/v1/Git-Tools-Stashing) for more details and
 for examples.
+
+---
+
+### Password manager/ssh-agent
+You can have the ssh-agent manage your password for you so you don't have to
+keep entering it.
+
+Start the ssh-agent
+
+~~~
+$ eval `ssh-agent`
+~~~
+{: .language-bash}
+
+Add your key(s) to the agent:
+
+~~~
+$ ssh-add
+~~~
+{: .language-bash}
 
 ---
 
