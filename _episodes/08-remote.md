@@ -144,7 +144,7 @@ Now that we have generated the SSH keys, we will find the SSH files when we chec
 ~~~
 $ ls ~/.ssh
 ~~~
-{: .language-bash}	
+{: .language-bash}
 
 ~~~
 id_ed25519  id_ed25519.pub
@@ -173,6 +173,21 @@ The final step is to add the public key to our GitHub accounts.
 - Add a title e.g. "my_work_laptop" and paste your SSH key into
   the field, and click the “Add SSH key” to complete the setup.
 
+### Set the default GitHub branch name to 'master'
+As we saw in [episode 2], the default branch name in a git repo is *master*.
+
+In 2021 GitHub and many other remote repo providers changed their settings
+so that new repositories will use *main* instead of master.
+As ever there are arguments [for] and [against] this change.
+We can however choose the default branch name in our GitHub settings,
+so let's set it to master to be consistent with the git software itself.
+
+On GitHub, click on your profile photo at the top right of the page.
+Then go to Settings -> Repositories -> Repository default branch.
+
+Change 'main' to 'master' and click 'update'.
+
+
 ### Create a new repository
 
 Now, we can create a repository on GitHub,
@@ -196,14 +211,6 @@ $ git push -u origin master
 
 The first line sets up an alias `origin`, to correspond to the URL of our
 new repository on GitHub.
-
-> ## `master` or `main`?
-> The `master` branch is the name of the default branch when you create a git repo.
-> Some people think that `main` is a better name,
-> and GitHub now has an extra line of code to rename the default branch.
->
-> For simplicity and consistency with the Git software, this course will continue to use `master`.
-{: .callout}
 
 
 ### Push locally tracked files to a remote repository
@@ -356,4 +363,6 @@ $ git remote -v
 [GitHub]: https://github.com/
 [add-results]: https://github.com/gcapes/git-course-paper/commit/0c4573e5ea15d6f5dc877e8db8c0696e7675d5ed
 [SSH]: https://en.wikipedia.org/wiki/Secure_Shell_Protocol
-	
+[for]: https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/
+[against]: https://dev.to/dandv/8-problems-with-replacing-master-in-git-2hck
+[episode 2]: ../02-local
