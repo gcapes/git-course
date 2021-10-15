@@ -102,7 +102,7 @@ $ ssh-keygen -t ed25519 -C "your_email@example.com"
 {: .language-bash}
 
 You *might* get an error from this if your system doesn't support
-the ed25519 algorithm, in which case you can try 
+the ed25519 algorithm, in which case you can try
 `$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
 
 ~~~
@@ -367,6 +367,6 @@ $ git remote -v
 [SSH]: https://en.wikipedia.org/wiki/Secure_Shell_Protocol
 [for]: https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/
 [against]: https://dev.to/dandv/8-problems-with-replacing-master-in-git-2hck
-[episode 2]: ../02-local
+[episode 2]: {{ page.root }}{% link _episodes/02-local.md %}
 
 {% include links.md %}
