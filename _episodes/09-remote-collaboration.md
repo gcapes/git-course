@@ -264,6 +264,7 @@ author
 J Smith, G Capes
 >>>>>>> 1b55fe7f23a6411f99bf573bfb287937ecb647fc
 ```
+{: .output}
 
 The mark-up shows us the parts of the file causing the conflict and the
 versions they come from. We now need to manually edit the file to *resolve* the

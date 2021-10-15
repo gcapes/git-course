@@ -24,6 +24,7 @@ Like many Unix/Linux commands, `git` has a `man` page,
 ```
 $ man git
 ```
+{: .language-bash}
 
 You can scroll the manual page up and down using the up and down arrows.
 
@@ -76,7 +77,10 @@ $ gedit .gitignore
 
 Then add patterns for the files you want to ignore, where `*` is a wildcard,
 
-    *~ *.o *.so *.dll *.exe *.class *.jar
+~~~
+*~ *.o *.so *.dll *.exe *.class *.jar
+~~~
+{: .language-bash}
 
 Then, add `.gitignore` to your repository,
 
@@ -212,9 +216,9 @@ $ cat ~/.gitconfig
 
 ```
 [user]
-	name = Your Name 
+	name = Your Name
 	email = yourname@yourplace.org
-[core] 
+[core]
 	editor = gedit
 ```
 {: .output}
@@ -230,8 +234,10 @@ $ git config --global alias.cms 'commit -m'
 And now our configuration file will have a new section added:
 
 ```
-… [alias] cms = commit -m
+[alias]
+	cms = commit -m
 ```
+{: .output}
 
 Next time we can simply type:
 

@@ -221,6 +221,7 @@ Aircraft measurements of biomass burning aerosols over West Africa
 Simulations of biomass burning aerosols over West Africa
 >>>>>>> simulations
 ```
+{: .output}
 
 The mark-up shows us the parts of the file causing the conflict and the
 versions they come from. We now need to manually edit the file to resolve the
