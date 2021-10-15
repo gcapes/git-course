@@ -95,3 +95,5 @@ In either case, your PR will update automatically once you have pushed your comm
 > created a pull request - the request can be reviewed, commented and merged in
 > (or not) via GitHub.
 {: .challenge}
+
+{% include links.md %}

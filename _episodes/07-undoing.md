@@ -263,3 +263,5 @@ more example scenarios and how to recover from them.
 
 [describe-methodology]: https://github.com/gcapes/git-course-paper/commit/00c685625b66952e33a7d88150232b7d6716a185
 [SMPS]: https://github.com/gcapes/git-course-paper/commit/bb77f4eafaf8a5c374a00ae17c79585d30343461
+
+{% include links.md %}

@@ -239,3 +239,5 @@ gives a good illustration of what happens during rebasing.
 [^opinion]: This statement contains elements of opinion.
 [acknowledgements]: https://github.com/gcapes/git-course-paper/commit/db0d7c74b532979242525cff88830f743f5e5bdc
 [abstract]: https://github.com/gcapes/git-course-paper/commit/3c7af5d5ec501c94729c222fe3271da0c03c7265
+
+{% include links.md %}

@@ -374,3 +374,5 @@ In order to add all tracked files to the staging area, use `git commit -a`
 [add-author-title]: https://github.com/gcapes/git-course-paper/commit/8bd913361c97cdf754b9952ac6c2ac40531aed84#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
 [start-intro]: https://github.com/gcapes/git-course-paper/commit/fd89f56eaf67c60318e3111268e0097359a3fa4e#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
 [cite a paper]: https://github.com/gcapes/git-course-paper/commit/6e3919a05cd1b3ce922d35c65815204e0c0db711#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
+
+{% include links.md %}

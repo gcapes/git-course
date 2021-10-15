@@ -397,3 +397,5 @@ $ git pull origin master	# Merge remote branch into local
 [author-affiliations]: https://github.com/gcapes/git-course-paper/commit/047e3f80e6530a3559efea82fe56229baf57f0b4
 [change-first-author]: https://github.com/gcapes/git-course-paper/commit/3e431fe1e6b9111a614e156994209c78169bb7f5
 [merge-conflict]: https://github.com/gcapes/git-course-paper/commit/0bba3e4aff27b7f8fa92736ab6e07429fd1fc49d
+
+{% include links.md %}

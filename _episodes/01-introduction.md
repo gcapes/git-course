@@ -147,3 +147,5 @@ have used a centralized version control system before e.g. Subversion,
 this will be one of the major differences to how you are used to working.
 See [here](https://git.wiki.kernel.org/index.php/GitSvnComparsion) for a more
 detailed comparison of Git and Subversion.
+
+{% include links.md %}

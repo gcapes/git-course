@@ -368,3 +368,5 @@ $ git remote -v
 [for]: https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/
 [against]: https://dev.to/dandv/8-problems-with-replacing-master-in-git-2hck
 [episode 2]: ../02-local
+
+{% include links.md %}
