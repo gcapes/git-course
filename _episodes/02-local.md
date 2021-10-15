@@ -12,7 +12,7 @@ objectives:
 keypoints:
 - "`git init` initializes a new repository"
 - "`git status` shows the status of a repository"
-- "Files can be stored in a project’s `working directory` (which users see), 
+- "Files can be stored in a project’s `working directory` (which users see),
    the `staging area` (where the next commit is being built up) and the
    `local repository` (where commits are permanently recorded)"
 - "`git add` puts files in the staging area"
@@ -163,10 +163,13 @@ $ gedit paper.md				# Windows and Mac users see below for text editors available
 > ```
 > notepad paper.md
 > ```
+> {: .language-bash}
+>
 > Similarly, if you are using macOS, use TextEdit:
 > ```
 > open -e paper.md
 > ```
+> {: .language-bash}
 {: .callout}
 
 > ## Accessing files from the command line
