@@ -20,11 +20,11 @@ keypoints:
 You might have noticed the term *branch* in status messages:
 
 ~~~
-$ git status 
+$ git status
 ~~~
 {: .language-bash}
 ~~~
-On branch master 
+On branch master
 nothing to commit (working directory clean)
 ~~~
 {: .output}
@@ -35,18 +35,18 @@ used `git checkout master`.
 Not only can our repository store the changes made to files and directories, it
 can store multiple sets of these, which we can use and edit and update in
 parallel. Each of these sets, or parallel instances, is termed a `branch` and
-`master` is Git's default branch. 
+`master` is Git's default branch.
 
 A new branch can be created from any commit. Branches can also be *merged*
-together. 
+together.
 
 ### Why are branches useful?
 Suppose we've developed some software and now we want to
 try out some new ideas but we're not sure yet whether we'll keep them. We
 can then create a branch 'feature1' and keep our `master` branch clean. When
 we're done developing the feature and we are sure that we want to include it
-in our program, we can merge the feature branch with the `master` branch. 
-This keeps all the work-in-progress separate from the `master` branch, which 
+in our program, we can merge the feature branch with the `master` branch.
+This keeps all the work-in-progress separate from the `master` branch, which
 contains tested, working code.
 
 When we merge our feature branch with master git creates a new commit which
@@ -59,16 +59,17 @@ making commits) in feature1 as well.
 One popular model is the [Gitflow model](http://nvie.com/posts/a-successful-git-branching-model/):
 
 - A `master` branch, representing a released version of the code
-- A release branch, representing the beginnings of the next release - a branch 
+- A release branch, representing the beginnings of the next release - a branch
 where the code is still undergoing testing
 - Various feature and/or developer-specific branches representing
 work-in-progress, new features, bug fixes etc
 
 For example:
 
-![Feature branches ([image source)](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow)](../fig/feature-branch.svg)
+![Feature branches ([image
+source)](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow)](../fig/feature-branch.svg)
 
-There are different possible workflows when using Git for code development. 
+There are different possible workflows when using Git for code development.
 If you want to learn more about different workflows with Git, have a look at
 [this discussion](https://www.atlassian.com/git/tutorials/comparing-workflows)
 on the Atlassian website.
@@ -100,11 +101,12 @@ $ git branch			# Double check which branch we are working on
 {: .language-bash}
 ~~~
   master
-* simulations 
+* simulations
 ~~~
 {: .output}
 
-The * indicates which branch we're currently in. Now let's [make the changes][change-title] to the paper.
+The * indicates which branch we're currently in. Now let's [make the changes][change-title]
+to the paper.
 
 ~~~
 $ gedit paper.md		# Change title and add co-author
@@ -116,7 +118,7 @@ $ git commit			# "Modify title and add John as co-author"
 If we now want to work in our `master` branch. We can switch back by using:
 
 ~~~
-$ git checkout master 
+$ git checkout master
 ~~~
 {: .language-bash}
 ~~~
@@ -143,7 +145,7 @@ Let's [add another section][simulations-section] to the paper to write about Joh
 ~~~
 $ git checkout simulations	# Switch branch
 $ gedit paper.md		# Add 'simulations' section
-$ git add paper.md 
+$ git add paper.md
 $ git commit -m "Add simulations" paper.md
 ~~~
 {: .language-bash}
@@ -161,7 +163,7 @@ git log --graph --all --oneline --decorate
 * 89d5c6e (simulations) Add simulations
 * 05d393a Change title and add coauthor
 | * (HEAD, master) bdebbe0 Include aircraft in title
-|/  
+|/
 * 87a65e6 Explain motivation for research
 * 6a48241 Cite previous work in introduction
 * ed26351 Cite PCASP paper
@@ -171,8 +173,8 @@ git log --graph --all --oneline --decorate
 {: .output}
 
 After some discussions with John we decided that we will publish together,
-hence it makes sense to now merge all that was authored together with John 
-in branch "simulations". 
+hence it makes sense to now merge all that was authored together with John
+in branch "simulations".
 We can do that by *merging* that branch with the `master` branch. Let's try
 doing that:
 
@@ -205,7 +207,7 @@ You have unmerged paths.
 Unmerged paths:
   (use "git add <file>..." to mark resolution)
 
-    	both modified:      paper.md
+	both modified:	    paper.md
 ~~~
 {: .output}
 
@@ -219,6 +221,7 @@ Aircraft measurements of biomass burning aerosols over West Africa
 Simulations of biomass burning aerosols over West Africa
 >>>>>>> simulations
 ```
+{: .output}
 
 The mark-up shows us the parts of the file causing the conflict and the
 versions they come from. We now need to manually edit the file to resolve the
@@ -231,7 +234,8 @@ conflict. This means removing the mark-up and doing one of:
 i.e. "Simulations of biomass burning aerosols over West Africa"
 
 - Or manually edit the line to something new which might combine some elements
-of the two e.g. "Aircraft measurements and simulations of biomass burning aerosols over West Africa"
+of the two e.g. "Aircraft measurements and simulations of biomass burning aerosols over West
+Africa"
 
 [We edit the file][resolve-conflict]. Then commit our changes:
 
@@ -255,11 +259,11 @@ $ git log --graph --decorate --all --oneline
 
 ```
 *   39cc80d (HEAD, master) Merge branch 'simulations'
-|\  
+|\
 | * 89d5c6e (simulations) Add simulations
 | * 05d393a Change title and add coauthor
 * | bdebbe0 Include aircraft in title
-|/  
+|/
 * 87a65e6 Explain motivation for research
 * 6a48241 Cite previous work in introduction
 * ed26351 Cite PCASP paper
@@ -271,8 +275,8 @@ $ git log --graph --decorate --all --oneline
 ### Looking at our history - revisited
 We already looked at "going back in time with Git". But now we'll look at it in
 more detail to see how moving back relates to branches and we will learn how to
-actually undo things. So far we were moving back in time in one branch by 
-checking out one of the past commits. 
+actually undo things. So far we were moving back in time in one branch by
+checking out one of the past commits.
 
 But we were then in the "detached HEAD" state.
 
@@ -287,9 +291,9 @@ But we were then in the "detached HEAD" state.
 > > git checkout HEAD~1  # Check out the commit one before last
 > > gedit paper.md     # Make some edits
 > > git add paper.md   # Stage the changes
-> > git commit           # Commit the changes
-> > git branch           # You should see a message like the one below,
-> >                      # indicating your commit does not belong to a branch
+> > git commit		 # Commit the changes
+> > git branch		 # You should see a message like the one below,
+> >			 # indicating your commit does not belong to a branch
 > > ```
 > > {: .language-bash}
 > > ```
@@ -302,16 +306,17 @@ But we were then in the "detached HEAD" state.
 > > which doesn't have a name.
 > >
 > > See this [detached HEAD animation] of the above process.
-> {: .solution} 
+> {: .solution}
 {: .challenge}
 
-[detached HEAD animation]: https://learngitbranching.js.org/?NODEMO&command=git%20checkout%20HEAD~;git%20commit
+[detached HEAD animation]:
+https://learngitbranching.js.org/?NODEMO&command=git%20checkout%20HEAD~;git%20commit
 
 > ## Abandon the commit on a detached HEAD
 > You decide that you want to abandon that commit.
 > How would you get back to the current version of your project?
 >
-> > ## Solution 
+> > ## Solution
 > > ```
 > > git checkout master
 > > ```
@@ -346,19 +351,19 @@ But we were then in the "detached HEAD" state.
 > Preparation:
 >
 > - You should be on the `master` branch after that last exercise.
-> If not, check out master again: `git checkout master` 
+> If not, check out master again: `git checkout master`
 > - Checkout one of the previous commits from your repository.
 > - Make some changes, save the file(s), and make a commit on the detached HEAD as
 > you did in the first exercise.
 > - Run `git branch` to list your local branches, and see that you are on a temporary branch.
 >
-> This time we want to keep the commit rather than abandon it. 
+> This time we want to keep the commit rather than abandon it.
 > - Create a new branch and check it out.
 > - Now run `git log` and see that your new commit belongs to this new branch.
 > - List your local branches again and see that the temporary branch has gone.
-> - Switch back to (i.e. checkout) the `master` branch 
+> - Switch back to (i.e. checkout) the `master` branch
 >
-> > ## Solution 
+> > ## Solution
 > >
 > > ```
 > > git checkout HEAD~1		# Checkout the commit before last
@@ -377,7 +382,7 @@ But we were then in the "detached HEAD" state.
 > > You are currently on a temporary, unnamed branch, as indicated by the `*`.
 > > ```
 > > git branch dh-exercise		# Create a new branch
-> > git checkout dh-exercise	# Switch to the new branch 
+> > git checkout dh-exercise	# Switch to the new branch
 > > ```
 > > {: .language-bash}
 > > ```
@@ -409,3 +414,5 @@ But we were then in the "detached HEAD" state.
 [aircraft-title]: https://github.com/gcapes/git-course-paper/commit/adcd2a0ceba5d87f8c56873d7984020fa3d82809
 [simulations-section]: https://github.com/gcapes/git-course-paper/commit/804bd97911c7b8191e5a372df364e87d27ea8c05
 [resolve-conflict]: https://github.com/gcapes/git-course-paper/commit/366bc48f3529ea740f5345b2307e105b942ad48b
+
+{% include links.md %}

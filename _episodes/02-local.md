@@ -12,7 +12,9 @@ objectives:
 keypoints:
 - "`git init` initializes a new repository"
 - "`git status` shows the status of a repository"
-- "Files can be stored in a project’s `working directory` (which users see), the `staging area` (where the next commit is being built up) and the `local repository` (where commits are permanently recorded)"
+- "Files can be stored in a project’s `working directory` (which users see),
+   the `staging area` (where the next commit is being built up) and the
+   `local repository` (where commits are permanently recorded)"
 - "`git add` puts files in the staging area"
 - "`git commit` saves the staged content as a new commit in the local repository"
 - "Always write a log message when committing changes"
@@ -161,10 +163,13 @@ $ gedit paper.md				# Windows and Mac users see below for text editors available
 > ```
 > notepad paper.md
 > ```
+> {: .language-bash}
+>
 > Similarly, if you are using macOS, use TextEdit:
 > ```
 > open -e paper.md
 > ```
+> {: .language-bash}
 {: .callout}
 
 > ## Accessing files from the command line
@@ -221,7 +226,7 @@ Initial commit
 Changes to be committed:
 (use "git rm --cached <file>..." to unstage)
 
-      	new file:   paper.md
+	new file:   paper.md
 ~~~
 {: .output}
 
@@ -307,7 +312,7 @@ Changes not staged for commit:
 (use "git add <file>..." to update what will be committed)
 (use "git checkout -- <file>..." to discard changes in working directory)
 
-     modified:   paper.md
+     modified:	 paper.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -359,7 +364,7 @@ paper.md to the staging area. But there is a shortcut. We can use
 that have been modified".
 
 ~~~
-$ git commit -am "Reference J Bloggs and add references file" 	# Add and commit all tracked files
+$ git commit -am "Reference J Bloggs and add references file"	# Add and commit all tracked files
 ~~~
 {: .language-bash}
 and Git will add, then commit, both the directory and the file.
@@ -372,3 +377,5 @@ In order to add all tracked files to the staging area, use `git commit -a`
 [add-author-title]: https://github.com/gcapes/git-course-paper/commit/8bd913361c97cdf754b9952ac6c2ac40531aed84#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
 [start-intro]: https://github.com/gcapes/git-course-paper/commit/fd89f56eaf67c60318e3111268e0097359a3fa4e#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
 [cite a paper]: https://github.com/gcapes/git-course-paper/commit/6e3919a05cd1b3ce922d35c65815204e0c0db711#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
+
+{% include links.md %}

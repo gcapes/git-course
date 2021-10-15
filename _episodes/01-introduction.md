@@ -10,7 +10,7 @@ objectives:
 keypoints:
 - "Git is a version control tool; one of many."
 - "GitHub is a repository hosting service; one of many."
-- "Use version control to store versions neatly, restore previous versions, 
+- "Use version control to store versions neatly, restore previous versions,
 understand what happened (and why), and always know which is the current version."
 ---
 
@@ -22,7 +22,8 @@ mess things up, you can retrieve an earlier version of your project.
 
 ## Why use a version control system?
 
-![[Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com](http://www.phdcomics.com)](../fig/phd101212s.png)
+![[Piled Higher and Deeper by Jorge Cham,
+http://www.phdcomics.com](http://www.phdcomics.com)](../fig/phd101212s.png)
 
 The comic above illustrates some of pitfalls of working without version
 control. Some of the benefits are given below:
@@ -63,7 +64,7 @@ Merge different versions
 The ability to restore previous versions of a file (or all the files
 in your project) greatly reduces the scope for screw ups. If you make
 changes which you later want to abandon (e.g. the wording of your
-conclusion section was better before you started making changes, your 
+conclusion section was better before you started making changes, your
 code changes end up breaking things which previously worked and you
 can't figure out why etc), you can just undo them by restoring a previous
 version.
@@ -100,16 +101,16 @@ and then you want to try something you're not quite confident about
 yet, so you save a copy in another folder just in case.
 
 Then you want to try out the program with more data on a bigger machine,
-and you make a few changes there to get it working properly. Then you 
+and you make a few changes there to get it working properly. Then you
 try out something else in the copy on your laptop.
 
 Now you have three or four copies, all slightly different, and you have
 some results generated from all of them, and you include some of it in
 a paper.
 
-Then someone asks for the same results based on a new data file. You have 
+Then someone asks for the same results based on a new data file. You have
 to go off and remind yourself which version you used, find out whether
-you still have it at all or whether you've changed it again since, check 
+you still have it at all or whether you've changed it again since, check
 whether it really has the vital changes you thought you'd included but
 that might have been only on that other machine, and so on.
 
@@ -117,7 +118,7 @@ You should easily be able to see the benefits of VCS in the situation above.
 
 ## What files can I track using version control?
 VCS is typically used for software source code, but it can be used for
-any kind of **text** file: 
+any kind of **text** file:
 
 - Configuration files
 - Parameter sets
@@ -141,8 +142,10 @@ Strategies for dealing with large binary files are discussed
 For this session, we'll be using Git, a popular distributed version control system
 and [GitHub](http://github.com), a web-based service providing remote
 repositories. *Distributed* means that each user has a complete copy of
-the repository on their computer and can commit changes offline. If you 
+the repository on their computer and can commit changes offline. If you
 have used a centralized version control system before e.g. Subversion,
 this will be one of the major differences to how you are used to working.
-See [here](https://git.wiki.kernel.org/index.php/GitSvnComparsion) for a more 
+See [here](https://git.wiki.kernel.org/index.php/GitSvnComparsion) for a more
 detailed comparison of Git and Subversion.
+
+{% include links.md %}

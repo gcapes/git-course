@@ -6,7 +6,7 @@ questions:
 - "How can I find help?"
 - "How can I further customise Git to suit my preferences?"
 objectives:
-- "Access help online and from command prompt" 
+- "Access help online and from command prompt"
 - "Configure Git to ignore certain types of files"
 - "Understand how to build a commit selectively using `git add --patch`"
 keypoints:
@@ -24,6 +24,7 @@ Like many Unix/Linux commands, `git` has a `man` page,
 ```
 $ man git
 ```
+{: .language-bash}
 
 You can scroll the manual page up and down using the up and down arrows.
 
@@ -43,18 +44,19 @@ $ git --help
 {: .language-bash}
 
 and Git gives a list of commands it is able to help with, as well as their
-descriptions. 
+descriptions.
 
 You can get more help on a specific command, by providing the command name e.g.
 
 ```
-$ git init --help 
+$ git init --help
 $ git commit --help
 ```
 {: .language-bash}
 
 #### Google
-Search for your problem online. Someone has probably already asked (and answered) your question on stackoverflow.com.
+Search for your problem online. Someone has probably already asked (and answered) your question
+on stackoverflow.com.
 
 ---
 
@@ -75,7 +77,10 @@ $ gedit .gitignore
 
 Then add patterns for the files you want to ignore, where `*` is a wildcard,
 
-    *~ *.o *.so *.dll *.exe *.class *.jar
+~~~
+*~ *.o *.so *.dll *.exe *.class *.jar
+~~~
+{: .language-bash}
 
 Then, add `.gitignore` to your repository,
 
@@ -101,7 +106,7 @@ http://nuclearsquid.com/writings/git-add/)
 ### `git commit --author`
 You can commit changes made by someone else, by using the `--author`
 flag. Consider how this may enable you to collaborate with your colleagues.
-The syntax is: 
+The syntax is:
 
 `git add --author="FirstName Surname <Firstname.Surname@example.com>"`
 
@@ -154,7 +159,7 @@ $ git difftool
 
 ### `git stash`
 Sometimes you are working on one branch and want to switch to another branch for
-a while. 
+a while.
 In order to do so you would normally need to have a clean working directory i.e.
 no modified files or staged changes.
 You could commit all the changes you have made, then switch branch, but that would
@@ -205,16 +210,19 @@ Git in the `home` directory. If you set up some basic configuration (in the
 first steps of this tutorial), it should look like this.
 
 ```
-$ cat ~/.gitconfig 
+$ cat ~/.gitconfig
 ```
 {: .language-bash}
 
 ```
-[user] name = Your Name email = yourname@yourplace.org 
-[core] editor = gedit
+[user]
+	name = Your Name
+	email = yourname@yourplace.org
+[core]
+	editor = gedit
 ```
 {: .output}
-     	
+
 You can add more configuration options. For example, instead of typing `git
 commit -m` we can have a shorter version of this command:
 
@@ -224,28 +232,30 @@ $ git config --global alias.cms 'commit -m'
 {: .language-bash}
 
 And now our configuration file will have a new section added:
-	
+
 ```
-… [alias] cms = commit -m
+[alias]
+	cms = commit -m
 ```
+{: .output}
 
 Next time we can simply type:
-	
+
 ```
 $ git cms "Commit message"
 ```
 {: .language-bash}
-	
----	
 
-### Completely removing unwanted files from the repository    
+---
+
+### Completely removing unwanted files from the repository
 
 As we discussed earlier, there are a number of ways to undo what we did in Git.
 However, most of the time, we actually want to make some amendments rather than
 discard everything completely. Also often undoing things means, in fact,
 creating a new commit (not abandoning them). Since Git is a version control
 system, everything that we recorded in the past commits will be available in
-the repository. 
+the repository.
 
 For example, if you accidentaly commited a file with sensitive data (passwords)
 in your local repository and then pushed it to the remote repository, the file
@@ -273,3 +283,5 @@ Again, as always with Git **before** you execute the above, make sure you know
 what you're doing!
 
 [editing hunks]: http://joaquin.windmuller.ca/2011/11/16/selectively-select-changes-to-commit-with-git-or-imma-edit-your-hunk
+
+{% include links.md %}

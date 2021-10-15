@@ -144,7 +144,8 @@ $ cat paper.md
 
 So we have now used two slightly different methods to get the latest changes
 from the remote repo.
-You may already have guessed that `git pull` is a shorthand for `git fetch` followed by `git merge`.
+You may already have guessed that `git pull` is a shorthand for `git fetch` followed by
+`git merge`.
 
 > ## `Fetch` vs `pull`
 > If `git pull` is a shortcut for `git fetch` followed by `git merge` then, why would
@@ -212,7 +213,7 @@ $ git push origin master
 {: .language-bash}
 ```
 To https://github.com/<USERNAME>/paper.git
- ! [rejected]        master -> master (fetch first)
+ ! [rejected]	     master -> master (fetch first)
 error: failed to push some refs to 'https://github.com/<USERNAME>/paper.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
@@ -263,6 +264,7 @@ author
 J Smith, G Capes
 >>>>>>> 1b55fe7f23a6411f99bf573bfb287937ecb647fc
 ```
+{: .output}
 
 The mark-up shows us the parts of the file causing the conflict and the
 versions they come from. We now need to manually edit the file to *resolve* the
@@ -324,11 +326,12 @@ $ git pull origin master	# Merge remote branch into local
 >
 > ```
 > $ git checkout -b my_branch		# Create and check out a new branch.
->				 	# Substitute your local branch name for 'my_branch'.
+>					# Substitute your local branch name for 'my_branch'.
 > ```
 > {: .language-bash}
 >
-> Now create/edit a file (e.g. fix a typo, add supplementary material etc), and then commit your changes.
+> Now create/edit a file (e.g. fix a typo, add supplementary material etc), and then commit
+> your changes.
 >
 > ```
 > $ git push origin my_branch		# Push your new branch to remote repo.
@@ -349,7 +352,7 @@ $ git pull origin master	# Merge remote branch into local
 > Counting objects: 3, done.  remote:
 > Compressing objects: 100% (3/3), done.
 > remote: Total 3 (delta 0), reused 2 (delta 0) Unpacking objects: 100% (3/3), done.
-> From  https://github.com/gcapes/paper
+> From	https://github.com/gcapes/paper
 > 9e1705a..640210a master -> origin/master
 > * [new branch] their_branch -> origin/their_branch
 > ```
@@ -395,3 +398,5 @@ $ git pull origin master	# Merge remote branch into local
 [author-affiliations]: https://github.com/gcapes/git-course-paper/commit/047e3f80e6530a3559efea82fe56229baf57f0b4
 [change-first-author]: https://github.com/gcapes/git-course-paper/commit/3e431fe1e6b9111a614e156994209c78169bb7f5
 [merge-conflict]: https://github.com/gcapes/git-course-paper/commit/0bba3e4aff27b7f8fa92736ab6e07429fd1fc49d
+
+{% include links.md %}

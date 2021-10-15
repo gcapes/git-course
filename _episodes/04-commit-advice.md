@@ -1,5 +1,5 @@
 ---
-title: "Commit advice" 
+title: "Commit advice"
 teaching: 10
 exercises: 0
 questions:
@@ -76,3 +76,5 @@ See [hints and tips]({{page.root}}/12-hints-and-tips).
 - Commit related changes.
 	- Confine your commit to directly related changes.
 	  If you fix two separate bugs, you should have two separate commits.
+
+{% include links.md %}
