@@ -61,21 +61,15 @@ information. In order to enter this information we need an editor. We'll now
 tell Git which editor we want to be the default one (i.e. Git will always bring
 it up whenever it wants us to provide some information).
 
-You can choose any editor available on your system. For the purpose of this
-session we'll use *gedit*:
+You can choose any editor available on your system.
+**Choose one of the three options below**
 
 ~~~
-$ git config --global core.editor gedit				# Linux users only.
-								# Windows users should use notepad: see below.
-								# Mac users should use TextEdit: see below.
+$ git config --global core.editor gedit				# Linux users only
+$ git config --global core.editor notepad			# Windows users should use notepad
+$ git config --global core.editor 'open -W -n'			# Mac users should use TextEdit
 ~~~
 {: .language-bash}
-
-To set up alternative editors, follow the same notation e.g.
-`git config --global core.editor notepad`, `git config --global core.editor vi`,
-`git config --global core.editor xemacs`.
-
-Mac users can use *TextEdit*: `git config --global core.editor 'open -W -n'`.
 
 
 ## Git's global configuration
