@@ -12,7 +12,9 @@ objectives:
 keypoints:
 - "`git init` initializes a new repository"
 - "`git status` shows the status of a repository"
-- "Files can be stored in a project’s `working directory` (which users see), the `staging area` (where the next commit is being built up) and the `local repository` (where commits are permanently recorded)"
+- "Files can be stored in a project’s `working directory` (which users see), 
+   the `staging area` (where the next commit is being built up) and the
+   `local repository` (where commits are permanently recorded)"
 - "`git add` puts files in the staging area"
 - "`git commit` saves the staged content as a new commit in the local repository"
 - "Always write a log message when committing changes"
@@ -221,7 +223,7 @@ Initial commit
 Changes to be committed:
 (use "git rm --cached <file>..." to unstage)
 
-      	new file:   paper.md
+	new file:   paper.md
 ~~~
 {: .output}
 
@@ -307,7 +309,7 @@ Changes not staged for commit:
 (use "git add <file>..." to update what will be committed)
 (use "git checkout -- <file>..." to discard changes in working directory)
 
-     modified:   paper.md
+     modified:	 paper.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -359,7 +361,7 @@ paper.md to the staging area. But there is a shortcut. We can use
 that have been modified".
 
 ~~~
-$ git commit -am "Reference J Bloggs and add references file" 	# Add and commit all tracked files
+$ git commit -am "Reference J Bloggs and add references file"	# Add and commit all tracked files
 ~~~
 {: .language-bash}
 and Git will add, then commit, both the directory and the file.

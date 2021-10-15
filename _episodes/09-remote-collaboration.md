@@ -144,7 +144,8 @@ $ cat paper.md
 
 So we have now used two slightly different methods to get the latest changes
 from the remote repo.
-You may already have guessed that `git pull` is a shorthand for `git fetch` followed by `git merge`.
+You may already have guessed that `git pull` is a shorthand for `git fetch` followed by
+`git merge`.
 
 > ## `Fetch` vs `pull`
 > If `git pull` is a shortcut for `git fetch` followed by `git merge` then, why would
@@ -212,7 +213,7 @@ $ git push origin master
 {: .language-bash}
 ```
 To https://github.com/<USERNAME>/paper.git
- ! [rejected]        master -> master (fetch first)
+ ! [rejected]	     master -> master (fetch first)
 error: failed to push some refs to 'https://github.com/<USERNAME>/paper.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
@@ -324,11 +325,12 @@ $ git pull origin master	# Merge remote branch into local
 >
 > ```
 > $ git checkout -b my_branch		# Create and check out a new branch.
->				 	# Substitute your local branch name for 'my_branch'.
+>					# Substitute your local branch name for 'my_branch'.
 > ```
 > {: .language-bash}
 >
-> Now create/edit a file (e.g. fix a typo, add supplementary material etc), and then commit your changes.
+> Now create/edit a file (e.g. fix a typo, add supplementary material etc), and then commit
+> your changes.
 >
 > ```
 > $ git push origin my_branch		# Push your new branch to remote repo.
@@ -349,7 +351,7 @@ $ git pull origin master	# Merge remote branch into local
 > Counting objects: 3, done.  remote:
 > Compressing objects: 100% (3/3), done.
 > remote: Total 3 (delta 0), reused 2 (delta 0) Unpacking objects: 100% (3/3), done.
-> From  https://github.com/gcapes/paper
+> From	https://github.com/gcapes/paper
 > 9e1705a..640210a master -> origin/master
 > * [new branch] their_branch -> origin/their_branch
 > ```

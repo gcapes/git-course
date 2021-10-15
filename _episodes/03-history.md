@@ -27,7 +27,7 @@ We can review the changes that we made using:
 ~~~
 $ gedit paper.md		# Cite previous studies in introduction
 $ gedit refs.txt		# Add the reference to the database
-$ git diff 			# View changes
+$ git diff			# View changes
 ~~~
 {: .language-bash}
 
@@ -79,20 +79,20 @@ $ git log
 ```
 commit 8bf67f3862828ec51b3fdad00c5805de934563aa
 Author: Your Name <your.name@manchester.ac.uk>
-Date:   Mon Jun 26 10:22:39 2017 +0100
+Date:	Mon Jun 26 10:22:39 2017 +0100
 
     Cite PCASP paper
 
 
 commit 4dd7f5c948fdc11814041927e2c419283f5fe84c
 Author: Your Name <your.name@manchester.ac.uk>
-Date:   Mon Jun 26 10:21:48 2017 +0100
+Date:	Mon Jun 26 10:21:48 2017 +0100
 
     Write introduction
 
 commit c38d2243df9ad41eec57678841d462af93a2d4a5
 Author: Your Name <your.name@manchester.ac.uk>
-Date:   Mon Jun 26 10:14:30 2017 +0100
+Date:	Mon Jun 26 10:14:30 2017 +0100
 
     Add author and title
 ```

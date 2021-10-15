@@ -58,7 +58,8 @@ message.
 
 But what if we forgot to include some files in the commit?
 
-Let's try it on our example. First, let's [modify two files][describe-methodology]: our paper file and
+Let's try it on our example. First, let's [modify two files][describe-methodology]: our paper
+file and
 the references file. We will add a methodology section to the paper where we
 detail the model used for the simulations, and add a reference for this to the references
 file.
@@ -68,11 +69,10 @@ $ gedit paper.md		# Add methodology section, including a reference to model
 $ gedit refs.txt		# Add new reference for the model used
 $ git status			# Get a status update on file modifications
 ```
-{: .output}
 {: .language-bash}
-	
+
 ```
-$ On branch master 
+$ On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
@@ -91,7 +91,7 @@ $ git add paper.md		 # Add paper to staging area
 $ git commit -m "Describe methodology"
 ```
 {: .language-bash}
-	
+
 Let's have a look at our working directory now:
 
 ```
@@ -99,10 +99,10 @@ $ git status
 ```
 {: .language-bash}
 ```
-$ On branch master 
-Changes not staged for commit: 
-  (use "git add <file>..." to update what will be committed) 
-  (use "git checkout --	<file>..." to discard changes in working directory)
+$ On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
 	modified:   refs.txt
 
@@ -123,7 +123,7 @@ $ git commit --amend		# Amend most recent commit
 This will again bring up the editor and we can amend the commit message if required.
 
 Now when we run `git status` and then `git log` we can see that our Working
-Directory is clean and that both files were added. 
+Directory is clean and that both files were added.
 
 ```
 $ git status
@@ -135,7 +135,7 @@ $ git log -3
 
 ### `git revert` (undo changes associated with a commit)
 
-`git revert` removes the changes applied in a specified commit. However, rather 
+`git revert` removes the changes applied in a specified commit. However, rather
 than deleting the commit from history, git works out how to undo those changes
 introduced by the commit, and appends a new commit with the resulting content.
 
@@ -155,14 +155,14 @@ Some of the data got corrupted, and due to problems with the logging computer
 we are not going to use that data.
 So it makes sense to abandon the commit completely.
 
-```	
+```
 $ git revert HEAD		# Undo changes introduced by most recent commit
 ```
 {: .language-bash}
 
 When we revert, a new commit is created. The *HEAD* pointer and the branch
-pointer are in fact moved forward rather than backwards. 	
-	
+pointer are in fact moved forward rather than backwards.
+
 We can revert any previous commit. That is, we can "abandon" any of the
 previous changes. However, depending on the changes we have made since,
 we may bump into a *conflict* (which we will cover in more detail later on).
@@ -175,9 +175,9 @@ hint: with 'git add <paths>' or 'git rm <paths>'
 hint: and commit the result with 'git commit'
 ```
 {: .output}
-	
+
 Behind the scenes Git gets confused trying to merge the commit *HEAD* is pointing
-to with the past commit we're reverting. 
+to with the past commit we're reverting.
 
 So we have seen that `git revert` is a non-destructive way to undo a commit.
 What if we don't want to keep a record of undoing commits? That would give a neater
@@ -191,7 +191,7 @@ history.
 `git reset` has several uses, and is most often used to unstage files from the staging
 area i.e. `git reset` or `git reset <file>`.
 
-We are going to use a variant `git reset --hard <commit>` to reset things to how 
+We are going to use a variant `git reset --hard <commit>` to reset things to how
 they were at `<commit>`. This is a permanent undo which deletes all changes more recent
 than `<commit>` from your history. There is clearly potential here to lose work, so use
 this command with care.
@@ -212,7 +212,7 @@ HEAD is now at fbdc44b Add methodology section and update references file
 ```
 {: .output}
 
-This moves the tip of the branch back to the specified commit. If we look in-depth, 
+This moves the tip of the branch back to the specified commit. If we look in-depth,
 this command moves back two pointers: `HEAD` and the pointer to the tip of the
 branch we currently are working on (master). (`HEAD~` = the commit right before HEAD;
 `HEAD~2` = two commits before HEAD)
@@ -233,19 +233,19 @@ depth `git reset` showing the differences between the three options:
 * `--hard`
 
 
-> ## Top tip: do not use `git reset` with remote branches 
+> ## Top tip: do not use `git reset` with remote branches
 > There is one important thing to remember about the `reset` command - it
 > should only be used with branches that have not been shared yet (that is they
 > haven't been pushed into a remote repository that others are using). Resetting
 > is changing the history **without** leaving trace. This is always a bad practice
 > when using remote repositories and can lead to a horrible mess.
-> 
+>
 > Reverting records the fact of "abandoning the commit" in the history.
 > When we revert in a branch that is shared with others and then push that branch
 > into the remote repository, it is as if we "came clean" about what we were
 > doing. Everyone who pulls the branch in which we reverted changes will see it.
 > With `git reset` we "keep it secret" that we have undone some changes.
-> 
+>
 > As such, if we want to abandon changes in branches that are shared
 > with others, we should to use the `revert` command.
 {: .callout}
@@ -258,7 +258,8 @@ https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting/com
 for further reading about the differences between `git revert` and `git reset`.
 
 ### How to undo almost anything with Git
-See [this blog post](https://github.com/blog/2019-how-to-undo-almost-anything-with-git) for more example scenarios and how to recover from them.
+See [this blog post](https://github.com/blog/2019-how-to-undo-almost-anything-with-git) for
+more example scenarios and how to recover from them.
 
 [describe-methodology]: https://github.com/gcapes/git-course-paper/commit/00c685625b66952e33a7d88150232b7d6716a185
 [SMPS]: https://github.com/gcapes/git-course-paper/commit/bb77f4eafaf8a5c374a00ae17c79585d30343461

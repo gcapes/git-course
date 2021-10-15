@@ -1,5 +1,5 @@
 ---
-title: "Commit advice" 
+title: "Commit advice"
 teaching: 10
 exercises: 0
 questions:

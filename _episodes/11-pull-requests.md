@@ -22,7 +22,7 @@ potential mistakes they may introduce.
 In large projects, primarily Open Source ones, in which the community of
 contributors can be very big, keeping the source code safe but at the same
 allow people to make contributions without making them "pass" tests for their
-skills and trustworthiness may be one of the keys to success. 
+skills and trustworthiness may be one of the keys to success.
 
 Leveraging the power of Git, GitHub provides a functionality called *Pull
 Requests*. Essentially it's "requesting the owner of the repository to pull in
@@ -38,7 +38,8 @@ a contributor, it was really easy to make the contribution.
 - Make changes, and push them to your repository on GitHub
 - Request that the owner of the repository you *forked* pulls in your changes
 
-![Conceptual illustration of a pull request - image adapted from [here](http://acrl.ala.org/techconnect/post/coding-collaboration-on-github)](../fig/github-diagram.png)
+![Conceptual illustration of a pull request - image adapted from
+[here](http://acrl.ala.org/techconnect/post/coding-collaboration-on-github)](../fig/github-diagram.png)
 
 ## Advice for submitting Pull Requests
 - Keep your Pull Request small and focussed (makes it easier to process)
@@ -67,9 +68,9 @@ or you could consider rewriting your history neatly using an interactive rebase 
 an earlier commit.
 In either case, your PR will update automatically once you have pushed your commits.
 
-> ## Exercise 
+> ## Exercise
 > Let's look at the workflow and try to repeat it:
-> 
+>
 > 1. **Fork** [this
 > repository](https://github.com/gcapes/manchester-papers.git)
 > by  clicking on the `Fork` button at the top of the page.
@@ -77,10 +78,11 @@ In either case, your PR will update automatically once you have pushed your comm
 > 2. Clone the repository from **YOUR** GitHub account. When you run `git remote -v`
 > you should get something like this:
 >
-> 	```{.output}
+>	~~~
 >	origin	https://github.com/YOUR_USERNAME/manchester-paper.git(fetch)
-> 	origin	https://github.com/YOUR_USERNAME/manchester-paper.git(push)
-> 	```
+>	origin	https://github.com/YOUR_USERNAME/manchester-paper.git(push)
+>	~~~
+>	{: .output}
 >
 > 3. `cd` into the directory you just cloned.
 > Create a new branch, then make changes you want to contribute.
@@ -89,7 +91,7 @@ In either case, your PR will update automatically once you have pushed your comm
 > because you are not added as a contributor!
 > 4. Go to your GitHub account and in the forked repository find a green button
 > for creating Pull Requests. Click it and follow the instructions.
-> 5. The owner of the original repository gets a notification that someone 
-> created a pull request - the request can be reviewed, commented and merged in 
+> 5. The owner of the original repository gets a notification that someone
+> created a pull request - the request can be reviewed, commented and merged in
 > (or not) via GitHub.
 {: .challenge}

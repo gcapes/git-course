@@ -69,7 +69,8 @@ in](https://GitHub.com).
 our remote repository.
 In order to use it, we need to set up a pair of SSH keys,
 which are used together to validate access.
-There's a private key, and a public key - GitHub needs to know the public key, but the private key stays only on your computer.
+There's a private key, and a public key - GitHub needs to know the public key, but the private
+key stays only on your computer.
 A useful analogy is to think of the public key as a padlock,
 and the private key as the only key to the padlock.
 
@@ -101,7 +102,8 @@ $ ssh-keygen -t ed25519 -C "your_email@example.com"
 {: .language-bash}
 
 You *might* get an error from this if your system doesn't support
-the ed25519 algorithm, in which case you can try `$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+the ed25519 algorithm, in which case you can try 
+`$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
 
 ~~~
 Generating public/private ed25519 key pair.
