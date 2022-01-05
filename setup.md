@@ -41,4 +41,4 @@ Hi yourusername! You've successfully authenticated, but GitHub does not provide 
 Please get in touch before the course starts if you run into any problems with set up.
 
 [GitHub]: https://github.com/
-[set up SSH keys]: {{ site.root }}/08-remote/#set-up-ssh-keys
+[set up SSH keys]: {% link _episodes/08-remote.md %}/#set-up-ssh-keys
