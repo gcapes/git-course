@@ -74,6 +74,8 @@ key stays only on your computer.
 A useful analogy is to think of the public key as a padlock,
 and the private key as the only key to the padlock.
 
+#### Create ssh keys
+
 Let's first check whether we already have ssh keys set up:
 
 ~~~
@@ -87,6 +89,8 @@ If you already have ssh keys set up, your output will look something like this:
 id_ed25519  id_ed25519.pub
 ~~~
 {: .output}
+
+and you can jump to the [final step](#add-public-ssh-key-to-github).
 
 If you still need to set up ssh keys, you'll get a message like this:
 
@@ -166,6 +170,8 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI
 {: .output}
 
 Now you should copy the output from this command ready for the final step.
+
+#### Add public ssh key to GitHub
 
 The final step is to add the public key to our GitHub accounts.
 - On [GitHub], click on your profile icon in the top right corner
