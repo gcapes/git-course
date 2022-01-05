@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Setup
-permalink: /setup/
 ---
 ## Files
 There are no files required for this lesson. You will create all the files needed.
