@@ -39,7 +39,7 @@ For this we will use the command line interface.
 
 ## Setting up Git
 Git is already installed on the training machines, whether you're using Windows or Linux.
-Instructions for setting up Git on your own machine are given under [setup]({{ page.root }}/setup).
+Instructions for setting up Git on your own machine are given under [setup]({{ page.root }}{% link setup.md %}).
 
 ## Tell Git who we are
 
