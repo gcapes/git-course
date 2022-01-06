@@ -309,8 +309,7 @@ But we were then in the "detached HEAD" state.
 > {: .solution}
 {: .challenge}
 
-[detached HEAD animation]:
-https://learngitbranching.js.org/?NODEMO&command=git%20checkout%20HEAD~;git%20commit
+[detached HEAD animation]: https://learngitbranching.js.org/?NODEMO&command=git%20checkout%20HEAD~;git%20commit
 
 > ## Abandon the commit on a detached HEAD
 > You decide that you want to abandon that commit.
