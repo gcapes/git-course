@@ -96,7 +96,7 @@ Delta compression using up to 8 threads.
 Compressing objects: 100% (28/28), done.
 Writing objects: 100% (32/32), 3.29 KiB | 0 bytes/s, done.
 Total 32 (delta 7), reused 0 (delta 0)
-To https://github.com/gcapes/paper.git
+To github.com:gcapes/paper
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ```
@@ -159,7 +159,7 @@ cd ..
 Then to clone the repo into a new directory called `laptop_paper`
 
 ```
-$ git clone https://github.com/<USERNAME>/paper.git laptop_paper
+$ git clone git@github.com:<USERNAME>/paper.git laptop_paper
 ```
 {: .language-bash}
 
@@ -234,12 +234,5 @@ $ git remote -v
 
 [GitHub]: https://github.com/
 [add-results]: https://github.com/gcapes/git-course-paper/commit/0c4573e5ea15d6f5dc877e8db8c0696e7675d5ed
-
-[SSH]: https://en.wikipedia.org/wiki/Secure_Shell_Protocol
-
-[for]: https://www.zdnet.com/article/github-to-replace-master-with-alternative-term-to-avoid-slavery-references/
-[against]: https://dev.to/dandv/8-problems-with-replacing-master-in-git-2hck
-
-[episode 2]: {{ page.root }}{% link _episodes/02-local.md %}
 
 {% include links.md %}
