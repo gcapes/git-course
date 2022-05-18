@@ -1,7 +1,7 @@
 ---
 title: "Commit advice"
 teaching: 10
-exercises: 0
+exercises: 5
 questions:
 - "How, what, and when to commit?"
 - "What makes a good commit message?"
@@ -39,6 +39,34 @@ It's well worth a read but the key points are given below:
 6. Wrap the body at 72 characters
 7. Use the body to explain what and why vs. how
 
+> ## How good are these commit messages?
+> The following are taken from a real project.
+> - Which messages conform to the conventions above?
+> - Can you rewrite those which don't?
+> - Which do you prefer?
+>
+>
+> 1. Add readme with links to data sources
+> 1. Started exploring data
+> 1. successfully extracted all phase 2 info from CH data
+> 1. dropping columns that look like they are of no use
+> 1. Ignore venv directory
+>
+> > ## Solution
+> > 1. No problems
+> > 1. Wrong tense
+> > 1. Wrong tense. Doesn't start with capital letter.
+> > 1. Wrong tense. Doesn't start with capital letter.
+> > 1. No problems
+> >
+> > ### Rewritten messages
+> > 1. Add readme with links to data sources
+> > 1. Start exploring data
+> > 1. Extract all phase 2 info from CH data
+> > 1. Drop columns that look to be no use
+> > 1. Ignore venv directory
+> {: .solution}
+{: .challenge}
 ---
 
 ### Commit anything that cannot be automatically recreated
