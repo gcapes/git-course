@@ -4,11 +4,9 @@ author: 'Gerard Capes'
 ---
 
 # Version control with Git and GitHub
-1. Please sit near the front
-2. Open the notes at [http://gcapes.github.io/git-course/](http://gcapes.github.io/git-course/)
-3. Sign up for a [GitHub account](https://github.com/)
-4. Attendance is recorded using a [feedback form]; there is no sign-in sheet
-5. You can use Windows or Linux on the training PCs
+1. Open the notes at [http://gcapes.github.io/git-course/](https://gcapes.github.io/git-course/)
+2. Make sure you've completed all the setup steps at <https://gcapes.github.io/git-course/setup.html>
+
 
 [feedback form]: https://goo.gl/forms/YZJ05PzX9tPFEtuV2
 
@@ -24,13 +22,10 @@ author: 'Gerard Capes'
 
 [Training courses]: https://www.staffnet.manchester.ac.uk/staff-learning-and-development/learning-pathways/professional-and-technical-development/it-skills/research-computing/research-courses/
 
-# Housekeeping
-- Fire exit
-- Toilets
-- Course timing
-	- 09:30 -- 12:00 Morning session
-	- 12:00 -- 13:00 Lunch
-	- 13:00 -- 16:00 Afternoon session
+# Course timing
+- 09:00 -- 12:00 Morning session
+- 12:00 -- 13:00 Lunch
+- 13:00 -- 16:00 Afternoon session
 
 
 # Teaching methods
@@ -42,7 +37,7 @@ author: 'Gerard Capes'
 	- Slides will remain online after the course
 
 # Getting help
-- Sticky notes
+- Sticky notes/zoom reactions
 	- Used for getting help and giving real-time feedback
 	- Green = OK, ready to continue
 	- Red = too fast, don't understand, computer says no etc
@@ -166,7 +161,7 @@ which explains why the changes were made.
 
 &nbsp;
 
-## [Feedback form][feedback form] = attendance record
+## [Feedback form][feedback form]
 
 # Rebasing
 ![](../fig/git-rebase.svg)
