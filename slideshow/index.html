@@ -8,18 +8,27 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="./reveal.js-4.1.2/dist/reset.css">
-  <link rel="stylesheet" href="./reveal.js-4.1.2/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="./reveal.js-4.1.2/dist/theme/mywhite.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="mywhite.css"/>
 </head>
 <body>
   <div class="reveal">
@@ -34,23 +43,35 @@
 <h1>Version control with Git and GitHub</h1>
 <ol type="1">
 <li>Please sit near the front</li>
-<li>Open the notes at <a href="http://gcapes.github.io/git-course/">http://gcapes.github.io/git-course/</a></li>
+<li>Open the notes at <a
+href="http://gcapes.github.io/git-course/">http://gcapes.github.io/git-course/</a></li>
 <li>Sign up for a <a href="https://github.com/">GitHub account</a></li>
-<li>Attendance is recorded using a <a href="https://goo.gl/forms/YZJ05PzX9tPFEtuV2">feedback form</a>; there is no sign-in sheet</li>
+<li>Attendance is recorded using a <a
+href="https://goo.gl/forms/YZJ05PzX9tPFEtuV2">feedback form</a>; there
+is no sign-in sheet</li>
 <li>You can use Windows or Linux on the training PCs</li>
 </ol>
 </section>
 <section id="research-related-it-services" class="slide level1">
 <h1>Research-related IT services</h1>
 <ul>
-<li>Described on <a href="http://www.itservices.manchester.ac.uk/research/">IT Services website</a></li>
-<li>Announcements given via <a href="https://researchitnews.org/">Research IT News</a></li>
-<li><a href="https://www.staffnet.manchester.ac.uk/staff-learning-and-development/learning-pathways/professional-and-technical-development/it-skills/research-computing/research-courses/">Training courses</a> teaching computing skills for Research</li>
+<li>Described on <a
+href="http://www.itservices.manchester.ac.uk/research/">IT Services
+website</a></li>
+<li>Announcements given via <a
+href="https://researchitnews.org/">Research IT News</a></li>
+<li><a
+href="https://www.staffnet.manchester.ac.uk/staff-learning-and-development/learning-pathways/professional-and-technical-development/it-skills/research-computing/research-courses/">Training
+courses</a> teaching computing skills for Research</li>
 <li>General guidance and advice about research software</li>
 <li>Access to specialist support and consultancy e.g. code reviews</li>
 <li>Access to HPC systems</li>
-<li><a href="http://www.itservices.manchester.ac.uk/our-services/research/">Full list of services on offer</a></li>
-<li>For help and support, use the <a href="http://www.itservices.manchester.ac.uk/help/">Support Portal</a></li>
+<li><a
+href="http://www.itservices.manchester.ac.uk/our-services/research/">Full
+list of services on offer</a></li>
+<li>For help and support, use the <a
+href="http://www.itservices.manchester.ac.uk/help/">Support
+Portal</a></li>
 </ul>
 </section>
 <section id="housekeeping" class="slide level1">
@@ -94,15 +115,18 @@
 <li>Peer learning
 <ul>
 <li>During exercises, please help each other as required</li>
-<li>Please try to be quiet during worked examples so everyone can hear</li>
+<li>Please try to be quiet during worked examples so everyone can
+hear</li>
 </ul></li>
 </ul>
 </section>
 <section id="what-is-a-version-control-system" class="slide level1">
 <h1>What is a version control system?</h1>
 <ul>
-<li>Version control is a piece of software which allows you to record and preserve the history of changes made to directories and files.</li>
-<li>If you mess things up, you can retrieve an earlier version of your project.</li>
+<li>Version control is a piece of software which allows you to record
+and preserve the history of changes made to directories and files.</li>
+<li>If you mess things up, you can retrieve an earlier version of your
+project.</li>
 </ul>
 </section>
 <section class="slide level1">
@@ -116,7 +140,8 @@
 <li>Save with a different name?</li>
 <li>How do you name different versions?</li>
 <li>What’s different between them?</li>
-<li>Many of copies of nearly-identical but critically different files.</li>
+<li>Many of copies of nearly-identical but critically different
+files.</li>
 </ul>
 </section>
 <section class="slide level1">
@@ -127,26 +152,32 @@
 <h1>Why use version control</h1>
 <h2 id="to-store-versions-properly">To store versions properly</h2>
 <ul>
-<li>VCS treats files as one project - one current version on disk, previous versions and variations are saved in a repository</li>
-<li>VCS starts with a base version of the project, and only saves the subsequent changes you make</li>
-<li>In order to save a new revision, a commit message is required, which explains why the changes were made.</li>
+<li>VCS treats files as one project - one current version on disk,
+previous versions and variations are saved in a repository</li>
+<li>VCS starts with a base version of the project, and only saves the
+subsequent changes you make</li>
+<li>In order to save a new revision, a commit message is required, which
+explains why the changes were made.</li>
 </ul>
 </section>
 <section class="slide level1">
 
-<h2 id="changes-are-saved-sequentially">Changes are saved sequentially</h2>
+<h2 id="changes-are-saved-sequentially">Changes are saved
+sequentially</h2>
 <p><img data-src="../fig/play-changes.svg" /></p>
 </section>
 <section class="slide level1">
 
-<h2 id="different-versions-can-be-saved">Different versions can be saved</h2>
+<h2 id="different-versions-can-be-saved">Different versions can be
+saved</h2>
 <p style="text-align:center;">
 <img src="../fig/versions.svg" alt="Drawing" style="width: 500px;"/>
 </p>
 </section>
 <section class="slide level1">
 
-<h2 id="multiple-versions-can-be-merged">Multiple versions can be merged</h2>
+<h2 id="multiple-versions-can-be-merged">Multiple versions can be
+merged</h2>
 <p style="text-align:center;">
 <img src="../fig/merge.svg" alt="Drawing" style="width: 500px;"/>
 </p>
@@ -170,7 +201,8 @@
 </section>
 <section id="open-the-notes" class="slide level1">
 <h1>Open the notes</h1>
-<h2 id="httpsgcapes.github.iogit-course"><a href="https://gcapes.github.io/git-course">https://gcapes.github.io/git-course</a></h2>
+<h2 id="httpsgcapes.github.iogit-course"><a
+href="https://gcapes.github.io/git-course">https://gcapes.github.io/git-course</a></h2>
 </section>
 <section class="slide level1">
 
@@ -183,13 +215,15 @@
 </section>
 <section class="slide level1">
 
-<h2 id="checking-out-a-previous-commit-detached-head">Checking out a previous commit: “detached HEAD”</h2>
+<h2 id="checking-out-a-previous-commit-detached-head">Checking out a
+previous commit: “detached HEAD”</h2>
 <p><img data-src="../fig/detached-head.svg" /></p>
 </section>
 <section id="exercise-1" class="slide level1">
 <h1>Exercise 1</h1>
 <h2 id="create-your-own-repo">Create your own repo</h2>
-<p><a href="http://gcapes.github.io/git-course/03-history/#exercise-bio-repository">http://gcapes.github.io/git-course/03-history</a></p>
+<p><a
+href="http://gcapes.github.io/git-course/03-history/#exercise-bio-repository">http://gcapes.github.io/git-course/03-history</a></p>
 </section>
 <section id="branches" class="slide level1">
 <h1>Branches</h1>
@@ -197,7 +231,8 @@
 </section>
 <section id="three-exercises-on-branching" class="slide level1">
 <h1>Three exercises on branching</h1>
-<p><a href="http://gcapes.github.io/git-course/05-branching/#add-a-commit-to-detached-head">http://gcapes.github.io/git-course/05-branching/</a></p>
+<p><a
+href="http://gcapes.github.io/git-course/05-branching/#add-a-commit-to-detached-head">http://gcapes.github.io/git-course/05-branching/</a></p>
 </section>
 <section id="revert" class="slide level1">
 <h1>Revert</h1>
@@ -211,9 +246,12 @@
 </section>
 <section id="exercises-on-remote-collaboration" class="slide level1">
 <h1>Exercises on remote collaboration</h1>
-<p><a href="http://gcapes.github.io/git-course/09-remote-collaboration/#collaborating-on-a-remote-repository">https://gcapes.github.io/git-course/09-remote-collaboration</a></p>
+<p><a
+href="http://gcapes.github.io/git-course/09-remote-collaboration/#collaborating-on-a-remote-repository">https://gcapes.github.io/git-course/09-remote-collaboration</a></p>
 <p> </p>
-<h2 id="feedback-formfeedback-form-attendance-record"><a href="https://goo.gl/forms/YZJ05PzX9tPFEtuV2">Feedback form</a> = attendance record</h2>
+<h2 id="feedback-formfeedback-form-attendance-record"><a
+href="https://goo.gl/forms/YZJ05PzX9tPFEtuV2">Feedback form</a> =
+attendance record</h2>
 </section>
 <section id="rebasing" class="slide level1">
 <h1>Rebasing</h1>
@@ -241,17 +279,18 @@
 </section>
 <section id="send-me-a-pr" class="slide level1">
 <h1>Send me a PR!</h1>
-<p><a href="http://gcapes.github.io/git-course/11-pull-requests/#exercise">http://gcapes.github.io/git-course/11-pull-requests/#exercise</a></p>
+<p><a
+href="http://gcapes.github.io/git-course/11-pull-requests/#exercise">http://gcapes.github.io/git-course/11-pull-requests/#exercise</a></p>
 </section>
     </div>
   </div>
 
-  <script src="./reveal.js-4.1.2/dist/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
 
   <!-- reveal.js plugins -->
-  <script src="./reveal.js-4.1.2/plugin/notes/notes.js"></script>
-  <script src="./reveal.js-4.1.2/plugin/search/search.js"></script>
-  <script src="./reveal.js-4.1.2/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
 
   <script>
 
@@ -283,7 +322,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
