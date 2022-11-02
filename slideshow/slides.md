@@ -142,7 +142,7 @@ which explains why the changes were made.
 ---
 
 # Three exercises on branching
-[http://gcapes.github.io/git-course/05-branching/](http://gcapes.github.io/git-course/05-branching/#add-a-commit-to-detached-head)
+[http://gcapes.github.io/git-course/06-branching/](http://gcapes.github.io/git-course/06-branching/#add-a-commit-to-detached-head)
 
 ---
 
@@ -157,7 +157,7 @@ which explains why the changes were made.
 ![](../fig/git-reset.svg)
 
 # Exercises on remote collaboration
-[https://gcapes.github.io/git-course/09-remote-collaboration](http://gcapes.github.io/git-course/09-remote-collaboration/#collaborating-on-a-remote-repository)
+[https://gcapes.github.io/git-course/10-remote-collaboration](http://gcapes.github.io/git-course/10-remote-collaboration/#collaborating-on-a-remote-repository)
 
 &nbsp;
 
@@ -182,4 +182,4 @@ which explains why the changes were made.
 ![](../fig/github-diagram.png)
 
 # Send me a PR!
-[http://gcapes.github.io/git-course/11-pull-requests/#exercise](http://gcapes.github.io/git-course/11-pull-requests/#exercise)
+[http://gcapes.github.io/git-course/13-pull-requests/#exercise](http://gcapes.github.io/git-course/13-pull-requests/#exercise)
