@@ -208,7 +208,7 @@ We can use our cloned repository just as if it was a local repository so let's
 
 ```
 $ git checkout master				# We'll continue working on the master branch
-$ gedit paper.md				# Add results section
+$ nano paper.md				# Add results section
 $ git add paper.md				# Stage changes
 $ git commit
 ```

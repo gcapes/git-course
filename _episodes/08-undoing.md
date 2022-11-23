@@ -29,7 +29,7 @@ haven't yet done a `git add` we can just throw the changes away and return
 our file to the most recent version we committed to the repository by using:
 
 ```
-$ gedit paper.md		# Make some small edits to the file
+$ nano paper.md		# Make some small edits to the file
 $ git checkout paper.md		# Discard edits we just made
 ```
 {: .language-bash}
@@ -39,7 +39,7 @@ the repository:
 
 ```
 $ git status			# See that we have a clean working directory
-$ gedit paper.md		# Inspect file to verify changes have been discarded
+$ nano paper.md		# Inspect file to verify changes have been discarded
 ```
 {: .language-bash}
 
@@ -65,8 +65,8 @@ detail the model used for the simulations, and add a reference for this to the r
 file.
 
 ```
-$ gedit paper.md		# Add methodology section, including a reference to model
-$ gedit refs.txt		# Add new reference for the model used
+$ nano paper.md		# Add methodology section, including a reference to model
+$ nano refs.txt		# Add new reference for the model used
 $ git status			# Get a status update on file modifications
 ```
 {: .language-bash}
@@ -143,7 +143,7 @@ Let's try it on our example. Modify the paper, [describing the SMPS][SMPS] which
 another instrument used to measure particle sizes, and then make a commit.
 
 ```
-$ gedit paper.md		# Describe other instrument
+$ nano paper.md		# Describe other instrument
 $ git add paper.md
 $ git commit -m "Describe SMPS"
 ```

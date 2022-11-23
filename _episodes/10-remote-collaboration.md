@@ -42,7 +42,7 @@ Still in the `paper` directory, let's [add a figures section][add-figures] to `p
 commit the file and push these changes to GitHub:
 
 ```
-$ gedit paper.md		# Add figures section
+$ nano paper.md		# Add figures section
 $ git add paper.md
 $ git commit -m "Add figures"
 $ git push
@@ -163,7 +163,7 @@ You may already have guessed that `git pull` is a shorthand for `git fetch` foll
 Let's [write the conclusions][write-conclusions]:
 
 ```
-$ gedit paper.md		# Write Conclusions
+$ nano paper.md		# Write Conclusions
 $ git add paper.md
 $ git commit -m "Write Conclusions" paper.md
 $ git push origin master
@@ -190,7 +190,7 @@ on two different machines. You should still be in the original *paper* folder.
 Then push these changes to our remote repository:
 
 ```
-$ gedit paper.md		# Add author affiliations
+$ nano paper.md		# Add author affiliations
 $ git add paper.md
 $ git commit -m "Add author affiliations"
 $ git push origin master
@@ -205,7 +205,7 @@ because we haven't yet updated our local branch using `git pull`.
 
 ```
 $ cd ../laptop_paper		# Switch directory to other copy of our repository
-$ gedit paper.md		# Change order of the authors
+$ nano paper.md		# Change order of the authors
 $ git add paper.md
 $ git commit -m "Change the first author" paper.md
 $ git push origin master
@@ -274,7 +274,7 @@ merging the branches.
 [We edit the file][merge-conflict]. Then commit our changes. Now, if we *push* ...
 
 ```
-$ gedit paper.md		# Edit file to resolve merge conflict
+$ nano paper.md		# Edit file to resolve merge conflict
 $ git add paper.md		# Stage the file
 $ git commit			# Commit to mark the conflict as resolved
 $ git push origin master
