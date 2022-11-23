@@ -61,13 +61,11 @@ information. In order to enter this information we need an editor. We'll now
 tell Git which editor we want to be the default one (i.e. Git will always bring
 it up whenever it wants us to provide some information).
 
-You can choose any editor available on your system.
-**Choose one of the three options below**
+You can choose any editor available on your system,
+but for this course we will use `nano`.
 
 ~~~
-$ git config --global core.editor nano				# Linux users only
-$ git config --global core.editor notepad			# Windows users should use notepad
-$ git config --global core.editor 'open -W -n'			# Mac users should use TextEdit
+$ git config --global core.editor nano
 ~~~
 {: .language-bash}
 
@@ -146,22 +144,16 @@ accidentally delete this directory!
 Now, we'll create a file. Let's say we're going to write a journal paper, so
 we will start by [adding the author names and a title][add-author-title], then save the file.
 ~~~
-$ nano paper.md				# Windows and Mac users see below for text editors available on your system
+$ nano paper.md
 # Add author names and paper title
 ~~~
 {: .language-bash}
 
 > ## Text editors on your OS
-> This course is written for Linux, where `nano` should be available.
-> If you are using Windows, use `notepad` instead:
+> `nano` should be available whatever OS you are using.
+> If you prefer a different editor feel free to use that instead e.g. `notepad` on Windows:
 > ```
 > notepad paper.md
-> ```
-> {: .language-bash}
->
-> Similarly, if you are using macOS, use TextEdit:
-> ```
-> open -e paper.md
 > ```
 > {: .language-bash}
 {: .callout}
