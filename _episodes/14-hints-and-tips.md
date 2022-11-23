@@ -71,7 +71,7 @@ these to `.gitignore` means Git won't complain about them being untracked.
 Create or edit `gitignore`,
 
 ```
-$ gedit .gitignore
+$ nano .gitignore
 ```
 {: .language-bash}
 
@@ -219,7 +219,7 @@ $ cat ~/.gitconfig
 	name = Your Name
 	email = yourname@yourplace.org
 [core]
-	editor = gedit
+	editor = nano
 ```
 {: .output}
 

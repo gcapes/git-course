@@ -25,8 +25,8 @@ Make the required changes, save both files but do not commit the changes yet.
 We can review the changes that we made using:
 
 ~~~
-$ gedit paper.md		# Cite previous studies in introduction
-$ gedit refs.txt		# Add the reference to the database
+$ nano paper.md		# Cite previous studies in introduction
+$ nano refs.txt		# Add the reference to the database
 $ git diff			# View changes
 ~~~
 {: .language-bash}
@@ -283,7 +283,7 @@ $ git tag
 Let's explain to the reader [why this research is important][give-context]:
 
 ```
-$ gedit paper.md	# Give context for research
+$ nano paper.md	# Give context for research
 $ git add paper.md
 $ git commit -m "Explain motivation for research" paper.md
 ```
@@ -351,10 +351,10 @@ $ git checkout master
 > > mkdir bio            # Create a new directory
 > > cd bio               # Navigate into the new directory
 > > git init             # Initialise a new repository
-> > gedit me.txt         # Create a file and write your biography
+> > nano me.txt         # Create a file and write your biography
 > > git add me.txt       # Add your biography file to the staging area
 > > git commit           # Commit your staged changes
-> > gedit me.txt         # Edit your file
+> > nano me.txt         # Edit your file
 > > git diff me.txt      # Display differences between your modified file and the last committed version
 > > ```
 > > {: .language-bash}

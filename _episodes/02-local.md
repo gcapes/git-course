@@ -65,7 +65,7 @@ You can choose any editor available on your system.
 **Choose one of the three options below**
 
 ~~~
-$ git config --global core.editor gedit				# Linux users only
+$ git config --global core.editor nano				# Linux users only
 $ git config --global core.editor notepad			# Windows users should use notepad
 $ git config --global core.editor 'open -W -n'			# Mac users should use TextEdit
 ~~~
@@ -88,7 +88,7 @@ $ cat ~/.gitconfig
 	name = Your Name
 	email = yourname@yourplace.org
 [core]
-	editor = gedit
+	editor = nano
 ~~~
 {: .output}
 
@@ -146,13 +146,13 @@ accidentally delete this directory!
 Now, we'll create a file. Let's say we're going to write a journal paper, so
 we will start by [adding the author names and a title][add-author-title], then save the file.
 ~~~
-$ gedit paper.md				# Windows and Mac users see below for text editors available on your system
+$ nano paper.md				# Windows and Mac users see below for text editors available on your system
 # Add author names and paper title
 ~~~
 {: .language-bash}
 
 > ## Text editors on your OS
-> This course is written for Linux, where `gedit` should be available.
+> This course is written for Linux, where `nano` should be available.
 > If you are using Windows, use `notepad` instead:
 > ```
 > notepad paper.md
@@ -244,7 +244,7 @@ we need to  **commit** it:
 ~~~
 $ git commit
 # Type a commit message: "Add title and authors"
-# Save the commit message and close your text editor (gedit, notepad etc.)
+# Save the commit message and close your text editor (nano, notepad etc.)
 ~~~
 {: .language-bash}
 
@@ -286,7 +286,7 @@ Now we will work a bit further on our *paper.md* file by [starting the introduct
 section.
 
 ```
-$ gedit paper.md
+$ nano paper.md
 # Write introduction section
 ```
 {: .language-bash}
@@ -332,14 +332,14 @@ by doing `git commit -m "Write introduction section"`.
 In our introduction, we should [cite a paper] describing the main instrument used.
 
 ~~~
-$ gedit paper.md 						# Cite instrument paper in introduction
+$ nano paper.md 						# Cite instrument paper in introduction
 ~~~
 {: .language-bash}
 
 Let's also create a file `refs.txt` to hold our references:
 
 ~~~
-$ gedit refs.txt					# Add the reference
+$ nano refs.txt					# Add the reference
 ~~~
 {: .language-bash}
 

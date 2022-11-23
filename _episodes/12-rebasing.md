@@ -122,7 +122,7 @@ we'll rebase `master` onto `origin/master`.
 We'll [write some acknowledgements][acknowledgements], then commit and push.
 
 ```
-$ gedit paper.md				# Write acknowledgements
+$ nano paper.md				# Write acknowledgements
 $ git add paper.md
 $ git commit -m "Write acknowledgements section"
 $ git push origin master			# Push master branch to remote
@@ -134,7 +134,7 @@ We'll now switch machine to our laptop, and [write the abstract][abstract]:
 
 ```
 $ cd ../laptop_paper				# Pretend we're on the laptop
-$ gedit paper.md				# Add abstract section
+$ nano paper.md				# Add abstract section
 $ git add paper.md
 $ git commit					# "Write abstract"
 ```
@@ -183,7 +183,7 @@ Typically, you would use `git pull --rebase` instead, which combines the fetch a
 > The process for fixing conflicts is the same as before:
 >
 > ```
-> $ gedit file					# Manually fix conficts in affected file(s)
+> $ nano file					# Manually fix conficts in affected file(s)
 > $ git add file					# Mark file(s) as resolved
 > $ git rebase --continue				# Continue to rebase
 > ```

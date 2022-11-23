@@ -109,7 +109,7 @@ The * indicates which branch we're currently in. Now let's [make the changes][ch
 to the paper.
 
 ~~~
-$ gedit paper.md		# Change title and add co-author
+$ nano paper.md		# Change title and add co-author
 $ git add paper.md
 $ git commit			# "Modify title and add John as co-author"
 ~~~
@@ -130,7 +130,7 @@ Having written some of the paper, we have thought of a [better title][aircraft-t
 the `master` version of the paper.
 
 ~~~
-$ gedit paper.md		# Rewrite the title
+$ nano paper.md		# Rewrite the title
 $ git add paper.md
 $ git commit			# "Include aircraft in title"
 ~~~
@@ -144,7 +144,7 @@ Let's [add another section][simulations-section] to the paper to write about Joh
 
 ~~~
 $ git checkout simulations	# Switch branch
-$ gedit paper.md		# Add 'simulations' section
+$ nano paper.md		# Add 'simulations' section
 $ git add paper.md
 $ git commit -m "Add simulations" paper.md
 ~~~
@@ -240,7 +240,7 @@ Africa"
 [We edit the file][resolve-conflict]. Then commit our changes:
 
 ~~~
-$ gedit paper.md		# Resolve conflict by editing paper.md
+$ nano paper.md		# Resolve conflict by editing paper.md
 $ git add paper.md		# Let Git know we have resolved the conflict
 $ git commit
 ~~~
@@ -289,7 +289,7 @@ But we were then in the "detached HEAD" state.
 > > ## Solution
 > > ```
 > > git checkout HEAD~1  # Check out the commit one before last
-> > gedit paper.md     # Make some edits
+> > nano paper.md     # Make some edits
 > > git add paper.md   # Stage the changes
 > > git commit		 # Commit the changes
 > > git branch		 # You should see a message like the one below,
@@ -366,7 +366,7 @@ But we were then in the "detached HEAD" state.
 > >
 > > ```
 > > git checkout HEAD~1		# Checkout the commit before last
-> > gedit paper.md		# Modify one of your files
+> > nano paper.md		# Modify one of your files
 > > git commit -a			# Commit all the modified files
 > > git branch			# List local branches
 > > ```
