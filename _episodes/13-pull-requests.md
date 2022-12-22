@@ -79,8 +79,8 @@ In either case, your PR will update automatically once you have pushed your comm
 > you should get something like this:
 >
 >	~~~
->	origin	https://github.com/YOUR_USERNAME/manchester-paper.git(fetch)
->	origin	https://github.com/YOUR_USERNAME/manchester-paper.git(push)
+>	origin	git@github.com:YOUR_USERNAME/manchester-paper.git(fetch)
+>	origin	git@github.com:YOUR_USERNAME/manchester-paper.git(push)
 >	~~~
 >	{: .output}
 >
