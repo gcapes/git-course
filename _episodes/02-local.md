@@ -310,7 +310,7 @@ commit the changes:
 
 ~~~
 $ git add paper.md
-$ git commit							# "Write introduction"
+$ git commit				# "Write introduction"
 ~~~
 {: .language-bash}
 Note that in this case we used `git add` to put paper.md to the staging
@@ -324,14 +324,14 @@ by doing `git commit -m "Write introduction section"`.
 In our introduction, we should [cite a paper] describing the main instrument used.
 
 ~~~
-$ nano paper.md 						# Cite instrument paper in introduction
+$ nano paper.md 			# Cite instrument paper in introduction
 ~~~
 {: .language-bash}
 
 Let's also create a file `refs.txt` to hold our references:
 
 ~~~
-$ nano refs.txt					# Add the reference
+$ nano refs.txt				# Add the reference
 ~~~
 {: .language-bash}
 
@@ -339,8 +339,8 @@ Now we need to record our work in the repository so we need to make a commit.
 First we tell Git to track the references.
 
 ~~~
-$ git add refs.txt					# Track the refs.txt file
-$ git status							# Verify that refs.txt is now tracked
+$ git add refs.txt			# Track the refs.txt file
+$ git status				# Verify that refs.txt is now tracked
 ~~~
 {: .language-bash}
 
