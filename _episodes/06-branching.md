@@ -34,8 +34,8 @@ used `git checkout master`.
 
 Not only can our repository store the changes made to files and directories, it
 can store multiple sets of these, which we can use and edit and update in
-parallel. Each of these sets, or parallel instances, is termed a `branch` and
-`master` is Git's default branch.
+parallel. Each of these sets, or parallel instances, is termed a **branch** and
+*master* is Git's default branch.
 
 A new branch can be created from any commit. Branches can also be *merged*
 together.
@@ -43,10 +43,10 @@ together.
 ### Why are branches useful?
 Suppose we've developed some software and now we want to
 try out some new ideas but we're not sure yet whether we'll keep them. We
-can then create a branch 'feature1' and keep our `master` branch clean. When
+can then create a branch *feature1* and keep our *master* branch clean. When
 we're done developing the feature and we are sure that we want to include it
-in our program, we can merge the feature branch with the `master` branch.
-This keeps all the work-in-progress separate from the `master` branch, which
+in our program, we can merge the feature branch with the *master* branch.
+This keeps all the work-in-progress separate from the *master* branch, which
 contains tested, working code.
 
 When we merge our feature branch with master git creates a new commit which
@@ -58,7 +58,7 @@ making commits) in feature1 as well.
 
 One popular model is the [Gitflow model](http://nvie.com/posts/a-successful-git-branching-model/):
 
-- A `master` branch, representing a released version of the code
+- A *master* branch, representing a released version of the code
 - A release branch, representing the beginnings of the next release - a branch
 where the code is still undergoing testing
 - Various feature and/or developer-specific branches representing
