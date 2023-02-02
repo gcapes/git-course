@@ -29,7 +29,7 @@ haven't yet done a `git add` we can just throw the changes away and return
 our file to the most recent version we committed to the repository by using:
 
 ```
-$ nano paper.md		# Make some small edits to the file
+$ nano paper.md			# Make some small edits to the file
 $ git checkout paper.md		# Discard edits we just made
 ```
 {: .language-bash}
@@ -38,7 +38,7 @@ and we can see that our file has reverted to being the most up-to-date one in
 the repository:
 
 ```
-$ git status			# See that we have a clean working directory
+$ git status		# See that we have a clean working directory
 $ nano paper.md		# Inspect file to verify changes have been discarded
 ```
 {: .language-bash}
@@ -67,7 +67,7 @@ file.
 ```
 $ nano paper.md		# Add methodology section, including a reference to model
 $ nano refs.txt		# Add new reference for the model used
-$ git status			# Get a status update on file modifications
+$ git status		# Get a status update on file modifications
 ```
 {: .language-bash}
 
@@ -116,7 +116,7 @@ Now, we want to fix our commit and add the references file.
 
 ```
 $ git add refs.txt	# Add reference file
-$ git commit --amend		# Amend most recent commit
+$ git commit --amend	# Amend most recent commit
 ```
 {: .language-bash}
 

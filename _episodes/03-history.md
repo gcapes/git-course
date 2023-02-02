@@ -27,7 +27,7 @@ We can review the changes that we made using:
 ~~~
 $ nano paper.md		# Cite previous studies in introduction
 $ nano refs.txt		# Add the reference to the database
-$ git diff			# View changes
+$ git diff		# View changes
 ~~~
 {: .language-bash}
 
@@ -240,7 +240,7 @@ We can display, this time specifying that we want to look at `--all` the history
 rather than just up to the current commit.
 
 ```
-$ git checkout HEAD~				# This syntax refers to the commit before HEAD
+$ git checkout HEAD~		# This syntax refers to the commit before HEAD
 $ git log --graph --decorate --oneline --all
 ```
 {: .language-bash}
@@ -351,10 +351,10 @@ $ git checkout master
 > > mkdir bio            # Create a new directory
 > > cd bio               # Navigate into the new directory
 > > git init             # Initialise a new repository
-> > nano me.txt         # Create a file and write your biography
+> > nano me.txt          # Create a file and write your biography
 > > git add me.txt       # Add your biography file to the staging area
 > > git commit           # Commit your staged changes
-> > nano me.txt         # Edit your file
+> > nano me.txt          # Edit your file
 > > git diff me.txt      # Display differences between your modified file and the last committed version
 > > ```
 > > {: .language-bash}
