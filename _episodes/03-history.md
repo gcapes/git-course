@@ -12,7 +12,7 @@ objectives:
 keypoints:
 - "`git log` shows the commit history"
 - "`git diff` displays differences between commits"
-- "`git checkout` recovers old versions of files"
+- "`git switch -d` recovers previous states of the repo"
 - "`HEAD` points to the commit you have checked out"
 - "`master` points to the tip of the `master` branch"
 ---
@@ -124,194 +124,6 @@ $ git diff OLDER_COMMITID NEWER_COMMITID
 ~~~
 {: .language-bash}
 
-Using our commit identifiers we can set our working directory to contain the
-state of the repository as it was at any commit. So, let's go back to the very
-first commit we made,
-
-~~~
-$ git log
-$ git checkout INITIAL_COMMITID
-~~~
-{: .language-bash}
-
-We will get something like this:
-
-~~~
-Note: checking out '21cfbdec'.
-
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by performing another checkout.
-
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -b with the checkout command again. Example:
-
-  git checkout -b new_branch_name
-
-HEAD is now at 21cfbde... Add title and authors
-~~~
-{: .output}
-
-This strange concept of the 'detached HEAD' is covered in the next section ...
-just bear with me for now!
-
-If we look at `paper.md` we'll see it's our very first version. And if we
-look at our directory,
-
-~~~
-$ ls
-~~~
-{: .language-bash}
-~~~
-paper.md
-~~~
-{: .output}
-
-then we see that our `refs.txt` file is gone. But, rest easy, while it's
-gone from our working directory, it's still in our repository. We can jump back
-to the latest commit by doing:
-
-~~~
-$ git checkout master
-~~~
-{: .language-bash}
-
-And `refs.txt` will be there once more,
-
-~~~
-$ ls
-~~~
-{: .language-bash}
-~~~
-paper.md refs.txt
-~~~
-{: .output}
-So we can get any version of our files from any point in time. In other words,
-we can set up our working directory back to any stage it was when we made
-a commit.
-
-### The `HEAD` and `master` pointers
-
-*HEAD* is a reference, or pointer, which points to the branch at the commit where
-you currently are.
-We said previously that `master` is the default branch. But `master` is
-actually a pointer - that points to the tip of the `master` branch (the sequence
-of commits that is created by default by Git). You may think of `master` as two
-things:
-
-1. a pointer
-2. the default branch.
-
-Before we checked out one of the past commits, the *HEAD* pointer was pointing to
-`master` i.e. the most recent commit of the `master` branch.
-After checking out one of the past commits, *HEAD* was pointing to that commit i.e.
-not pointing to master any more.
-That is what Git means by a 'detached HEAD' state and advises us that if we want to make a commit
-now, we should create a new branch to retain these commits.
-
-![Checking out a previous commit - detached head](../fig/detached-head.svg)
-
-If we created a new commit without first creating a new branch, i.e. working from
-the 'detached HEAD' these commits would not overwrite any of our existing work,
-but they would not belong to any branch. In order to save this work, we would need
-to checkout a new branch. To discard any changes we make from the detached HEAD
-state, we can just checkout master again.
-
-## Visualising your own repository as a graph
-If we use `git log` with a couple of options, we can display the history as a graph,
-and decorate those commits corresponding to Git references (e.g. `HEAD`, `master`):
-
-~~~
-$ git log --graph --decorate --oneline
-~~~
-{: .language-bash}
-
-```
-* 6a48241 (HEAD, master) Cite previous work in introduction
-* ed26351 Cite PCASP paper
-* 7446b1d Write introduction
-* 4f572d5 Add title and author
-```
-{: .output}
-
-Notice how `HEAD` and `master` point to the same commit.
-Now checkout a previous commit again, and look at the graph again.
-We can display, this time specifying that we want to look at `--all` the history,
-rather than just up to the current commit.
-
-```
-$ git checkout HEAD~		# This syntax refers to the commit before HEAD
-$ git log --graph --decorate --oneline --all
-```
-{: .language-bash}
-
-```
-* 6a48241 (master) Reference second paper in introduction
-* ed26351 (HEAD) Reference Allen et al in introduction
-* 7446b1d Write introduction
-* 4f572d5 Add title and authors
-```
-{: .output}
-
-Notice how `HEAD` no longer points to the same commit as `master`.
-Let's return to the current version of the project by checking out `master` again.
-
-```
-$ git checkout master
-```
-{: .language-bash}
-
-### Using tags as nicknames for commit identifiers
-
-Commit identifiers are long and cryptic. Git allows us to create tags, which
-act as easy-to-remember nicknames for commit identifiers.
-
-For example,
-
-```
-$ git tag PAPER_STUB
-```
-{: .language-bash}
-
-We can list tags by doing:
-
-```
-$ git tag
-```
-{: .language-bash}
-
-Let's explain to the reader [why this research is important][give-context]:
-
-```
-$ nano paper.md	# Give context for research
-$ git add paper.md
-$ git commit -m "Explain motivation for research" paper.md
-```
-{: .language-bash}
-
-We can checkout our previous version using our tag instead of a commit
-identifier.
-
-```
-$ git checkout PAPER_STUB
-```
-{: .language-bash}
-
-And return to the latest checkout,
-
-```
-$ git checkout master
-```
-{: .language-bash}
-
-> ## Top tip: tag significant events
-> When do you tag? Well, whenever you might want to get back to the exact
-> version you've been working on. For a paper, this might be a version that has
-> been submitted to an internal review, or has been submitted to a conference.
-> For code this might be when it's been submitted to review, or has been
-> released.
-{: .callout}
-
 > ## Where to create a Git repository?
 > Avoid creating a Git repository within another Git repository.
 > Nesting repositories in this way causes the 'outer' repository to
@@ -360,6 +172,216 @@ $ git checkout master
 > > {: .language-bash}
 > {: .solution}
 {: .challenge}
+
+### The `HEAD` and `master` pointers
+
+Let's take a look again at the output from `git log`.
+This time we'll use the `--decorate` option to display the pointers
+(your git set up might already display them by default).
+
+~~~
+$ git log --decorate
+~~~
+{: .language-bash}
+
+~~~
+commit 8bf67f3862828ec51b3fdad00c5805de934563aa (HEAD -> master)
+Author: Your Name <your.name@manchester.ac.uk>
+Date:	Mon Jun 26 10:22:39 2017 +0100
+
+    Cite PCASP paper
+
+
+commit 4dd7f5c948fdc11814041927e2c419283f5fe84c
+Author: Your Name <your.name@manchester.ac.uk>
+Date:	Mon Jun 26 10:21:48 2017 +0100
+
+    Write introduction
+
+commit c38d2243df9ad41eec57678841d462af93a2d4a5
+Author: Your Name <your.name@manchester.ac.uk>
+Date:	Mon Jun 26 10:14:30 2017 +0100
+
+    Add author and title
+~~~
+{: .output}
+
+You'll see there are two pointers, `HEAD` and `master` which label the most recent commit.
+
+- `HEAD` points to the commit you're currently on in the repo
+- `master` points to the tip of the *master* branch, and moves forward as you make new commits
+- `HEAD` normally points to a branch pointer
+
+### Going back in time with git
+
+We can use commit identifiers to set our working directory back to how it was
+at any commit.
+Doing so will mean the `HEAD` pointer no longer points to the branch tip --
+this scenario is known as a *detached HEAD*,
+and is for inspection and discardable experiments.
+
+![Checking out a previous commit - detached head](../fig/detached-head.svg)
+
+Let's go back to the very first commit we made:
+~~~
+$ git log
+$ git switch -d INITIAL_COMMITID
+~~~
+{: .language-bash}
+
+We will get something like this:
+
+~~~
+HEAD is now at 8bd9133 Add title and author
+~~~
+{: .output}
+
+And if we run
+~~~
+$ git status
+~~~
+{: .language-bash}
+
+we get a confirmation that we have a *detached HEAD*:
+
+~~~
+HEAD detached at 8bd9133
+nothing to commit, working tree clean
+~~~
+{: .output}
+
+If we look at `paper.md` we'll see it's our very first version. And if we
+look at our directory,
+
+~~~
+$ ls
+~~~
+{: .language-bash}
+
+~~~
+paper.md
+~~~
+{: .output}
+
+then we see that our `refs.txt` file is gone. But, rest easy, while it's
+gone from our working directory, it's still in our repository. We can jump back
+to the latest commit by doing:
+
+~~~
+$ git switch master
+~~~
+{: .language-bash}
+
+And `refs.txt` will be there once more,
+
+~~~
+$ ls
+~~~
+{: .language-bash}
+~~~
+paper.md refs.txt
+~~~
+{: .output}
+So we can get any version of our files from any point in time. In other words,
+we can set up our working directory back to any stage it was when we made
+a commit.
+
+## Visualising your own repository as a graph
+If we use `git log` with a couple of options, we can display the history as a graph,
+and decorate those commits corresponding to Git references (e.g. `HEAD`, `master`):
+
+~~~
+$ git log --graph --decorate --oneline
+~~~
+{: .language-bash}
+
+```
+* 6a48241 (HEAD, master) Cite previous work in introduction
+* ed26351 Cite PCASP paper
+* 7446b1d Write introduction
+* 4f572d5 Add title and author
+```
+{: .output}
+
+Notice how `HEAD` and `master` point to the same commit.
+Now checkout a previous commit again, and look at the graph again.
+We can display, this time specifying that we want to look at `--all` the history,
+rather than just up to the current commit.
+
+```
+$ git switch -d HEAD~		# This syntax refers to the commit before HEAD
+$ git log --graph --decorate --oneline --all
+```
+{: .language-bash}
+
+```
+* 6a48241 (master) Reference second paper in introduction
+* ed26351 (HEAD) Reference Allen et al in introduction
+* 7446b1d Write introduction
+* 4f572d5 Add title and authors
+```
+{: .output}
+
+Notice how `HEAD` no longer points to the same commit as `master`.
+Let's return to the current version of the project by switching to `master` again.
+
+```
+$ git switch master
+```
+{: .language-bash}
+
+### Using tags as nicknames for commit identifiers
+
+Commit identifiers are long and cryptic. Git allows us to create tags, which
+act as easy-to-remember nicknames for commit identifiers.
+
+For example,
+
+```
+$ git tag PAPER_STUB
+```
+{: .language-bash}
+
+We can list tags by doing:
+
+```
+$ git tag
+```
+{: .language-bash}
+
+Let's explain to the reader [why this research is important][give-context]:
+
+```
+$ nano paper.md	# Give context for research
+$ git add paper.md
+$ git commit -m "Explain motivation for research" paper.md
+```
+{: .language-bash}
+
+We can checkout our previous version using our tag instead of a commit
+identifier.
+
+```
+$ git switch -d PAPER_STUB
+```
+{: .language-bash}
+
+And return to the latest commit,
+
+```
+$ git switch master
+```
+{: .language-bash}
+
+
+> ## Top tip: tag significant events
+> When do you tag? Well, whenever you might want to get back to the exact
+> version you've been working on. For a paper, this might be a version that has
+> been submitted to an internal review, or has been submitted to a conference.
+> For code this might be when it's been submitted to review, or has been
+> released.
+{: .callout}
+
 
 [reference-previous-work]: https://github.com/gcapes/git-course-paper/commit/add59ba7d0b963531195eb3774b79bb9bcd749d1#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
 [give-context]: https://github.com/gcapes/git-course-paper/commit/92f674de54c77afd7ae32342f9f03d2bdd8fb76d#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
