@@ -304,7 +304,7 @@ $ git log --graph --decorate --oneline
 {: .output}
 
 Notice how `HEAD` and `master` point to the same commit.
-Now checkout a previous commit again, and look at the graph again.
+Now switch to previous commit again, and look at the graph again.
 We can display, this time specifying that we want to look at `--all` the history,
 rather than just up to the current commit.
 
@@ -358,7 +358,7 @@ $ git commit -m "Explain motivation for research" paper.md
 ```
 {: .language-bash}
 
-We can checkout our previous version using our tag instead of a commit
+We can switch back to our previous version using our tag instead of a commit
 identifier.
 
 ```

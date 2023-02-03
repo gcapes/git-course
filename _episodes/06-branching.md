@@ -309,7 +309,7 @@ But we were then in the "detached HEAD" state.
 > {: .solution}
 {: .challenge}
 
-[detached HEAD animation]: https://learngitbranching.js.org/?NODEMO&command=git%20checkout%20HEAD~;git%20commit
+[detached HEAD animation]: https://learngitbranching.js.org/?NODEMO&command=git%20switch%20HEAD~;git%20commit
 
 > ## Abandon the commit on a detached HEAD
 > You decide that you want to abandon that commit.
@@ -344,7 +344,7 @@ But we were then in the "detached HEAD" state.
 > {: .solution}
 {: .challenge}
 
-[abandon detached HEAD]: https://learngitbranching.js.org/?NODEMO&command=git%20checkout%20HEAD~;git%20commit;git%20checkout%20master
+[abandon detached HEAD]: https://learngitbranching.js.org/?NODEMO&command=git%20switch%20HEAD~;git%20commit;git%20switch%20main
 
 > ## Save your changes in a new branch
 > Preparation:
@@ -407,7 +407,7 @@ But we were then in the "detached HEAD" state.
 > {: .solution}
 {: .challenge}
 
-[new branch animation]: https://learngitbranching.js.org/?NODEMO&command=git%20checkout%20HEAD~;git%20commit;git%20branch%20dh-ex;git%20checkout%20dh-ex;git%20checkout%20master
+[new branch animation]: https://learngitbranching.js.org/?NODEMO&command=git%20switch%20HEAD~;git%20commit;git%20branch%20dh-ex;git%20switch%20dh-ex;git%20checkout%20main
 [change-title]: https://github.com/gcapes/git-course-paper/commit/6d3e6fb24213f796a36fc8bec9db4cc779685482#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
 [aircraft-title]: https://github.com/gcapes/git-course-paper/commit/adcd2a0ceba5d87f8c56873d7984020fa3d82809
 [simulations-section]: https://github.com/gcapes/git-course-paper/commit/804bd97911c7b8191e5a372df364e87d27ea8c05
