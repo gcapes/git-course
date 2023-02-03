@@ -124,7 +124,7 @@ which explains why the changes were made.
 
 ---
 
-## Checking out a previous commit: "detached HEAD"
+## Switching to a previous commit: "detached HEAD"
 ![](../fig/detached-head.svg)
 
 ---
