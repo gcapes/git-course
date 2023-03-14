@@ -197,7 +197,7 @@ In order to see the other branches locally, we can check them out as before:
 
 ```
 $ git branch -r					# Show remote branches
-$ git checkout simulations			# Check out the simulations branch
+$ git switch simulations			# Check out the simulations branch
 ```
 {: .language-bash}
 
@@ -207,7 +207,7 @@ We can use our cloned repository just as if it was a local repository so let's
 [add a results section][add-results] and commit the changes.
 
 ```
-$ git checkout master			# We'll continue working on the master branch
+$ git switch master			# We'll continue working on the master branch
 $ nano paper.md				# Add results section
 $ git add paper.md			# Stage changes
 $ git commit

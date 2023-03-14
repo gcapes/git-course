@@ -12,7 +12,7 @@ objectives:
 - "Be able to discard all changes since a particular commit"
 - "Be able to undo the changes introduced by a commit"
 keypoints:
-- "`git checkout <file>` discards unstaged changes"
+- "`git restore <file>` discards unstaged changes"
 - "`git commit --amend` allows you to edit the last commit"
 - "`git revert` undoes a commit, preserving history"
 - "`git reset` undoes a commit by deleting history"
@@ -30,7 +30,7 @@ our file to the most recent version we committed to the repository by using:
 
 ```
 $ nano paper.md			# Make some small edits to the file
-$ git checkout paper.md		# Discard edits we just made
+$ git restore paper.md		# Discard edits we just made
 ```
 {: .language-bash}
 
@@ -75,7 +75,7 @@ $ git status		# Get a status update on file modifications
 $ On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git restore <file>..." to discard changes in working directory)
 
 	modified:   refs.txt
 	modified:   paper.md
@@ -102,7 +102,7 @@ $ git status
 $ On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+  (use "git restore <file>..." to discard changes in working directory)
 
 	modified:   refs.txt
 

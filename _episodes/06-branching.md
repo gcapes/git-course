@@ -10,7 +10,7 @@ objectives:
 - "Understand how to merge branches"
 - "Understand how to resolve conflicts during a merge"
 keypoints:
-- "`git branch` creates a new branch"
+- "`git switch -c <branch_name>` creates a new branch"
 - "Use feature branches for new ideas and fixes, before merging into `master`"
 - merging does not delete any branches
 ---
@@ -30,7 +30,7 @@ nothing to commit (working directory clean)
 {: .output}
 
 and when we wanted to get back to our most recent version of the repository, we
-used `git checkout master`.
+used `git switch master`.
 
 Not only can our repository store the changes made to files and directories, it
 can store multiple sets of these, which we can use and edit and update in
@@ -83,7 +83,7 @@ and carry on working on this "experimental" version of the paper in a branch
 rather than in the master.
 
 ~~~
-$ git checkout -b simulations
+$ git switch -c simulations
 ~~~
 {: .language-bash}
 ~~~
@@ -111,14 +111,14 @@ to the paper.
 ~~~
 $ nano paper.md		# Change title and add co-author
 $ git add paper.md
-$ git commit			# "Modify title and add John as co-author"
+$ git commit		# "Modify title and add John as co-author"
 ~~~
 {: .language-bash}
 
 If we now want to work in our `master` branch. We can switch back by using:
 
 ~~~
-$ git checkout master
+$ git switch master
 ~~~
 {: .language-bash}
 ~~~
@@ -132,7 +132,7 @@ the `master` version of the paper.
 ~~~
 $ nano paper.md		# Rewrite the title
 $ git add paper.md
-$ git commit			# "Include aircraft in title"
+$ git commit		# "Include aircraft in title"
 ~~~
 {: .language-bash}
 
@@ -143,8 +143,8 @@ which may possibly be collaborative work in our "simulations" branch.
 Let's [add another section][simulations-section] to the paper to write about John's simulations.
 
 ~~~
-$ git checkout simulations	# Switch branch
-$ nano paper.md		# Add 'simulations' section
+$ git switch simulations	# Switch branch
+$ nano paper.md			# Add 'simulations' section
 $ git add paper.md
 $ git commit -m "Add simulations" paper.md
 ~~~
@@ -179,7 +179,7 @@ We can do that by *merging* that branch with the `master` branch. Let's try
 doing that:
 
 ~~~
-$ git checkout master		# Switch branch
+$ git switch master		# Switch branch
 $ git merge simulations		# Merge simulations into master
 ~~~
 {: .language-bash}
@@ -276,24 +276,24 @@ $ git log --graph --decorate --all --oneline
 We already looked at "going back in time with Git". But now we'll look at it in
 more detail to see how moving back relates to branches and we will learn how to
 actually undo things. So far we were moving back in time in one branch by
-checking out one of the past commits.
+switching to one of the past commits.
 
 But we were then in the "detached HEAD" state.
 
 > ## Add a commit to detached HEAD
 >
-> - Checkout one of the previous commits from our repository.
+> - Switch to one of the previous commits from our repository.
 > - Make some changes and commit them. What happened?
 > - Now try to run `git branch`. What can you see?
 >
 > > ## Solution
 > > ```
-> > git checkout HEAD~1  # Check out the commit one before last
-> > nano paper.md     # Make some edits
-> > git add paper.md   # Stage the changes
-> > git commit		 # Commit the changes
-> > git branch		 # You should see a message like the one below,
-> >			 # indicating your commit does not belong to a branch
+> > git switch -d HEAD~1		# Check out the commit one before last
+> > nano paper.md			# Make some edits
+> > git add paper.md		# Stage the changes
+> > git commit			# Commit the changes
+> > git branch			# You should see a message like the one below,
+> >				# indicating your commit does not belong to a branch
 > > ```
 > > {: .language-bash}
 > > ```
@@ -309,7 +309,7 @@ But we were then in the "detached HEAD" state.
 > {: .solution}
 {: .challenge}
 
-[detached HEAD animation]: https://learngitbranching.js.org/?NODEMO&command=git%20checkout%20HEAD~;git%20commit
+[detached HEAD animation]: https://learngitbranching.js.org/?NODEMO&command=git%20switch%20HEAD~;git%20commit
 
 > ## Abandon the commit on a detached HEAD
 > You decide that you want to abandon that commit.
@@ -317,7 +317,7 @@ But we were then in the "detached HEAD" state.
 >
 > > ## Solution
 > > ```
-> > git checkout master
+> > git switch master
 > > ```
 > > {: .language-bash}
 > > Git will warn you that you are leaving behind changes that would be lost:
@@ -344,13 +344,13 @@ But we were then in the "detached HEAD" state.
 > {: .solution}
 {: .challenge}
 
-[abandon detached HEAD]: https://learngitbranching.js.org/?NODEMO&command=git%20checkout%20HEAD~;git%20commit;git%20checkout%20master
+[abandon detached HEAD]: https://learngitbranching.js.org/?NODEMO&command=git%20switch%20HEAD~;git%20commit;git%20switch%20main
 
 > ## Save your changes in a new branch
 > Preparation:
 >
 > - You should be on the `master` branch after that last exercise.
-> If not, check out master again: `git checkout master`
+> If not, switch to master again: `git switch master`
 > - Checkout one of the previous commits from your repository.
 > - Make some changes, save the file(s), and make a commit on the detached HEAD as
 > you did in the first exercise.
@@ -360,14 +360,14 @@ But we were then in the "detached HEAD" state.
 > - Create a new branch and check it out.
 > - Now run `git log` and see that your new commit belongs to this new branch.
 > - List your local branches again and see that the temporary branch has gone.
-> - Switch back to (i.e. checkout) the `master` branch
+> - Switch back to the `master` branch
 >
 > > ## Solution
 > >
 > > ```
-> > git checkout HEAD~1		# Checkout the commit before last
-> > nano paper.md		# Modify one of your files
-> > git commit -a			# Commit all the modified files
+> > git switch -d HEAD~1        # Checkout the commit before last
+> > nano paper.md               # Modify one of your files
+> > git commit -a               # Commit all the modified files
 > > git branch			# List local branches
 > > ```
 > > {: .language-bash}
@@ -380,8 +380,7 @@ But we were then in the "detached HEAD" state.
 > > {: .output}
 > > You are currently on a temporary, unnamed branch, as indicated by the `*`.
 > > ```
-> > git branch dh-exercise		# Create a new branch
-> > git checkout dh-exercise	# Switch to the new branch
+> > git switch -c dh-exercise	# Create and switch to a new branch
 > > ```
 > > {: .language-bash}
 > > ```
@@ -401,14 +400,14 @@ But we were then in the "detached HEAD" state.
 > > The commit you made on the detached HEAD now belongs to a named branch
 > > (`dh-exercise` in the example above), rather than a temporary branch.
 > > ```
-> > git checkout master		# Switch back to the 'master' branch
+> > git switch master		# Switch back to the 'master' branch
 > > ```
 > > {: .language-bash}
 > > See this [new branch animation] for the key points in this exercise.
 > {: .solution}
 {: .challenge}
 
-[new branch animation]: https://learngitbranching.js.org/?NODEMO&command=git%20checkout%20HEAD~;git%20commit;git%20branch%20dh-ex;git%20checkout%20dh-ex;git%20checkout%20master
+[new branch animation]: https://learngitbranching.js.org/?NODEMO&command=git%20switch%20HEAD~;git%20commit;git%20branch%20dh-ex;git%20switch%20dh-ex;git%20checkout%20main
 [change-title]: https://github.com/gcapes/git-course-paper/commit/6d3e6fb24213f796a36fc8bec9db4cc779685482#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
 [aircraft-title]: https://github.com/gcapes/git-course-paper/commit/adcd2a0ceba5d87f8c56873d7984020fa3d82809
 [simulations-section]: https://github.com/gcapes/git-course-paper/commit/804bd97911c7b8191e5a372df364e87d27ea8c05

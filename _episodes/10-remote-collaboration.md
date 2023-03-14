@@ -325,7 +325,7 @@ $ git pull origin master	# Merge remote branch into local
 > you should substitute the name of your new branch and your partner's new branch.
 >
 > ```
-> $ git checkout -b my_branch		# Create and check out a new branch.
+> $ git switch -c my_branch		# Create and switch to a new branch.
 >					# Substitute your local branch name for 'my_branch'.
 > ```
 > {: .language-bash}
@@ -364,7 +364,7 @@ $ git pull origin master	# Merge remote branch into local
 > The next step is to check out a new branch locally to track the new remote branch.
 >
 > ```
-> $ git checkout their_branch
+> $ git switch their_branch
 > ```
 > {: .language-bash}
 > ```
