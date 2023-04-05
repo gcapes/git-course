@@ -20,7 +20,7 @@ Git is free and open-source software, available for all operating systems.
 #### Installation on a managed desktop PC
 
 [Git for Windows](https://git-for-windows.github.io/) is available for self-installation from the
-[Software Centre](https://supportcentre.manchester.ac.uk/ServiceDesk.WebAccess/wd/object/open.rails?class_name=Knowledge.Article&key=2713eff4-2720-4db8-a1f6-a4bbb0d70cab).
+[Software Centre](https://manchester.saasiteu.com/Modules/SelfService/#knowledgeBase/view/19D08D7414AE4D85998B2F79EC4C4B99).
 
 #### Installation on personal and unmanaged machines
 
