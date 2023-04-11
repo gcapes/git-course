@@ -85,7 +85,7 @@ Then add patterns for the files you want to ignore, where `*` is a wildcard,
 Then, add `.gitignore` to your repository,
 
 ```
-$ git add .gitignore $ git commit -m "Added rules to ignore vim scratch
+$ git add .gitignore $ git commit -m "Add rules to ignore vim scratch
 files and binary files"
 ```
 {: .language-bash}
