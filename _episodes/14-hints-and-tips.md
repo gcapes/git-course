@@ -166,7 +166,7 @@ You could commit all the changes you have made, then switch branch, but that wou
 involve committing incomplete work just to return to this state later on.
 `git stash` saves the dirty state of your working directory and saves it on a stack
 of unfinished changes that you can reapply at any time using `git stash apply`.
-See [here](https://git-scm.com/book/en/v1/Git-Tools-Stashing) for more details and
+See [here](https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning) for more details and
 for examples.
 
 ---
