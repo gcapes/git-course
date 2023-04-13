@@ -65,12 +65,14 @@ Now, we can create a repository on GitHub,
 * Click on the **Create** icon on the top right
 * Enter Repository name: "paper"
 * For the purpose of this exercise we'll create a public repository
-* Make sure that **Initialize this repository with a README** is **unselected**
+* Make sure that *Initialize this repository with a README* is **unselected**
 * Click **Create Repository**
 
 You'll get a page with new information about your repository. We already have
-our local repository and we will be *pushing* it to GitHub using SSH,
+our local repository and we will be *pushing* it to GitHub **using SSH**,
 so this is the option we will use:
+
+![ssh-address](../fig/github-ssh-address.png)
 
 ```
 $ git remote add origin git@github.com:<USERNAME>/paper.git
