@@ -57,7 +57,7 @@ id_ed25519  id_ed25519.pub
 ```
 {: .output}
 
-and you can jump to the [final step](#add-public-ssh-key-to-github).
+and you can skip to the next section [(Add public ssh key to GitHub)](#add-public-ssh-key-to-github).
 
 If you still need to set up ssh keys, you'll get a message like this:
 
