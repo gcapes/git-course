@@ -137,7 +137,7 @@ which explains why the changes were made.
 ---
 
 # Branches
-![](../fig/feature-branch.svg)
+![](../fig/feature-branches.svg)
 
 ---
 
