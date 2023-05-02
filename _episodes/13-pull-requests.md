@@ -68,7 +68,7 @@ or you could consider rewriting your history neatly using an interactive rebase 
 an earlier commit.
 In either case, your PR will update automatically once you have pushed your commits.
 
-> ## Exercise
+> ## Send me a pull request!
 > Let's look at the workflow and try to repeat it:
 >
 > 1. **Fork** [this
