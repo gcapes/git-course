@@ -27,7 +27,7 @@ For this we will use the command line interface.
 
 > ## Why use the command line?
 > There are lots of graphical user interfaces (GUIs) for using Git: both stand-alone
-> and integrated into IDEs (e.g. MATLAB, Rstudio).
+> and integrated into IDEs (e.g. MATLAB, Rstudio, PyCharm).
 > We are deliberately not using a GUI for this course because:
 >
 > * you will have a better understanding of how the git comands work
@@ -35,6 +35,9 @@ For this we will use the command line interface.
 > * you will be able to use Git on any computer
 > (e.g. remotely accessing HPC systems, which generally only have Linux command line access)
 > * you will be able to use any GUI, rather than just the one you have learned
+>
+> By the end of the course, this should no longer be you:
+> ![xkcd-git-comic](https://imgs.xkcd.com/comics/git.png)
 {: .callout}
 
 ## Setting up Git
