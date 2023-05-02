@@ -163,8 +163,11 @@ $ nano paper.md
 > ## Accessing files from the command line
 > In this lesson we create and modify text files using a command line interface
 > (e.g. terminal, Git Bash etc), mainly for convenience.
-> These are normal files which are also accessible from the file browser (e.g. Windows explorer),
-> and by other programs.
+> **These are normal files which are also accessible from the file browser (e.g. Windows explorer),
+> and by other programs.**
+>
+> Your typical workflow using version control might involve editing files using
+> e.g. MATLAB, PyCharm, Rstudio etc and committing from a command line interface.
 {: .callout}
 
 `git status` allows us to find out about the current status
