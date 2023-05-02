@@ -68,7 +68,7 @@ or you could consider rewriting your history neatly using an interactive rebase 
 an earlier commit.
 In either case, your PR will update automatically once you have pushed your commits.
 
-> ## Send me a pull request!
+> ## Send me a Pull Request!
 > Let's look at the workflow and try to repeat it:
 >
 > 1. **Fork** [this
@@ -94,6 +94,32 @@ In either case, your PR will update automatically once you have pushed your comm
 > 5. The owner of the original repository gets a notification that someone
 > created a pull request - the request can be reviewed, commented and merged in
 > (or not) via GitHub.
+{: .challenge}
+
+## Using issues for planning and discussion
+Issues are a great way to plan/project manage your own work.
+You can think of them like a to-do list, where you create a new branch for each issue,
+to be merged into `master` when completed.
+They are also a good place for discussion ahead of creating a pull request.
+
+A nice GitHub integration is that you can close an issue via a commit message
+e.g. if you include `Fix #2` in your commit message, it will close issue 2
+when merged into master.
+
+> ## Send yourself a Pull Request!
+> Pull requests aren't just for repos where you don't have write access.
+> You can also create a pull request from a feature branch within your own repo.
+> This is a useful workflow if you would like some input from colleagues -
+> you can request a review and have discussions on the pull request.
+>
+> 1. Create a new issue for your repository (e.g. acknowledge funding source)
+> 2. Create a new feature branch and switch to it ahead of fixing the issue
+> 3. Edit your paper to resolve the issue, and include `Fix #1` in your commit
+>    message (assuming you're fixing issue #1).
+> 4. Push your new feature branch to `origin`
+> 5. Create a new pull request from your feature branch to `master`
+>   (Look for a green button at the top of the `code` tab after pushing)
+> 6. Merge your pull request on GitHub, under the "Pull requests" tab
 {: .challenge}
 
 {% include links.md %}
