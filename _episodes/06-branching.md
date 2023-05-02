@@ -56,20 +56,21 @@ making commits) in feature1 as well.
 
 ### Branching workflows
 
-One popular model is the [Gitflow model](http://nvie.com/posts/a-successful-git-branching-model/):
+A simple workflow I recommend using is the feature branch workflow.
 
+This consists of:
 - A *master* branch, representing a released version of the code
-- A release branch, representing the beginnings of the next release - a branch
-where the code is still undergoing testing
-- Various feature and/or developer-specific branches representing
-work-in-progress, new features, bug fixes etc
+- Various feature branches representing work-in-progress, new features, bug fixes etc
+
+The main idea is to start each piece of work in a new feature branch,
+and merge finished work into master.
+You shouldn't normally be committing directly to master.
 
 For example:
 
-![Feature branches ([image
-source)](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow)](../fig/feature-branch.svg)
+![Feature branches](../fig/feature-branches.svg)
 
-There are different possible workflows when using Git for code development.
+There are various possible workflows when using Git for code development.
 If you want to learn more about different workflows with Git, have a look at
 [this discussion](https://www.atlassian.com/git/tutorials/comparing-workflows)
 on the Atlassian website.
