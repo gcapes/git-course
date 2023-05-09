@@ -102,9 +102,11 @@ You can think of them like a to-do list, where you create a new branch for each 
 to be merged into `master` when completed.
 They are also a good place for discussion ahead of creating a pull request.
 
-A nice GitHub integration is that you can close an issue via a commit message
+A nice GitHub integration is that you can [close an issue via a commit message][close via commit]
 e.g. if you include `Fix #2` in your commit message, it will close issue 2
 when merged into master.
+
+
 
 > ## Send yourself a Pull Request!
 > Pull requests aren't just for repos where you don't have write access.
@@ -123,3 +125,5 @@ when merged into master.
 {: .challenge}
 
 {% include links.md %}
+
+[close via commit]: https://github.com/gcapes/git-course/commit/b76e9fe967d4f1a1a612399bb4fb615cef70e2e0
