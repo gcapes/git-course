@@ -28,14 +28,12 @@ tools for browsing, collaborating on and documenting code. GitHub, like other
 services such as [Bitbucket](https://bitbucket.org) and [GitLab](https://about.gitlab.com/)
 supports a wealth of resources to support projects including:
 
-* Time histories changes to repositories
-* Commit-triggered e-mails
+* Code download
+* History of changes to repositories
 * Browsing code from within a web browser, with syntax highlighting
+* E-mail notifications
 * Software release management
-* Issue (ticket) and bug tracking
-* Download
-* Varying permissions for various groups of users
-* Other service hooks e.g. to Twitter.
+* Issue tracking (great for planning and discussing work)
 
 **Note**  GitHub's free repositories have public licences **by default**. If
 you don't want to share (in the most liberal sense) your stuff with the world
@@ -45,12 +43,14 @@ to 3 collaborators for a free GitHub account.
 ### GitHub for research
 
 GitHub **isn't** the only remote repositories provider. It is however very popular,
-in particular within the Open Source communities. The reason why we teach GitHub
-in this tutorial is mainly due to popular demand.
+in particular within the Open Source communities.
 
-Also, GitHub has started working on [functionality which is particularily useful
-for researchers](https://github.com/blog/1840-improving-github-for-sciences)
-such as making code citable.
+As a researcher, having your code somewhere like GitHub is useful if you want
+to ask a colleague for help (peer review),
+and keeps the history and discussions all in one place.
+This also makes it easier for you to build upon someone else's code (or vice versa).
+
+You can also [release code with a DOI][citable-code] so that people can cite it in papers.
 
 ---
 
@@ -233,5 +233,6 @@ $ git remote -v
 
 [GitHub]: https://github.com/
 [add-results]: https://github.com/gcapes/git-course-paper/commit/0c4573e5ea15d6f5dc877e8db8c0696e7675d5ed
+[citable-code]: https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content
 
 {% include links.md %}

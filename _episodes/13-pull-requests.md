@@ -21,14 +21,15 @@ make sure that their contributions will provide more benefits than the
 potential mistakes they may introduce.
 
 In large projects, primarily Open Source ones, in which the community of
-contributors can be very big, keeping the source code safe but at the same
-allow people to make contributions without making them "pass" tests for their
+contributors can be very big, keeping the source code safe but at the same time
+allowing people to make contributions without making them "pass" tests for their
 skills and trustworthiness may be one of the keys to success.
 
 Leveraging the power of Git, GitHub provides a functionality called *Pull
 Requests*. Essentially it's "requesting the owner of the repository to pull in
 your contributions". The owner may or may not accept them. But for you as
 a contributor, it was really easy to make the contribution.
+
 
 ## The process
 
