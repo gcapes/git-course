@@ -21,14 +21,12 @@ to.
 
 ### GitHub
 
-[GitHub](http://GitHub.com) is a company which provides remote repositories for
+[GitHub](http://github.com) is a company which provides remote repositories for
 Git and a range of functionalities supporting their use. GitHub allows users to
 set up  their private and public source code Git repositories. It provides
 tools for browsing, collaborating on and documenting code. GitHub, like other
-services such as [Launchpad](https://launchpad.net),
-[Bitbucket](https://bitbucket.org), [GoogleCode](http://code.google.com), and
-[SourceForge](http://sourceforge.net) supports a wealth of resources to support
-projects including:
+services such as [Bitbucket](https://bitbucket.org) and [GitLab](https://about.gitlab.com/)
+supports a wealth of resources to support projects including:
 
 * Time histories changes to repositories
 * Commit-triggered e-mails
@@ -41,9 +39,8 @@ projects including:
 
 **Note**  GitHub's free repositories have public licences **by default**. If
 you don't want to share (in the most liberal sense) your stuff with the world
-and you want to use GitHub, you will need to pay for the
-private GitHub repositories (GitHub offers up to 5 free private repositories,
-if you are an academic - but do check this information as T&C may change).
+and you want to use GitHub, you can create a private repository, which is limited
+to 3 collaborators for a free GitHub account.
 
 ### GitHub for research
 
