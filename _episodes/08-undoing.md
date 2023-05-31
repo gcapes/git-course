@@ -24,8 +24,10 @@ commited in Git.
 ### Discarding local changes
 
 Maybe we made our change just to see how something looks, or to
-quickly try something out. But we may be unhappy with our changes. If we
-haven't yet done a `git add` we can just throw the changes away and return
+quickly try something out.
+Maybe we asked a colleague for help but they ended up making things worse!
+Whatever the reason, if we're not unhappy with our changes,
+and we haven't yet done a `git add` we can just throw the changes away and return
 our file to the most recent version we committed to the repository by using:
 
 ```
@@ -279,6 +281,14 @@ for further reading about the differences between `git revert` and `git reset`.
 ### How to undo almost anything with Git
 See [this blog post](https://github.com/blog/2019-how-to-undo-almost-anything-with-git) for
 more example scenarios and how to recover from them.
+
+
+### Mental freedom
+A nice side effect of being able to easily undo changes
+is the mental freedom/headspace it affords you.
+There is no penalty for trying something out, making a mess, and then discarding it.
+It's quite liberating to be able to just get on with things
+without nagging doubts about how you're going to undo it if it doesn't work out.
 
 [describe-methodology]: https://github.com/gcapes/git-course-paper/commit/00c685625b66952e33a7d88150232b7d6716a185
 [SMPS]: https://github.com/gcapes/git-course-paper/commit/bb77f4eafaf8a5c374a00ae17c79585d30343461
