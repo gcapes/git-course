@@ -282,6 +282,6 @@ provider that allows for large files).
 Again, as always with Git **before** you execute the above, make sure you know
 what you're doing!
 
-[editing hunks]: http://joaquin.windmuller.ca/2011/11/16/selectively-select-changes-to-commit-with-git-or-imma-edit-your-hunk
+[editing hunks]: https://github.com/mightymakku/Manually-Editing-Hunks
 
 {% include links.md %}
