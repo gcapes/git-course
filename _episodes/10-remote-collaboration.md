@@ -1,7 +1,7 @@
 ---
 title: "Collaborating with a remote repository"
 teaching: 25
-exercises: 15
+exercises: 10
 questions:
 - "How do I update my local repository with changes from the remote?"
 - "How can I collaborate using Git?"
@@ -374,24 +374,6 @@ $ git pull origin master	# Merge remote branch into local
 > {: .output}
 {: .challenge}
 
-> ## Undoing changes using revert
->
-> Once you have the branches which others created, try to undo one of the commits.
->
-> Each one of you should try to [revert]({{ page.root }}/07-undoing) a commit in a different
-> branch to your partner(s).
->
-> Push the branch back to the remote repository. The others should pull that
-> branch to get the changes you made.
->
-> What is the end result? What happens when you pull the branch that your
-> colleagues changed using `git revert`?
->
-> > ## Solution
-> > The revert shows up in everyone's copy.
-> > You should always use `revert` to undo changes which have been shared with others.
-> {: .solution}
-{: .challenge}
 
 [add-figures]: https://github.com/gcapes/git-course-paper/commit/8bfe74f715173b3f000134d56678e39e64d4bfbb
 [write-conclusions]: https://github.com/gcapes/git-course-paper/commit/7f9d94849c7de7c8dd915938b13fecae037f675a
