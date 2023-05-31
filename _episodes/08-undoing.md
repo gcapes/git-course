@@ -1,7 +1,7 @@
 ---
 title: "Undoing changes"
 teaching: 25
-exercises: 0
+exercises: 5
 questions:
 - "How can I discard unstaged changes?"
 - "How do I edit the last commit?"
@@ -256,6 +256,25 @@ depth `git reset` showing the differences between the three options:
 See this [Atlassian online tutorial](
 https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting/commit-level-operations)
 for further reading about the differences between `git revert` and `git reset`.
+
+
+> ## Undoing changes using revert
+>
+> 1. Make a change to one of your project files (you could repeat the last example about using SMPS data)
+> 2. Commit your changes
+> 3. Push the commit to your remote repository
+> 4. Undo the changes you just made by reverting the last commit
+> 5. Push the revert commit
+>
+> What does the history show on GitHub?
+>
+> > ## Solution
+> > The revert commit is also visible on GitHub - what has happened is completely transparent to any collaborators
+> > you might have.
+> > You should always use `revert` to undo changes which have been pushed to a remote repository.
+> {: .solution}
+{: .challenge}
+
 
 ### How to undo almost anything with Git
 See [this blog post](https://github.com/blog/2019-how-to-undo-almost-anything-with-git) for
