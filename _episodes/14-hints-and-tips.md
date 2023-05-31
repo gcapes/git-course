@@ -112,29 +112,6 @@ The syntax is:
 
 ---
 
-### Colours in Git
-
-On many computers, the terminal output is automatically coloured which makes
-reading the output easier.
-If your output is not coloured (e.g. in the Sackville/G11 cluster) there is a command
-which will add the colour (**note the spelling of *color***):
-
-```
-$ git config --global --add color.ui true                       # Note US spelling of color
-```
-{: .language-bash}
-
----
-
-### Add colour to `diff`
-
-```
-$ git config --global color.diff auto
-```
-{: .language-bash}
-
----
-
 ### Configure a visual diff tool
 
 `git diff` is ok, but not very user friendly.
@@ -282,6 +259,6 @@ provider that allows for large files).
 Again, as always with Git **before** you execute the above, make sure you know
 what you're doing!
 
-[editing hunks]: http://joaquin.windmuller.ca/2011/11/16/selectively-select-changes-to-commit-with-git-or-imma-edit-your-hunk
+[editing hunks]: https://github.com/mightymakku/Manually-Editing-Hunks
 
 {% include links.md %}
