@@ -1,7 +1,7 @@
 ---
 title: "Working from multiple locations with a remote repository"
 teaching: 30
-exercises: 0
+exercises: 5
 questions:
 - "What is a remote repository"
 - "How can I use GitHub to work from multiple locations?"
@@ -40,17 +40,29 @@ you don't want to share (in the most liberal sense) your stuff with the world
 and you want to use GitHub, you can create a private repository, which is limited
 to 3 collaborators for a free GitHub account.
 
-### GitHub for research
-
-GitHub **isn't** the only remote repositories provider. It is however very popular,
-in particular within the Open Source communities.
-
-As a researcher, having your code somewhere like GitHub is useful if you want
-to ask a colleague for help (peer review),
-and keeps the history and discussions all in one place.
-This also makes it easier for you to build upon someone else's code (or vice versa).
-
-You can also [release code with a DOI][citable-code] so that people can cite it in papers.
+> ## Are you already using GitHub?
+> - If you're not already using GitHub (or similar) for your research code
+>   what is holding you back? What concerns do you have?
+> - If you've already taken the plunge, how did you overcome any concerns?
+>
+> > ## Some thoughts
+> > - Your code isn't 'good enough' yet
+> >   - Getting your code shared online is one of the best ways to improve it.
+> >   - GitHub has some great tools for collaboration which will make it easier
+> >     to get help from others (e.g. code review from a colleague) and
+> >   - Having the history of changes and discussions all in one place makes it easier
+> >     for someone else to build on your code (or vice versa)
+> >   - The reality is code is nearly always a work-in-progress,
+> >     so it's best to just get started wherever you're currently up to
+> > - Who owns code in a public repo?
+> >   - Keeping your code in a private repo certainly means that no-one is going to
+> >     copy it and use it, or pass it off as their own
+> >   - However, adding a licence e.g. [MIT][MIT-licence] and [making a release][github-release]
+> >     means others can use it but you would retain copyright for your work
+> >   - https://choosealicense.com/ is a good tool for deciding which licence is appropriate for you
+> >   - You can also [release code with a DOI][citable-code] so that people can cite it in papers.
+> {: .solution}
+{: .discussion}
 
 ---
 
@@ -234,5 +246,6 @@ $ git remote -v
 [GitHub]: https://github.com/
 [add-results]: https://github.com/gcapes/git-course-paper/commit/0c4573e5ea15d6f5dc877e8db8c0696e7675d5ed
 [citable-code]: https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content
-
+[MIT-licence]: https://choosealicense.com/licenses/mit/
+[github-release]: https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository
 {% include links.md %}
