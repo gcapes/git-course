@@ -182,4 +182,4 @@ which explains why the changes were made.
 ![](../fig/github-diagram.png)
 
 # Send me a PR!
-[http://gcapes.github.io/git-course/13-pull-requests/#exercise](http://gcapes.github.io/git-course/13-pull-requests/#exercise)
+[https://gcapes.github.io/git-course/13-pull-requests/#send-me-a-pull-request](https://gcapes.github.io/git-course/13-pull-requests/#send-me-a-pull-request)
