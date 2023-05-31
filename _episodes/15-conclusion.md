@@ -1,7 +1,7 @@
 ---
 title: "Conclusions and further information"
 teaching: 5
-exercises: 0
+exercises: 5
 questions:
 - "Where can I find out more?"
 objectives:
@@ -38,6 +38,11 @@ It also allows you to work with others on a project, whether that be writing
 code or papers, down to the level of individual files, without the risk of
 overwriting and losing each others work, and being able to record and
 understand who changed what, when, and why.
+
+> ## Upload your own code
+> If you have code that you're currently working on, which isn't under version control
+> [create a new repo](https://github.com/new) on GitHub and upload it today!
+{: .challenge}
 
 ### Find out more...
 
