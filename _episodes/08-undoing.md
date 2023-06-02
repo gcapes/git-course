@@ -141,26 +141,47 @@ $ git log -3
 than deleting the commit from history, git works out how to undo those changes
 introduced by the commit, and appends a new commit with the resulting content.
 
-Let's try it on our example. Modify the paper, [describing the SMPS][SMPS] which is
-another instrument used to measure particle sizes, and then make a commit.
+![git revert diagram](../fig/git-revert.svg)
 
-```
-$ nano paper.md		# Describe other instrument
-$ git add paper.md
-$ git commit -m "Describe SMPS"
-```
-{: .language-bash}
+Let's try it on our example.
 
-We now realise that what we've just done in our journal article is incorrect
-because we are not using the data from that instrument.
-Some of the data got corrupted, and due to problems with the logging computer
-we are not going to use that data.
-So it makes sense to abandon the commit completely.
-
-```
-$ git revert HEAD		# Undo changes introduced by most recent commit
-```
-{: .language-bash}
+> ## Revert a commit
+> Modify the paper, [describing the SMPS][SMPS] which is
+> another instrument used to measure particle sizes, and then make a commit.
+>
+> ```
+> $ nano paper.md		# Describe other instrument
+> $ git add paper.md
+> $ git commit -m "Describe SMPS"
+> ```
+> {: .language-bash}
+>
+> We now realise that what we've just done in our journal article is incorrect
+> because we are not using the data from that instrument.
+> Some of the data got corrupted, and due to problems with the logging computer
+> we are not going to use that data.
+> So it makes sense to abandon the commit completely.
+>
+> Find the commit ID of the commit you just made, and
+> use it in the command below to revert the commit:
+> ```
+> git revert <commit ID>
+> ```
+> {: .language-bash}
+>
+> What does your history look like now?
+>
+> > ## Solution
+> >
+> > After resetting the commit with
+> > ```
+> > $ git revert HEAD		# Undo changes introduced by most recent commit
+> > ```
+> > {: .language-bash}
+> >
+> > There will be one new commit on the master branch which undoes the changes.
+> {: .solution}
+{: .challenge}
 
 When we revert, a new commit is created. The *HEAD* pointer and the branch
 pointer are in fact moved forward rather than backwards.
@@ -198,8 +219,11 @@ they were at `<commit>`. This is a permanent undo which deletes all changes more
 than `<commit>` from your history. There is clearly potential here to lose work, so use
 this command with care.
 
-Let's try that on our paper, using the same example as before. Now we have two commits
-which we want to abandon: the commit outlining the unreliable instrumentation, and
+![hard reset diagram](../fig/git-reset.svg)
+
+Let's try that on our paper, building on the example in the previous exercise.
+Now we have two commits which we want to abandon:
+the commit outlining the unreliable instrumentation, and
 the subsequent revert commit. We can achieve this by resetting to the last
 commit we want to keep.
 
@@ -251,8 +275,6 @@ depth `git reset` showing the differences between the three options:
 > As such, if we want to abandon changes in branches that are shared
 > with others, we should to use the `revert` command.
 {: .callout}
-
-![Reset vs revert](../fig/git-revert-vs-reset.svg)
 
 
 See this [Atlassian online tutorial](
