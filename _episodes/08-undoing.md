@@ -15,7 +15,7 @@ keypoints:
 - "`git restore <file>` discards unstaged changes"
 - "`git commit --amend` allows you to edit the last commit"
 - "`git revert` undoes a commit, preserving history"
-- "`git reset` undoes a commit by deleting history"
+- "`git reset --hard` undoes a commit by deleting history"
 ---
 
 There are a number of things which we can amend and change after they have been
