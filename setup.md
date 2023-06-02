@@ -31,6 +31,9 @@ for the major operating systems.
 ### SSH keys
 
 Please set up SSH keys for authentication with GitHub.
+This is a two step process:
+1. [Create SSH keys on your laptop]({{page.root}}/setup#create-ssh-keys)
+2. [Add the public key to GitHub]({{page.root}}/setup#add-public-ssh-key-to-github)
 
 [SSH] is an encrypted network protocol which we will use to securely access
 our remote repository.
