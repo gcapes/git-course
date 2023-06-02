@@ -59,7 +59,7 @@ to 3 collaborators for a free GitHub account.
 > >     copy it and use it, or pass it off as their own
 > >   - However, adding a licence e.g. [MIT][MIT-licence] and [making a release][github-release]
 > >     means others can use it but you would retain copyright for your work
-> >   - https://choosealicense.com/ is a good tool for deciding which licence is appropriate for you
+> >   - <https://choosealicense.com/> is a good tool for deciding which licence is appropriate for you
 > >   - You can also [release code with a DOI][citable-code] so that people can cite it in papers.
 > {: .solution}
 {: .discussion}
