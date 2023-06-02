@@ -55,8 +55,8 @@ to 3 collaborators for a free GitHub account.
 > >   - The reality is code is nearly always a work-in-progress,
 > >     so it's best to just get started wherever you're currently up to
 > > - Who owns code in a public repo?
-> >   - Keeping your code in a private repo certainly means that no-one is going to
-> >     copy it and use it, or pass it off as their own
+> >   - Keeping your code in a private repo will ensure that no-one can view it or use it
+> >   - Even a public repo without a licence is covered by default copyright laws
 > >   - However, adding a licence e.g. [MIT][MIT-licence] and [making a release][github-release]
 > >     means others can use it but you would retain copyright for your work
 > >   - <https://choosealicense.com/> is a good tool for deciding which licence is appropriate for you
