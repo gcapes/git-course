@@ -107,6 +107,15 @@ which explains why the changes were made.
 - Text files vs binary files
 - Git vs GitHub
 
+# Check setup was a success
+```{.bash}
+ssh -T git@github.com
+```
+
+```{.output}
+Hi yourusername! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
 # Open the notes
 
 ## [https://gcapes.github.io/git-course](https://gcapes.github.io/git-course)
