@@ -8,6 +8,8 @@ title: "Instructor Notes"
 	- Use black-on-white colour scheme
 	- Set a minimal shell prompt `PS1="$ "`
 	- Also set a larger font size in your text editor
+- Check everyone has SSH keys set up
+  - Help get everyone set up at lunch time
 
 ## Ahead of time
 - Send instructions on how to install Git and SSH keys
