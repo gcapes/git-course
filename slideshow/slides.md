@@ -133,17 +133,18 @@ Hi yourusername! You've successfully authenticated, but GitHub does not provide 
 
 ---
 
-## Switching to a previous commit: "detached HEAD"
-![](../fig/detached-head.svg)
-
----
-
 # Exercise 1
 ## Create your own repo
 
 [http://gcapes.github.io/git-course/03-history](http://gcapes.github.io/git-course/03-history/#exercise-bio-repository)
 
 ---
+
+## Switching to a previous commit: "detached HEAD"
+![](../fig/detached-head.svg)
+
+---
+
 
 # Branches
 ![](../fig/feature-branches.svg)
