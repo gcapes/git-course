@@ -9,7 +9,7 @@ objectives:
 - "Understand how to pull changes from remote repository"
 - "Understand how to resolve merge conflicts"
 keypoints:
-- "`git pull` to integrate remote changes into local copy of repository"
+- "`git pull` merges remote changes into local branch of repository"
 ---
 
 
