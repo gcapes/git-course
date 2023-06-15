@@ -50,26 +50,19 @@ understand who changed what, when, and why.
 * [Atlassian Git tutorials](https://www.atlassian.com/git/tutorials/) --- an
 excellent resource with clear explanations and illustrations
 * [Learn Git branching](https://learngitbranching.js.org/) --- interactive, visual tutorials
-* K. Ram  (2013) "git can facilitate greater reproducibility and increased
-transparency in science", Source Code for Biology and Medicine 2013, 8:7
-doi:[10.1186/1751-0473-8-7](http://dx.doi.org/10.1186/1751-0473-8-7) --- survey
-of the range of ways in which version control can help research.
-* [Visual Git Reference](http://marklodato.github.com/visual-git-guide/index-en.html)
-  --- pictorial representations of what Git commands do
+* [Visual Git Reference][visual-git] --- pictorial representations of what Git commands do
 * [Pro Git](http://git-scm.com/book) --- the "official" online Git book.
-* [Version control by example](http://www.ericsink.com/vcbe/) --- an acclaimed online book
+* [Version control by example][version-control-by-example] --- an acclaimed online book
 on version control by Eric Sink.
 * [Git beyond the basics](https://speakerdeck.com/zakkak/git-beyond-the-basics) --- a nice
   reference
 slideshow covering some more advanced topics
-* G. Wilson, D. A. Aruliah, C. T. Brown, N. P. Chue
-Hong, M. Davis, R. T. Guy, S. H. D. Haddock, K. Huff, I. M. Mitchell, M.
-Plumbley, B. Waugh, E. P. White, P. Wilson (2012) "[Best Practices for
-Scientific Computing](http://arxiv.org/abs/1210.0530)", arXiv:1210.0530
-[cs.MS].
+* [Best Practices for Scientific Computing](http://arxiv.org/abs/1210.0530)
 
 ### Feedback
 Please leave some [feedback](https://docs.google.com/forms/d/e/1FAIpQLSdfpd8QuG9SPAehY5PBJ7AQdbH_eQcDL0UNbS2Oqs6960BTww/viewform?usp=pp_url&entry.1427428485&entry.1759822899&entry.1444288709=Version+control+with+Git+and+GitHub&entry.1409009513&entry.160472735&entry.2083518247&entry.9232415://docs.google.com/forms/d/e/1FAIpQLSdfpd8QuG9SPAehY5PBJ7AQdbH_eQcDL0UNbS2Oqs6960BTww/viewform?usp=pp_url&entry.1427428485&entry.1759822899&entry.1444288709=Version+control+with+Git+and+GitHub&entry.1409009513&entry.160472735&entry.2083518247&entry.92324155).
 It's good to know how things can be improved.
 
+[visual-git]: https://marklodato.github.io/visual-git-guide/index-en.html
+[version-control-by-example]: https://ericsink.com/vcbe/index.html
 {% include links.md %}
