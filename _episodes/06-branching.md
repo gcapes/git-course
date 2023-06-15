@@ -12,7 +12,8 @@ objectives:
 keypoints:
 - "`git switch -c <branch_name>` creates a new branch"
 - "Use feature branches for new ideas and fixes, before merging into `master`"
-- merging does not delete any branches
+- "`git merge <branch_name>` merges into current branch"
+- "Merging does not delete any branches"
 ---
 
 ### What is a branch?

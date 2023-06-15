@@ -3,11 +3,12 @@ title: "Looking at history and differences"
 teaching: 30
 exercises: 5
 questions:
-- "How do I get started with Git?"
-- "Where does Git store information?"
+- "How can I see what changed between commits?"
+- "How do I go back to a previous version of my project?"
 objectives:
 - "Be able to view history of changes to a repository"
 - "Be able to view differences between commits"
+- "Be able to recover a previous version of your project"
 - "Understand how and when to use tags to label commits"
 keypoints:
 - "`git log` shows the commit history"

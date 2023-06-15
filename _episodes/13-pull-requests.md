@@ -4,14 +4,19 @@ teaching: 5
 exercises: 15
 questions:
 - "How can I contribute to a repository to which I don't have write access?"
+- "Where can I discuss changes to my code?"
+- "What GitHub tools can I use to plan my work?"
 objectives:
 - "Understand what it means to fork a repository"
 - "Be able to fork a repository on GitHub"
-- "Understand how to submit a pull request"
+- "Be able to submit a pull request"
+- "Be able to create a new issue"
+- "Be aware of GitHub projects"
 keypoints:
 - "A `fork` is a `git clone` into your (GitHub) account"
 - "A `pull request` asks the owner of a repository to incorporate your changes"
-- "Use issues to plan your work"
+- "Use issues and GitHub projects to plan your work"
+- "You can discuss code on both issues and pull requests"
 ---
 
 Pull Requests are a great solution for contributing to repositories to which
@@ -99,10 +104,11 @@ In either case, your PR will update automatically once you have pushed your comm
 {: .challenge}
 
 ## Using issues for planning and discussion
-Issues are a great way to plan/project manage your own work.
+[Issues][issues] are a great way to plan/project manage your own work.
 You can think of them like a to-do list, where you create a new branch for each issue,
 to be merged into `master` when completed.
 They are also a good place for discussion ahead of creating a pull request.
+GitHub [projects] are a convenient way to project manage your issues via a table and/or board view.
 
 A nice GitHub integration is that you can [close an issue via a commit message][close via commit]
 e.g. if you include `Fix #2` in your commit message, it will close issue 2
@@ -125,6 +131,10 @@ when merged into master.
 >   (Look for a green button at the top of the `code` tab after pushing)
 > 6. Merge your pull request on GitHub, under the "Pull requests" tab
 {: .challenge}
+
+[issues]: https://github.com/features/issues
+[projects]: https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects
+
 
 {% include links.md %}
 
