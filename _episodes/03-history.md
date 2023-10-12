@@ -223,6 +223,10 @@ and is for inspection and discardable experiments.
 
 ![Checking out a previous commit - detached head](../fig/detached-head.svg)
 
+As we'll find out in [episode 6]({{page.root}}/06-branching/#branching-in-practice), the **switch** command is used to switch between branches,
+but if we want to switch to a commit instead of a named branch,
+we'll need to use `switch` with the `-d` (detach) option.
+
 Let's go back to the very first commit we made:
 ~~~
 $ git log
