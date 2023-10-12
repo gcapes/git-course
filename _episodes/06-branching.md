@@ -84,14 +84,26 @@ if it will actually make a publication. So it will be safer to create a branch
 and carry on working on this "experimental" version of the paper in a branch
 rather than in the master.
 
+So we create a new branch:
+
 ~~~
-$ git switch -c simulations
+$ git branch simulations
+~~~
+{: .language-bash}
+
+and then switch to it.
+
+~~~
+$ git switch simulations
 ~~~
 {: .language-bash}
 ~~~
-Switched to a new branch 'simulations'
+Switched to branch 'simulations'
 ~~~
 {: .output}
+
+In practice you'd probably want to combine these two steps using `git switch -c simulations`
+which both creates the new branch, and switches to it all in one command.
 
 We're going to change the title of the paper and update the author list (adding John Smith).
 However, before we get started it's a good practice to check that we're working
