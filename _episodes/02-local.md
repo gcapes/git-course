@@ -43,6 +43,18 @@ For this we will use the command line interface.
 ## Setting up Git
 Instructions for setting up Git on your own machine are given under [setup]({{ page.root }}{% link setup.md %}).
 
+You can verify you have everything set up correctly like this:
+
+```
+$ ssh -T git@github.com
+```
+{: .language-bash}
+
+```
+Hi <yourusername>! You've successfully authenticated, but GitHub does not provide shell access.
+```
+{: .output}
+
 ## Tell Git who we are
 
 As part of the information about changes made to files Git records who made
