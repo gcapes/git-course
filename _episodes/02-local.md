@@ -51,7 +51,7 @@ $ ssh -T git@github.com
 {: .language-bash}
 
 ```
-Hi <yourusername>! You've successfully authenticated, but GitHub does not provide shell access.
+Hi <YOUR_GITHUB_USERNAME>! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 {: .output}
 
