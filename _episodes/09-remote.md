@@ -89,6 +89,19 @@ $ git push -u origin master
 ```
 {: .language-bash}
 
+> ## Authentication Errors
+>
+> If you get a warning that HTTPS access is deprecated, or a token is required,
+> then you accidentally cloned the repository using HTTPS and not SSH.
+> You can fix this from the command line by
+> resetting the remote repository URL setting on your local repo:
+>
+> ~~~
+> $ git remote set-url origin git@github.com:<YOUR_GITHUB_USERNAME>/paper.git
+> ~~~
+> {: .language-bash}
+{: .caution}
+
 The first line sets up an alias `origin`, to correspond to the URL of our
 new repository on GitHub.
 
