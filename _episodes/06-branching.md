@@ -365,13 +365,13 @@ But we were then in the "detached HEAD" state.
 >
 > - You should be on the `master` branch after that last exercise.
 > If not, switch to master again: `git switch master`
-> - Checkout one of the previous commits from your repository.
+> - Switch (-d) to one of the previous commits from your repository.
 > - Make some changes, save the file(s), and make a commit on the detached HEAD as
 > you did in the first exercise.
 > - Run `git branch` to list your local branches, and see that you are on a temporary branch.
 >
 > This time we want to keep the commit rather than abandon it.
-> - Create a new branch and check it out.
+> - Create a new branch and switch to it.
 > - Now run `git log` and see that your new commit belongs to this new branch.
 > - List your local branches again and see that the temporary branch has gone.
 > - Switch back to the `master` branch
