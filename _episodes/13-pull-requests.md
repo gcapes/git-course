@@ -81,24 +81,45 @@ In either case, your PR will update automatically once you have pushed your comm
 > 1. **Fork** [this
 > repository](https://github.com/gcapes/manchester-papers.git)
 > by  clicking on the `Fork` button at the top of the page.
+> ![screenshot of fork button](../fig/fork-a-repo.png)
 >
-> 2. Clone the repository from **YOUR** GitHub account. When you run `git remote -v`
-> you should get something like this:
+> 1. Navigate back to your home directory so you don't clone into an existing repo
+> in the next step
+>
+>     ~~~
+>     $ cd
+>     ~~~
+>     {: .language-bash}
+>
+> 1. Clone the repository from **YOUR** GitHub account.
+> On GitHub, click on the green `Code` button  to get the SSH address to clone.
+> You should be running a command like this:
 >
 >	~~~
->	origin	git@github.com:YOUR_USERNAME/manchester-paper.git(fetch)
->	origin	git@github.com:YOUR_USERNAME/manchester-paper.git(push)
+>	$ git clone git@github.com:<YOUR_USERNAME>/manchester-paper.git
 >	~~~
 >	{: .output}
 >
-> 3. `cd` into the directory you just cloned.
+> 1. `cd` into the directory you just cloned.
+>    ~~~
+>    $ cd manchester-papers
+>    ~~~
+>    {: .language-bash}
 > Create a new branch, then make changes you want to contribute.
+>    ~~~
+>    $ git switch -c <your-new-branch>
+>    ~~~
+>    {: .language-bash}
 > Commit and push them back to your repository.
+>    ~~~
+>    $ git push origin <your-new-branch>
+>    ~~~
+>    {: .language-bash}
 > You won't be able to push back to the repository you forked from
 > because you are not added as a contributor!
-> 4. Go to your GitHub account and in the forked repository find a green button
+> 1. Go to your GitHub account and in the forked repository find a green button
 > for creating Pull Requests. Click it and follow the instructions.
-> 5. The owner of the original repository gets a notification that someone
+> 1. The owner of the original repository gets a notification that someone
 > created a pull request - the request can be reviewed, commented and merged in
 > (or not) via GitHub.
 {: .challenge}
