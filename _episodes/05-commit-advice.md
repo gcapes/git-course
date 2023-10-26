@@ -13,6 +13,8 @@ keypoints:
 - "Commit messages explain why changes were made, so make them clear and concise"
 - "Follow conventions to give a history that is both useful, and easy to read"
 - "Only commit files which can't be automatically recreated"
+- "List files to ignore by committing a `.gitignore` file"
+- "Selectively stage changes to files using `git add --patch`"
 ---
 
 ### How to write a good commit message
@@ -79,8 +81,8 @@ or `jar` files) we don't save as we can recreate it from the source. Adopting
 this approach also means there's no risk of the auto-generated files becoming
 out of sync with the manual ones.
 
-We can automatically ignore such files using a `.gitignore` file.
-See [hints and tips]({{page.root}}/12-hints-and-tips).
+We can automatically ignore such files using a
+[`.gitignore`][gitignore] file.
 
 ---
 
@@ -100,9 +102,24 @@ See [hints and tips]({{page.root}}/12-hints-and-tips).
 	- Break your code changes into small, but working chunks.
 	- If you need to temporarily save some work-in-progress
 	  (e.g. in order to work in another branch),
-	  use `git stash` -- see [hints and tips]({{page.root}}/12-hints-and-tips).
+	  use [`git stash`][stash]
 - Commit related changes.
 	- Confine your commit to directly related changes.
 	  If you fix two separate bugs, you should have two separate commits.
 
+---
+
+> ## `git add --patch`
+> This is a way to stage only parts of a file. If you have done lots of work
+> without committing, it may be useful to commit your changes as a series of
+> small commits. This command allows you to choose which changes go into which
+> commit so you can group the changes logically.
+> - [Guide to `git add --patch`](
+> http://nuclearsquid.com/writings/git-add/)
+> - Manually [editing hunks] is the  most difficult aspect.
+{: .callout}
+
 {% include links.md %}
+[gitignore]: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
+[stash]: https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning
+[editing hunks]: https://github.com/mightymakku/Manually-Editing-Hunks

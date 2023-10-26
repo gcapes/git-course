@@ -20,3 +20,5 @@ root: .
 [Workshop slideshow](slideshow/index.html)
 
 [Cheat sheet of commands and key points]({{ page.root }}/reference)
+
+`git --help` provides some summary information on common commands and their usage.
