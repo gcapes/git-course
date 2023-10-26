@@ -13,6 +13,7 @@ keypoints:
 - "Commit messages explain why changes were made, so make them clear and concise"
 - "Follow conventions to give a history that is both useful, and easy to read"
 - "Only commit files which can't be automatically recreated"
+- "List files to ignore by committing a `.gitignore` file"
 ---
 
 ### How to write a good commit message
