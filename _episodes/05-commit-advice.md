@@ -79,8 +79,8 @@ or `jar` files) we don't save as we can recreate it from the source. Adopting
 this approach also means there's no risk of the auto-generated files becoming
 out of sync with the manual ones.
 
-We can automatically ignore such files using a `.gitignore` file.
-See [hints and tips]({{page.root}}/12-hints-and-tips).
+We can automatically ignore such files using a
+[`.gitignore`][gitignore] file.
 
 ---
 
@@ -106,3 +106,4 @@ See [hints and tips]({{page.root}}/12-hints-and-tips).
 	  If you fix two separate bugs, you should have two separate commits.
 
 {% include links.md %}
+[gitignore]: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
