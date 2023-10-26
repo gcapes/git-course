@@ -16,6 +16,7 @@ keypoints:
 - "`git switch -d` recovers previous states of the repo"
 - "`HEAD` points to the commit you have checked out"
 - "`master` points to the tip of the `master` branch"
+- "`git tag` allows commits to be given a descriptive label"
 - "`git difftool` shows changes using your configured diff GUI"
 ---
 
