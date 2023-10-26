@@ -14,6 +14,7 @@ keypoints:
 - "Follow conventions to give a history that is both useful, and easy to read"
 - "Only commit files which can't be automatically recreated"
 - "List files to ignore by committing a `.gitignore` file"
+- "Selectively stage changes to files using `git add --patch`"
 ---
 
 ### How to write a good commit message
