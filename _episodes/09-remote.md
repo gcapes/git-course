@@ -153,6 +153,14 @@ $ git branch -a
 ```
 {: .language-bash}
 
+> ## Automatically enter your ssh passphrase with the ssh agent
+> If your ssh key has a passphrase and you don't want to enter it every time,
+> you can [add your key to the ssh agent][ssh-agent] which manages your keys and remembers
+> your passphrase.
+>
+> **Be sure to follow the correct instructions for your operating system at the link above!**
+{: .callout}
+
 > ## Deleting branches (for information only)
 >
 > **Don't do this now.** This is just for information.
@@ -261,4 +269,5 @@ $ git remote -v
 [citable-code]: https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content
 [MIT-licence]: https://choosealicense.com/licenses/mit/
 [github-release]: https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository
+[ssh-agent]: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=windows
 {% include links.md %}
