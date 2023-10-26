@@ -105,6 +105,19 @@ We can automatically ignore such files using a
 	- Confine your commit to directly related changes.
 	  If you fix two separate bugs, you should have two separate commits.
 
+---
+
+> ## `git add --patch`
+> This is a way to stage only parts of a file. If you have done lots of work
+> without committing, it may be useful to commit your changes as a series of
+> small commits. This command allows you to choose which changes go into which
+> commit so you can group the changes logically.
+> - [Guide to `git add --patch`](
+> http://nuclearsquid.com/writings/git-add/)
+> - Manually [editing hunks] is the  most difficult aspect.
+{: .callout}
+
 {% include links.md %}
 [gitignore]: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
 [stash]: https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning
+[editing hunks]: https://github.com/mightymakku/Manually-Editing-Hunks
