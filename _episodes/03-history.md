@@ -44,21 +44,30 @@ Looking at differences between commits is one of the most common activities.
 The `git diff` command itself has a number of [useful
 options](http://git-scm.com/docs/git-diff.html).
 
-There is also a range of GUI-based tools for looking at differences and
-editing files. For example:
+> ## Configure a visual diff tool
+>
+> There are many GUI-based tools available for looking at differences and editing files,
+> which can be easier to work with.
+>  For example:
+> * [Diffmerge](https://sourcegear.com/diffmerge/) (Free, cross-platform)
+> * [WinMerge](http://winmerge.org/) - open source tool available for Windows;
+> To view differences with a GUI instead of using the command-line diff tool, first configure
+> git to use your chosen diff tool:
+>
+> ```
+> $ git config --global diff.tool diffmerge    # Set diffmerge as your visual diff tool
+> $ git config --global difftool.prompt false  # Suppress confirmation before launching GUI
+> ```
+> {: .language-bash}
+> Then to use the GUI, use the following command instead of `git diff`:
+>
+> ```
+> $ git difftool
+> ```
+> {: .language-bash}
+>
+{: .callout}
 
-* [Diffmerge](https://sourcegear.com/diffmerge/) (Free, cross-platform)
-* [WinMerge](http://winmerge.org/) - open source tool available for Windows;
-* GitHub [Compare
-view](https://help.github.com/articles/comparing-commits-across-time)
-
-Git can be configured to use graphical diff tools, and this is functionality
-is accessed using `git difftool` in place of `git diff`.
-Configuring a visual diff tool is covered on the
-[hints and tips](11-hints-and-tips.html) page.
-The choice of GUI for viewing differences depends on the context in which you
-are working and your own preferences related to choosing tools and
-technologies.
 
 Now commit the change we made by adding the second reference:
 ```
