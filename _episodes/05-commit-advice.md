@@ -100,10 +100,11 @@ We can automatically ignore such files using a
 	- Break your code changes into small, but working chunks.
 	- If you need to temporarily save some work-in-progress
 	  (e.g. in order to work in another branch),
-	  use `git stash` -- see [hints and tips]({{page.root}}/12-hints-and-tips).
+	  use [`git stash`][stash]
 - Commit related changes.
 	- Confine your commit to directly related changes.
 	  If you fix two separate bugs, you should have two separate commits.
 
 {% include links.md %}
 [gitignore]: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
+[stash]: https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning
