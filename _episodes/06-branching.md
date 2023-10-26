@@ -10,9 +10,10 @@ objectives:
 - "Understand how to merge branches"
 - "Understand how to resolve conflicts during a merge"
 keypoints:
-- "`git switch -c <branch_name>` creates a new branch"
-- "Use feature branches for new ideas and fixes, before merging into `master`"
+- "`git switch` switches to another branch"
+- "`git switch -c <branch_name>` creates a new branch and switches to it"
 - "`git merge <branch_name>` merges into current branch"
+- "Use feature branches for new ideas and fixes, before merging into `master`"
 - "Merging does not delete any branches"
 ---
 

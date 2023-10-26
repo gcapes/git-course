@@ -19,5 +19,4 @@ root: .
 ## Resources
 [Workshop slideshow](slideshow/index.html)
 
-[Git cheat sheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
-(You may want to download a copy of this for reference during this workshop)
+[Cheat sheet of commands and key points]({{ page.root }}/reference)
