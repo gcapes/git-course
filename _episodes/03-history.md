@@ -61,6 +61,8 @@ options](http://git-scm.com/docs/git-diff.html).
 > $ git config --global difftool.prompt false  # Suppress confirmation before launching GUI
 > ```
 > {: .language-bash}
+> Note that these config steps are [slightly different][diffmerge on windows] for Windows.
+>
 > Then to use the GUI, use the following command instead of `git diff`:
 >
 > ```
@@ -401,5 +403,6 @@ $ git switch master
 
 [reference-previous-work]: https://github.com/gcapes/git-course-paper/commit/add59ba7d0b963531195eb3774b79bb9bcd749d1#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
 [give-context]: https://github.com/gcapes/git-course-paper/commit/92f674de54c77afd7ae32342f9f03d2bdd8fb76d#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
+[diffmerge on windows]: https://stackoverflow.com/questions/42283336/how-to-configure-sourcegear-diffmerge-as-mergetool-and-difftool-for-github-windo
 
 {% include links.md %}
