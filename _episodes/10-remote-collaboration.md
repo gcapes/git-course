@@ -301,7 +301,8 @@ $ git pull origin master	# Merge remote branch into local
 >
 > In this exercise you should work with a partner or a group of three.
 > One of you should give access to your remote repository on GitHub to
-> the others (by selecting `Settings -> Manage access -> Invite a collaborator`).
+> the others (by selecting `Settings tab -> Access -> Collaborators`).
+> ![](../fig/repo-settings.png)
 > The invited person should then check their email to accept the invitation.
 >
 > Now those of you who are added as collaborators should clone the repository of
