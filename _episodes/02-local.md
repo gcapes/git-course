@@ -150,7 +150,7 @@ $ ls .git
 branches  config  description  HEAD  hooks  info  objects refs
 ~~~
 {: .output}
-The `.git` directory contains Git's configuration files. Be careful not to
+The `.git` directory contains Git's [configuration files][inside-dot-git]. Be careful not to
 accidentally delete this directory!
 
 ## Tracking files with a git repository
@@ -381,5 +381,6 @@ In order to add all tracked files to the staging area, use `git commit -a`
 [start-intro]: https://github.com/gcapes/git-course-paper/commit/fd89f56eaf67c60318e3111268e0097359a3fa4e#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
 [cite a paper]: https://github.com/gcapes/git-course-paper/commit/6e3919a05cd1b3ce922d35c65815204e0c0db711#diff-0403ef06adf405f7b310b4518bd6a3559854f54c61676f676ce9cbfee7172ab6
 [guis]: https://git-scm.com/downloads/guis
+[inside-dot-git]: https://jvns.ca/blog/2024/01/26/inside-git/?utm_source=tldrnewsletter
 
 {% include links.md %}
