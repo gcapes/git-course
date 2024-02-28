@@ -96,7 +96,7 @@ In either case, your PR will update automatically once you have pushed your comm
 > You should be running a command like this:
 >
 >	~~~
->	$ git clone git@github.com:<YOUR_USERNAME>/manchester-paper.git
+>	$ git clone git@github.com:<YOUR_USERNAME>/manchester-papers.git
 >	~~~
 >	{: .output}
 >
