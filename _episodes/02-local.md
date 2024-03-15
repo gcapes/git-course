@@ -213,6 +213,23 @@ For now, the important bit of information is that our file is listed as
 tracking it - that is, any changes made to this file will not be recorded by
 Git.
 
+> ## Default branch name
+> Some implementations of git (e.g. on  newish Macs) have chosen to overwrite the default
+> branch name, and use `main` instead of `master`.
+> If this is the case, you can either mentally switch out `master` with `main` for the
+> rest of the course, or if you prefer you can change the branch name to `master` using
+> ```
+> git branch -m master
+> ```
+> {: .language-bash}
+>
+> To make this a permanent change for new repos, you would need to run
+> ```
+> git config --global init.defaultBranch master
+> ```
+> {: .language-bash}
+{: .callout}
+
 ## Add files to a Git repository
 To tell Git about the file, we will use the `git add` command:
 
