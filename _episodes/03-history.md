@@ -226,6 +226,7 @@ You'll see there are two pointers, `HEAD` and `master` which label the most rece
 - `master` points to the tip of the *master* branch, and moves forward as you make new commits
 - `HEAD` normally points to a branch pointer
 
+
 ### Going back in time with git
 
 We can use commit identifiers to set our working directory back to how it was
@@ -236,13 +237,31 @@ and is for inspection and discardable experiments.
 
 ![Checking out a previous commit - detached head](../fig/detached-head.svg)
 
-As we'll find out in [episode 6]({{page.root}}/06-branching/#branching-in-practice), the **switch** command is used to switch between branches,
+Before we go back to a previous version of our project,
+we'll just visualise our history in the same way as the diagram above.
+
+~~~
+$ git log --graph --decorate --oneline --all
+~~~
+{: .language-bash}
+
+```
+* 6a48241 (HEAD, master) Cite previous work in introduction
+* ed26351 Cite PCASP paper
+* 7446b1d Write introduction
+* 4f572d5 Add title and author
+```
+{: .output}
+
+Notice how `HEAD` and `master` point to the same commit.
+
+As we'll find out in [episode 6]({{page.root}}/06-branching/#branching-in-practice),
+the **switch** command is used to switch between branches,
 but if we want to switch to a commit instead of a named branch,
 we'll need to use `switch` with the `-d` (detach) option.
 
 Let's go back to the very first commit we made:
 ~~~
-$ git log
 $ git switch -d INITIAL_COMMITID
 ~~~
 {: .language-bash}
@@ -281,53 +300,12 @@ paper.md
 ~~~
 {: .output}
 
-then we see that our `refs.txt` file is gone. But, rest easy, while it's
-gone from our working directory, it's still in our repository. We can jump back
-to the latest commit by doing:
+then we see that our `refs.txt` file is gone. But don't worry, while it's
+gone from our working directory, it's still in our repository.
 
-~~~
-$ git switch master
-~~~
-{: .language-bash}
-
-And `refs.txt` will be there once more,
-
-~~~
-$ ls
-~~~
-{: .language-bash}
-~~~
-paper.md refs.txt
-~~~
-{: .output}
-So we can get any version of our files from any point in time. In other words,
-we can set up our working directory back to any stage it was when we made
-a commit.
-
-## Visualising your own repository as a graph
-If we use `git log` with a couple of options, we can display the history as a graph,
-and decorate those commits corresponding to Git references (e.g. `HEAD`, `master`):
-
-~~~
-$ git log --graph --decorate --oneline
-~~~
-{: .language-bash}
+Let's visualise the repo again now we are a 'detached HEAD' state:
 
 ```
-* 6a48241 (HEAD, master) Cite previous work in introduction
-* ed26351 Cite PCASP paper
-* 7446b1d Write introduction
-* 4f572d5 Add title and author
-```
-{: .output}
-
-Notice how `HEAD` and `master` point to the same commit.
-Now switch to previous commit again, and look at the graph again.
-We can display, this time specifying that we want to look at `--all` the history,
-rather than just up to the current commit.
-
-```
-$ git switch -d HEAD~		# This syntax refers to the commit before HEAD
 $ git log --graph --decorate --oneline --all
 ```
 {: .language-bash}
@@ -341,12 +319,28 @@ $ git log --graph --decorate --oneline --all
 {: .output}
 
 Notice how `HEAD` no longer points to the same commit as `master`.
-Let's return to the current version of the project by switching to `master` again.
+Let's return to the current version of the project by switching back to `master`.
 
 ```
 $ git switch master
 ```
 {: .language-bash}
+
+See that `refs.txt` is back in the working directory,
+
+~~~
+$ ls
+~~~
+{: .language-bash}
+~~~
+paper.md refs.txt
+~~~
+{: .output}
+
+So we can get any version of our files from any point in time. In other words,
+we can set up our working directory back to any stage it was at when we made
+a commit.
+
 
 ### Using tags as nicknames for commit identifiers
 
@@ -384,7 +378,14 @@ $ git switch -d PAPER_STUB
 ```
 {: .language-bash}
 
-And return to the latest commit,
+We might want to have a look around while we're here:
+
+```
+$ nano paper.md
+```
+{: .language-bash}
+
+And to return to the latest commit, we use
 
 ```
 $ git switch master
