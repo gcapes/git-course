@@ -84,6 +84,15 @@ $ git config --global core.editor nano
 {: .language-bash}
 
 
+## Set remote merge strategy
+
+Set the default behaviour for merging remote branches (this afternoon).
+
+~~~
+git config --global pull.rebase false
+~~~
+{: .language-bash}
+
 ## Git's global configuration
 
 We can now preview (and edit, if necessary) Git's global configuration (such as
