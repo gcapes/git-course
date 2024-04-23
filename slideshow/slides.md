@@ -11,16 +11,13 @@ author: 'Gerard Capes'
 [feedback form]: https://goo.gl/forms/YZJ05PzX9tPFEtuV2
 
 # Research-related IT services
-- Described on [IT Services website](http://www.itservices.manchester.ac.uk/research/)
-- Announcements given via [Research IT News](https://researchitnews.org/)
-- [Training courses] teaching computing skills for Research
-- General guidance and advice about research software
-- Access to specialist support and consultancy e.g. code reviews
-- Access to HPC systems
-- [Full list of services on offer](http://www.itservices.manchester.ac.uk/our-services/research/)
-- For help and support, use the [Support Portal](http://www.itservices.manchester.ac.uk/help/)
-
-[Training courses]: https://www.staffnet.manchester.ac.uk/staff-learning-and-development/learning-pathways/professional-and-technical-development/it-skills/research-computing/research-courses/
+- Go to the [Research IT website](https://research-it.manchester.ac.uk/) for links and info on
+  - Training courses teaching computing skills for Research
+  - General guidance and advice about research software
+  - Specialist support and consultancy e.g. code reviews
+  - HPC systems and data storage
+  - How to get in touch with us
+  - Newsletter and twitter for updates
 
 # Course timing
 - 09:00 -- 12:00 Morning session
