@@ -155,8 +155,7 @@ when merged into master.
 
 [issues]: https://github.com/features/issues
 [projects]: https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects
+[close via commit]: https://github.com/gcapes/git-course/commit/b76e9fe967d4f1a1a612399bb4fb615cef70e2e0
 
 
 {% include links.md %}
-
-[close via commit]: https://github.com/gcapes/git-course/commit/b76e9fe967d4f1a1a612399bb4fb615cef70e2e0

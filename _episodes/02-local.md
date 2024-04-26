@@ -41,7 +41,8 @@ For this we will use the command line interface.
 {: .callout}
 
 ## Setting up Git
-Instructions for setting up Git on your own machine are given under [setup]({{ page.root }}{% link setup.md %}).
+Instructions for setting up Git on your own machine are given under 
+[setup]({{ page.root }}{% link setup.md %}).
 
 You can verify you have everything set up correctly like this:
 

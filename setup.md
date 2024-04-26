@@ -25,8 +25,8 @@ Git is free and open-source software, available for all operating systems.
 
 #### Installation on personal and unmanaged machines
 
-[See here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for installation instructions
-for the major operating systems.
+[See here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
+for installation instructions for the major operating systems.
 
 ### SSH keys
 
@@ -60,7 +60,8 @@ id_ed25519  id_ed25519.pub
 ```
 {: .output}
 
-and you can skip to the next section [(Add public ssh key to GitHub)](#add-public-ssh-key-to-github).
+and you can skip to the next section 
+[(Add public ssh key to GitHub)](#add-public-ssh-key-to-github).
 
 If you still need to set up ssh keys, you'll get a message like this:
 
@@ -77,7 +78,8 @@ $ ssh-keygen -t ed25519 -C "your_email@example.com"
 {: .language-bash}
 
 You *might* get an error from this if your system doesn't support
-the ed25519 algorithm, in which case you can try `$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+the ed25519 algorithm, in which case you can try 
+`$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
 
 ```
 Generating public/private ed25519 key pair.

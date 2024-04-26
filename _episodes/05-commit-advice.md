@@ -119,7 +119,8 @@ We can automatically ignore such files using a
 > - Manually [editing hunks] is the  most difficult aspect.
 {: .callout}
 
-{% include links.md %}
 [gitignore]: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
 [stash]: https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning
 [editing hunks]: https://github.com/mightymakku/Manually-Editing-Hunks
+
+{% include links.md %}
