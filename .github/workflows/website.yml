@@ -125,3 +125,13 @@ jobs:
 
       - run: make lesson-check-all
         if: always()
+
+      - name: Build slides
+        uses: docker://pandoc/core:latest
+        with:
+          args: --to=revealjs --standalone -o slideshow/index.html --css=mywhite.css  slideshow/slides.md
+
+      - name: Deploy slides
+        uses: JamesIves/github-pages-deploy-action@v4.6.0
+        with:
+          folder: .
