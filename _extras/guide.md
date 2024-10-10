@@ -8,6 +8,9 @@ title: "Instructor Notes"
 	- Use black-on-white colour scheme
 	- Set a minimal shell prompt `PS1="$ "`
 	- Also set a larger font size in your text editor
+  - Syntax highlighting in `nano` isn't very legible on a light background.
+    <kbd>Alt</kbd> + <kbd>Y</kbd> toggles syntax highlighting in `nano`,
+    but using a dark terminal background could also be a solution
 - Check everyone has SSH keys set up
   - Help get everyone set up at lunch time
 
