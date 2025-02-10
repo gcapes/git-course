@@ -39,8 +39,7 @@ of what is what.
 * How do you know what is different between each version?
 
 Without a VCS you will probably end up with lots of nearly-identical
-(but critically different) copies of the same file, which is confusing
-and wastes hard drive space.
+(but critically different) copies of the same file, which is confusing.
 Your project will probably start to look like this:
 
 ![](../fig/astorytoldinfilenames.gif)
@@ -48,8 +47,8 @@ Your project will probably start to look like this:
 A VCS treats your files as one project, so you only have one current
 version on your disk (the working copy) - all the other variants and
 previous versions are saved in the VCS repository. A VCS starts with
-a base version of your project and only saves the changes you make along
-the way, so it is much more space efficient too.
+a base version of your project and records changes you make along
+the way.
 
 Add changes sequentially
 ![Add changes sequentially](../fig/play-changes.svg)
