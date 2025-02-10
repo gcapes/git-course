@@ -31,10 +31,11 @@ For this we will use the command line interface.
 > We are deliberately not using a GUI for this course because:
 >
 > * you will have a better understanding of how the git comands work
-> (some functionality is often missing and/or unclear in GUIs)
+>   (some functionality is often missing and/or unclear in GUIs)
 > * you will be able to use Git on any computer
-> (e.g. remotely accessing HPC systems, which generally only have Linux command line access)
+>   (e.g. remotely accessing HPC systems, which generally only have Linux command line access)
 > * you will be able to use any GUI, rather than just the one you have learned
+> * you'll be able to search for help online and understand the answers
 >
 > By the end of the course, this should no longer be you:
 > ![xkcd-git-comic](https://imgs.xkcd.com/comics/git.png)
