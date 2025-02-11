@@ -46,7 +46,9 @@ and the private key as the only key to the padlock.
 
 #### Create ssh keys
 
-Let's first check whether we already have ssh keys set up:
+Let's first check whether we already have ssh keys set up.
+Start up a **Terminal** (Linux/macOS) or **Git BASH** (Windows)
+and run these commands:
 
 ```
 $ ls ~/.ssh
