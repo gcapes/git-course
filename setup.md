@@ -166,12 +166,13 @@ $ ssh -T git@github.com
 
 If this is the first time you have connected, you'll probably see a warning like this:
 
-```output
+```
 The authenticity of host 'github.com (20.26.156.215)' can't be established.
 ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
 This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
+{: .output}
 
 This is asking you to verify github's public key to check you're connecting to the right thing.
 Assuming it matches one of the [public keys](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints)
