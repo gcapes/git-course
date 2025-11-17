@@ -25,7 +25,7 @@ Git is free and open-source software, available for all operating systems.
 
 #### Installation on personal and unmanaged machines
 
-[See here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
+[See here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 for installation instructions for the major operating systems.
 
 ### SSH keys
@@ -62,7 +62,7 @@ id_ed25519  id_ed25519.pub
 ```
 {: .output}
 
-and you can skip to the next section 
+and you can skip to the next section
 [(Add public ssh key to GitHub)](#add-public-ssh-key-to-github).
 
 If you still need to set up ssh keys, you'll get a message like this:
@@ -80,7 +80,7 @@ $ ssh-keygen -t ed25519 -C "your_email@example.com"
 {: .language-bash}
 
 You *might* get an error from this if your system doesn't support
-the ed25519 algorithm, in which case you can try 
+the ed25519 algorithm, in which case you can try
 `$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
 
 ```
@@ -163,6 +163,19 @@ You can verify your SSH set up was successful like this:
 $ ssh -T git@github.com
 ```
 {: .language-bash}
+
+If this is the first time you have connected, you'll probably see a warning like this:
+
+```output
+The authenticity of host 'github.com (20.26.156.215)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+```
+
+This is asking you to verify github's public key to check you're connecting to the right thing.
+Assuming it matches one of the [public keys](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints)
+we can go ahead and type enter `yes`, which brings us to the confirmation.
 
 ```
 Hi yourusername! You've successfully authenticated, but GitHub does not provide shell access.
