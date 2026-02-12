@@ -158,6 +158,9 @@ You may already have guessed that `git pull` is a shorthand for `git fetch` foll
 >
 > Fetching first lets you inspect the changes
 > before deciding what you want to do with them.
+>
+> `git fetch` is also used when you want to get a local copy of a new remote (feature) branch.
+> First you `git fetch` the remote tracking branches, then `git switch` to the new branch.
 {: .callout}
 
 Let's [write the conclusions][write-conclusions]:
